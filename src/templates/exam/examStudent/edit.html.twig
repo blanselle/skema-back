@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edition d'une inscription à un examen{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('student_edit', {'id': student.id}) }}" class="btn btn-secondary">Retour au candidat</a>
+        {% if examStudent is defined and examStudent.score is empty and examStudent.examSession.price is empty %}
+            {{ include('exam/examStudent/_delete_form.html.twig') }}
+        {% endif %}
+    </div>
+    <hr />
+    {% if examStudent is defined %}
+        <h1>{{ examStudent.examSession.examClassification.name }} - [{{ student.user.firstName }} {{ student.user.lastName }}]</h1>
+    {% else %}
+        <h1>Inscription nouvelle session : {{ student.user.firstName }} {{ student.user.lastName }}</h1>
+    {% endif %}
+    <hr />
+    {% for error in formErrors %}
+        <div class="alert alert-danger mb-3">
+            {{ error.message }}
+        </div>
+    {% endfor %}
+    {{ include('exam/examStudent/_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification d'un thème{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('faq_topic_index') }}" class="btn btn-secondary">Retour à la liste des thèmes</a>
+        {{ include('faq/topic/_delete_form.html.twig') }}
+    </div>
+    <hr />
+    <h1>Modifier le thème {{ topic.label }}</h1>
+
+    <div class="save_container">
+        {{ include('faq/topic/_form.html.twig') }}
+    </div>
+{% endblock %}

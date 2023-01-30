@@ -1,0 +1,24 @@
+framework:
+  workflows:
+    order:
+      type: 'state_machine'
+      marking_store:
+        type: 'method'
+        property: 'state'
+      supports:
+        - App\Entity\Payment\Order
+      initial_marking: created
+      places:
+        - created
+        - in_progress
+        - validated
+      transitions:
+        treated:
+          from: created
+          to: in_progress
+        validate:
+          from: in_progress
+          to: validated
+        recreate:
+          from: in_progress
+          to: created

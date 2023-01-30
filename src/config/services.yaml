@@ -1,0 +1,16 @@
+imports:
+  - { resource: services/parameters.yaml }
+  - { resource: services/services.yaml }
+  - { resource: services/gelf.yaml }
+  - { resource: services/fixtureProviders.yaml }
+  - { resource: services/openApiDecorators.yaml }
+  - { resource: services/eventSubscribers.yaml }
+  - { resource: services/eventListeners.yaml }
+  - { resource: services/normalizers.yaml }
+  - { resource: services/doctrineExtension.yaml }
+  - { resource: services/rulers.yaml }
+  - { resource: workflows/candidate.yaml }
+  - { resource: workflows/media.yaml }
+  - { resource: workflows/payment.yaml }
+  - { resource: workflows/order.yaml }
+  - { resource: workflows/oral_test_student.yaml }

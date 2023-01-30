@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Répartitions des candidats - Session Skema{% endblock %}
+
+{% block body %}
+    <h1>Répartitions des candidats</h1>
+    <hr />
+
+    <div class="row">
+        {{ include('partial/_flash_messages.html.twig') }}
+    </div>
+
+    {% for campus in campuses %}
+        <div class="distribution_item">
+            <h3>{{ campus.name }}</h3>
+            {% if campus.id not in campusesDistributed %}
+                <p class="error_not_distributed">La répartition n'est pas réalisée</p>
+            {% else %}
+                <a href="{{ path('exam_distribution_list', {'campus': campus.id}) }}">> Voir la répartition {{ campus.name }}</a>
+            {% endif %}
+        </div>
+    {% endfor %}
+    <hr />
+    {{ include('exam/distribution/_form.html.twig') }}
+{% endblock %}

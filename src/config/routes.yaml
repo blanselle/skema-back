@@ -1,0 +1,18 @@
+controllers:
+    resource: ../src/Controller/
+    type: annotation
+
+Actions:
+    resource: ../src/Action/
+    type: annotation
+
+kernel:
+    resource: ../src/Kernel.php
+    type: annotation
+
+authentication_token:
+    path: /api/authentication_token
+    methods: ['POST']
+
+gesdinet_jwt_refresh_token:
+    path: /api/token/refresh

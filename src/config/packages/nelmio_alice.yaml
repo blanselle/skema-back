@@ -1,0 +1,4 @@
+when@dev: &dev
+    nelmio_alice:
+
+when@test: *dev

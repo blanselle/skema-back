@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle sessions{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('exam_session_index') }}" class="btn btn-secondary">Retour à la liste des sessions</a>
+    </div>
+    <hr />
+    <h1>Créer une session</h1>
+
+    {{ include('exam/session/_form.html.twig') }}
+{% endblock %}

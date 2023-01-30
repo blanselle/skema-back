@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des évènements du calendrier{% endblock %}
+
+{% block body %}
+<h1>Liste des évènements du calendrier <a class="btn btn-primary" href="{{ path('event_new') }}">Ajouter un évènement</a></h1>
+<div class="search_form">
+    <hr />
+    <form action="" method="get" id="list-search">
+        <div class="row">
+            <div class="col">
+                <input type="text" name="label" id="label" class="form-control" placeholder="Label"
+                       value="{% if params['label'] is defined %}{{ params['label'] }}{% endif %}" />
+            </div>
+        </div>
+        <button class="btn btn-success" type="submit">Filtrer</button>
+    </form>
+    <hr />
+</div>
+{% include 'table.html.twig' with {'columns' : columns, 'controller' : 'event_index'} %}
+{% endblock %}

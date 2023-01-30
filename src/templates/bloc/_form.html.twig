@@ -1,0 +1,65 @@
+{{ form_start(form) }}
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.label) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.media.formFile) }}
+            {% if form.media.originalName is defined %}
+            <div class="hidden">
+                {{ form_row(form.media.originalName) }}
+            </div>
+            {% endif %}
+        </div>
+        <div class="col">
+            {% if item.media is not null and item.media.file is not empty %}
+                <div class="bloc_media" style="display:flex;">
+                    <button type="button" data-url="{{ path('ajax_bloc_media_delete', {'id': item.id}) }}" class="media_delete btn btn-danger action-delete" style="align-self:baseline;margin-left:10px;"><i class="bi bi-trash"></i></button>
+                </div>
+                <img class="img-thumbnail" src="{{ absolute_url(path('media_rendering', {id: item.media.id})) }}" alt="" />
+                <br />
+                <br />
+            {% endif %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.content) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.link) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.labelLink) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.position) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.active) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.tag) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.programChannels) }}
+        </div>
+    </div>
+    <div class="save_container">
+        <button class="btn btn-success">{{ button_label|default('Sauvegarder') }}</button>
+    </div>
+{{ form_end(form) }}

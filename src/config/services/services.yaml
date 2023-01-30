@@ -1,0 +1,34 @@
+services:
+  # default configuration for services in *this* file
+  _defaults:
+    autowire: true      # Automatically injects dependencies in your services.
+    autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+  App\:
+    resource: '../../src/'
+    exclude:
+      - '../../src/DependencyInjection/'
+      - '../../src/Entity/'
+      - '../../src/Kernel.php'
+
+
+  App\ArgumentResolver\BonusResolver:
+    tags:
+        - { name: controller.argument_value_resolver, priority: 50 }
+
+  App\Service\Admissibility\Ranking\DataAverageToExport: ~
+  App\Service\Admissibility\Ranking\DataForProgramChannelsToExport: ~
+  App\Service\Admissibility\Ranking\DataNoteToExport: ~
+  App\Service\Admissibility\Ranking\DataToExportInterface $dataAverageToExport: '@App\Service\Admissibility\Ranking\DataAverageToExport'
+  App\Service\Admissibility\Ranking\DataToExportInterface $dataForProgramChannelsToExport: '@App\Service\Admissibility\Ranking\DataForProgramChannelsToExport'
+  App\Service\Admissibility\Ranking\DataToExportInterface $dataNoteToExport: '@App\Service\Admissibility\Ranking\DataNoteToExport'
+
+  app.form.type.experience:
+    class: App\Form\Admin\User\CV\ExperienceType
+    arguments: [ "@translator" ]
+    tags:
+      - { name: form.type }
+
+  App\Manager\Admissibility\LandingPage\PurgeVarnishManager:
+    arguments:
+      $purger: '@api_platform.http_cache.purger.varnish'

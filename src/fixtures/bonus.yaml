@@ -1,0 +1,31 @@
+App\Entity\Admissibility\Bonus\Category:
+  distinctionCategoryBonus: 
+    key: 'bac_distinction'
+    name: 'Mention'
+  additionnalCategoryBonus: 
+    key: 'additionnal'
+    name: 'Double Diplome'
+  bacTypeCategoryBonus:
+    key: 'bac_type'
+    name: 'Type de bac'
+  sportLevelCategoryBonus:
+    key: 'sport_level'
+    name: 'Niveau sportif'
+  languageCategoryBonus:
+    key: 'language'
+    name: 'Langues'
+  experienceCategoryBonus:
+    key: 'experience'
+    name: 'Experience'
+App\Entity\Admissibility\Bonus\BacDistinctionBonus:
+  distinctionBonus: 
+    bacDistinction: '@distinction_tb'
+    value: 0.5
+    programChannel: '@ast1_program_channel'
+    category: '@distinctionCategoryBonus'
+
+App\Entity\Admissibility\Bonus\BasicBonus:
+  basicBonus:
+    value: 0.5
+    programChannel: '@ast1_program_channel'
+    category: '@additionnalCategoryBonus'

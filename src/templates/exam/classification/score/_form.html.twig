@@ -1,0 +1,10 @@
+{{ form_start(form) }}
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.score) }}
+        </div>
+    </div>
+    <div class="save_container">
+        <button class="btn btn-success">{{ button_label|default('Sauvegarder') }}</button>
+    </div>
+{{ form_end(form) }}

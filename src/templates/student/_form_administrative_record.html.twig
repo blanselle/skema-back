@@ -1,0 +1,348 @@
+{{ include('student/_validation_check_diploma.html.twig') }}
+
+{{ form_start(formAR) }}
+<div class="bg-light p-2">
+    <h4>Diplôme(s)</h4>
+    <div class="form_container p-5">
+        {% for diploma in formAR.studentDiplomas %}
+
+            {% if loop.index == 1 %}
+                <h5><i>Le parcours principal</i></h5>
+            {% endif %}
+
+            {% if loop.index == 2 %}
+                <div class="nav_actions">
+                    <h5 id="dualpath"><i>Le double parcours</i></h5>
+                    <a href="{{ path('ar_dual_path_remove', {'id' : diploma.id.vars.value}) }}" onclick="return confirm('Voulez vous vraiment supprimer le double parcours ?');" class="btn btn-danger">
+                        Supprimer le double parcours
+                    </a>
+                </div>
+            <hr />
+            {% endif %}
+
+            {{ form_row(diploma.id) }}
+            {% if loop.index == 1 %}
+                <div class="row">
+                    <div class="col">
+                        {{ form_row(diploma.year) }}
+                    </div>
+                </div>
+            {% else %}
+                <div class="row">
+                    <div class="col">
+                        {{ form_row(diploma.year, {'label': false, 'attr': {'class': 'hidden'}}) }}
+                    </div>
+                </div>
+            {% endif %}
+            <div class="row">
+                <div class="col">
+                    {{ form_row(diploma.diploma) }}
+                </div>
+                <div class="col">
+                    {{ form_row(diploma.diplomaChannel) }}
+                </div>
+                <div class="col">
+                    {{ form_row(diploma.detail) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    {{ form_row(diploma.establishment) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    {{ form_row(diploma.postalCode) }}
+                </div>
+                <div class="col">
+                    {{ form_row(diploma.city) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col media_parent_container">
+                    {% if student.administrativeRecord is not empty and student.administrativeRecord.studentDiplomas is not empty %}
+                        {% for studentDiploma in student.administrativeRecord.studentDiplomas %}
+                            {% if studentDiploma.id == diploma.id.vars.value %}
+                                {% include '_media.html.twig' with {'medias': studentDiploma.diplomaMedias, 'exemption': exemption} %}
+                                <br />
+                                {% if diploma.diplomaMedias is defined %}
+                                    <div class="media_content">
+                                        <ul class="diplomaMedias_{{ loop.index0 }}" data-index="0"
+                                            data-prototype="{{ form_widget(diploma.diplomaMedias.vars.prototype)|e('html_attr') }}"></ul>
+                                        <div style="text-align:center;margin-bottom:25px;">
+                                            <button type="button" class="add_media btn btn-primary" data-collection-holder-class="diplomaMedias_{{ loop.index0 }}">Ajouter un média</button>
+                                            <button type="button" class="save_media btn btn-success" data-id="diplomaMedias_{{ loop.index0 }}">Sauvegarder</button>
+                                        </div>
+                                    </div>
+                                    {% for diplomaMedia in diploma.diplomaMedias %}
+                                        <div class="hidden">
+                                            {{ form_row(diplomaMedia) }}
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+        {% if formAR.studentDiplomas|length == 1 and formAR.id.vars.value|length != 0 %}
+            <hr />
+            <div class="nav_actions"><a href="{{ path('ar_dual_path_new', {'id': formAR.id.vars.value}) }}" class="btn btn-primary justify-content-end">Ajouter un double parcours</a></div>
+        {% endif %}
+    </div>
+</div>
+
+<hr />
+<div class="bg-light p-2">
+    <h4>Informations complémentaires</h4>
+    <div class="form_container p-5">
+        <div class="row">
+            <div class="col">
+                {{ form_row(formAR.optionalExamLanguage) }}
+            </div>
+            <div class="col">
+                {{ form_row(formAR.examLanguage) }}
+            </div>
+        </div>
+        <h5><i>Sportif de haut niveau</i></h5>
+        <hr />
+        <div class="row">
+            <div class="col">
+                {{ form_row(formAR.highLevelSportsman) }}
+            </div>
+            <div class="col">
+                {{ form_row(formAR.sportLevel) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col media_parent_container">
+                {% if student.administrativeRecord is not empty and student.administrativeRecord.highLevelSportsmanMedias is not empty %}
+                    {% include '_media.html.twig' with {'medias': student.administrativeRecord.highLevelSportsmanMedias, 'exemption': exemption} %}
+                {% endif %}
+                <br />
+                {% if formAR.highLevelSportsmanMedias is defined %}
+                    <div class="media_content">
+                        <ul class="highLevelSportsmanMedias" data-index="0"
+                            data-prototype="{{ form_widget(formAR.highLevelSportsmanMedias.vars.prototype)|e('html_attr') }}"></ul>
+                        <div style="text-align:center;margin-bottom:25px;">
+                            <button type="button" class="add_media btn btn-primary" data-collection-holder-class="highLevelSportsmanMedias">Ajouter un média</button>
+                            <button type="button" class="save_media btn btn-success" data-id="highLevelSportsmanMedias">Sauvegarder</button>
+                        </div>
+                    </div>
+
+                    {% for highLevelMedia in formAR.highLevelSportsmanMedias %}
+                        <div class="hidden">
+                            {{ form_row(highLevelMedia) }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+        <h5><i>Boursier</i></h5>
+        <hr />
+        <div class="row">
+            <div class="col">
+                {{ form_row(formAR.scholarShip) }}
+            </div>
+            <div class="col">
+                {{ form_row(formAR.scholarShipLevel) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col media_parent_container">
+                {% if student.administrativeRecord is not empty and student.administrativeRecord.scholarShipMedias is not empty %}
+                    {% include '_media.html.twig' with {'medias': student.administrativeRecord.scholarShipMedias, 'exemption': exemption} %}
+                {% endif %}
+                <br />
+                {% if formAR.scholarShipMedias is defined %}
+                    <div class="media_content">
+                        <ul class="scholarShipMedias" data-index="0"
+                             data-prototype="{{ form_widget(formAR.scholarShipMedias.vars.prototype)|e('html_attr') }}"></ul>
+                        <div style="text-align:center;margin-bottom:25px;">
+                            <button type="button" class="add_media btn btn-primary" data-collection-holder-class="scholarShipMedias">Ajouter un média</button>
+                            <button type="button" class="save_media btn btn-success" data-id="scholarShipMedias">Sauvegarder</button>
+                        </div>
+                    </div>
+                    {% for scholardMedia in formAR.scholarShipMedias %}
+                        <div class="hidden">
+                            {{ form_row(scholardMedia) }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+        <h5><i>Tiers temps</i></h5>
+        <hr />
+        <div class="row">
+            <div class="col">
+                {{ form_row(formAR.thirdTime) }}
+            </div>
+            <div class="col">
+                {{ form_row(formAR.thirdTimeNeedDetail) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="col">
+                    {{ form_row(formAR.thirdTimeDetail) }}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col media_parent_container">
+                {% if student.administrativeRecord is not empty and student.administrativeRecord.thirdTimeMedias is not empty %}
+                    {% include '_media.html.twig' with {'medias': student.administrativeRecord.thirdTimeMedias, 'exemption': exemption} %}
+                {% endif %}
+                <br />
+                {% if formAR.thirdTimeMedias is defined %}
+                    <div class="media_content">
+                        <ul class="thirdTimeMedias" data-index="0"
+                            data-prototype="{{ form_widget(formAR.thirdTimeMedias.vars.prototype)|e('html_attr') }}"></ul>
+                        <div style="text-align:center;margin-bottom:25px;">
+                            <button type="button" class="add_media btn btn-primary" data-collection-holder-class="thirdTimeMedias">Ajouter un média</button>
+                            <button type="button" class="save_media btn btn-success" data-id="thirdTimeMedias">Sauvegarder</button>
+                        </div>
+                    </div>
+                    {% for thirdMedia in formAR.thirdTimeMedias %}
+                        <div class="hidden">
+                            {{ form_row(thirdMedia) }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr />
+
+<div class="bg-light p-2">
+    <h4>Carte d'identité</h4>
+    <div class="form_container p-5">
+        <div class="row">
+            <div class="col single_content media_parent_container">
+                {% if student.administrativeRecord is not empty and student.administrativeRecord.idCards is not empty %}
+                    {% include '_media.html.twig' with {'medias': student.administrativeRecord.idCards, 'exemption': exemption} %}
+                {% endif %}
+                <br />
+                {% if formAR.idCards is defined %}
+                    <div class="media_content">
+                        <ul class="idCards" data-index="0"
+                            data-prototype="{{ form_widget(formAR.idCards.vars.prototype)|e('html_attr') }}"></ul>
+                        <div style="text-align:center;margin-bottom:25px;">
+                            <button type="button" class="add_media btn btn-primary" data-collection-holder-class="idCards">Ajouter un média</button>
+                            <button type="button" class="save_media btn btn-success" data-id="idCards">Sauvegarder</button>
+                        </div>
+                    </div>
+                    {% for idCard in formAR.idCards %}
+                        <div class="hidden">
+                            {{ form_row(idCard) }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr />
+
+<div class="bg-light p-2">
+    <h4 class="bg-light">JDC</h4>
+    <div class="form_container p-5">
+        <div class="row">
+            <div class="col single_content media_parent_container">
+                {% if student.administrativeRecord is not empty and student.administrativeRecord.jdc is not empty and student.administrativeRecord.jdc.id is not empty %}
+                    {% include '_media.html.twig' with {'medias': [student.administrativeRecord.jdc], 'exemption': exemption} %}
+                {% endif %}
+                <br />
+                <div class="media_content {% if student.administrativeRecord is not empty and student.administrativeRecord.jdc is not empty and student.administrativeRecord.jdc.state == 'accepted' %}hidden{% endif %}">
+                    <div>
+                        {{ form_row(formAR.jdc) }}
+                    </div>
+                    <div style="text-align:center;margin-bottom:25px;">
+                        <button type="button" class="save_media btn btn-success" data-id="jdc">Sauvegarder</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if not exemption %}
+    <div class="save_container">
+        <button type="submit" class="btn btn-success btn-lg">{{ button_label|default('Sauvegarder') }}</button>
+        <a onclick="return confirm('Voulez vous vraiment annuler les modifications ?');" href="{{ path('student_edit', {'id': student.id}) }}" class="btn btn-secondary btn-lg">{{ button_label|default('Annuler') }}</a>
+    </div>
+{% endif %}
+{{ form_end(formAR) }}
+
+<script type="application/javascript">
+    $(document).ready(function(){
+        let selects = '#administrative_record_highLevelSportsman, #administrative_record_optionalExamLanguage, ' +
+            '#administrative_record_scholarShip, #administrative_record_thirdTime, #administrative_record_thirdTimeNeedDetail';
+
+        function disable_sub_fields(element)
+        {
+            let obj = element;
+            if ('1' !== obj.val()) {
+                obj.parent().parent().next().find('select').val('').attr('disabled', true)
+                obj.parent().parent().parent().next().hide()
+                if (obj.is('#administrative_record_thirdTime')) {
+                    $('#administrative_record_thirdTimeDetail').val('').attr('disabled', true)
+                    obj.parent().parent().parent().next().next().hide()
+                }
+                if (obj.is('#administrative_record_thirdTimeNeedDetail')) {
+                    $('#administrative_record_thirdTimeDetail').val('')
+                }
+            } else {
+                obj.parent().parent().next().find('select').attr('disabled', false)
+                obj.parent().parent().parent().next().show()
+                if (obj.is('#administrative_record_thirdTime')) {
+                    $('#administrative_record_thirdTimeDetail').attr('disabled', false)
+                    obj.parent().parent().parent().next().next().show()
+                }
+            }
+        }
+
+        $(selects).each(function(){
+            disable_sub_fields($(this))
+        })
+
+        $(selects).change(function (){
+            disable_sub_fields($(this))
+        })
+
+        $("form[name='administrative_record']").submit(function(e) {
+            e.preventDefault();
+
+            $.ajax({
+                url: $(this).attr('action'),
+                data: new FormData(this),
+                method: $(this).attr('method'),
+                processData: false,
+                dataType: 'json',
+                contentType: false,
+            })
+            .done(function() {
+                location.reload();
+            })
+            .fail(function (data) {
+                $('#administrative_record_part').html(data.responseText);
+
+                const error = $('#administrative_record_part').find('.invalid-feedback').first();
+                if(error.length > 0) {
+                    $('html, body').animate({
+                        scrollTop: error.parent().offset().top
+                    }, 500);
+                }
+            })
+        })
+
+        var hash = window.location.hash.substr(1);
+        if (hash == 'ardualpath') {
+            $('#administrative_record_title').removeClass('collapsed').attr('aria-expanded', true).next().addClass('show');
+        }
+    });
+</script>

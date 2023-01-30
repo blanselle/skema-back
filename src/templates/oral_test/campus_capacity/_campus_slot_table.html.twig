@@ -1,0 +1,34 @@
+{% from 'oral_test/campus_capacity/macro.html.twig' import sum as macro_sum %}
+
+<table id="campus-slot-table" class="table table-bordered table-fixed-column-row stripe row-border order-column" style="width:100%">
+    <thead>
+    <tr>
+        <th class="p-0">
+            <p id="total-score" class="mb-0 p-2 bg-blue score">{{ macro_sum(configuration.campusOralDays) }}</p>
+        </th>
+        {% for slot in slotDays|first %}
+            <th class="p-0 text-center col-total-slot">
+                <p>Entretien</p>
+                <p>{% if slot.firstLanguage is not empty %} {{ slot.firstLanguage.name }} {% else %} - {% endif %}</p>
+                <p>{% if slot.secondLanguage is not empty %} {{ slot.secondLanguage.name }} {% else %} - {% endif %}</p>
+                <p id="{{ 'slot-total-col-'~loop.index }}" class="mb-0 p-2 bg-blue">{{ macro_sum(configuration.campusOralDays|filter(s => s.firstLanguage == slot.firstLanguage and s.secondLanguage == slot.secondLanguage)) }}</p>
+            </th>
+        {% endfor %}
+    </tr>
+    </thead>
+    <tbody>
+    {% for date, slotDay in slotDays %}
+        <tr class="slot-row">
+            <td class="p-0 align-bottom">
+                <p class="p-2 col-12">{{ date|format_datetime('full', 'none', locale='fr') }}</p>
+                <p id="{{ 'total-row-'~loop.index0 }}" class="mb-0 p-2 bg-blue score">{{ macro_sum(slotDay) }}</p>
+            </td>
+            {% for slot in slotDay %}
+            <td class="{{ 'slot-col-' ~ loop.index }}" id="{{ 'col-' ~ loop.index ~ '-slot-id-' ~ slot.id }}">
+                {% include 'oral_test/campus_capacity/_campus_slot_row_table.html.twig' with {'colNumber': loop.index} %}
+            </td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

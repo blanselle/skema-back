@@ -1,0 +1,33 @@
+includes:
+	- vendor/phpstan/phpstan-symfony/extension.neon
+	- vendor/phpstan/phpstan-symfony/rules.neon
+	- vendor/phpstan/phpstan-doctrine/extension.neon
+	- vendor/phpstan/phpstan-doctrine/rules.neon
+	- vendor/phpstan/phpstan-phpunit/extension.neon
+	- vendor/phpstan/phpstan-phpunit/rules.neon
+	- vendor/phpstan/phpstan-strict-rules/rules.neon
+
+parameters:
+	level: 7
+	doctrine:
+		repositoryClass: Doctrine\ORM\EntityRepository
+	paths:
+		- %currentWorkingDirectory%/src
+		- %currentWorkingDirectory%/tests
+	symfony:
+		container_xml_path: '%rootDir%/../../../var/cache/dev/App_KernelDevDebugContainer.xml'
+	excludePaths:
+		- tests/*
+		- var/*
+		- vendor/*
+		- src/Serializer/Normalizer
+		- src/Validator
+		- src/Command/DataImportCommand.php
+
+	checkGenericClassInNonGenericObjectType: false
+	checkMissingIterableValueType: false
+	treatPhpDocTypesAsCertain: false
+	ignoreErrors:
+		- '#Call to an undefined method [a-zA-Z0-9\\_]+::find#'
+		- '#Construct empty\(\) is not allowed. Use more strict comparison.#'
+		- '#Call to an undefined method Doctrine\\ORM\\EntityRepository<object>::filterQueryBuilder\(\).#'

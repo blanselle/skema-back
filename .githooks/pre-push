@@ -1,0 +1,36 @@
+#!/bin/bash
+
+cd run/dev
+
+# phpmd
+docker-compose exec -T -u web php ./vendor/bin/phpmd src ansi phpmd.xml
+
+if ! [ $? -eq 0 ];then
+   exit 1
+fi
+
+
+# phpstan
+docker-compose exec -T -u web php ./vendor/bin/phpstan analyse
+
+if ! [ $? -eq 0 ];then
+   exit 1
+fi
+
+
+# Fixtures
+docker-compose exec -T -u web php bin/console doctrine:database:drop --if-exists --force -n --env=test
+docker-compose exec -T -u web php bin/console doctrine:database:create -n --env=test
+docker-compose exec -T -u web php bin/console doctrine:migration:migrate -n --env=test
+docker-compose exec -T -u web php bin/console doctrine:query:sql "update campus set media_id = null" --env=test
+docker-compose exec -T -u web php bin/console hautelook:fixtures:load -n --env=test
+
+
+# tests
+docker-compose exec -T -u web php ./vendor/bin/phpunit --testdox
+
+if ! [ $? -eq 0 ];then
+   exit 1
+fi
+
+exit 0

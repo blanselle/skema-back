@@ -1,0 +1,32 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col"></th>
+            {% for programChannel in programChannels %}
+                <th scope="col">{{ programChannel.name }}</th>
+            {% endfor %}
+            <th scope="col">Total</th>
+            {% if action is defined %}
+            <th scope="col">Action</th>
+            {% endif %}
+        </tr>
+    </thead>
+    <tbody>
+    {% for row in rows %}
+        <tr>
+            <th>{{ row.label }}</th>
+            {% for value in row.values %}
+                <td>{{ value }}</td>
+            {% endfor %}
+            <td>{{ row.total }}</td>
+            {% if action is defined %}
+                {% set params = {'media': action, 'mediaCode': row.key} %}
+                {% if row.key == constant('App\\Constants\\Media\\MediaCodeConstants::CODE_ATTESTATION_ANGLAIS') or row.key == constant('App\\Constants\\Media\\MediaCodeConstants::CODE_ATTESTATION_MANAGEMENT') %}
+                    {% set params = params|merge({ 'externalSession': 'true' }) %}
+                {% endif %}
+                <td><a class="btn btn-primary" href="{{ path('student_index', params) }}"><i class="bi bi-arrow-right"></i></a></td>
+            {% endif %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

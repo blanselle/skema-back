@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification language{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('language_index') }}" class="btn btn-secondary">Retourner à la liste des languages</a>
+        {{ include('language/_delete_form.html.twig') }}
+    </div>
+    <hr />
+    <h1>{{ item.label }}</h1>
+
+    {{ include('language/_form.html.twig') }}
+{% endblock %}

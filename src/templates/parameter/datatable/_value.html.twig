@@ -1,0 +1,5 @@
+{% if item.value.timestamp is defined %}
+    {{ item.value|date('Y-m-d H:i:s') }}
+{% else %}
+    {{ item.value }}
+{% endif %}

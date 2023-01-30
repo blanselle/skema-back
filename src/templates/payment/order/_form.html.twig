@@ -1,0 +1,53 @@
+{% block javascripts %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".select2").select2({width: '100%'});
+
+            $('#order_manual_type').change(function() {
+                hideExamSessionField($(this))
+            })
+
+            hideExamSessionField($('#order_manual_type'))
+
+            function hideExamSessionField(object)
+            {
+                if (object.val() == "{{ constant('App\\Constants\\Payment\\OrderTypeConstants::REGISTRATION_FEE_FOR_EXAM_SESSION') }}") {
+                    $('#examSessionField').removeClass('hidden').find('select').prop('required', true);
+                } else if (!$('#examSessionField').hasClass('hidden')) {
+                    $('#examSessionField').addClass('hidden').find('select').prop('required', false);
+                }
+            }
+        })
+    </script>
+{% endblock %}
+{{ form_start(form) }}
+    {{ include('partial/_flash_messages.html.twig') }}
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.type) }}
+        </div>
+        <div class="col">
+            {{ form_row(form.payments[0].mode) }}
+        </div>
+    </div>
+    <div id="examSessionField" class="row hidden">
+        <div class="col">
+            {{ form_row(form.examSession) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.student) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.payments[0].additionalInformation) }}
+        </div>
+    </div>
+    {% if disabled is not defined %}
+    <div class="save_container">
+        <button class="btn btn-success">{{ button_label|default('Sauvegarder') }}</button>
+    </div>
+    {% endif %}
+{{ form_end(form) }}

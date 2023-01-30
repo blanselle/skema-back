@@ -1,0 +1,71 @@
+{{ form_start(form) }}
+
+<div class="tab-pane fade" id="campus-{{ form.campus.vars.value }}-tab-pane" role="tabpanel" aria-labelledby="campus-{{ form.campus.vars.value }}-tab" tabindex="0">
+    {% if message is defined and message is not empty %}
+        <div class="row pt-3">
+            <div class="col alert alert-success" style="text-align:center;">
+                <p id="campus-{{ form.campus.vars.value }}-tab-pane-message">{{ message }}</p>
+            </div>
+        </div>
+    {% endif %}
+    <div class="row">
+        <div class="col">{{ form_row(form.minimumDurationBetweenTwoTests) }}</div>
+        <div class="col">{{ form_row(form.distribution) }}</div>
+        <div class="col">{{ form_row(form.juryDebriefDuration) }}</div>
+        <div class="col">{{ form_row(form.preparationRoom) }}</div>
+    </div>
+    <div class="row">
+        <div class="col">{{ form_row(form.campus) }}</div>
+    </div>
+
+    <div class="row pt-3">
+        {% for test in form.testConfigurations %}
+            {% set loopTest = loop.index0 %}
+            <div class="col-6 test-configuration {{ loop.last? 'border-start-dashed' : '' }}">
+                <h5>{{ 'Epreuve "' ~ test.testType.vars.value|testTypeLabel ~ '"' }}</h5>
+
+                <div class="row">
+                    <div class="col">{{ form_row(test.durationOfTest) }}</div>
+                    <div class="col">{{ form_row(test.preparationTime) }}</div>
+                </div>
+
+                {% for slot in test.slotConfigurations %}
+                    <div class="row slot-form">
+                        <div class="col-2 pt-2">{{ slot.slotType.vars.value|slotTypeLabel}}</div>
+
+                        <div class="col">
+                            {% if loop.last %}
+                                <div class="row mt-2">
+                                    <div class="col">{{ form_row(test.eveningEvent) }}</div>
+                                </div>
+                            {% endif %}
+                            <div class="row">
+                                <div class="col">{{ form_row(slot.startTime) }}</div>
+                                <div class="col">{{ form_row(slot.endTime) }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col">{{ form_row(slot.breakTime) }}</div>
+                                <div class="col">{{ form_row(slot.breakDuration) }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col">{{ form_row(slot.nbOfCandidatesPerJury) }}</div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+                <div class="row">
+                    <div class="col">{{ form_row(test.testType) }}</div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="row pt-3">
+        <div class="col" style="text-align:center;">
+            <button class="btn btn-primary" type="submit">Sauvegarder</button>
+        </div>
+    </div>
+
+</div>
+{{ form_end(form) }}

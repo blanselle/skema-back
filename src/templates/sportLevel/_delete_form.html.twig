@@ -1,0 +1,4 @@
+<form method="post" action="{{ path('sport_level_delete', {'id': sportLevel.id}) }}" onsubmit="return confirm('Voulez-vous vraiment supprimer ce niveau sportif ?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ sportLevel.id) }}">
+    <button class="btn btn-danger action-delete"><i class="bi bi-trash"></i></button>
+</form>

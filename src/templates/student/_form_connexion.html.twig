@@ -1,0 +1,13 @@
+{{ form_start(formConnexion) }}
+<div class="form_container">
+    <div class="row">
+        <div class="col">
+            {{ form_row(formConnexion.email) }}
+        </div>
+                    
+        <div class="nav_actions">
+            <a href="{{ path('exam_student_mail_edit', {'user': student.user.id}) }}" class="btn btn-primary justify-content-end">Changer l'adresse mail</a>
+        </div>
+    </div>
+</div>
+{{ form_end(formConnexion) }}

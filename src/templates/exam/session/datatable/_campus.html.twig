@@ -1,0 +1,5 @@
+{% if item.campus.name is defined %}
+    {{ item.campus.name }}
+{% else %}
+    <span class="badge bg-danger">En ligne</span>
+{% endif %}

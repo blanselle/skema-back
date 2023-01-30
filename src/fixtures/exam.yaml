@@ -1,0 +1,319 @@
+App\Entity\Exam\ExamSessionType:
+  type_anglais:
+    name: "Anglais"
+    code: "ANG"
+  type_management:
+    name: "Management"
+    code: "MANAGEMENT"
+
+App\Entity\Exam\ExamCondition:
+  condition_presentiel:
+    name: "Présentiel"
+  condition_distantiel:
+    name: "En ligne"
+
+App\Entity\Exam\ExamRoom:
+  room_test_lille_1:
+    name: "Amphi 1"
+    numberOfPlaces: 500
+    thirdTime: false
+  room_test_lille_2:
+    name: "Amphi 2"
+    numberOfPlaces: 500
+    thirdTime: false
+  room_test_lille_3:
+    name: "Amphi 1a"
+    numberOfPlaces: 500
+    thirdTime: true
+  room_test_paris_1:
+    name: "Amphi 1"
+    numberOfPlaces: 500
+    thirdTime: false
+  room_test_sophia_1:
+    name: "C23"
+    numberOfPlaces: 9000
+    thirdTime: false
+
+App\Entity\Exam\ExamClassification:
+  typologie_1:
+    name: TOEIC®
+    examSessionType: '@type_anglais'
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+    examCondition: '@condition_presentiel'
+    key: toiec
+  typologie_2:
+    name: TOEFL®
+    examSessionType: '@type_anglais'
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+    examCondition: '@condition_presentiel'
+    key: toefl
+  typologie_3:
+    name: iCIMS®
+    examSessionType: '@type_anglais'
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+    examCondition: '@condition_presentiel'
+    key: icims
+  typologie_4:
+    name: Tage 2®
+    examSessionType: '@type_management'
+    programChannels: ['@ast1_program_channel']
+    examCondition: '@condition_distantiel'
+    key: tage2
+  typologie_5:
+    name: TAGE MAGE®
+    examSessionType: '@type_management'
+    programChannels: ['@ast2_program_channel']
+    examCondition: '@condition_presentiel'
+    key: tagemage
+  typologie_6:
+    name: GMAT®
+    examSessionType: '@type_management'
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+    examCondition: '@condition_presentiel'
+    key: gmat
+
+App\Entity\Exam\ExamClassificationScore:
+  classification_score_typologie_1_score_{0..198}:
+    examClassification: '@typologie_1'
+    score: <increment(<current()>, 5)>
+  classification_score_typologie_2_score_{0..120}:
+    examClassification: '@typologie_2'
+    score: <increment(<current()>, 1)>
+  classification_score_typologie_3_score_{0..100}:
+    examClassification: '@typologie_3'
+    score: <increment(<current()>, 1)>
+  classification_score_typologie_4_score_{0..210}:
+    examClassification: '@typologie_4'
+    score: <increment(<current()>, 1)>
+  classification_score_typologie_5_score_{0..750}:
+    examClassification: '@typologie_5'
+    score: <increment(<current()>, 1, -150)>
+  classification_score_typologie_6_score_{0..60}:
+    examClassification: '@typologie_6'
+    score: <increment(<current()>, 10, 200)>
+
+App\Entity\Exam\ExamSession:
+  session_typologie1_lille:
+    price: "150"
+    dateStart: <(new DateTime("2022-06-01 10:00:00"))>
+    campus: '@campus_lille'
+    examRooms: ['@room_test_lille_1', '@room_test_lille_3']
+    numberOfPlaces: 1500
+    examClassification: '@typologie_1'
+    type: 'Skema'
+  session_typologie1_paris:
+    price: "150"
+    dateStart: <(new DateTime("2022-06-01 10:00:00"))>
+    campus: '@campus_paris'
+    examRooms: [ '@room_test_paris_1' ]
+    numberOfPlaces: 1500
+    examClassification: '@typologie_1'
+    type: 'Skema'
+  session_typologie2_lille:
+    price: "500"
+    dateStart: <(new DateTime("2022-06-01 11:00:00"))>
+    campus: '@campus_lille'
+    examRooms: ['@room_test_lille_3']
+    numberOfPlaces: 500
+    examClassification: '@typologie_2'
+    type: 'Skema'
+  session_typologie2_antipolis:
+    price: "500"
+    dateStart: <(new DateTime("2022-06-02 11:00:00"))>
+    campus: '@campus_sophia_antipolis'
+    examRooms: ['@room_test_sophia_1']
+    numberOfPlaces: 500
+    examClassification: '@typologie_2'
+    type: 'Skema'
+  session_typologie3_antipolis:
+    price: "500"
+    dateStart: <(new DateTime("2022-01-26 11:00:00"))>
+    campus: '@campus_sophia_antipolis'
+    examRooms: [ '@room_test_sophia_1' ]
+    numberOfPlaces: 500
+    examClassification: '@typologie_3'
+    type: 'Skema'
+  session_typologie4_lille:
+    price: "150"
+    dateStart: <(new DateTime("2022-01-26 17:00:00"))>
+    campus: '@campus_lille'
+    examRooms: [ '@room_test_lille_1', '@room_test_lille_3' ]
+    numberOfPlaces: 1500
+    examClassification: '@typologie_4'
+    type: 'Skema'
+  session_typologie5_lille:
+    price: "150"
+    dateStart: <(new DateTime("2022-01-28 17:00:00"))>
+    campus: '@campus_lille'
+    examRooms: [ '@room_test_lille_1', '@room_test_lille_3' ]
+    numberOfPlaces: 1500
+    examClassification: '@typologie_5'
+    type: 'Skema'
+  session_typologie6_paris:
+    price: "150"
+    dateStart: <(new DateTime("2022-02-28 17:00:00"))>
+    campus: '@campus_paris'
+    examRooms: [ '@room_test_paris_1' ]
+    numberOfPlaces: 1500
+    examClassification: '@typologie_6'
+    type: 'Skema'
+
+App\Entity\Exam\ExamStudent:
+  inscription_test_1:
+    examSession: '@session_typologie1_lille'
+    student: '@student_ast1'
+    examRoom: '@room_test_lille_2'
+  inscription_test_2:
+    examSession: '@session_typologie1_lille'
+    student: '@student_ast2'
+    examRoom: '@room_test_lille_2'
+  inscription_test_3:
+    examSession: '@session_typologie1_paris'
+    student: '@student_ast1'
+#  inscription_session_typologie1_lille_room1_ast1_{1..15}:
+#    examSession: '@session_typologie1_lille'
+#    student: '@student_ast1_<current()>'
+#    examRoom: '@room_test_lille_1'
+#    score: <randomScore(0, 990, 5)>
+#  inscription_session_typologie1_lille_room2_ast1_{16..30}:
+#    examSession: '@session_typologie1_lille'
+#    student: '@student_ast1_<current()>'
+#    examRoom: '@room_test_lille_3'
+#    score: <randomScore(0, 990, 5)>
+#  inscription_session_typologie1_lille_room1_ast2_{1..15}:
+#    examSession: '@session_typologie1_lille'
+#    student: '@student_ast2_<current()>'
+#    examRoom: '@room_test_lille_1'
+#    score: <randomScore(0, 990, 5)>
+#  inscription_session_typologie2_lille_room1_ast1_{1..30}:
+#    examSession: '@session_typologie2_lille'
+#    student: '@student_ast1_<current()>'
+#    examRoom: '@room_test_lille_3'
+#    score: <randomScore(0, 120, 1)>
+#  inscription_session_typologie2_lille_room1_ast2_{1..30}:
+#    examSession: '@session_typologie2_lille'
+#    student: '@student_ast2_<current()>'
+#    examRoom: '@room_test_lille_3'
+#    score: <randomScore(0, 120, 1)>
+#  inscription_session_typologie2_antipolis_room1_ast1_{1..22}:
+#    examSession: '@session_typologie2_antipolis'
+#    student: '@student_ast1_<current()>'
+#    examRoom: '@room_test_sophia_1'
+#    score: <randomScore(0, 120, 1)>
+#  inscription_session_typologie3_antipolis_room1_ast1_{16..30}:
+#    examSession: '@session_typologie3_antipolis'
+#    student: '@student_ast1_<current()>'
+#    examRoom: '@room_test_sophia_1'
+#    score: <randomScore(0, 100, 1)>
+#  inscription_session_typologie3_antipolis_room1_ast2_{16..30}:
+#    examSession: '@session_typologie3_antipolis'
+#    student: '@student_ast2_<current()>'
+#    examRoom: '@room_test_sophia_1'
+#    score: <randomScore(0, 100, 1)>
+#  inscription_session_typologie4_lille_room1_ast1_{2..10}:
+#    examSession: '@session_typologie4_lille'
+#    student: '@student_ast1_<current()>'
+#    examRoom: '@room_test_lille_1'
+#    score: <randomScore(0, 210, 1)>
+#  inscription_session_typologie4_lille_room2_ast1_{11..23}:
+#    examSession: '@session_typologie4_lille'
+#    student: '@student_ast1_<current()>'
+#    examRoom: '@room_test_lille_3'
+#    score: <randomScore(0, 210, 1)>
+#  inscription_session_typologie5_lille_room1_ast2_{1..13}:
+#    examSession: '@session_typologie5_lille'
+#    student: '@student_ast2_<current()>'
+#    examRoom: '@room_test_lille_1'
+#    score: <randomScore(-150, 600, 1)>
+#  inscription_session_typologie5_lille_room2_ast2_{16..28}:
+#    examSession: '@session_typologie5_lille'
+#    student: '@student_ast2_<current()>'
+#    examRoom: '@room_test_lille_3'
+#    score: <randomScore(-150, 600, 1)>
+#  inscription_session_typologie6_paris_room1_ast1_{16..28}:
+#    examSession: '@session_typologie6_paris'
+#    student: '@student_ast1_<current()>'
+#    examRoom: '@room_test_paris_1'
+#    score: <randomScore(200, 800, 10)>
+#  inscription_session_typologie6_paris_room1_ast2_{16..28}:
+#    examSession: '@session_typologie6_paris'
+#    student: '@student_ast2_<current()>'
+#    examRoom: '@room_test_paris_1'
+#    score: <randomScore(200, 800, 10)>
+
+App\Entity\Exam\ExamLanguage:
+  language_allemand:
+    name: 'Allemand'
+    key: 'ALL'
+    color: '#41D653'
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel', '@bce_eco_program_channel', '@bce_lit_program_channel']
+  language_espagnol:
+    name: 'Espagnol'
+    key: 'ESP'
+    color: '#C70039'
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel', '@bce_eco_program_channel', '@bce_lit_program_channel']
+  language_italien:
+    name: 'Italien'
+    key: 'ITA'
+    color: '#4B81E7'
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel', '@bce_eco_program_channel', '@bce_lit_program_channel']
+  language_russe:
+    name: 'Russe'
+    key: 'RUS'
+    color: '#570C0C'
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel', '@bce_eco_program_channel', '@bce_lit_program_channel']
+  language_chinois:
+    name: 'Chinois'
+    key: 'CHI'
+    color: '#FF5733'
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel', '@bce_eco_program_channel', '@bce_lit_program_channel']
+  language_arabe:
+    name: 'Arabe'
+    key: 'ARA'
+    color: '#4BE4E7'
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel', '@bce_eco_program_channel', '@bce_lit_program_channel']
+  language_hebreu:
+    name: 'Hébreu'
+    key: 'HEB'
+    color: '#C19B22'
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel', '@bce_eco_program_channel', '@bce_lit_program_channel']
+  language_grec:
+    name: 'Grec'
+    key: 'GRC'
+    color: '#756C79'
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel', '@bce_eco_program_channel', '@bce_lit_program_channel']
+  language_japonais:
+    name: 'Japonais'
+    key: 'JAP'
+    color: '#EE3EEE'
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel', '@bce_eco_program_channel', '@bce_lit_program_channel']
+  language_latin:
+    name: 'Latin'
+    key: 'LAT'
+    color: '#7F147F'
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel', '@bce_eco_program_channel', '@bce_lit_program_channel']
+  language_polonais:
+    name: 'Polonais'
+    key: 'POL'
+    color: '#F189C6'
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel', '@bce_eco_program_channel', '@bce_lit_program_channel']
+  language_portugais:
+    name: 'Portugais'
+    key: 'POR'
+    color: '#AFD3A9'
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel', '@bce_eco_program_channel', '@bce_lit_program_channel']
+  language_turc:
+    name: 'Turc'
+    key: 'TUR'
+    color: '#91A812'
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel', '@bce_eco_program_channel', '@bce_lit_program_channel']
+  language_vietnamien:
+    name: 'Vietnamien'
+    key: 'VIE'
+    color: '#7A6969'
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel', '@bce_eco_program_channel', '@bce_lit_program_channel']
+  language_anglais:
+    name: 'Anglais'
+    key: 'ANG'
+    color: '#FFE633'
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel', '@bce_eco_program_channel', '@bce_lit_program_channel']

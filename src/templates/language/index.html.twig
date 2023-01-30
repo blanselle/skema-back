@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des languages{% endblock %}
+
+{% block body %}
+<h1>Liste des languages <a class="btn btn-primary" href="{{ path('language_new') }}">Ajouter un language</a></h1>
+<div class="search_form">
+    <hr />
+    <form action="" method="get" id="list-search">
+        <div class="row">
+            <div class="col">
+                <input type="text" name="label" id="label" class="form-control" placeholder="Label"
+                       value="{% if params['label'] is defined %}{{ params['label'] }}{% endif %}" />
+            </div>
+            <div class="col">
+                <input type="text" name="code" id="code" class="form-control" placeholder="code"
+                       value="{% if params['code'] is defined %}{{ params['code'] }}{% endif %}" />
+            </div>
+        </div>
+        <button class="btn btn-success" type="submit">Filtrer</button>
+    </form>
+    <hr />
+</div>
+{% include 'table.html.twig' with {'columns' : columns, 'controller' : 'language_index'} %}
+{% endblock %}

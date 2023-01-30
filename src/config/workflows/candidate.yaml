@@ -1,0 +1,223 @@
+# config/packages/workflow.yaml
+framework:
+  workflows:
+    candidate:
+      type: 'state_machine'
+      marking_store:
+        type: 'method'
+        property: 'state'
+      supports:
+        - App\Entity\Student
+      initial_marking: start
+      places:
+        - start
+        - exemption
+        - check_diploma
+        - created
+        - rejected
+        - rejected_diploma
+        - rejected_eligible
+        - declined_payment
+        - resigned
+        - resigned_payed
+        - check_boursier
+        - recheck_boursier
+        - boursier_ko
+        - created_to_pay
+        - valid
+        - eligible
+        - approved
+        - admissible
+        - rejected_admissible
+        - admis
+        - registered_sk
+        - canceled
+        - canceled_payed
+        - registered_eo
+        - canceled_eo
+        # TODO: CREATE TRANSITIONS
+        - complete
+        - complete_proof
+      transitions:
+        submit_to_exemption:
+          from: start
+          to: exemption
+        submit_to_check_diploma:
+          from: start
+          to: check_diploma
+        submit_to_created:
+          from: start
+          to: created
+        derogate_to_check_diploma:
+          from: exemption
+          to: check_diploma
+        derogate_to_created:
+          from: exemption
+          to: created
+        check_diploma_to_created:
+          from: check_diploma
+          to: created
+        reject:
+          from: exemption
+          to: rejected
+        resignation:
+          from: [
+            start,
+            exemption,
+            check_diploma,
+            created,
+            check_boursier,
+            recheck_boursier,
+            created_to_pay,
+            valid,
+            eligible,
+            approved,
+            admissible,
+            admis,
+            registered_sk,
+            boursier_ko,
+            complete,
+            complete_proof
+          ]
+          to: resigned
+        resignation_payed:
+          # TODO: add complete, complete_proof
+          from: [
+            check_diploma,
+            created,
+            check_boursier,
+            recheck_boursier,
+            created_to_pay,
+            valid,
+            eligible,
+            approved,
+            boursier_ko
+          ]
+          to: resigned_payed
+        cancelation:
+          from: [
+            start,
+            exemption,
+            check_diploma,
+            created,
+            rejected,
+            rejected_diploma,
+            rejected_eligible,
+            declined_payment,
+            resigned,
+            resigned_payed,
+            check_boursier,
+            recheck_boursier,
+            boursier_ko,
+            created_to_pay,
+            valid,
+            eligible,
+            approved,
+            admissible,
+            rejected_admissible,
+            admis,
+            registered_sk,
+            canceled_payed,
+            complete,
+            complete_proof,
+          ]
+          to: canceled
+        cancelation_payed:
+          # TODO: add complete, complete_proof
+          from: [
+            rejected_eligible,
+            resigned_payed,
+            valid,
+            eligible,
+            approved,
+            admissible,
+            rejected_admissible,
+            admis,
+            registered_sk,
+            canceled_payed,
+            complete,
+          ]
+          to: canceled_payed
+        ar_to_check:
+          from: created
+          to: check_boursier
+        ar_validated:
+          from: created
+          to: created_to_pay
+        check_diploma_to_rejected_diploma:
+          from: check_diploma
+          to: rejected_diploma
+
+        ar_validated_to_valid:
+          from: created_to_pay
+          to: valid
+        valid_to_eligible:
+          from: valid
+          to: eligible
+        check_boursier_to_valid:
+          from:  [
+            check_boursier,
+            recheck_boursier
+          ]
+          to: valid
+        check_boursier_to_eligible:
+          from: [
+            check_boursier,
+            recheck_boursier
+          ]
+          to: eligible
+        eligible_to_approved:
+          from: eligible
+          to: approved
+        approved_to_admissible:
+          from: approved
+          to: admissible
+        approved_to_rejected_admissible:
+          from: approved
+          to: rejected_admissible
+        to_complete:
+          from: [
+            valid,
+            eligible,
+            check_boursier,
+            recheck_boursier,
+            complete_proof
+          ]
+          to: complete
+        to_declined_payment:
+          from: [
+            created_to_pay,
+          ]
+          to: declined_payment
+        to_complete_proof:
+          from: [
+            boursier_ko
+          ]
+          to: complete_proof
+        admis_to_registered_sk:
+          from: admis
+          to: registered_sk
+        to_boursier_ko:
+          from: check_boursier
+          to: boursier_ko
+        eligible_to_complete:
+          from: eligible
+          to: complete
+        complete_to_approved:
+          from: complete
+          to: approved
+        boursier_ko_to_recheck_boursier:
+          from: boursier_ko
+          to: recheck_boursier
+        recheck_boursier_to_created_to_pay:
+          from: recheck_boursier
+          to: created_to_pay
+        admissibile_to_registered_eo:
+          from: admissible
+          to: registered_eo
+        registered_eo_to_canceled_eo: 
+          from: registered_eo
+          to: canceled_eo
+        canceled_eo_to_registered_eo: 
+          from: canceled_eo
+          to: registered_eo

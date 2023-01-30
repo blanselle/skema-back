@@ -1,0 +1,269 @@
+App\Entity\Parameter\ParameterKey:
+  key_dateDebutInscriptions: 
+    name: "dateDebutInscriptions"
+    type: "date"
+    format: "YYYY-MM-DD HH:mm:ss"
+    description: "Date d’ouverture des inscriptions au concours"
+
+  key_dateClotureInscriptions: 
+    name: "dateClotureInscriptions"
+    type: "date"
+    format: "YYYY-MM-DD HH:mm:ss"
+    description: "Date de clôture des inscriptions au concours"
+
+  key_dateFinCV: 
+    name: "dateFinCV"
+    type: "date"
+    format: "YYYY-MM-DD HH:mm:ss"
+    description: "Date limite de soumission du dossier"
+
+  key_dateFinUploadEpreuveAnglais: 
+    name: "dateFinUploadEpreuveAnglais"
+    type: "date"
+    format: "YYYY-MM-DD HH:mm:ss"
+    description: "Date limite de saisie du résultat de test d’anglais"
+
+  key_dateFinUploadEpreuveGmat: 
+    name: "dateFinUploadEpreuveGmat"
+    type: "date"
+    format: "YYYY-MM-DD HH:mm:ss"
+    description: "Date limite de saisie du résultat de test GMAT"
+
+  key_dateFinEpreuveManagement: 
+    name: "dateFinEpreuveManagement"
+    type: "date"
+    format: "YYYY-MM-DD HH:mm:ss"
+    description: "Date limite de passage du test de management"
+
+  key_dateResultatsAdmissibilite: 
+    name: "dateResultatsAdmissibilite"
+    type: "date"
+    format: "YYYY-MM-DD HH:mm:ss"
+    description: "Date de mise en ligne des résultats d’admissibilité"
+
+  key_dateOuvertureRDV: 
+    name: "dateOuvertureRDV"
+    type: "date"
+    format: "YYYY-MM-DD HH:mm:ss"
+    description: "Date d’ouverture des inscriptions aux épreuves orales"
+
+  key_dateFermetureRDV: 
+    name: "dateFermetureRDV"
+    type: "date"
+    format: "YYYY-MM-DD HH:mm:ss"
+    description: "Date de fermeture des inscriptions aux épreuves orales"
+
+  key_oralDateDebut: 
+    name: "oralDateDebut"
+    type: "date"
+    format: "YYYY-MM-DD HH:mm:ss"
+    description: "Date de début des épreuves orales par campus"
+
+  key_oralDateFin: 
+    name: "oralDateFin"
+    type: "date"
+    format: "YYYY-MM-DD HH:mm:ss"
+    description: "Date de fin des épreuves orales par campus"
+
+  key_limiteRDV:
+    name: "limiteRDV"
+    type: "number"
+    description: "Limite à partir de laquelle les créneaux aux épreuves orales sont disponibles"
+
+  key_dateResultatsAdmission: 
+    name: "dateResultatsAdmission"
+    type: "date"
+    format: "YYYY-MM-DD HH:mm:ss"
+    description: "Date de mise en ligne des résultats d’admission"
+
+  key_dateAffectationDefinitive: 
+    name: "dateAffectationDefinitive"
+    type: "date"
+    format: "YYYY-MM-DD HH:mm:ss"
+    description: "Date de début de diffusion des affectations"
+
+  key_dateFinReaffectation: 
+    name: "dateFinReaffectation"
+    type: "date"
+    format: "YYYY-MM-DD HH:mm:ss"
+    description: "Date de clôture des affectations"
+
+  key_fraisInscription: 
+    name: "fraisInscription"
+    type: "number"
+    description: "Montant des frais d’inscription"
+
+  key_naissance_max:
+    name: "naissance_max"
+    type: "date"
+    format: "YYYY-MM-DD"
+    description: "Date de naissance maximale pour candidater"
+
+  key_dateMiniAnglais:
+    name: "dateMiniAnglais"
+    type: "date"
+    format: "YYYY-MM-DD"
+    description: "Date minimum de passage d’une épreuve écrite d’anglais"
+
+  key_dateMiniManagement:
+    name: "dateMiniManagement"
+    type: "date"
+    format: "YYYY-MM-DD"
+    description: "Date minimum de passage d’une épreuve écrite de management"
+  key_anneeConcours:
+    name: "anneeConcours"
+    type: "number"
+    description: "Année du concours"
+  key_maxResultsDatatablePerPage:
+    name: "maxResultsDatatablePerPage"
+    type: "number"
+    description: "Nombre de résultats par page pour la pagination des tableaux dans l'administration"
+
+App\Entity\Parameter\Parameter:
+  param_dateDebutInscriptions{1..1}:
+    key: '@key_dateDebutInscriptions'
+    campuses: ['@campus_paris', '@campus_lille', '@campus_sophia_antipolis']
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+    valueDateTime: <(new DateTime("2022-04-15 09:00:00"))>
+
+  param_dateClotureInscriptions{1..1}:
+    key: '@key_dateClotureInscriptions'
+    campuses: ['@campus_paris', '@campus_lille', '@campus_sophia_antipolis']
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+    valueDateTime: <(new DateTime("2022-05-15 18:30:00"))>
+
+  param_dateFinCV{1..1}:
+    key: '@key_dateFinCV'
+    campuses: ['@campus_paris', '@campus_lille', '@campus_sophia_antipolis']
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+    valueDateTime: <(new DateTime("2022-05-25 20:00:00"))>
+
+  param_dateFinUploadEpreuveAnglais{1..1}:
+    key: '@key_dateFinUploadEpreuveAnglais'
+    campuses: ['@campus_paris', '@campus_lille', '@campus_sophia_antipolis']
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel', '@bce_eco_program_channel', '@bce_lit_program_channel']
+    valueDateTime: <(new DateTime("2022-06-01 12:00:00"))>
+
+  param_dateFinUploadEpreuveGmat{1..1}:
+    key: '@key_dateFinUploadEpreuveGmat'
+    campuses: ['@campus_paris', '@campus_lille', '@campus_sophia_antipolis']
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel', '@bce_eco_program_channel', '@bce_lit_program_channel']
+    valueDateTime: <(new DateTime("2022-06-01 12:00:00"))>
+
+  param_dateFinEpreuveManagement{1..1}:
+    key: '@key_dateFinEpreuveManagement'
+    campuses: ['@campus_paris', '@campus_lille', '@campus_sophia_antipolis']
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel', '@bce_eco_program_channel', '@bce_lit_program_channel']
+    valueDateTime: <(new DateTime("2022-06-01 12:00:00"))>
+
+  param_dateResultatsAdmissibilite1:
+    key: '@key_dateResultatsAdmissibilite'
+    campuses: ['@campus_paris', '@campus_lille', '@campus_sophia_antipolis']
+    programChannels: ['@ast1_program_channel']
+    valueDateTime: <(new DateTime("2022-06-10 12:00:00"))>
+
+  param_dateResultatsAdmissibilite2:
+    key: '@key_dateResultatsAdmissibilite'
+    campuses: ['@campus_paris', '@campus_lille', '@campus_sophia_antipolis']
+    programChannels: ['@ast2_program_channel']
+    valueDateTime: <(new DateTime("2022-06-12 11:45:00"))>
+
+  param_dateOuvertureRDV1:
+    key: '@key_dateOuvertureRDV'
+    campuses: ['@campus_paris', '@campus_lille', '@campus_sophia_antipolis']
+    programChannels: ['@ast1_program_channel']
+    valueDateTime: <(new DateTime("2022-06-10 12:00:00"))>
+
+  param_dateOuvertureRDV2:
+    key: '@key_dateOuvertureRDV'
+    campuses: ['@campus_paris', '@campus_lille', '@campus_sophia_antipolis']
+    programChannels: ['@ast2_program_channel']
+    valueDateTime: <(new DateTime("2022-06-12 11:45:00"))>
+
+  param_dateFermetureRDV{1..1}:
+    key: '@key_dateFermetureRDV'
+    campuses: ['@campus_paris', '@campus_lille', '@campus_sophia_antipolis']
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+    valueDateTime: <(new DateTime("2023-03-31 17:30:00"))>
+
+  param_oralDateDebut1:
+    key: '@key_oralDateDebut'
+    campuses: ['@campus_lille', '@campus_sophia_antipolis']
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+    valueDateTime: <(new DateTime("2023-06-20 09:00:00"))>
+
+  param_oralDateDebut2:
+    key: '@key_oralDateDebut'
+    campuses: ['@campus_paris']
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+    valueDateTime: <(new DateTime("2023-06-22 09:00:00"))>
+
+  param_oralDateFin{1..1}:
+    key: '@key_oralDateFin'
+    campuses: ['@campus_paris', '@campus_lille', '@campus_sophia_antipolis']
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+    valueDateTime: <(new DateTime("2023-06-23 09:00:00"))>
+
+  param_limiteRDV{1..1}:
+    key: '@key_limiteRDV'
+    campuses: ['@campus_paris', '@campus_lille', '@campus_sophia_antipolis']
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel', '@bce_eco_program_channel', '@bce_lit_program_channel']
+    valueNumber: 2
+
+  param_dateResultatsAdmission{1..1}:
+    key: '@key_dateResultatsAdmission'
+    campuses: ['@campus_paris', '@campus_lille', '@campus_sophia_antipolis']
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+    valueDateTime: <(new DateTime("2022-07-10 12:00:00"))>
+
+  param_dateAffectationDefinitive{1..1}:
+    key: '@key_dateAffectationDefinitive'
+    campuses: ['@campus_paris', '@campus_lille', '@campus_sophia_antipolis']
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+    valueDateTime: <(new DateTime("2022-07-10 12:00:00"))>
+
+  param_dateFinReaffectation{1..1}:
+    key: '@key_dateFinReaffectation'
+    campuses: ['@campus_paris', '@campus_lille', '@campus_sophia_antipolis']
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+    valueDateTime: <(new DateTime("2022-07-15 12:00:00"))>
+
+  param_fraisInscription{1..1}:
+    key: '@key_fraisInscription'
+    campuses: ['@campus_paris', '@campus_lille', '@campus_sophia_antipolis']
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel', '@bce_eco_program_channel', '@bce_lit_program_channel']
+    valueNumber: 60
+
+  param_naissance_max1:
+    key: '@key_naissance_max'
+    campuses: ['@campus_paris', '@campus_lille', '@campus_sophia_antipolis']
+    programChannels: ['@ast1_program_channel']
+    valueDateTime: <(new DateTime("1998-09-01"))>
+
+  param_naissance_max2:
+    key: '@key_naissance_max'
+    campuses: ['@campus_paris', '@campus_lille', '@campus_sophia_antipolis']
+    programChannels: ['@ast2_program_channel']
+    valueDateTime: <(new DateTime("1999-09-01"))>
+
+  param_dateMiniAnglais{1..1}:
+    key: '@key_dateMiniAnglais'
+    campuses: ['@campus_paris', '@campus_lille', '@campus_sophia_antipolis']
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel', '@bce_eco_program_channel', '@bce_lit_program_channel']
+    valueDateTime: <(new DateTime("2021-01-01"))>
+
+  param_dateMiniManagement{1..1}:
+    key: '@key_dateMiniManagement'
+    campuses: ['@campus_paris', '@campus_lille', '@campus_sophia_antipolis']
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel', '@bce_eco_program_channel', '@bce_lit_program_channel']
+    valueDateTime: <(new DateTime("2022-01-01"))>
+
+  param_anneeConcours:
+    key: '@key_anneeConcours'
+    campuses: ['@campus_paris', '@campus_lille', '@campus_sophia_antipolis']
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel', '@bce_eco_program_channel', '@bce_lit_program_channel']
+    valueNumber: 2022
+
+  param_maxResultsDatatablePerPage:
+    key: '@key_maxResultsDatatablePerPage'
+    valueNumber: 100

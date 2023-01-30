@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification d'une session{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('exam_session_index') }}" class="btn btn-secondary">Retour à la liste des sessions</a>
+        {{ include('exam/session/_delete_form.html.twig') }}
+    </div>
+    <hr />
+    <h1>Modifier la session : {{ item.examClassification.name }}</h1>
+
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{ path('exam_session_edit', {'id': item.id}) }}">Session</a>
+        </li>
+        {% if item.campus is not empty %}
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path('exam_room_edit', {'id': item.id}) }}">Salle(s)</a>
+        </li>
+        {% endif %}
+    </ul>
+    <br />
+    {{ include('exam/session/_form.html.twig') }}
+{% endblock %}

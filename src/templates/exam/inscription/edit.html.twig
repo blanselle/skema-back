@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification des inscriptions utilisateur{% endblock %}
+
+{% block body %}
+<h1>{{ item.student.user.firstName }} {{ item.student.user.lastName }}</h1>
+
+<div class="row">
+    <div class="col">
+        <input type="text" class="form-control" value="{{ item.student.identifier }}" disabled />
+    </div>
+    <div class="col">
+        <div class="form-check">
+        <input type="checkbox" id="thirdTime" class="form-check-input"
+               {% if item.student.administrativeRecord.thirdTime is defined and item.student.administrativeRecord.thirdTime == true %}checked{% endif %} disabled />
+            <label class="form-check-label" for="thirdTime">
+                Tiers temps
+            </label>
+        </div>
+    </div>
+</div>
+
+<div id="edit_exam_list" class="exams_list">
+    {% for student in exams %}
+        <div class="exams_item">
+            {{ student.examSession.examClassification.name }} -
+            {% if student.examSession.campus is not empty %}{{ student.examSession.campus.name }}{% else %}<span class="badge bg-danger">En ligne</span>{% endif %} -
+            {{ student.examSession.dateStart|date('d-m-Y H:i') }}
+            {{ include('exam/inscription/_delete_form.html.twig') }}
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

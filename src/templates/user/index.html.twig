@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/admin-datatables-light.js') }}" type="text/javascript"></script>
+{% endblock %}
+
+{% block title %}Utilisateurs{% endblock %}
+
+{% block body %}
+
+<h2>Informations sur les roles</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Libellé</th>
+            <th scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">Coordinateur</th>
+            <td>permet le suivi des dossier de condidature</td>
+        </tr>
+        <tr>
+            <th scope="row">Responsable</th>
+            <td>coordinatrice + statistiques + param calendrier</td>
+        </tr>
+        <tr>
+            <th scope="row">Administrateur</th>
+            <td>responsable + tout paramétrage + import / export technique</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Utilisateurs ({{ pagination.getTotalItemCount }})</h2>
+
+<table id="users" class="table admin-datatable stripe hover order-column">
+    <thead>
+        <tr>
+            <th scope="col">Email</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Prénom</th>
+            <th scope="col">Rôle</th>
+            <th scope="col">Actions</th>
+        </tr>
+    <thead>
+
+    <tbody>
+    {% for index, user in pagination %}
+        <tr id="{{ user.email | lower | slug }}">
+            <td id="{{ 'email-' ~ user.email | lower | slug }}">{{ user.email }}</td>
+            <td id="{{ 'firstname-' ~ user.email | lower | slug }}">{{ user.firstName }}</td>
+            <td id="{{ 'lastname-' ~ user.email | lower | slug }}">{{ user.lastName }}</td>
+            <td id="{{ 'role-' ~ user.email | lower | slug }}">
+            {% for role in user.roles %}
+                <span class="badge bg-secondary">{{ role }}</span>
+            {% endfor %}
+            </td>
+            <td class="d-flex">
+                <a class="action-edit btn btn-warning me-2" href="{{ path('user_edit', {'id': user.id}) }}"><i class="bi bi-pencil-square"></i></a>
+                {{ include('user/_delete_form.html.twig') }}
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<div class="d-flex justify-content-center">
+    <div class="text-center">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+</div>
+<a class="btn btn-primary" href="{{ path('user_new') }}"><i class="bi bi-plus-square"></i> Ajouter un utilisateur</a>
+
+{% endblock %}

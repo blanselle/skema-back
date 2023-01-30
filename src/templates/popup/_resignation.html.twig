@@ -1,0 +1,9 @@
+<div id="popup_notification_resignation">
+    <div class="row">
+        <div class="col">
+            <textarea class="form-control" name="content" placeholder="Motif de démission" rows="10"></textarea>
+        </div>
+    </div>
+    <br />
+    <button id="send" type="button" class="btn btn-primary" data-url="{{ path('ajax_student_cancelation', {'id': student.id}) }}">Valider</button>
+</div>

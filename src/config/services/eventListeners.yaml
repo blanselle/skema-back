@@ -1,0 +1,27 @@
+services:
+  # default configuration for services in *this* file
+  _defaults:
+    autowire: true      # Automatically injects dependencies in your services.
+    autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+  App\EventListener\User\EncodePassword:
+    tags:
+      - { name: doctrine.event_listener, event: prePersist }
+      - { name: doctrine.event_listener, event: preUpdate }
+
+  App\EventListener\HttpExceptionListener:
+    tags:
+      - { name: kernel.event_listener, event: kernel.exception }
+
+  App\EventListener\Experience\ManageDuration:
+    tags:
+      - { name: doctrine.event_listener, event: prePersist }
+      - { name: doctrine.event_listener, event: preUpdate }
+
+  App\EventListener\JWT\OnAuthenticationSuccessEvent:
+    tags:
+      - { name: kernel.event_listener, event: lexik_jwt_authentication.on_authentication_success, method: onAuthenticationSuccessEvent }
+
+  App\EventListener\Student\OnCreateListener:
+    tags:
+      - { name: doctrine.event_listener, event: preFlush }

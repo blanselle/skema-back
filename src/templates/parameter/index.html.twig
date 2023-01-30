@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des paramètres{% endblock %}
+
+{% block body %}
+    <h1>Liste des paramètres <a class="btn btn-primary" href="{{ path('parameter_new') }}">Ajouter un nouveau paramètre</a></h1>
+
+    <div class="search_form">
+        <hr />
+        <form action="" method="get" id="list-search">
+            <div class="row">
+                <div class="col">
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Paramètre"
+                           value="{% if params['name'] is defined %}{{ params['name'] }}{% endif %}" />
+                </div>
+                <div class="col">
+                    <input type="text" name="descr" id="descr" class="form-control" placeholder="Description"
+                           value="{% if params['descr'] is defined %}{{ params['descr'] }}{% endif %}" />
+                </div>
+            </div>
+            <button class="btn btn-success" type="submit">Filtrer</button>
+        </form>
+        <hr />
+    </div>
+
+    {% include 'table.html.twig' with {'columns' : columns, 'controller' : 'parameter_index'} %}
+{% endblock %}

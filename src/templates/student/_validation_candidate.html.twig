@@ -1,0 +1,16 @@
+<script type="application/javascript">
+    $(document).ready(function() {
+        $('#approuved_candidate').click(function (e) {
+            if (confirm('Voulez-vous approuver le candidat ?')) {
+                return true;
+            }
+            e.preventDefault()
+        })
+    })
+</script>
+{% if student.state == 'complete' %}
+    <form name="validate_candidate_form" id="validate_candidate_form" action="" method="post" style="text-align: center">
+        <input type="hidden" name="token" value="{{ csrf_token('student'~student.id) }}"/>
+        <button value="{{ validate }}" id="approved_candidate" name="approved_candidate" type="submit" class="btn btn-danger btn-lg">Approuver le candidat</button>
+    </form>
+{% endif %}

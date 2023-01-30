@@ -1,0 +1,24 @@
+App\Entity\AdministrativeRecord\AdministrativeRecord:
+  record_1:
+    optionalExamLanguage: true
+    examLanguage: '@language_chinois'
+    student: '@student_ast1'
+    studentDiplomas: ['@student_diploma_ast1_2', '@student_diploma_ast1']
+
+  record_2:
+    optionalExamLanguage: true
+    examLanguage: '@language_allemand'
+    student: '@student_ast2'
+    studentDiplomas: [ '@student_diploma_ast2' ]
+
+  record_3:
+    optionalExamLanguage: true
+    examLanguage: '@language_espagnol'
+    student: '@student_bce'
+    studentDiplomas: [ '@student_diploma_bce' ]
+
+#  record_ast1_{3..30}:
+#    student: '@student_ast1_<current()>'
+#
+#  record_ast2_{1..30}:
+#    student: '@student_ast2_<current()>'

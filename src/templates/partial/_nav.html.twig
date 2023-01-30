@@ -1,0 +1,43 @@
+{% set navigation = navigation() %}
+
+<nav class="navbar">
+    <a class="navbar-brand text-dark" href="/"><span class="fs-1"><i class="bi bi-back"></i> Skema</span></a>
+    <div class="container-fluid">
+        <ul class="navbar-nav">
+            {% for id, category in navigation.categories %}
+                <li class="nav-item dropdown mb-3">
+                    <a class="nav-link dropdown-toggle text-dark" href="#" id="#{{id}}-collapse" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {% if category.icon is defined %}
+                            <i class="bi bi-{{category.icon}}"></i>
+                        {% else %}
+                            <i class="bi bi-app"></i>
+                        {% endif %}
+                        {{ category.label }} {% if id == 'notification' %}({{ CountNotifications() }}){% endif %}
+                    </a>
+                    <ul class="dropdown-menu {{ category.active ? 'show' }}" aria-labelledby="#{{id}}-collapse">
+                        {% for route, page in category.pages %}
+                            <li>
+                                <a href="{{ path(route) }}" class="dropdown-item {% if page.active %}text-primary {% else %}text-dark{% endif %}" aria-current="page">
+                                    {% if page.icon is defined %}
+                                        <i class="bi bi-{{page.icon}}"></i>
+                                    {% else %}
+                                        <i class="bi bi-list"></i>
+                                    {% endif %}
+                                    {{ page.label }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+
+            <li><hr class="dropdown-divider"></li>
+
+            {% if app.user is not null  %}
+                <li class="nav-item dropdown mb-3 text-decoration-none">
+                    <a class="dd-flex align-items-center text-dark text-decoration-none" href="{{ path('app_logout') }}"><i class="bi bi-box-arrow-right"></i> Se deconnecter</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>

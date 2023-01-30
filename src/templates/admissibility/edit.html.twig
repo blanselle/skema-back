@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Table de conversion{% endblock %}
+
+{% block body %}
+    <script type="application/javascript">
+        $(document).ready(function(){
+            let _admissibility_generate_url = $('#conversion-table-url').data('admissibility-generate-url');
+            let _admissibility_index_url = $('#conversion-table-url').data('admissibility-index-url');
+            let _url = $('#conversion-table-url').data('conversion-table-exist-url');
+
+            $("[name=admissibility\\[examClassification\\]], [name=admissibility\\[type\\]]").change(function(){
+                if ($('[name=admissibility\\[examClassification\\]] option:selected').val() && $('[name=admissibility\\[type\\]] option:selected').val()) {
+
+                    let _param = {
+                        examId: $('[name=admissibility\\[examClassification\\]] option:selected').val(),
+                    };
+                    $.ajax({
+                        url: _url + '?' + $.param(_param),
+                        method: 'get',
+                        success: function(response) {
+                            if (response.hasConversionTable) {
+                                $('#conversion-table-modal').modal('show');
+                                _admissibility_generate_url = _admissibility_generate_url.replace(0, response.admissibilityId);
+                            } else {
+                                $('#conversion-table-modal').modal('hide');
+                                $('form[name=admissibility]').submit();
+                            }
+                        },
+                    })
+                }
+            })
+
+            $('#modal-valider').click(function() {
+                $('form[name=admissibility]').submit();
+            })
+
+            $('#modal-show-conversion-table').click(function() {
+                window.location.href = _admissibility_generate_url;
+            })
+
+            $('.modal-close').click(function () {
+                window.location.href = _admissibility_index_url;
+            })
+        })
+    </script>
+    <div class="nav_actions">
+        <a href="{{ path('admissibility_conversion_index') }}" class="btn btn-secondary">Retourner à la liste des tables</a>
+        {% if admissibility is defined %}{{ include('admissibility/_delete_form.html.twig') }}{% endif %}
+    </div>
+    <hr />
+    <h1>Créer une nouvelle table de conversion</h1>
+    <hr />
+
+    {{ include('admissibility/_form.html.twig') }}
+
+    <div id="conversion-table-url" class="hidden"
+         data-conversion-table-exist-url="{{ path('admissibility_has_conversion_table') }}"
+         data-admissibility-generate-url="{{ path('admissibility_conversion_generate', {'id': 0}) }}"
+         data-admissibility-index-url="{{ path('admissibility_conversion_index') }}"
+    ></div>
+
+    <!-- Modal -->
+    <div class="modal" id="conversion-table-modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Table de conversion</h5>
+                    <button type="button" class="btn-close modal-close" aria-label="Close" onclick=""></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-warning">
+                        <p>Une table de conversion existe pour cette épreuve.</p>
+                        <p>Etes-vous sûr de vouloir en générer une nouvelle ?</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="modal-valider" class="btn btn-primary">Valider</button>
+                    <button type="button" class="btn btn-secondary modal-close">Annuler</button>
+                    <button type="button" id="modal-show-conversion-table" class="btn btn-primary">Voir la table existante</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

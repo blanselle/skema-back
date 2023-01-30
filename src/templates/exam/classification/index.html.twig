@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/admin-datatables-light.js') }}" type="text/javascript"></script>
+{% endblock %}
+
+{% block title %}Typologie d'Épreuves - Session Skema{% endblock %}
+
+{% block body %}
+    <h1>Typologie d'Épreuves <a class="btn btn-primary" href="{{ path('exam_classifications_new') }}">Ajouter une typologie</a></h1>
+
+    <table class="table admin-datatable stripe hover order-column">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Type</th>
+                <th>Passage</th>
+                <th>Voie de concours</th>
+                <th>Scores possibles</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for exam in pagination %}
+                <tr id="{{ 'classification-' ~ exam.id | lower | slug }}">
+                    <td id="{{ 'classification-id-' ~ exam.id | lower | slug }}">{{ exam.name }}</td>
+                    <td id="{{ 'classification-type-' ~ exam.id | lower | slug }}">{{ exam.examSessionType.name }}</td>
+                    <td id="{{ 'classification-condition-' ~ exam.id | lower | slug }}">{{ exam.examCondition.name }}</td>
+                    <td id="{{ 'classification-condition-programChannel-' ~ exam.id | lower | slug }}">
+                        {% for item in exam.programChannels %}{{ item.name }}{% if loop.last != true %}, {% endif %}{% endfor %}
+                    </td>
+                    <td  id="{{'classification-score-' ~ exam.id | lower | slug }}">
+                        <a href="{{ path('exam_classification_scores_index', {'id': exam.id}) }}">{{ exam.examClassificationScores | length }}</a>
+                    </td>
+                    <td class="d-flex">
+                        <a class="btn btn-warning me-2 action-edit" href="{{ path('exam_classifications_edit', {'id': exam.id}) }}"><i class="bi bi-pencil-square"></i></a>
+                        {{ include('exam/classification/_delete_form.html.twig') }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

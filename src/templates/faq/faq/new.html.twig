@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle FAQ{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('faq_faq_index') }}" class="btn btn-secondary">Retour à la liste des questions</a>
+    </div>
+    <hr />
+    <h1>Créer une question</h1>
+
+    {{ include('faq/faq/_form.html.twig') }}
+{% endblock %}

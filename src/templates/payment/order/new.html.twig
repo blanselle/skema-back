@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau paiement{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('order_index', {'identifier': order.student?order.student.identifier : null }) }}" class="btn btn-secondary">Retour à la liste des paiements</a>
+    </div>
+    <hr />
+    <h1>Ajouter un paiement</h1>
+
+    {{ include('payment/order/_form.html.twig') }}
+{% endblock %}

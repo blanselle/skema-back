@@ -1,0 +1,108 @@
+App\Entity\OralTest\CampusOralDay:
+  slot_configuration_lille_ast_1_ang_1:
+    configuration: '@configuration_lille_ast_1'
+    date: <(new DateTimeImmutable("2023-06-20 09:00:00"))>
+    firstLanguage: '@language_anglais'
+    secondLanguage: null
+    nbOfReservedPlaces: 2
+    nbOfAvailablePlaces: 20
+  slot_configuration_lille_ast_1_ang_2:
+    configuration: '@configuration_lille_ast_1'
+    date: <(new DateTimeImmutable("2023-06-21 09:00:00"))>
+    firstLanguage: '@language_anglais'
+    secondLanguage: null
+    nbOfReservedPlaces: 5
+    nbOfAvailablePlaces: 20
+  slot_configuration_lille_ast_1_ang_3:
+    configuration: '@configuration_lille_ast_1'
+    date: <(new DateTimeImmutable("2023-06-22 09:00:00"))>
+    firstLanguage: '@language_anglais'
+    secondLanguage: null
+    nbOfReservedPlaces: 10
+    nbOfAvailablePlaces: 20
+  slot_configuration_lille_ast_1_ang_4:
+    configuration: '@configuration_lille_ast_1'
+    date: <(new DateTimeImmutable("2023-06-23 09:00:00"))>
+    firstLanguage: '@language_anglais'
+    secondLanguage: null
+    nbOfReservedPlaces: 17
+    nbOfAvailablePlaces: 20
+  slot_configuration_lille_ast_1_ang_ita_1:
+    configuration: '@configuration_lille_ast_1'
+    date: <(new DateTimeImmutable("2023-06-20 09:00:00"))>
+    firstLanguage: '@language_anglais'
+    secondLanguage: '@language_chinois'
+    nbOfReservedPlaces: 0
+    nbOfAvailablePlaces: 20
+  slot_configuration_lille_ast_1_ang_ita_2:
+    configuration: '@configuration_lille_ast_1'
+    date: <(new DateTimeImmutable("2023-06-21 09:00:00"))>
+    firstLanguage: '@language_anglais'
+    secondLanguage: '@language_chinois'
+    nbOfReservedPlaces: 18
+    nbOfAvailablePlaces: 20
+  slot_configuration_lille_ast_1_ang_ita_3:
+    configuration: '@configuration_lille_ast_1'
+    date: <(new DateTimeImmutable("2023-06-22 09:00:00"))>
+    firstLanguage: '@language_anglais'
+    secondLanguage: '@language_chinois'
+    nbOfReservedPlaces: 22
+    nbOfAvailablePlaces: 20
+  slot_configuration_lille_ast_1_ang_ita_4:
+    configuration: '@configuration_lille_ast_1'
+    date: <(new DateTimeImmutable("2023-06-23 09:00:00"))>
+    firstLanguage: '@language_anglais'
+    secondLanguage: '@language_chinois'
+    nbOfReservedPlaces: 20
+    nbOfAvailablePlaces: 20
+
+App\Entity\OralTest\CampusOralDayConfiguration:
+  configuration_lille_ast_1:
+    campus: '@campus_lille'
+    optionalLv1: false
+    optionalLv2: true
+    programChannels: ['@ast1_program_channel']
+    firstLanguages: ['@language_anglais']
+    secondLanguages: ['@language_chinois']
+
+  configuration_lille_ast_2:
+    campus: '@campus_lille'
+    optionalLv1: true
+    optionalLv2: true
+    programChannels: ['@ast2_program_channel']
+    firstLanguages: ['@language_anglais']
+    secondLanguages: ['@language_italien', '@language_hebreu']
+
+App\Entity\OralTest\DistributionType:
+    distribution_type_day:
+      label: Journée
+      code: day
+      position: 1
+    distribution_type_slot:
+      label: Slot
+      code: slot
+      position: 2
+
+App\Entity\OralTest\SlotType:
+    slot_type_m:
+      label: Matin
+      code: M
+      position: 1
+    slot_type_a:
+      label: Après-midi
+      code: A
+      position: 2
+    slot_type_s:
+      label: Soirée
+      code: S
+      position: 3
+
+App\Entity\OralTest\TestType:
+  test_type_ent:
+    label: Entretien
+    code: ent
+    position: 1
+  test_type_lang:
+    label: Langue vivante
+    code: lang
+    position: 2

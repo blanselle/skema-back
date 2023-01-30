@@ -1,0 +1,24 @@
+stages:
+  - UnitTests
+  - CodingStandards
+
+phpunit:
+  stage: UnitTests
+  tags:
+    - php81
+  script:
+    - sudo phing test
+  allow_failure: true
+  only:
+    - merge_requests
+
+phpstan:
+  stage: CodingStandards
+  tags:
+    - php81
+  script:
+    - sudo phing try-test
+    - ./src/vendor/bin/phpstan analyse -c ./src/phpstan.neon ./src
+  allow_failure: true
+  only:
+    - merge_requests

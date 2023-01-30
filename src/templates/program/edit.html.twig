@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification programme{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('program_index') }}" class="btn btn-secondary">Retour à la liste des programmes</a>
+        {{ include('program/_delete_form.html.twig') }}
+    </div>
+    <hr />
+    <h1>Modifier le programme {{ program.name }}</h1>
+
+    <div class="save_container">
+        {{ include('program/_form.html.twig') }}
+    </div>
+{% endblock %}

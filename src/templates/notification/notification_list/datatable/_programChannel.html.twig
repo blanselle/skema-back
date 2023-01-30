@@ -1,0 +1,3 @@
+{% if item.sender is not empty and item.sender.student is not empty %}
+    {{ item.sender.student.programChannel.name }}
+{% endif %}

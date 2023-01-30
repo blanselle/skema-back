@@ -1,0 +1,56 @@
+<div id="first_message" class="notification_container">  
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('[name=treat]').click(function () {
+                $('#treat_form').submit()
+            })
+        })
+    </script>  
+    <div class="read">
+        {% if false == notificationParent.read and edit_student  is defined and edit_student == true %}
+        <form action="{{ path('notification_treat', {id: notificationParent.id})}}" method="post" id="treat_form" name="treat_form">
+            <input type="hidden" name="treat_hidden">
+            <input type="hidden" name="identifier" value="{{notificationParent.identifier}}">
+            <div id="treat" class="badge bg-warning text-dark" for="treat">
+                <input type="checkbox" class="form-check-inline"  name="treat" />Traitée
+            </div>
+        </form>
+        {% endif %}
+    </div>
+    <div class="title">
+        {{ notificationParent.subject }}
+    </div>
+    <div class="message">
+        <div class="from">
+            De : <span class="from_name">
+                {% if notificationParent.sender is not empty %}
+                    {% if notificationParent.sender.student is not empty %}
+                        <a href="{{ path('student_edit', {'id': notificationParent.sender.student.id}) }}">
+                            {{ notificationParent.sender.firstName }} {{ notificationParent.sender.lastName }}
+                        </a>
+                    {% else %}
+                        {{ notificationParent.sender.firstName }} {{ notificationParent.sender.lastName }}
+                    {% endif %}
+                {% else %}
+                    Service Concours
+                {% endif %}
+            </span> - ({{ notificationParent.createdAt|date('d/m/Y H:i:s') }})
+        </div>
+        {% if notificationParent.receiver is not null and edit_student  is defined  and edit_student != true %}
+            <div class="to">
+                À : <span class="to_name">
+                    {% if notificationParent.receiver.student is not empty %}
+                        <a href="{{ path('student_edit', {'id': notificationParent.receiver.student.id}) }}">
+                            {{ notificationParent.receiver.firstName }} {{ notificationParent.receiver.lastName }}
+                        </a>
+                    {% else %}
+                        {{ notificationParent.receiver.firstName }} {{ notificationParent.receiver.lastName }}
+                    {% endif %}
+                </span>
+            </div>
+        {% endif %}
+    </div>
+    <div class="content">
+        {{ notificationParent.content|raw }}
+    </div>
+</div>

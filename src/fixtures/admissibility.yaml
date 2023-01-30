@@ -1,0 +1,25 @@
+App\Entity\Admissibility\Ranking\Coefficient:
+  anglais_ast1:
+    programChannel: '@ast1_program_channel'
+    type: 'Anglais'
+    coefficient: 7
+  cv_ast1:
+    programChannel: '@ast1_program_channel'
+    type: 'Cv'
+    coefficient: 1
+  management_ast1:
+    programChannel: '@ast1_program_channel'
+    type: 'Management'
+    coefficient: 2
+  anglais_ast2:
+    programChannel: '@ast2_program_channel'
+    type: 'Anglais'
+    coefficient: 8
+  cv_ast2:
+    programChannel: '@ast2_program_channel'
+    type: 'Cv'
+    coefficient: 1
+  management_ast2:
+    programChannel: '@ast2_program_channel'
+    type: 'Management'
+    coefficient: 1

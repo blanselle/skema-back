@@ -1,0 +1,79 @@
+App\Entity\Student:
+  student_ast1:
+    user: '@candidate_AST1'
+    dateOfBirth: <dateTimeBetween('2006-10-10', '2020-10-10')>
+    programChannel: '@ast1_program_channel'
+    firstNameSecondary: 'Jean, Jacques'
+    gender: 'M'
+    phone: '+33701010101'
+    address: '10 rue de Général de Gaule'
+    postalCode: 59000
+    city: Lille
+    country: '@country_fra'
+    identifier: 230001
+    countryBirth: '@country_fra'
+    nationality: '@country_fra'
+    state: 'eligible'
+    transition: 'valid_to_eligible'
+
+  student_ast2:
+    user: '@candidate_AST2'
+    dateOfBirth: <dateTimeBetween('2006-10-10', '2020-10-10')>
+    programChannel: '@ast2_program_channel'
+    gender: 'F'
+    phone: '+33672850159'
+    address: '202 rue de la place'
+    postalCode: 59100
+    city: Roubaix
+    country: '@country_fra'
+    identifier: 230002
+    countryBirth: '@country_fra'
+    nationality: '@country_fra'
+    state: 'eligible'
+    transition: 'valid_to_eligible'
+
+  student_bce:
+    user: '@candidate_BCE'
+    dateOfBirth: <dateTimeBetween('2006-10-10', '2020-10-10')>
+    programChannel: '@bce_eco_program_channel'
+    gender: 'O'
+    phone: '+33672850159'
+    address: '68 rue du Maréchal Fernand'
+    postalCode: 31000
+    city: Toulouse
+    country: '@country_fra'
+    identifier: 230003
+    countryBirth: '@country_fra'
+    nationality: '@country_fra'
+
+#  student_ast1_{1..30}:
+#    user: '@candidate_AST1_<current()>'
+#    dateOfBirth: <dateTimeBetween('2006-10-10', '2020-10-10')>
+#    programChannel: '@ast1_program_channel'
+#    gender: 'O'
+#    phone: '+33672850159'
+#    address: '68 rue du Maréchal Fernand'
+#    postalCode: 31000
+#    city: Toulouse
+#    country: '@country_fra'
+#    countryBirth: '@country_fra'
+#    nationality: '@country_fra'
+#    identifier: <addition(<current()>, 230003)>
+#    state: 'eligible'
+#    transition: 'valid_to_eligible'
+#
+#  student_ast2_{1..30}:
+#    user: '@candidate_AST2_<current()>'
+#    dateOfBirth: <dateTimeBetween('2006-10-10', '2020-10-10')>
+#    programChannel: '@ast2_program_channel'
+#    gender: 'O'
+#    phone: '+33672850159'
+#    address: '68 rue du Maréchal Fernand'
+#    postalCode: 31000
+#    city: Toulouse
+#    country: '@country_fra'
+#    countryBirth: '@country_fra'
+#    nationality: '@country_fra'
+#    identifier: <addition(<current()>, 230033)>
+#    state: 'eligible'
+#    transition: 'valid_to_eligible'

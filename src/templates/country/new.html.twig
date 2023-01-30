@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau pays{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('country_index') }}" class="btn btn-secondary">Retour à la liste des pays</a>
+    </div>
+    <hr />
+    <h1>Création d'un pays</h1>
+
+    {{ include('country/_form.html.twig') }}
+{% endblock %}

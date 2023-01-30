@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Table de conversion{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('admissibility_conversion_index') }}" class="btn btn-secondary">Retourner à la liste des tables</a>
+        {% if admissibility is defined %}{{ include('admissibility/_delete_form.html.twig') }}{% endif %}
+    </div>
+    <hr />
+
+    <h1>{{ admissibility.examClassification.name }}</h1>
+    <hr />
+
+    {{ include('partial/_flash_messages.html.twig') }}
+
+    <div id="conversion">
+        <table class="table" id="conversion_table">
+            <thead>
+                <tr>
+                    <td>Score</td>
+                    {% for param in admissibility.params|sort((a, b) => a.programChannel.name <=> b.programChannel.name) %}
+                        <td>{{ param.programChannel.name }}</td>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+            {% for key, program in notes %}
+                <tr>
+                    <td>{{ key }}</td>
+                    {% set last_note = null %}
+                    {% for param in admissibility.params|sort((a, b) => a.programChannel.position <=> b.programChannel.position) %}
+                        <td {% if last_note is not empty and last_note < program[param.programChannel.name]['score'] %}class="warning"{% endif %}>
+                            {{ program[param.programChannel.name]['score']|number_format(6, ',') }}
+                        </td>
+                        {% set last_note = program[param.programChannel.name]['score'] %}
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div id="moyenne_conversion_table">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td></td>
+                        <td>Moyenne</td>
+                        <td>Candidats</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for key, value in averages %}
+                        <tr>
+                            <td>{{ key }}</td>
+                            <td>{{ value['average']|number_format(4, ',') }}</td>
+                            <td>{{ value['nb_student'] }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <form action="" method="post">
+                <button type="submit" class="btn btn-primary">Sauvegarder la table de conversion</button>
+                <br /><br />
+                <a href="{{ path('admissibility_conversion_edit', {'id' : admissibility.id}) }}" class="btn btn-primary">Modifier les paramètres</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}

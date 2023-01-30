@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification de niveau sportif{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('sport_level_index') }}" class="btn btn-secondary">Retourner à la liste des niveaux sportifs</a>
+        {{ include('sportLevel/_delete_form.html.twig') }}
+    </div>
+    <hr />
+    <h1>{{ sportLevel.label }}</h1>
+
+    <div class="save_container">
+        {{ include('sportLevel/_form.html.twig') }}
+    </div>
+{% endblock %}

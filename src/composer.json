@@ -1,0 +1,134 @@
+{
+    "type": "project",
+    "license": "proprietary",
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=8.1",
+        "ext-ctype": "*",
+        "ext-iconv": "*",
+        "api-platform/core": "^2.6",
+        "babdev/pagerfanta-bundle": "^3.6",
+        "doctrine/annotations": "^1.0",
+        "doctrine/doctrine-bundle": "^2.5",
+        "doctrine/doctrine-migrations-bundle": "^3.2",
+        "doctrine/orm": "^2.11",
+        "friendsofsymfony/ckeditor-bundle": "^2.4",
+        "gesdinet/jwt-refresh-token-bundle": "^1.0",
+        "graylog2/gelf-php": "^2.0",
+        "guzzlehttp/guzzle": "^7.4",
+        "helios-ag/fm-elfinder-bundle": "^12.1",
+        "knplabs/knp-paginator-bundle": "^5.8",
+        "knplabs/knp-snappy-bundle": "^1.9",
+        "lexik/jwt-authentication-bundle": "^2.14",
+        "nelmio/cors-bundle": "^2.2",
+        "nyholm/append-query-string": "^1.0",
+        "phpdocumentor/reflection-docblock": "^5.3",
+        "phpoffice/phpspreadsheet": "^1.23",
+        "phpstan/phpdoc-parser": "^1.2",
+        "predis/predis": "^2.0",
+        "sensio/framework-extra-bundle": "^6.2",
+        "stof/doctrine-extensions-bundle": "^1.7",
+        "symfony/amqp-messenger": "6.1.*",
+        "symfony/asset": "6.1.*",
+        "symfony/console": "6.1.*",
+        "symfony/dotenv": "6.1.*",
+        "symfony/expression-language": "6.1.*",
+        "symfony/flex": "^2",
+        "symfony/form": "6.1.*",
+        "symfony/framework-bundle": "6.1.*",
+        "symfony/http-client": "6.1.*",
+        "symfony/intl": "6.1.*",
+        "symfony/mailer": "6.1.*",
+        "symfony/maker-bundle": "^1.37",
+        "symfony/messenger": "6.1.*",
+        "symfony/mime": "6.1.*",
+        "symfony/monolog-bundle": "^3.7",
+        "symfony/property-access": "6.1.*",
+        "symfony/property-info": "6.1.*",
+        "symfony/proxy-manager-bridge": "6.1.*",
+        "symfony/runtime": "6.1.*",
+        "symfony/security-bundle": "6.1.*",
+        "symfony/serializer": "6.1.*",
+        "symfony/string": "6.1.*",
+        "symfony/twig-bundle": "6.1.*",
+        "symfony/uid": "6.1.*",
+        "symfony/validator": "6.1.*",
+        "symfony/workflow": "6.1.*",
+        "symfony/yaml": "6.1.*",
+        "twig/extra-bundle": "^3.3",
+        "twig/intl-extra": "^3.4",
+        "twig/string-extra": "^3.3",
+        "twig/twig": "^2.12|^3.0",
+        "wl-online-payments-direct/sdk-php": "^4.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true,
+            "symfony/flex": true,
+            "symfony/runtime": true
+        },
+        "optimize-autoloader": true,
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\Tests\\": "tests/"
+        }
+    },
+    "replace": {
+        "symfony/polyfill-ctype": "*",
+        "symfony/polyfill-iconv": "*",
+        "symfony/polyfill-php72": "*",
+        "symfony/polyfill-php73": "*",
+        "symfony/polyfill-php74": "*",
+        "symfony/polyfill-php80": "*"
+    },
+    "scripts": {
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd",
+            "ckeditor:install": "symfony-cmd",
+            "elfinder:install": "symfony-cmd"
+        },
+        "post-install-cmd": [
+            "@auto-scripts"
+        ],
+        "post-update-cmd": [
+            "@auto-scripts"
+        ]
+    },
+    "conflict": {
+        "symfony/symfony": "*"
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": false,
+            "require": "6.1.*"
+        }
+    },
+    "require-dev": {
+        "doctrine/doctrine-fixtures-bundle": "^3.4",
+        "hautelook/alice-bundle": "^2.10",
+        "phpmd/phpmd": "^2.11",
+        "phpstan/phpstan": "^1.4",
+        "phpstan/phpstan-doctrine": "^1.2",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "phpstan/phpstan-strict-rules": "^1.1",
+        "phpstan/phpstan-symfony": "^1.1",
+        "phpunit/phpunit": "^9.5",
+        "symfony/browser-kit": "6.1.*",
+        "symfony/css-selector": "6.1.*",
+        "symfony/phpunit-bridge": "6.1.*",
+        "symfony/stopwatch": "6.1.*",
+        "symfony/web-profiler-bundle": "6.1.*"
+    }
+}

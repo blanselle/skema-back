@@ -1,0 +1,21 @@
+services:
+  # default configuration for services in *this* file
+  _defaults:
+    autowire: true      # Automatically injects dependencies in your services.
+    autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+  App\OpenApi\JwtDecorator:
+    decorates: 'api_platform.openapi.factory'
+    arguments: ['@.inner']
+  
+  App\OpenApi\ResetPasswordDecorator:
+    decorates: 'api_platform.openapi.factory'
+    arguments: ['@.inner']
+
+  App\OpenApi\OpenApiFactory:
+    decorates: 'api_platform.openapi.factory'
+    arguments: ['@.inner']
+
+  App\OpenApi\CheckOralTestStudentState:
+    decorates: 'api_platform.openapi.factory'
+    arguments: ['@.inner']

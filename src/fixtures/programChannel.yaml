@@ -1,0 +1,27 @@
+App\Entity\ProgramChannel:
+  ast1_program_channel:
+    name: AST 1
+    program: '@pge_program'
+    description: 'Entrée en L3 (Titulaires Bac+2 minimum)'
+    intern: true
+    key: 'ast1'
+    position: 1
+  ast2_program_channel:
+    name: AST 2
+    program: '@pge_program'
+    description: 'Entrée en M1 (Titulaires Bac+3/4)'
+    intern: true
+    key: 'ast2'
+    position: 2
+  bce_eco_program_channel:
+    name: BCE Économique
+    program: '@pge_program'
+    intern: false
+    key: 'bce_eco'
+    position: 3
+  bce_lit_program_channel:
+    name: BCE Littéraire
+    program: '@pge_program'
+    intern: false
+    key: 'bce_lit'
+    position: 4

@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/admin-datatables-light.js') }}" type="text/javascript"></script>
+{% endblock %}
+
+{% block title %}Liste des thèmes - FAQ{% endblock %}
+
+{% block body %}
+    <h1>Liste des thèmes - FAQ <a class="btn btn-primary" href="{{ path('faq_topic_new') }}">Ajouter un thème</a></h1>
+
+    <table id="faq" class="table admin-datatable stripe hover order-column">
+        <thead>
+            <tr>
+                <th>Thème</th>
+                <th>Voie(s) de concours</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for topic in pagination %}
+            <tr id="{{ topic.label | lower | slug }}">
+                <td id="{{ 'label-' ~ topic.label | lower | slug }}">{{ topic.label }}</td>
+                <td id="{{ topic.label | lower | slug }}{% for program in topic.programChannels %}-{{ program.name | slug }}{% endfor %}">
+                    {% for program in topic.programChannels %}
+                        {% if loop.index0 > 0 %}
+                            {% if loop.last %} et {% else  %},{% endif %}
+                        {% endif %}
+                        {{ program.name }}
+                    {% endfor %}
+                </td>
+                <td class="d-flex">
+                    <a class="btn btn-warning me-2 action-edit" href="{{ path('faq_topic_edit', {'id': topic.id}) }}"><i class="bi bi-pencil-square"></i></a>
+                    {{ include('faq/topic/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Aucun thème trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {{ knp_pagination_render(pagination) }}
+{% endblock %}

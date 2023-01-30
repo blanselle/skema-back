@@ -1,0 +1,6 @@
+{% if programChannel.key is null %}
+<form method="post" action="{{ path('program_channel_delete', {'id': programChannel.id}) }}" onsubmit="return confirm('Voulez-vous vraiment supprimer cette voie de concours ?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ programChannel.id) }}">
+    <button class="btn btn-danger action-delete"><i class="bi bi-trash"></i></button>
+</form>
+{% endif %}

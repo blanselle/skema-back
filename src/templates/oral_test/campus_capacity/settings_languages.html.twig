@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'oral_test.campus_oral_day_settings.page.campus_description'|trans({'%name%': campus.name}) }}{% endblock %}
+
+{% block page_title %}{{ 'oral_test.campus_oral_day_settings.page.campus_description'|trans({'%name%': campus.name}) }}{% endblock page_title %}
+
+{% block main %}
+    <div id="campus-slot-settings-languages" class="row">
+
+        <div id="campus-slot-settings-languages-form">
+            {{ form_start(form) }}
+                <div class="row">
+                    <div class="col-6">
+                        <div class="row justify-content-start align-items-center">
+                            <div class="col-auto">
+                                {{ form_label(form.firstLanguages) }}
+                            </div>
+                            <div class="col">
+                                {{ form_row(form.optionalLv1) }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            {{ form_widget(form.firstLanguages) }}
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="row justify-content-start align-items-center">
+                            <div class="col-auto">
+                                {{ form_label(form.secondLanguages) }}
+                            </div>
+                            <div class="col">
+                                {{ form_row(form.optionalLv2) }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            {{ form_widget(form.secondLanguages) }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-end">
+                    <div class="col-3">
+                        <button id="language-settings-form-submit-button" type="submit" class="btn btn-primary align-self-end">{{ 'oral_test.campus_oral_day_settings_languages.form.button_submit'|trans }}</button>
+                    </div>
+                </div>
+            {{ form_end(form) }}
+        </div>
+
+        {{ include('partial/_message_modal.html.twig') }}
+
+        <div id="javascript-attributes"
+             data-configuration-id="{{ configuration.id }}"
+             data-check-reserved-places-path="{{ path('campus_capacity_settings_languages_check_reserved_places', {'id': configuration.id}) }}"
+        ></div>
+    </div>
+{% endblock main %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script src="{{ asset('js/campus-slot.js') }}" type="text/javascript"></script>
+{% endblock %}

@@ -1,0 +1,39 @@
+<hr />
+
+<div class="alert alert-primary" role="alert">
+    Voici les résultats du fichier importé, voulez-vous valider et sauvegarder les données ci-dessous ou annuler l'opération ?
+    <br />
+    <br />
+    <div class="save_container" style="margin-bottom: 0;">
+        <form name="import_reject" method="post" action="">
+            <input type="hidden" name="exam-classification" value="{{ examClassification.id }}">
+            <input type="hidden" value="{{ constant('App\\Controller\\Exam\\GradeController::IMPORT_REJECT') }}" name="validation_import" />
+            <button type="submit" class="btn btn-danger">Annuler</button>
+        </form>
+        <form name="import_validate" method="post" action="" style="margin-left: 50px;">
+            <input type="hidden" name="exam-classification" value="{{ examClassification.id }}">
+            <input type="hidden" value="{{ constant('App\\Controller\\Exam\\GradeController::IMPORT_VALIDATE') }}" name="validation_import" />
+            <input type="hidden" value="{{ file }}" name="file" />
+            <button type="submit" class="btn btn-success">Valider</button>
+        </form>
+    </div>
+</div>
+
+<table class="table" id="import-score">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Note</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for examStudent in examStudents %}
+            <tr {% if examStudent.score is empty %}class="alert"{% endif %}>
+                <td>{{ examStudent.student.user.lastName }}</td>
+                <td>{{ examStudent.student.user.firstName }}</td>
+                <td>{{ examStudent.score }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

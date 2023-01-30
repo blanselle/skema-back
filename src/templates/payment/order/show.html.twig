@@ -1,0 +1,104 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Récapitulatif ordre de commande{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('order_index', {'identifier' : order.student.identifier }) }}" class="btn btn-secondary">Retour à la liste des paiements</a>
+    </div>
+    <hr />
+    <h1>Récapitulatif ordre de commande</h1>
+
+    <div class="row pt-2 pb-5">
+        <div class="row">
+            <div class="col">Candidat: </div>
+            <div class="col">{{ order.student }}</div>
+        </div>
+        {% if order.examSession is not empty %}
+            <div class="row">
+                <div class="col">Session</div>
+                <div class="col">{{ order.examSession.examClassification.name }}</div>
+            </div>
+        {% endif %}
+        <div class="row">
+            <div class="col">Type: </div>
+            <div class="col">
+                {% if order.examSession is not empty %}
+                    {{ ('order.type.' ~ order.type)|trans({'%session_name%': order.examSession.examClassification.name}) }}
+                {% else %}
+                    {{ ('order.type.' ~ order.type)|trans }}
+                {% endif %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">Montant: </div>
+            <div class="col">{{ (order.amount/100)|number_format(2, ',', '.') ~ '€' }}</div>
+            <div class="col"><strong>{{ ('workflow.order.' ~ order.state)|trans }}</strong></div>
+        </div>
+    </div>
+
+    <hr />
+
+    <h2>Liste des paiements</h2>
+
+    {{ include('partial/_flash_messages.html.twig') }}
+
+    {% for payment in order.payments|sort((a, b) => b.createdAt <=> a.createdAt) %}
+        <div class="row pt-2 pb-5" id="{{ 'payment-' ~ payment.id }}">
+            <div class="row">
+                <div class="col">Mode de paiement : </div>
+                <div class="col">{{ ('payment.mode.' ~ payment.mode)|trans }}</div>
+                <div class="col">
+                    <strong>{{ ('workflow.payment.' ~ payment.state)|trans }}</strong>
+                </div>
+                <div class="col">
+                    {% if payment.state == constant('App\\Constants\\Payment\\PaymentWorkflowStateConstants::STATE_CREATED') or payment.state == constant('App\\Constants\\Payment\\PaymentWorkflowStateConstants::STATE_IN_PROGRESS') %}
+                        <form class="d-inline-block" method="post" action="{{ path('payments_refresh_state', {'id': payment.id}) }}" onsubmit="return confirm('Voulez-vous vraiment mettre à jour le statut du paiement ?');" title="Mettre à jour le statut du paiement">
+                            <input type="hidden" name="_token" value="{{ csrf_token('refresh-state-' ~ payment.id) }}">
+                            <button class="btn btn-primary action-refresh-state"><i class="bi bi-bootstrap-reboot"></i></button>
+                        </form>
+
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <form class="d-inline-block" method="post" action="{{ path('payments_cancel', {'id': payment.id}) }}" onsubmit="return confirm('Voulez-vous vraiment annuler ce paiement ?');" title="Annuler un paiement">
+                                <input type="hidden" name="_token" value="{{ csrf_token('cancel-' ~ payment.id) }}">
+                                <button class="btn btn-danger action-cancel"><i class="bi bi-trash"></i></button>
+                            </form>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">Date :</div>
+                <div class="col">{{ payment.createdAt|date('d/m/Y H:i:s') }}</div>
+            </div>
+            <div class="row">
+                <div class="col">Dernière mise à jour :</div>
+                <div class="col">{{ payment.updatedAt|date('d/m/Y H:i:s') }}</div>
+            </div>
+            <div class="row">
+                <div class="col">Informations additionnelles :</div>
+                <div class="col">{{ payment.additionalInformation|raw }}</div>
+            </div>
+            <div class="row">
+                <div class="col">Merchant reference :</div>
+                <div class="col">{{ payment.merchantReference }}</div>
+            </div>
+            <div class="row">
+                <div class="col">PSP - Reference :</div>
+                <div class="col">{{ payment.externalPaymentID?? 'NC' }}</div>
+            </div>
+            <div class="row">
+                <div class="col">PSP - Statut :</div>
+                <div class="col">
+                    {% if payment.externalPaymentID is not empty %}
+                        {{ payment.externalStatus?? 'Invalid or incomplete' }}
+                    {% else %}
+                        {{ payment.externalStatus?? 'NC' }}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+    {% endfor %}
+
+{% endblock %}

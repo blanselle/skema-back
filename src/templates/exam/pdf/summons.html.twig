@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+    </head>
+
+    <body>
+        <table style="width:100%;">
+            <tr>
+                <td style="width:68%;">
+                    <table>
+                        <tr>
+                            <td style="width:150px;">N° candidat :</td>
+                            <td>{{ examStudent.student.identifier }}</td>
+                        </tr>
+                        <tr>
+                            <td>Année postulée :</td>
+                            <td>{{ examStudent.student.programChannel.name }}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <tr>
+                            {% if examStudent.examSession.campus is not empty %}
+                                <td>{{ examStudent.examSession.campus.name }}, le {{ date }}</td>
+                            {% else %}
+                                <td>SKEMA BUSINESS SCHOOL, le {{ date }}</td>
+                            {% endif %}
+                        </tr>
+                        <tr>
+                            <td>{{ examStudent.student.user.lastName }} {{ examStudent.student.user.firstName }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ examStudent.student.address }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ examStudent.student.postalCode }} {{ examStudent.student.city }}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align:center;">
+                    {{ zone_1|raw }}
+                </td>
+            </tr>
+            {% if examStudent.examSession.campus is not empty %}
+            <tr>
+                <td colspan="2">
+                    <table style="width:100%">
+                        <tr>
+                            <td style="text-align:center;">
+                                {{ examStudent.examSession.campus.name }}<br />
+                                {{ examStudent.examSession.campus.addressLine1 }}<br />
+                                {% if examStudent.examSession.campus.addressLine2 is not empty  %}{{ examStudent.examSession.campus.addressLine2 }}<br />{% endif %}
+                                {% if examStudent.examSession.campus.addressLine3 is not empty  %}{{ examStudent.examSession.campus.addressLine3 }}<br />{% endif %}
+                                {{ examStudent.examSession.campus.postalCode }} {{ examStudent.examSession.campus.city }}<br />
+                                Accueil: {{ examStudent.examSession.campus.phoneReception }} | Service concours : {{ examStudent.examSession.campus.phoneCustomerService }}
+                                <br />
+                                <br />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            {% endif %}
+            <tr>
+                <td colspan="2">
+                    {{ zone_2|raw }}
+                    <p>
+                        {% if examStudent.examSession.examClassification.equipment is not empty %}
+                            {{ zone_equipment|raw }}
+
+                            {{ examStudent.examSession.examClassification.equipment|raw }}
+                        {% endif %}
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    {{ zone_3|raw }}
+                </td>
+            </tr>
+            {% if examStudent.examSession.campus is not empty %}
+                <tr>
+                    <td colspan="2">
+                        {{ examStudent.examSession.campus.instruction|raw }}
+                    </td>
+                </tr>
+            {% endif %}
+        </table>
+    </body>
+</html>

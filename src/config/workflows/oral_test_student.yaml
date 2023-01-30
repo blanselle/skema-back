@@ -1,0 +1,24 @@
+framework:
+  workflows:
+    oral_test_student:
+      type: 'state_machine'
+      marking_store:
+        type: 'method'
+        property: 'state'
+      supports:
+        - App\Entity\OralTest\OralTestStudent
+      initial_marking: waiting_for_treatment
+      places:
+        - waiting_for_treatment
+        - validated
+        - rejected
+      transitions:
+        validate:
+          from: waiting_for_treatment
+          to: validated
+        validate_force: # This transition is equal to validate except the surbooking checking on guard
+          from: waiting_for_treatment
+          to: validated
+        reject:
+          from: waiting_for_treatment
+          to: rejected

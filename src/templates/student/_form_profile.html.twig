@@ -1,0 +1,93 @@
+{{ form_start(form) }}
+<div class="bg-light p-2">
+    <h4>Voie de concours</h4>
+    <div class="form_container p-5">
+        <div class="row">
+            <div class="col">
+                {{ form_row(form.student.programChannel, {'attr': {'disabled': true}}) }}
+                <button id="updateProgramChannel" type="button" class="btn btn-danger">Modifier</button>
+            </div>
+        </div>
+    </div>
+
+    <h4>Informations personnelles</h4>
+    <div class="form_container p-5">
+        <div class="row">
+            <div class="col">
+                {{ form_row(form.firstName) }}
+            </div>
+            <div class="col">
+                {{ form_row(form.student.firstNameSecondary) }}
+            </div>
+            <div class="col">
+                {{ form_row(form.lastName) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                {{ form_row(form.student.gender) }}
+            </div>
+            <div class="col">
+                {{ form_row(form.student.identifier) }}
+            </div>
+            <div class="col">
+                {{ form_row(form.student.phone) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                {{ form_row(form.student.dateOfBirth) }}
+            </div>
+            <div class="col">
+                {{ form_row(form.student.countryBirth) }}
+            </div>
+            <div class="col">
+                {{ form_row(form.student.nationality) }}
+            </div>
+            <div class="col">
+                {{ form_row(form.student.nationalitySecondary) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                {{ form_row(form.student.address) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                {{ form_row(form.student.postalCode) }}
+            </div>
+            <div class="col">
+                {{ form_row(form.student.city) }}
+            </div>
+            <div class="col">
+                {{ form_row(form.student.country) }}
+            </div>
+        </div>
+    </div>
+</div>
+{% if not exemption %}
+    <div class="save_container">
+        <button type="submit" class="btn btn-success btn-lg">{{ button_label|default('Sauvegarder') }}</button>
+        <a onclick="return confirm('Voulez vous vraiment annuler les modifications ?');" href="{{ path('student_edit', {'id': student.id}) }}" class="btn btn-secondary btn-lg">{{ button_label|default('Annuler') }}</a>
+    </div>
+{% endif %}
+{{ form_end(form) }}
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#updateProgramChannel').click(function() {
+            if (confirm('Êtes-vous sûr de vouloir modifier la voie de concours ?')) {
+                $('#user_student_programChannel').attr('disabled', false)
+                $(this).hide()
+            }
+        })
+
+        $('form').submit(function() {
+            $('#user_student_programChannel').attr('disabled', false)
+        });
+    })
+</script>

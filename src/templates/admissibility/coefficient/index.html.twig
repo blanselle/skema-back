@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des coefficients{% endblock %}
+
+{% block body %}
+    <h1>Liste des coefficients <a class="btn btn-primary" href="{{ path('admissibility_coefficient_new') }}">Ajouter un coefficient</a></h1>
+    <hr />
+    <table class="table stripe hover order-column">
+        <thead>
+            <tr>
+                <th>Voie de concours</th>
+                <th>Type</th>
+                <th>Coefficient</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for coefficient in coefficients %}
+            <tr>
+                <td id="{{ 'coefficient-programChannel-' ~ coefficient.id | lower | slug }}">{{ coefficient.programChannel.name }}</td>
+                <td id="{{ 'coefficient-type-' ~ coefficient.id | lower | slug }}">{{ coefficient.type }}</td>
+                <td id="{{ 'coefficient-coefficient-' ~ coefficient.id | lower | slug }}">{{ coefficient.coefficient }}</td>
+                <td class="d-flex">
+                    <a class="btn btn-warning me-2 action-edit" href="{{ path('admissibility_coefficient_edit', {'id': coefficient.id}) }}"><i class="bi bi-pencil-square"></i></a>
+                    {{ include('admissibility/coefficient/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Aucun coefficient trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

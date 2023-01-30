@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification Parameter{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('parameter_index') }}" class="btn btn-secondary">Retour à la liste des paramètres</a>
+        {{ include('parameter/_delete_form.html.twig') }}
+    </div>
+    <hr />
+    <h1>Modifier le paramètre</h1>
+
+    <div class="save_container">
+        {{ include('parameter/_form.html.twig') }}
+    </div>
+{% endblock %}

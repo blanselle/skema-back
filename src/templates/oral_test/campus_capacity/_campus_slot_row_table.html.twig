@@ -1,0 +1,19 @@
+{% from 'oral_test/campus_capacity/macro.html.twig' import percentColorClass as macro_percent_color_class %}
+
+{% set colNumber = colNumber?? 0 %}
+
+<div  class="{{ macro_percent_color_class(slot.nbOfReservedPlaces, slot.nbOfAvailablePlaces) }}">
+    <div class="p-2 form-content">
+        <form name="refresh-places" action="{{ path('campus_capacity_refresh_places', {'id': slot.id, 'colNumber': colNumber}) }}" method="post" data-element-id="{{ 'col-' ~ colNumber ~ '-slot-id-' ~ slot.id }}" data-col-number="{{ colNumber }}">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="nb-of-available-places">Places:</span>
+                <input id="{{ 'col-' ~ colNumber ~ '-input-slot-id-' ~ slot.id }}" class="form-control slot-input-col {{ 'slot-input-col-' ~ colNumber }}" type="number" name="nbOfAvailablePlaces" value="{{ slot.nbOfAvailablePlaces }}" min="0" aria-label="Places" aria-describedby="nb-of-available-places">
+                <input type="hidden" name="_token" value="{{ csrf_token('refresh-places-' ~ slot.id) }}">
+            </div>
+        </form>
+        <p class="refresh-places-errors" style="color: red"></p>
+    </div>
+    <div class="mb-0 p-2">
+        <span class="slot-nb-of-reserved-places-col {{ 'slot-nb-of-reserved-places-col-' ~ colNumber }}" data-value="{{ slot.nbOfReservedPlaces }}">{{ 'Réservés: ' ~ slot.nbOfReservedPlaces }}</span>
+    </div>
+</div>

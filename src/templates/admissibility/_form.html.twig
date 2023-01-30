@@ -1,0 +1,108 @@
+{{ form_start(form) }}
+    <div class="row">
+        <div class="col">{{ form_row(form.examClassification) }}</div>
+        <div class="col" {% if form.params is not empty %}style="display:none;"{% endif %}>{{ form_row(form.type) }}</div>
+    </div>
+    {% if form.params is not empty %}
+        <script type="application/javascript">
+            $(document).ready(function(){
+                $('[name=admissibility] button[type=button]').click(function(){
+                    let table = $(this).parent().parent().parent()
+                    let score = $(this).parent().prev().prev().find('input');
+                    let note = $(this).parent().prev().find('input');
+                    let url = $(this).attr('data-url');
+                    if (score.val() && note.val()) {
+                        $.ajax({
+                            url : url,
+                            type: 'POST',
+                            data: {
+                                note: note.val(),
+                                score: score.val()
+                            },
+                            success: function(html) {
+                                location.reload();
+                            },
+                            statusCode: {
+                                404: function () {
+                                    alert('Le score ' + score.val() + ' n’est pas possible pour cette épreuve');
+                                },
+                                403: function () {
+                                    alert('Merci de vérifier les bornes saisies, elles ne semblent pas être cohérentes (notes par ordre croissant)');
+                                }
+                            }
+                        })
+                    }
+                })
+
+                $('.border-delete').click(function(){
+                    let url = $(this).attr('data-url');
+                    $.ajax({
+                        url : url,
+                        type: 'POST',
+                        success: function() {
+                            location.reload();
+                        }
+                    })
+                });
+            })
+        </script>
+        <div class="admissibility_pc">
+            {% for param in form.params %}
+            <div class="admissibility_item">
+                <div class="row">
+                    <div class="col">
+                        {{ form_row(param.programChannel) }}
+                    </div>
+                </div>
+                {% if param.highClipping.vars is defined and param.lowClipping.vars is defined %}
+                <div class="row">
+                    <div class="col">{{ form_row(param.highClipping) }}</div>
+                    <div class="col">{{ form_row(param.lowClipping) }}</div>
+                </div>
+                {% endif %}
+                {% if param.median.vars is defined %}
+                <div class="row">
+                    <div class="col">{{ form_row(param.median) }}</div>
+                </div>
+                {% endif %}
+                {% if param.file.vars is defined %}
+                    <div class="row">
+                        <div class="col">{{ form_row(param.file) }}</div>
+                    </div>
+                {% endif %}
+                {% if admissibility.type == type_border %}
+                <div class="row">
+                    <div class="col">
+                        <table class="table table-admissibility-border">
+                            <tr>
+                                <td><input class="form-control" type="number" placeholder="Score" /></td>
+                                <td><input class="form-control" type="number" placeholder="Note" /></td>
+                                <td style="vertical-align:top;">
+                                    <button data-url="{{ path('ajax_admissibility_border_post', {'id': param.id.vars.value}) }}" class="btn btn-primary" type="button">+</button>
+                                </td>
+                            </tr>
+                            {% for border in param.borders %}
+                            <tr>
+                                <td style="vertical-align:middle;">
+                                    {{ border.score.vars.value }}
+                                </td>
+                                <td style="vertical-align:middle;">
+                                    {{ border.note.vars.value }}
+                                </td>
+                                <td>
+                                    <button type="button" class="border-delete btn btn-danger action-delete" data-url="{{ path('ajax_admissibility_border_delete', {'id': border.id.vars.value}) }}"><i class="bi bi-trash"></i></button>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        <div class="save_container">
+            <button class="btn btn-primary">{{ button_label|default('Générer') }}</button>
+        </div>
+    {% endif %}
+{{ form_end(form) }}

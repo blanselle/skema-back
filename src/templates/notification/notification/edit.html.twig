@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails notification{% endblock %}
+
+{% block body %}
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('[name=treat]').click(function () {
+                $('#treat_form').submit()
+            })
+        })
+    </script>
+    <div class="nav_actions">
+        <a href="{{ referer }}" class="btn btn-secondary float-left">Retour à la liste des notifications</a>
+
+        {% if studentLink is not empty %}
+        <a href="{{ studentLink }}" class="btn btn-primary float-right">Accéder à la candidature</a>
+        {% endif %}
+    </div>
+    <hr />
+
+    {{ include('notification/notification_partial/_notification_title.html.twig') }}
+
+    {{ include('notification/notification/_form_comment.html.twig') }}
+
+    <br /><hr />
+
+    <h4>Discussion :</h4>
+    {{ include('notification/notification_partial/_notification_parent.html.twig') }}
+
+    {{ include('notification/notification_partial/_replies_container.html.twig') }}
+
+    <br /><hr /><br />
+    <h4>Répondre au message :</h4>
+
+    {{ include('notification/notification_partial/_notification_container.html.twig') }}
+
+    {{ include('notification/notification_partial/_form_reply.html.twig') }}
+
+{% endblock %}

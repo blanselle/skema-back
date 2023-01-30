@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des admissibiles{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/admin-datatables-light.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/ranking.js') }}" type="text/javascript"></script>
+{% endblock %}
+
+{% block body %}
+    <h1>Ranking d'admissibilité</h1>
+    <hr />
+
+    {{ include('partial/_flash_messages.html.twig') }}
+
+    <div class="row">
+        <div class="col-6">
+            {{ include('admissibility/ranking/_form.html.twig') }}
+        </div>
+        <div class="col-6" id="coefficient-list" data-url="{{ path('admissibility_coefficient_list') }}">
+            {{ include('admissibility/_coefficent_list.html.twig') }}
+        </div>
+    </div>
+
+
+    {% if ranking is not empty %}
+        <div id="ranking">
+            {% for programChannels, values in ranking %}
+                <a href="#{{ values.programChannel.name | lower | slug }}" class="collapse_title" data-bs-toggle="collapse">
+                    <h3>{{ values.programChannel.name }}</h3>
+                    <div class="arrow"></div>
+                </a>
+                <div id="{{ values.programChannel.name | lower | slug }}" class="collapse collapse_content">
+                    <table class="table admin-datatable stripe hover order-column">
+                        <thead>
+                            <tr>
+                                <td>Rang</td>
+                                <td>Identifiant</td>
+                                <td>Nom</td>
+                                <td>Prénom</td>
+                                <td>Score</td>
+                                <td>Note</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for item in values.students %}
+                            <tr>
+                                <td>{{ item.admissibilityRanking }}</td>
+                                <td>{{ item.identifier }}</td>
+                                <td>{{ item.user.lastName }}</td>
+                                <td>{{ item.user.firstName }}</td>
+                                <td>{{ item.admissibilityGlobalScore }}</td>
+                                <td>{{ item.admissibilityGlobalNote }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}

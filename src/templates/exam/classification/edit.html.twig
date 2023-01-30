@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification d'une typologie - Sessions Skema{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('exam_classifications_index') }}" class="btn btn-secondary">Retour à la liste des typologie</a>
+        <div style="display: flex;">
+            {{ include('exam/classification/_delete_form.html.twig') }}
+        </div>
+    </div>
+    <hr />
+    <h1>Modifier la typologie</h1>
+
+    <div class="row">
+        {{ include('partial/_flash_messages.html.twig') }}
+    </div>
+
+    {{ include('exam/classification/_form.html.twig') }}
+
+{% endblock %}

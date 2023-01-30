@@ -1,0 +1,18 @@
+/* Oral Tests */
+
+div.dataTables_wrapper {
+    width: 100%;
+    margin: 0 auto;
+}
+th, td {
+    white-space: nowrap;
+    min-width: 200px;
+}
+th:first-child, td:first-child {
+    white-space: nowrap;
+    min-width: 250px;
+}
+
+input:focus {
+    z-index: 0 !important;
+}

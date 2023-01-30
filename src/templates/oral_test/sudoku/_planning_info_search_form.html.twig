@@ -1,0 +1,13 @@
+{{ form_start(form) }}
+        <div class="row">
+            <div class="col">{{ form_row(form.contestJuryWebsiteCode) }}</div>
+        </div>
+        <div class="row">
+            <div class="col">{{ form_row(form.date) }}</div>
+        </div>
+        <div class="row">
+            <div class="col" style="text-align:center;">
+                <button class="btn btn-primary" type="submit">{{ button_label|default('Refresh') }}</button>
+            </div>
+        </div>
+{{ form_end(form) }}

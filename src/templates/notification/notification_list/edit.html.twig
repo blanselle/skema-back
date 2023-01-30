@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails notification{% endblock %}
+
+{% block body %}
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('[name=treat]').click(function () {
+                $('#treat_form').submit()
+            })
+        })
+    </script>
+    <div class="nav_actions">
+        <a href="{{ path('notification_index') }}" class="btn btn-secondary">Retour à la liste des notifications</a>
+    </div>
+    <hr />
+    
+    {{ include('notification/notification_partial/_notification_title.html.twig') }}
+
+    {{ include('notification/notification_partial/_notification_container.html.twig') }}
+
+    {{ include('notification/notification/_form_comment.html.twig') }}
+
+    {{ include('notification/notification_partial/_form_reply.html.twig') }}
+
+    <br /><hr />
+
+    {{ include('notification/notification_partial/_replies_container.html.twig') }}
+{% endblock %}

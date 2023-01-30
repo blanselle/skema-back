@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Import des scores{% endblock %}
+
+{% block body %}
+    <h1>Importer des scores</h1>
+
+    {{ include('partial/_flash_messages.html.twig') }}
+    <div class="mb-3">
+        <select id="exam-classification-selector" class="form-control">
+            {% if examClassification is null %}
+                <option value="" selected disabled hidden>Selectionnez une typologie</option>
+            {% endif %}
+            {% for classification in examClassifications %}
+                <option value="{{ classification.id }}" {{ (examClassification == classification) ? 'selected' : '' }} >{{ classification.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div id="classification-detail">
+        {% if examClassification is not null %}
+            {{ include('exam/grade/form.html.twig') }}
+        {% endif %}
+    </div>
+    <br />
+
+    {% if examStudents is not empty %}
+        {% include "exam/grade/result.html.twig" %}
+    {% endif %}
+
+    <script>
+        ( () => {
+            const classification = document.querySelector('#exam-classification-selector');
+            document.querySelector('#exam-classification-selector').addEventListener('change', function() {
+                
+                const form = this.closest('form');
+
+                const url = "{{ path('exam_grade_form', {'examClassification': '__id__'}) }}".replace('__id__', classification.value);
+                
+                fetch(url, {
+                    method: 'GET',
+                })
+                .then(response => {
+                    let text = response.text()
+                    return text;
+                })
+                .then(html => {
+                    const detail = document.querySelector('#classification-detail');
+                    detail.innerHTML = html
+                });
+            });
+        } )();
+    </script>  
+{% endblock %}

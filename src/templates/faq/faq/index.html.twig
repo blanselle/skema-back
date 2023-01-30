@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des questions - FAQ{% endblock %}
+
+{% block body %}
+    <h1>Liste des questions <a class="btn btn-primary" href="{{ path('faq_faq_new') }}">Ajouter une question</a></h1>
+
+    <div class="search_form">
+        <hr />
+        <form action="" method="get" id="list-search">
+            <div class="row">
+                <div class="col">
+                    <input type="text" name="question" id="question" class="form-control" placeholder="Question"
+                           value="{% if params['question'] is defined %}{{ params['question'] }}{% endif %}" />
+                </div>
+                <div class="col">
+                    <select class="form-select select-filter" name="topic" id="topic">
+                        <option value=""></option>
+                        {% for topic in topics %}
+                            <option value="{{ topic.id }}" {% if params is not empty and params['topic'] is defined and params['topic'] == topic.id %}selected{% endif %}>{{ topic.label }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <button class="btn btn-success" type="submit">Filtrer</button>
+        </form>
+        <hr />
+    </div>
+
+    {% include 'table.html.twig' with {'columns' : columns, 'controller' : 'faq_faq_index'} %}
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle filière{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('diploma_channel_index') }}" class="btn btn-secondary">Retour à la liste des filières</a>
+    </div>
+    <hr />
+    <h1>Création d'une filière</h1>
+
+    {{ include('diploma/diploma_channel/_form.html.twig') }}
+{% endblock %}

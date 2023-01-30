@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'oral_test.campus_oral_day_settings.page.title'|trans }}{% endblock %}
+
+{% block page_title %}{{ 'oral_test.campus_oral_day_settings.page.title'|trans }}{% endblock page_title %}
+
+{% block main %}
+    <div id="campus-slot-settings" class="row">
+
+        <div class="campus-settings-list row">
+            {% for campus in campuses %}
+                <div class="mb-2" id="{{ 'campus-'~campus.id }}">
+                    <button class="btn btn-primary campus-settings-button" data-bs-toggle="modal" data-bs-target="#programChannelModal" data-id="{{ campus.id }}">
+                        {{ 'oral_test.campus_oral_day_settings.page.campus_description'|trans({'%name%': campus.name}) }}
+                    </button>
+                </div>
+            {% endfor %}
+        </div>
+
+        <hr>
+
+        <h2>{{ 'oral_test.campus_oral_day_settings.page.configuration_list'|trans }}</h2>
+
+        <div class="row pt-5 configuration-settings-list">
+            {% for configuration in configurations %}
+                <div class="mb-2" id="{{ 'configuration-'~configuration.id }}">
+                    <a class="btn btn-success" href="{{ path('campus_capacity_show', {'id': configuration.id}) }}">{{ 'oral_test.campus_oral_day_settings.page.display_configuration'|trans({'%configuration%': configuration}) }}</a>
+                </div>
+            {% else %}
+                <div class="mb-2 alert alert-warning" role="alert">
+                    {{ 'oral_test.campus_oral_day_settings.page.button_no_result'|trans }}
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="modal fade" id="programChannelModal" tabindex="-1" aria-labelledby="programChannelModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">
+                            {{ 'oral_test.campus_oral_day_settings.page.modal.title'|trans }}
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        {{ form_start(form) }}
+                            <div class="row">{{ form_row(form.campus) }}</div>
+                            <div class="row">{{ form_row(form.programChannels) }}</div>
+                            <div class="row justify-content-end">
+                                <div class="col-3">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ 'oral_test.campus_oral_day_settings.page.modal.button_close'|trans }}</button>
+                                </div>
+                                <div class="col-3">
+                                    <button type="submit" class="btn btn-primary align-self-end">{{ 'oral_test.campus_oral_day_settings.page.modal.button_submit'|trans }}</button>
+                                </div>
+                            </div>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock main %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script src="{{ asset('js/campus-slot.js') }}" type="text/javascript"></script>
+{% endblock %}

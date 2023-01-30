@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Épreuves orales - Sudoku{% endblock title %}
+
+{% block page_title %}Épreuves orales - Sudoku{% endblock page_title %}
+
+{% block main %}
+    <div id="sudoku-init" class="row">
+        <div class="col-12">
+            <p>Sélectionnez la(les) voie(s) de concours pour initialiser un Sudoku</p>
+        </div>
+        <div class="col-4">
+            {{ form_start(form) }}
+            {% for message in app.flashes('success') %}
+                <div class="alert alert-success" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+            {% for message in app.flashes('error') %}
+                <div class="alert alert-danger" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+            <div class="row">
+                <div class="col">{{ form_row(form.programChannels) }}</div>
+            </div>
+            <div class="row">
+                <div class="col" style="text-align:center;">
+                    <button class="btn btn-primary" type="submit">Valider</button>
+                </div>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+
+{% endblock main %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script src="{{ asset('js/sudoku-init.js') }}" type="text/javascript"></script>
+{% endblock %}

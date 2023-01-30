@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau thème{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('faq_topic_index') }}" class="btn btn-secondary">Retour à la liste des thèmes</a>
+    </div>
+    <hr />
+    <h1>Créer un thème</h1>
+
+    {{ include('faq/topic/_form.html.twig') }}
+{% endblock %}

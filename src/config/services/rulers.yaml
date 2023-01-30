@@ -1,0 +1,4 @@
+services:
+  App\Ruler\CV\CvRuler:
+    arguments:
+      - !tagged_iterator cv.rule

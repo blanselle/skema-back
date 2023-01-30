@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau bacSup{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('student_edit', {'id': cv.student.id}) }}" class="btn btn-secondary">Retour à la candidature</a>
+    </div>
+    <hr />
+    <h1>Ajouter une année post bac double parcours</h1>
+    <div id="bac-sup-new">
+        <h5>{{ form.identifier.vars.value }}</h5>
+        {{ form_errors(form) }}
+        {{ form_start(form) }}
+        <div class="row">
+            <div class="col hidden">
+                {{ form_row(form.year) }}
+            </div>
+            <div class="col">
+                {{ form_row(form.diploma) }}
+            </div>
+            <div class="col">
+                {{ form_row(form.diplomaChannel) }}
+            </div>
+            <div class="col">
+                {{ form_row(form.detail) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{ form_row(form.establishment) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{ form_row(form.postalCode) }}
+            </div>
+            <div class="col">
+                {{ form_row(form.city) }}
+            </div>
+            <div class="col">
+                {{ form_row(form.country) }}
+            </div>
+        </div>
+        <h5>Bulletin(s)</h5>
+        <div class="col">
+            {{ form_row(form.type) }}
+        </div>
+
+        {% for schoolReport in form.schoolReports %}
+            <div class="row">
+                <div class="col">
+                    {{ form_row(schoolReport.score) }}
+                    {{ form_row(schoolReport.scoreRetained) }}
+                    {{ form_row(schoolReport.scoreNotOutOfTwenty) }}
+                    {{ form_row(schoolReport.media) }}
+                </div>
+            </div>
+        {% endfor %}
+
+        <ul class="schoolReports school-reports-list"
+            data-index="{{ form.schoolReports|length > 0 ? form.schoolReports|last.vars.name + 1 : 0 }}"
+            data-prototype="
+                {{ form_row(form.schoolReports.vars.prototype.id)|e('html_attr')}}
+                <div class='row'>
+                {{ form_row(form.schoolReports.vars.prototype.score, {'row_attr': {'class': 'col-6 mb-3'}})|e('html_attr') }}
+                {{ form_row(form.schoolReports.vars.prototype.scoreRetained, {'row_attr': {'class': 'col-6 mb-3'}})|e('html_attr') }}
+                </div>
+                {{ form_row(form.schoolReports.vars.prototype.scoreNotOutOfTwenty, {'row_attr': {'class': 'mb-3'}})|e('html_attr') }}
+                {{ form_row(form.schoolReports.vars.prototype.media, {'row_attr': {'class': 'mb-3'}})|e('html_attr') }}
+            "
+        ></ul>
+
+        <hr />
+        <div class="save_container">
+            <button type="submit" class="btn btn-success btn-lg">{{ button_label|default('Sauvegarder') }}</button>
+            <a onclick="return confirm('Voulez vous vraiment annuler les modifications ?');" href="{{ path('student_edit', {'id': cv.student.id}) }}" class="btn btn-secondary btn-lg" style="margin-left: 15px">{{ button_label|default('Annuler') }}</a>
+        </div>
+        {{ form_end(form) }}
+    </div>
+
+    <script type="text/javascript" src="{{ asset('js/bacsup-form.js') }}" data-ajax-diploma-channel="{{ path('ajax_diploma_channel') }}" data-ajax-diploma-need-detail="{{ path('ajax_diploma_need_detail') }}"></script>
+
+{% endblock %}

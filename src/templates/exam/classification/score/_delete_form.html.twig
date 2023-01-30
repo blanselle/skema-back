@@ -1,0 +1,4 @@
+<form method="post" action="{{ path('exam_classification_scores_delete', {'id': examClassificationScore.id}) }}" onsubmit="return confirm('Voulez-vous vraiment supprimer ce score de typologie ?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ examClassificationScore.id) }}">
+    <button class="btn btn-danger action-delete"><i class="bi bi-trash"></i></button>
+</form>

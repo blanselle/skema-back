@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/admin-datatables-light.js') }}" type="text/javascript"></script>
+{% endblock %}
+
+{% block title %}Liste des programmes{% endblock %}
+
+{% block body %}
+    <h1>Liste des programmes <a class="btn btn-primary" href="{{ path('program_new') }}">Ajouter un programme</a></h1>
+
+    <table id="programs" class="table admin-datatable stripe hover order-column">
+        <thead>
+            <tr>
+                <th>Nom du programme</th>
+                <th>Voie de concours</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for program in programs %}
+            <tr id="{{ program.name | lower | slug }}">
+                <td id="{{ 'name-' ~ program.name | lower | slug }}">{{ program.name }}</td>
+                <td id="{{ 'program-channel-' ~ program.name | lower | slug }}">
+                    <div class="list-group">
+                        {% for programChannel in program.programChannels %}
+                            <a href="{{ path('program_channel_edit', {'id': programChannel.id}) }}" class="list-group-item list-group-item-action">{{ programChannel.name }}</a>
+                        {% else %}
+                            <p>Aucune voie de concours pour ce programme</p>
+                        {% endfor %}
+                    </div>
+                </td>
+                <td class="d-flex">
+                    <a class="action-edit btn btn-warning  me-2" href="{{ path('program_edit', {'id': program.id}) }}"><i class="bi bi-pencil-square"></i></a>
+                    {{ include('program/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Aucun programme trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

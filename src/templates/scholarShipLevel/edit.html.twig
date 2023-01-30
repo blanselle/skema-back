@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification de niveau de bourse{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('scholar_ship_level_index') }}" class="btn btn-secondary">Retourner à la liste des niveaux de bourse</a>
+        {{ include('scholarShipLevel/_delete_form.html.twig') }}
+    </div>
+    <hr />
+    <h1>{{ scholarShipLevel.label }}</h1>
+
+    <div class="save_container">
+        {{ include('scholarShipLevel/_form.html.twig') }}
+    </div>
+{% endblock %}

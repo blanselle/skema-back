@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des notifications{% endblock %}
+
+{% block body %}
+    {% if student is not empty %}
+        <div class="nav_actions">
+            <a href="{{ path('student_edit', {'id' : student.id}) }}" class="btn btn-secondary">Retour à la candidature</a>
+        </div>
+        <hr />
+    {% endif %}
+
+    <h1>Notifications envoyées {% if student is not empty %}de {{ student.user.firstName }} {{ student.user.lastName }}
+            <a class="btn btn-primary" href="{{ path('notification_new', {'student': student.identifier}) }}">Envoyer un message</a>
+        {% else %}
+            <a class="btn btn-primary" href="{{ path('notification_new') }}">Envoyer un message</a>
+        {% endif %}</h1>
+
+    <div class="search_form">
+        <hr />
+        <form action="" method="get" id="list-search">
+            <div class="row">
+                <div class="col">
+                    <input type="text" name="identifier" id="identifier" class="form-control" placeholder="Identifiant"
+                           value="{% if params['identifier'] is defined %}{{ params['identifier'] }}{% endif %}" />
+                </div>
+                <div class="col">
+                    <input type="text" name="firstname" id="firstname" class="form-control" placeholder="Prénom"
+                           value="{% if params['firstname'] is defined %}{{ params['firstname'] }}{% endif %}" />
+                </div>
+                <div class="col">
+                    <input type="text" name="lastname" id="lastname" class="form-control" placeholder="Nom"
+                           value="{% if params['lastname'] is defined %}{{ params['lastname'] }}{% endif %}" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <input type="text" name="subject" id="subject" class="form-control" placeholder="Sujet"
+                           value="{% if params['subject'] is defined %}{{ params['subject'] }}{% endif %}" />
+                </div>
+                <div class="col">
+                    <input type="text" name="comment" id="comment" class="form-control" placeholder="Commentaire interne"
+                           value="{% if params['comment'] is defined %}{{ params['comment'] }}{% endif %}" />
+                </div>
+            </div>
+            <input type="hidden" name="student" id="student" class="form-control"
+                   value="{% if params['student'] is defined %}{{ params['student'] }}{% endif %}" />
+            <button class="btn btn-success" type="submit">Filtrer</button>
+        </form>
+        <hr />
+    </div>
+    {% include 'table.html.twig' with {'columns' : columns, 'controller' : 'notification_send'} %}
+{% endblock %}

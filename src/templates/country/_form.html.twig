@@ -1,0 +1,28 @@
+{{ form_start(form, { attr: {id: 'parameter'}}) }}
+    <div class="row">
+        <div class="col-2">
+            {{ form_row(form.idCountry) }}
+        </div>
+        <div class="col">
+            {{ form_row(form.name) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2">
+            {{ form_row(form.codeSISE) }}
+        </div>
+        <div class="col">
+            {{ form_row(form.nationality) }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-1">
+            {{ form_row(form.active) }}
+        </div>
+    </div>
+
+    <div class="save_container">
+        <button class="btn btn-success">{{ button_label|default('Sauvegarder') }}</button>
+    </div>
+{{ form_end(form) }}

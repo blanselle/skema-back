@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification bloc{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('bloc_index') }}" class="btn btn-secondary">Retour à la liste des blocs</a>
+        {{ include('bloc/_delete_form.html.twig') }}
+    </div>
+    <hr />
+    <h1>Modifier le bloc {{ item.label }}</h1>
+
+    {{ include('bloc/_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'history.page.title'|trans({'%student%': student }) }}{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('student_edit', {'id': student.id}) }}" class="btn btn-secondary">{{ 'history.page.button.go_back'|trans }}</a>
+    </div>
+    <hr />
+    <h1>{{ 'history.page.title'|trans({'%student%': student }) }}</h1>
+
+    <div id="student-history-content" class="pt-5 pb-5">
+        <table id="student-history-table" class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">{{ knp_pagination_sortable(pagination, '#', 'h.id') }}</th>
+                <th scope="col">{{ knp_pagination_sortable(pagination, 'history.page.table.head.date'|trans, 'h.loggedAt') }}</th>
+                <th scope="col">{{ knp_pagination_sortable(pagination, 'history.page.table.head.type'|trans, 'h.type') }}</th>
+                <th scope="col">{{ knp_pagination_sortable(pagination, 'history.page.table.head.author'|trans, 'h.username') }}</th>
+                <th scope="col">{{ 'history.page.table.head.action'|trans }}</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for log in pagination|filter(log => log.data is not empty) %}
+                    <tr>
+                        <th scope="row">{{ log.id }}</th>
+                        <td>{{ log.loggedAt|date('d/m/Y H:i:s') }}</td>
+                        <td>{{ ('loggable.history.type.' ~ log.type)|trans }}</td>
+                        <td>{{ log.username|getUser }}</td>
+                        <td>
+                            {% for key, datum in log.data %}
+                                <p>{{ log|logDescription(key, datum)|raw }}</p>
+                            {% endfor %}
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr class="text-center"><td colspan="4">{{ 'history.page.table.no_result_found'|trans }}</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="navigation">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+    </div>
+{% endblock %}

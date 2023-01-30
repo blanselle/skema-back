@@ -1,0 +1,13 @@
+{% block javascripts %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".select2").select2({width: '100%'});
+        })
+    </script>
+{% endblock %}
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <div class="save_container">
+        <button class="btn btn-success">{{ button_label|default('Sauvegarder') }}</button>
+    </div>
+{{ form_end(form) }}

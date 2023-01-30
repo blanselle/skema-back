@@ -1,0 +1,88 @@
+<div class="nav_actions" id="examStudentNew">
+    <h4>SESSION SKEMA</h4>
+    {% if not exemption %}
+        <a href="{{ path('exam_student_new', {'student': student.id}) }}" class="btn btn-primary justify-content-end">Inscrire à une session</a>
+    {% endif %}
+</div>
+<hr />
+<table class="table admin-datatable stripe hover order-column">
+    <thead>
+        <th>Typologie</th>
+        <th>Score</th>
+        <th>Media</th>
+        <th>Campus</th>
+        <th>Date</th>
+        <th>Payé</th>
+        <th>Absent</th>
+        <th>Action</th>
+    </thead>
+    <tbody>
+    {% for exam in student.examStudents %}
+        {% if exam.examSession.type == constant('App\\Constants\\Exam\\ExamSessionTypeConstants::TYPE_INSIDE') %}
+            <tr>
+                <td id="{{ exam.examSession.examClassification.name | lower | slug }}">{{ exam.examSession.examClassification.name }}</td>
+                <td {% if exam.score is not empty %}id="{{ (exam.examSession.examClassification.name~"-"~exam.score) | lower | slug }}"{% endif %}>{{ exam.score }}</td>
+                <td>{% if exam.media is not empty %}{{ exam.media.originalName }}{% endif %}</td>
+                <td {% if exam.examSession.campus is not empty %}id="{{ exam.examSession.campus.name | lower | slug }}"{% endif %}>{% if exam.examSession.campus is not empty %}{{ exam.examSession.campus.name }}{% else %}<span class="badge bg-danger">En ligne</span>{% endif %}</td>
+                <td id="{{ (exam.examSession.examClassification.name~"-"~exam.examSession.dateStart|date('Y-m-d-h-i')) | lower | slug }}">{{ exam.examSession.dateStart|date('d/m/Y H:i') }}</td>
+                <td>
+                    {% set order = student.getOrder(constant('App\\Constants\\Payment\\OrderTypeConstants::REGISTRATION_FEE_FOR_EXAM_SESSION'), exam.examSession) %}
+                    {% if order is not empty %}
+                        <span class="badge bg-primary">{{ 'Oui [' ~ ('workflow.order.' ~ order.state)|trans ~ ']' }}</span>
+                    {% else %}
+                        <span class="badge bg-secondary">Non</span>
+                    {% endif %}
+                </td>
+                <td>
+                    {% if exam.absent %}
+                        <span class="badge bg-primary">Oui</span>
+                    {% else %}
+                        <span class="badge bg-secondary">Non</span>
+                    {% endif %}
+                </td>
+                <td>
+                    <a class="btn btn-warning mt-0" href="{{ path('exam_student_edit', {'student': exam.student.id, 'examStudent': exam.id}) }}"><i class="bi bi-pencil-square"></i></a>
+                    <form method="post" action="{{ path('exam_student_delete', {'student': exam.student.id, 'examStudent': exam.id}) }}" onsubmit="return confirm('Voulez-vous vraiment supprimer cette inscription ?');">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ exam.id) }}">
+                        <button style="margin-left:5px;" class="btn btn-danger action-delete"><i class="bi bi-trash"></i></button>
+                    </form>
+                </td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+    </tbody>
+</table>
+<div class="nav_actions" id="examStudentNew2">
+    <h4>SESSION EXTÈRIEURE</h4>
+</div>
+<hr />
+<table class="table admin-datatable stripe hover order-column">
+    <thead>
+    <th>Typologie</th>
+    <th>Score</th>
+    <th>Media</th>
+    <th>Statut</th>
+    <th>Date</th>
+    <th>Action</th>
+    </thead>
+    <tbody>
+    {% for exam in student.examStudents %}
+        {% if exam.examSession.type != constant('App\\Constants\\Exam\\ExamSessionTypeConstants::TYPE_INSIDE') %}
+            <tr>
+                <td id="{{ exam.examSession.examClassification.name | lower | slug }}">{{ exam.examSession.examClassification.name }}</td>
+                <td {% if exam.score is not empty %}id="{{ (exam.examSession.examClassification.name~"-"~exam.score) | lower | slug }}"{% endif %}>{{ exam.score }}</td>
+                <td>{% if exam.media is not empty %}{{ exam.media.originalName }}{% endif %}</td>
+                <td>{% if exam.media is not empty and exam.media.state is not empty %}{{ exam.media.state|trans }}{% endif %}</td>
+                <td id="{{ (exam.examSession.examClassification.name~"-"~exam.examSession.dateStart|date('Y-m-d-h-i')) | lower | slug }}">{{ exam.examSession.dateStart|date('d/m/Y H:i') }}</td>
+                <td>
+                    <a class="btn btn-warning mt-0" href="{{ path('exam_student_edit', {'student': exam.student.id, 'examStudent': exam.id}) }}"><i class="bi bi-pencil-square"></i></a>
+                    <form method="post" action="{{ path('exam_student_delete', {'student': exam.student.id, 'examStudent': exam.id}) }}" onsubmit="return confirm('Voulez-vous vraiment supprimer cette inscription ?');">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ exam.id) }}">
+                        <button style="margin-left:5px;" class="btn btn-danger action-delete"><i class="bi bi-trash"></i></button>
+                    </form>
+                </td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+    </tbody>
+</table>

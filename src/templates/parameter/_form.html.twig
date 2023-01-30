@@ -1,0 +1,22 @@
+{{ form_start(form, { attr: {id: 'parameter'}}) }}
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.key) }}
+        </div>
+        <div class="col">
+            {{ form_row(form.value) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.programChannels) }}
+        </div>
+        <div class="col">
+            {{ form_row(form.campuses) }}
+        </div>
+    </div>
+
+    <div class="save_container">
+        <button class="btn btn-success">{{ button_label|default('Sauvegarder') }}</button>
+    </div>
+{{ form_end(form) }}

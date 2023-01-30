@@ -1,0 +1,12 @@
+<table class="table">
+    <caption style="caption-side:top; text-align:left">Rappel paramétrage :</caption>
+    <tbody>
+    {% for programChannel, values in coefficients %}
+        {% for type, value in values %}
+            <tr><td>{{ type ~ ' - ' ~  value.program_channel ~ ' : ' ~ value.value}}</td></tr>
+        {% endfor %}
+    {% else %}
+        <tr><td>Aucun paramètre trouvé</td></tr>
+    {% endfor %}
+    </tbody>
+</table>

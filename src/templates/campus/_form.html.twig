@@ -1,0 +1,75 @@
+{{ form_start(form) }}
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.name) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.media) }}
+        </div>
+        <div class="col">
+            {% if campus.media is not null and campus.media.file is not empty %}
+            <img class="img-thumbnail" src="{{ absolute_url(path('media_rendering', {id: campus.media.id})) }}" alt="" />
+            {% endif %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.addressLine1) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.addressLine2) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.addressLine3) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.postalCode) }}
+        </div>
+        <div class="col">
+            {{ form_row(form.city) }}
+        </div>
+        <div class="col">
+            {{ form_row(form.country) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.email) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.phoneReception) }}
+        </div>
+        <div class="col">
+            {{ form_row(form.phoneCustomerService) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.instruction) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.assignmentCampus) }}
+        </div>
+        <div class="col">
+            {{ form_row(form.oralTestCenter) }}
+        </div>
+        <div class="col">
+            {{ form_row(form.contestJuryWebsiteCode) }}
+        </div>
+    </div>
+    <div class="save_container">
+        <button class="btn btn-success">{{ button_label|default('Sauvegarder') }}</button>
+    </div>
+{{ form_end(form) }}

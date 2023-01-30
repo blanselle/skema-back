@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Candidats inscrits - Session Skema{% endblock %}
+
+{% block body %}
+    <h1>Candidats inscrits - Session Skema</h1>
+
+    <ul class="nav nav-tabs">
+    {% for campus in campuses %}
+        <li class="nav-item">
+            <a class="nav-link {% if id_campus == campus.id and online is empty %}active{% endif %}" href="{{ path('exam_inscriptions_index', {'id_campus': campus.id}) }}">{{ campus.name }}</a>
+        </li>
+    {% endfor %}
+        <li class="nav-item">
+            <a class="nav-link {% if online is not empty %}active{% endif %}" href="{{ path('exam_inscriptions_index', {'online': 1}) }}">En ligne</a>
+        </li>
+    </ul>
+    <div class="exams_list">
+        {% if online is empty %}
+            {% for campus in campuses %}
+                {% for exam in campus.examSessions %}
+                    {% if id_campus == campus.id %}
+                        <div class="exams_item {% if exam.dateStart | date('Y-m-d') < "now" | date('Y-m-d') %}date_passed{% endif %}">
+                            {{ exam.examClassification.name }} : {{ exam.examStudents|length }} inscrits ({{ exam.numberOfPlaces - exam.examStudents|length }} places disponibles - {{ exam.dateStart|date('d-m-Y H:i') }})
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        {% else %}
+            {% for exam in examsOnline  %}
+                <div class="exams_item {% if exam.dateStart | date('Y-m-d') < "now" | date('Y-m-d') %}date_passed{% endif %}">
+                    {{ exam.examClassification.name }} : {{ exam.examStudents|length }} inscrits ({{ exam.numberOfPlaces - exam.examStudents|length }} places disponibles  - {{ exam.dateStart|date('d-m-Y H:i') }})
+                </div>
+            {% endfor %}
+            <br /><hr />
+            {{ include('exam/inscription/_form.html.twig') }}
+        {% endif %}
+    </div>
+    {% if online is not empty %}
+    <div id="inscription_export_online">
+
+    </div>
+    {% endif %}
+    <div class="exam_students">
+        <div class="search_form">
+            <hr />
+            <form action="" method="get" id="list-search">
+                <div class="row">
+                    <div class="col">
+                        <input type="text" name="candidate" id="candidate" class="form-control" placeholder="Candidat"
+                               value="{% if params['candidate'] is defined %}{{ params['candidate'] }}{% endif %}" />
+                    </div>
+                    <div class="col">
+                        <input type="text" name="lastname" id="lastname" class="form-control" placeholder="Nom"
+                               value="{% if params['lastname'] is defined %}{{ params['lastname'] }}{% endif %}" />
+                    </div>
+                    <div class="col">
+                        <select name="exam" id="exam" class="form-select select-filter">
+                            <option value=""></option>
+                            {% for typo in typologies %}
+                                <option value="{{ typo.id }}" {% if params['exam'] is defined and params['exam'] == typo.id %}selected{% endif %}>{{ typo.name }} - {% for item in typo.programChannels %}{{ item.name }}{% if loop.last != true %}, {% endif %}{% endfor %}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col">
+                        <select name="campus" id="campus" class="form-select select-filter">
+                            <option value=""></option>
+                            {% for campus in campuses %}
+                                <option value="{{ campus.id }}" {% if params['campus'] is defined and params['campus'] == campus.id %}selected{% endif %}>{{ campus.name }}</option>
+                            {% endfor %}
+                            <option value="online" {% if params['campus'] is defined and params['campus'] == 'online' %}selected{% endif %}>En ligne</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn btn-success" type="submit">Filtrer</button>
+            </form>
+            <hr />
+        </div>
+
+        {% include 'table.html.twig' with {'columns' : columns, 'controller' : 'exam_inscriptions_index'} %}
+    </div>
+{% endblock %}

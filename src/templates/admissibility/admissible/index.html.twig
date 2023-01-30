@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block javascripts %}{% endblock %}
+
+{% block title %}Liste des admissibles - Admissibilité{% endblock %}
+
+{% block body %}
+    <script type="application/javascript">
+        $(document).ready(function (){
+            function getCoefficientParams () {
+                let ids = [];
+                $("input[name='admissible[programChannels][]']:checked").each((index, el) => {
+                    ids[index] = $(el).val();
+                })
+
+                $.ajax({
+                    url: $('#coefficient-list').attr('data-url'),
+                    method: 'POST',
+                    data: {
+                        programChannelIds: ids
+                    },
+                    success: function(html){
+                        $('#coefficient-list').html(html);
+                        $('#modal-coefficient-list').html(html);
+                    }
+                })
+            }
+
+            $("input[name='admissible[programChannels][]']").change(() => {
+                getCoefficientParams();
+            })
+        })
+    </script>
+    <h1>Liste des admissibles</h1>
+    <hr />
+
+    {{ include('partial/_flash_messages.html.twig') }}
+
+    <div class="row">
+        <div class="col-6">
+            {{ include('admissibility/admissible/_form.html.twig') }}
+        </div>
+
+        <div class="col-6" id="coefficient-list" data-url="{{ path('admissibility_coefficient_list') }}">
+            {{ include('admissibility/_coefficent_list.html.twig') }}
+        </div>
+    </div>
+    <div class="row">
+        {% if admissibles is not empty %}
+            <table class="table">
+                <thead>
+                <tr>
+                    <td></td>
+                    {% for key, admissible in admissibles %}
+                        {% if loop.first %}
+                        {% for name, candidats in admissible %}
+                            <td>{{ name }}</td>
+                        {% endfor %}
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+                </thead>
+                <tbody>
+                {% for key, admissible in admissibles %}
+                    <tr>
+                        <td>{{ ('admissible.'~key)|trans() }}</td>
+                        {% for name, candidats in admissible %}
+                            <td>{{ candidats|length }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,8 @@
+    <h1>    
+        {% if notification.sender is null %}
+            Notification Service Concours
+        {% else %}
+            Notification {{ notification.sender.firstName }} {{ notification.sender.lastName }}
+            {% if notification.sender.student is not empty %} -  {{ notification.sender.student.programChannel.name }}{% endif %}
+        {% endif %}
+    </h1>

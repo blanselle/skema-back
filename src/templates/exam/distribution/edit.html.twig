@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification d'une typologie - Sessions Skema{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('exam_distribution_list', {'campus': campus.id}) }}" class="btn btn-secondary">Retour aux répartitions du campus</a>
+        {{ include('exam/distribution/_delete_form.html.twig') }}
+    </div>
+    <hr />
+    <h1>Modifier l'inscription {{ student.student.user.firstName }} {{ student.student.user.lastName }} - {{ student.examSession.examClassification.name }} ({{ student.examSession.dateStart|date('Y-m-d H:i') }})</h1>
+
+    {{ include('exam/distribution/_form_edit.html.twig') }}
+{% endblock %}

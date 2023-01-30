@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau thème{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('notification_template_index') }}" class="btn btn-secondary">Retour à la liste des messages</a>
+    </div>
+    <hr />
+    <h1>Créer un message rapide</h1>
+
+    {{ include('notification/notification_template/_form.html.twig') }}
+{% endblock %}

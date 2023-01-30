@@ -1,0 +1,25 @@
+App\Entity\AdministrativeRecord\ScholarShipLevel:
+  level_0:
+    label: Échelon 0 bis
+    position: 0
+  level_1:
+    label: Échelon 1
+    position: 1
+  level_2:
+    label: Échelon 2
+    position: 2
+  level_3:
+    label: Échelon 3
+    position: 3
+  level_4:
+    label: Échelon 4
+    position: 4
+  level_5:
+    label: Échelon 5
+    position: 5
+  level_6:
+    label: Échelon 6
+    position: 6
+  level_7:
+    label: Échelon 7
+    position: 7

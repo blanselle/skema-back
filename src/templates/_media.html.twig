@@ -1,0 +1,44 @@
+{% for media in medias %}
+    {% if media.media is defined %}
+        {% set media = media.media %}
+    {% endif %}
+    {% if media is not empty and media.id is not empty %}
+        <div class="media_container">
+            {% if media.file ends with '.pdf' %}
+                <a class="media" target="_blank" href="{{ absolute_url(path('media_rendering_admin', {id: media.id})) }}"></a>
+            {% else %}
+                <a class="media preview" data-url="{{ path('ajax_media_preview') }}" href="{{ absolute_url(path('media_rendering_admin', {id: media.id})) }}"></a>
+            {% endif %}
+            <div class="media_form">
+                <div class="row">
+                    <div class="col">
+                        <p>
+                            {{ media.originalName }}
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input class="form-control" type="text" value="{{ media.state|trans }}" disabled />
+                    </div>
+                </div>
+                <div id="validation-media-{{ media.id }}" class="row">
+                    <div class="col">
+                        <button type="button" {% if not is_granted('accept', media) %} disabled {% endif %} data-id="{{ media.id }}" data-student-status="{{ student.state }}" data-code="{{ media.code }}" data-url="{{ path('ajax_media_validate') }}" data-callback="{{ path('ajax_candidate_validate') }}" data-choice="accepted" class="btn btn-primary m-2 process validate">Valider</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" {% if not is_granted('transfert', media) %} disabled {% endif %} data-id="{{ media.id }}" data-url="{{ path('ajax_media_notification', {'media': media.id, 'tag': 'media_transfer'}) }}" data-choice="transfered" name="document_transfer" class="btn btn-info m-2 transfer notif">Transférer</button>
+                    </div>
+                    <div class="col">
+                        <button type="button" {% if not is_granted('reject', media) %} disabled {% endif %} data-id="{{ media.id }}" data-url="{{ path('ajax_media_notification', {'media': media.id, 'tag': 'media_rejection'}) }}" data-choice="rejected" name="document_reject" class="btn btn-danger m-2 reject notif">Refuser</button>
+                    </div>
+                    {% if is_granted('reaccept', media) %}
+                    <div class="col">
+                        <button type="button" data-id="{{ media.id }}" data-url="{{ path('ajax_media_revalidate', {'media': media.id}) }}" data-choice="reaccepted" name="document_revalidate" class="btn btn-success m-2 process validate">Revalider</button>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endfor %}

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvel évènement{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('event_index') }}" class="btn btn-secondary">Retour à la liste des évènements</a>
+    </div>
+    <hr />
+    <h1>Créer un évènement</h1>
+
+    {{ include('event/_form.html.twig') }}
+{% endblock %}

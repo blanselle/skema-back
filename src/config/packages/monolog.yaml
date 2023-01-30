@@ -1,0 +1,117 @@
+monolog:
+    channels:
+        - deprecation # Deprecations are logged in the dedicated "deprecation" channel when it exists
+        - crontab
+        - payment
+        - export
+        - written_test_summon
+
+when@dev:
+    monolog:
+        handlers:
+            main:
+                type: gelf
+                publisher: gelf.publisher
+                level: debug
+                channels: ["!event", "!doctrine", "!crontab", "!payment", "!export"]
+            console:
+                type: console
+                process_psr_3_messages: false
+                channels: ["!event", "!doctrine", "!console", "!crontab", "!payment", "!export"]
+            crontab:
+                type: gelf
+                publisher: gelf.publisher
+                level: debug
+                channels: [crontab]
+            payment:
+                type: gelf
+                publisher: gelf.publisher
+                level: debug
+                channels: [payment]
+            export:
+                type: gelf
+                publisher: gelf.publisher
+                level: debug
+                channels: [export]
+            written_test_summon:
+                type: gelf
+                publisher: gelf.publisher
+                level: debug
+                channels: [written_test_summon]
+
+when@pic:
+    monolog:
+        handlers:
+            main:
+                type: stream
+                path: "%kernel.logs_dir%/dev.log"
+                level: debug
+                channels: ["!deprecation","!event", "!doctrine", "!crontab", "!payment", "!export"]
+            console:
+                type: console
+                process_psr_3_messages: false
+                channels: ["!event", "!doctrine", "!console", "!crontab", "!payment", "!export"]
+            crontab:
+                type: stream
+                path: "%kernel.logs_dir%/crontab.%kernel.environment%.log"
+                level: debug
+                channels: [crontab]
+            payment:
+                type: stream
+                path: "%kernel.logs_dir%/payment.%kernel.environment%.log"
+                level: debug
+                channels: [payment]
+            export:
+                type: stream
+                path: "%kernel.logs_dir%/export.%kernel.environment%.log"
+                level: debug
+                channels: [export]
+when@test:
+    monolog:
+        handlers:
+            main:
+                type: fingers_crossed
+                action_level: error
+                handler: nested
+                excluded_http_codes: [404, 405]
+                channels: ["!event"]
+            nested:
+                type: stream
+                path: "%kernel.logs_dir%/%kernel.environment%.log"
+                level: debug
+
+when@prod:
+    monolog:
+        handlers:
+            main:
+                type: gelf
+                publisher: gelf.publisher
+                level: error
+                # max number of log files to keep
+                # defaults to zero, which means infinite files
+                max_files: 30
+            console:
+                level: error
+                type: console
+                process_psr_3_messages: false
+                channels: ["!deprecation","!event", "!doctrine", "!crontab", "!payment", "!export"]
+            deprecation:
+                level: error
+                type: stream
+                channels: [deprecation]
+                path: php://stderr
+            crontab:
+                type: gelf
+                publisher: gelf.publisher
+                level: info
+                channels: [crontab]
+            payment:
+                type: gelf
+                publisher: gelf.publisher
+                level: info
+                channels: [payment]
+            export:
+                type: gelf
+                publisher: gelf.publisher
+                level: info
+                channels: [export]

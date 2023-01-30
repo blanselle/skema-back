@@ -1,0 +1,1702 @@
+App\Entity\Country:
+  country_abw:
+    idCountry: 'ABW'
+    name: "ARUBA"
+    nationality: 'Néerlandaise'
+    codeSISE: '990'
+    active: false
+    
+  country_ago:
+    idCountry: 'AFG'
+    name: "AFGHANISTAN"
+    nationality: 'Afghane'
+    codeSISE: '212'
+    active: true
+    
+  country_afg:
+    idCountry: 'AGO'
+    name: "ANGOLA"
+    nationality: 'Angolaise'
+    codeSISE: '395'
+    active: true
+    
+  country_alb:
+    idCountry: 'AIA'
+    name: "ANGUILLA"
+    nationality: null
+    codeSISE: '990'
+    active: false
+    
+  country_aia:
+    idCountry: 'ALB'
+    name: "ALBANIE"
+    nationality: 'Albanienne'
+    codeSISE: '125'
+    active: true
+    
+  country_ant:
+    idCountry: 'AND'
+    name: "ANDORRE"
+    nationality: 'Andorran'
+    codeSISE: '130'
+    active: true
+    
+  country_and:
+    idCountry: 'ANT'
+    name: "ANTILLES NÉERLANDAISES"
+    nationality: 'Néerlandaise'
+    codeSISE: '990'
+    active: false
+    
+  country_arg:
+    idCountry: 'ARE'
+    name: "EMIRATS ARABES UNIS"
+    nationality: 'Emirienne'
+    codeSISE: '247'
+    active: true
+    
+  country_are:
+    idCountry: 'ARG'
+    name: "ARGENTINE"
+    nationality: 'Argentine'
+    codeSISE: '415'
+    active: true
+    
+  country_asm:
+    idCountry: 'ARM'
+    name: "ARMENIE"
+    nationality: 'Arménienne'
+    codeSISE: '262'
+    active: true
+    
+  country_arm:
+    idCountry: 'ASM'
+    name: "SAMOA AMÉRICAINES"
+    nationality: 'Samoanne'
+    codeSISE: '990'
+    active: false
+    
+  country_atf:
+    idCountry: 'ATA'
+    name: "ANTARCTIQUE"
+    nationality: null
+    codeSISE: '990'
+    active: false
+    
+  country_ata:
+    idCountry: 'ATF'
+    name: "TERRES AUSTRALES FRANÇAISES"
+    nationality: 'Française'
+    codeSISE: '100'
+    active: false
+    
+  country_aus:
+    idCountry: 'ATG'
+    name: "ANTIGUA-ET-BARBUDA"
+    nationality: 'Antiguaise et Barbudienne'
+    codeSISE: '441'
+    active: true
+    
+  country_atg:
+    idCountry: 'AUS'
+    name: "AUSTRALIE"
+    nationality: 'Australienne'
+    codeSISE: '501'
+    active: true
+    
+  country_aze:
+    idCountry: 'AUT'
+    name: "AUTRICHE"
+    nationality: 'Autrichienne'
+    codeSISE: '110'
+    active: true
+    
+  country_aut:
+    idCountry: 'AZE'
+    name: "AZERBAÏDJAN"
+    nationality: 'Azerbaïdjannaise'
+    codeSISE: '253'
+    active: true
+    
+  country_bel:
+    idCountry: 'BDI'
+    name: "BURUNDI"
+    nationality: 'Burundaise'
+    codeSISE: '321'
+    active: true
+    
+  country_bdi:
+    idCountry: 'BEL'
+    name: "BELGIQUE"
+    nationality: 'Belge'
+    codeSISE: '131'
+    active: true
+    
+  country_bfa:
+    idCountry: 'BEN'
+    name: "BENIN"
+    nationality: 'Béninoise'
+    codeSISE: '327'
+    active: true
+    
+  country_ben:
+    idCountry: 'BFA'
+    name: "BURKINA FASO"
+    nationality: 'Burkinabé'
+    codeSISE: '331'
+    active: true
+    
+  country_bgr:
+    idCountry: 'BGD'
+    name: "BANGLADESH"
+    nationality: 'Bangladaise'
+    codeSISE: '246'
+    active: true
+    
+  country_bgd:
+    idCountry: 'BGR'
+    name: "BULGARIE"
+    nationality: 'Bulgare'
+    codeSISE: '111'
+    active: true
+    
+  country_bhs:
+    idCountry: 'BHR'
+    name: "BAHREÏN"
+    nationality: 'Bahreïnienne'
+    codeSISE: '249'
+    active: true
+    
+  country_bhr:
+    idCountry: 'BHS'
+    name: "BAHAMAS"
+    nationality: 'Bahamienne'
+    codeSISE: '436'
+    active: true
+    
+  country_ble:
+    idCountry: 'BIH'
+    name: "BOSNIE-HERZEGOVINE"
+    nationality: 'Bosnienne'
+    codeSISE: '118'
+    active: true
+    
+  country_bih:
+    idCountry: 'BLE'
+    name: "BIÉLORUSSIE"
+    nationality: 'Biélorussie'
+    codeSISE: '148'
+    active: true
+    
+  country_blz:
+    idCountry: 'BLR'
+    name: "BÉLARUSSIE"
+    nationality: 'Biélarusse'
+    codeSISE: '148'
+    active: true
+    
+  country_blr:
+    idCountry: 'BLZ'
+    name: "BELIZE"
+    nationality: 'Belizienne'
+    codeSISE: '429'
+    active: true
+    
+  country_bol:
+    idCountry: 'BMU'
+    name: "BERMUDES"
+    nationality: null
+    codeSISE: '990'
+    active: false
+    
+  country_bmu:
+    idCountry: 'BOL'
+    name: "BOLIVIE"
+    nationality: 'Bolivienne'
+    codeSISE: '418'
+    active: true
+    
+  country_brb:
+    idCountry: 'BRA'
+    name: "BRESIL"
+    nationality: 'Brésilienne'
+    codeSISE: '416'
+    active: true
+    
+  country_bra:
+    idCountry: 'BRB'
+    name: "BARBADE"
+    nationality: 'Barbadienne'
+    codeSISE: '434'
+    active: true
+    
+  country_btn:
+    idCountry: 'BRN'
+    name: "BRUNÉI DARUSSALAM"
+    nationality: 'Brunéienne'
+    codeSISE: '225'
+    active: true
+    
+  country_brn:
+    idCountry: 'BTN'
+    name: "BHOUTAN"
+    nationality: 'Bhoutanaise'
+    codeSISE: '214'
+    active: true
+    
+  country_bwa:
+    idCountry: 'BVT'
+    name: "BOUVET (ÎLE)"
+    nationality: null
+    codeSISE: '990'
+    active: false
+    
+  country_bvt:
+    idCountry: 'BWA'
+    name: "BOTSWANA"
+    nationality: 'Botwanaise'
+    codeSISE: '347'
+    active: true
+    
+  country_can:
+    idCountry: 'CAF'
+    name: "CENTRAFRICAINE (RÉPUBLIQUE)"
+    nationality: 'Centrafricaine'
+    codeSISE: '323'
+    active: true
+    
+  country_caf:
+    idCountry: 'CAN'
+    name: "CANADA"
+    nationality: 'Canadienne'
+    codeSISE: '401'
+    active: true
+    
+  country_che:
+    idCountry: 'CCK'
+    name: "ISLANDS COCOS (ILES KEELING)"
+    nationality: null
+    codeSISE: '990'
+    active: false
+    
+  country_cck:
+    idCountry: 'CHE'
+    name: "SUISSE"
+    nationality: 'Suisse'
+    codeSISE: '140'
+    active: true
+    
+  country_chn:
+    idCountry: 'CHL'
+    name: "CHILI"
+    nationality: 'Chilienne'
+    codeSISE: '417'
+    active: true
+    
+  country_chl:
+    idCountry: 'CHN'
+    name: "CHINE"
+    nationality: 'Chinoise'
+    codeSISE: '216'
+    active: true
+    
+  country_cmr:
+    idCountry: 'CIV'
+    name: "CÔTE D'IVOIRE"
+    nationality: 'Ivoirienne'
+    codeSISE: '326'
+    active: true
+    
+  country_civ:
+    idCountry: 'CMR'
+    name: "CAMEROUN"
+    nationality: 'Camerounaise'
+    codeSISE: '322'
+    active: true
+    
+  country_cog:
+    idCountry: 'COD'
+    name: "RÉPUBLIQUE DÉMOCRATIQUE DU CONGO"
+    nationality: 'Congolaise'
+    codeSISE: '312'
+    active: true
+    
+  country_cod:
+    idCountry: 'COG'
+    name: "CONGO"
+    nationality: 'Congolaise'
+    codeSISE: '324'
+    active: true
+    
+  country_col:
+    idCountry: 'COK'
+    name: "COOK (ILES)"
+    nationality: 'Néo-Zélandaise'
+    codeSISE: '990'
+    active: true
+    
+  country_cok:
+    idCountry: 'COL'
+    name: "COLOMBIE"
+    nationality: 'Colombienne'
+    codeSISE: '419'
+    active: true
+    
+  country_cpv:
+    idCountry: 'COM'
+    name: "COMORES"
+    nationality: 'Comorienne'
+    codeSISE: '397'
+    active: true
+    
+  country_com:
+    idCountry: 'CPV'
+    name: "CAP-VERT"
+    nationality: 'Cap Verdienne'
+    codeSISE: '396'
+    active: true
+    
+  country_cub:
+    idCountry: 'CRI'
+    name: "COSTA RICA"
+    nationality: 'Costaricaine'
+    codeSISE: '406'
+    active: true
+    
+  country_cri:
+    idCountry: 'CUB'
+    name: "CUBA"
+    nationality: 'Cubaine'
+    codeSISE: '407'
+    active: true
+    
+  country_cym:
+    idCountry: 'CXR'
+    name: "ISLAND CHRISTMAS (ILE)"
+    nationality: null
+    codeSISE: '990'
+    active: false
+    
+  country_cxr:
+    idCountry: 'CYM'
+    name: "CAÏMANES (ILES)"
+    nationality: null
+    codeSISE: '990'
+    active: false
+    
+  country_cze:
+    idCountry: 'CYP'
+    name: "CHYPRE"
+    nationality: 'Chypriotte'
+    codeSISE: '254'
+    active: true
+    
+  country_cyp:
+    idCountry: 'CZE'
+    name: "TCHEQUE (REPUBLIQUE)"
+    nationality: 'Tchèque'
+    codeSISE: '116'
+    active: true
+    
+  country_dji:
+    idCountry: 'DEU'
+    name: "ALLEMAGNE"
+    nationality: 'Allemande'
+    codeSISE: '109'
+    active: true
+    
+  country_deu:
+    idCountry: 'DJI'
+    name: "DJIBOUTI"
+    nationality: 'Djiboutienne'
+    codeSISE: '399'
+    active: true
+    
+  country_dnk:
+    idCountry: 'DMA'
+    name: "DOMINIQUE"
+    nationality: 'Dominicaine'
+    codeSISE: '438'
+    active: true
+    
+  country_dma:
+    idCountry: 'DNK'
+    name: "DANEMARK"
+    nationality: 'Danoise'
+    codeSISE: '101'
+    active: true
+    
+  country_dza:
+    idCountry: 'DOM'
+    name: "DOMINICAINE (RÉPUBLIQUE)"
+    nationality: 'Dominicaine'
+    codeSISE: '408'
+    active: true
+    
+  country_dom:
+    idCountry: 'DZA'
+    name: "ALGERIE"
+    nationality: 'Algérienne'
+    codeSISE: '352'
+    active: true
+    
+  country_egy:
+    idCountry: 'ECU'
+    name: "EQUATEUR"
+    nationality: 'Equatorienne'
+    codeSISE: '420'
+    active: true
+    
+  country_ecu:
+    idCountry: 'EGY'
+    name: "EGYPTE"
+    nationality: 'Egyptienne'
+    codeSISE: '301'
+    active: true
+    
+  country_esh:
+    idCountry: 'ERI'
+    name: "ERITHRÉE"
+    nationality: 'Erithréenne'
+    codeSISE: '317'
+    active: true
+    
+  country_eri:
+    idCountry: 'ESH'
+    name: "SAHARA OCCIDENTAL"
+    nationality: null
+    codeSISE: '389'
+    active: false
+    
+  country_est:
+    idCountry: 'ESP'
+    name: "ESPAGNE"
+    nationality: 'Espagnole'
+    codeSISE: '134'
+    active: true
+    
+  country_esp:
+    idCountry: 'EST'
+    name: "ESTONIE"
+    nationality: 'Estonienne'
+    codeSISE: '106'
+    active: true
+    
+  country_fin:
+    idCountry: 'ETH'
+    name: "ETHIOPIE"
+    nationality: 'Ethiopienne'
+    codeSISE: '315'
+    active: true
+    
+  country_eth:
+    idCountry: 'FIN'
+    name: "FINLANDE"
+    nationality: 'Finlandaise'
+    codeSISE: '105'
+    active: true
+    
+  country_flk:
+    idCountry: 'FJI'
+    name: "FIDJI"
+    nationality: 'Fidjienne'
+    codeSISE: '508'
+    active: true
+    
+  country_fji:
+    idCountry: 'FLK'
+    name: "(MALVINAS) FALKLAND (ILES)"
+    nationality: null
+    codeSISE: '990'
+    active: false
+    
+  country_fro:
+    idCountry: 'FRA'
+    name: "FRANCE"
+    nationality: 'Française'
+    codeSISE: '100'
+    active: true
+    
+  country_fra:
+    idCountry: 'FRO'
+    name: "FÉROÉ (ILES)"
+    nationality: null
+    codeSISE: '990'
+    active: false
+    
+  country_gab:
+    idCountry: 'FSM'
+    name: "MICRONÉSIE"
+    nationality: 'Micronésienne'
+    codeSISE: '516'
+    active: true
+    
+  country_fsm:
+    idCountry: 'GAB'
+    name: "GABON"
+    nationality: 'Gabonaise'
+    codeSISE: '328'
+    active: true
+    
+  country_geo:
+    idCountry: 'GBR'
+    name: "ROYAUME-UNI"
+    nationality: 'Anglaise'
+    codeSISE: '132'
+    active: true
+    
+  country_gbr:
+    idCountry: 'GEO'
+    name: "GEORGIE"
+    nationality: 'Géorgienne'
+    codeSISE: '255'
+    active: true
+    
+  country_gib:
+    idCountry: 'GHA'
+    name: "GHANA"
+    nationality: 'Ghanéenne'
+    codeSISE: '329'
+    active: true
+    
+  country_gha:
+    idCountry: 'GIB'
+    name: "GIBRALTAR"
+    nationality: 'Anglaise'
+    codeSISE: '133'
+    active: false
+    
+  country_glp:
+    idCountry: 'GIN'
+    name: "GUINÉE"
+    nationality: 'Guinéenne'
+    codeSISE: '330'
+    active: true
+    
+  country_gin:
+    idCountry: 'GLP'
+    name: "GUADELOUPE"
+    nationality: 'Française'
+    codeSISE: '100'
+    active: false
+    
+  country_gnb:
+    idCountry: 'GMB'
+    name: "GAMBIE"
+    nationality: 'Gambienne'
+    codeSISE: '304'
+    active: true
+    
+  country_gmb:
+    idCountry: 'GNB'
+    name: "GUINÉE-BISSAU"
+    nationality: 'Guinéenne'
+    codeSISE: '392'
+    active: true
+    
+  country_grc:
+    idCountry: 'GNQ'
+    name: "GUINÉE EQUATORIALE"
+    nationality: 'Guinéenne'
+    codeSISE: '314'
+    active: true
+    
+  country_gnq:
+    idCountry: 'GRC'
+    name: "GRECE"
+    nationality: 'Grèque'
+    codeSISE: '126'
+    active: true
+    
+  country_grl:
+    idCountry: 'GRD'
+    name: "GRENADE"
+    nationality: 'Grenadienne'
+    codeSISE: '435'
+    active: true
+    
+  country_grd:
+    idCountry: 'GRL'
+    name: "GROENLAND"
+    nationality: 'Danoise'
+    codeSISE: '430'
+    active: false
+    
+  country_guf:
+    idCountry: 'GTM'
+    name: "GUATEMALA"
+    nationality: 'Guatemaltèque'
+    codeSISE: '409'
+    active: true
+    
+  country_gtm:
+    idCountry: 'GUF'
+    name: "GUYANE FRANÇAISE"
+    nationality: 'Française'
+    codeSISE: '100'
+    active: false
+    
+  country_guy:
+    idCountry: 'GUM'
+    name: "GUAM"
+    nationality: null
+    codeSISE: '990'
+    active: false
+    
+  country_gum:
+    idCountry: 'GUY'
+    name: "GUYANA"
+    nationality: 'Guyanienne'
+    codeSISE: '428'
+    active: true
+    
+  country_hmd:
+    idCountry: 'HKG'
+    name: "HONG-KONG"
+    nationality: null
+    codeSISE: '990'
+    active: true
+    
+  country_hkg:
+    idCountry: 'HMD'
+    name: "HEARD ET MC DONALD (ILES)"
+    nationality: null
+    codeSISE: '990'
+    active: false
+    
+  country_hrv:
+    idCountry: 'HND'
+    name: "HONDURAS"
+    nationality: 'Hondurienne'
+    codeSISE: '411'
+    active: true
+    
+  country_hnd:
+    idCountry: 'HRV'
+    name: "CROATIE"
+    nationality: 'Croate'
+    codeSISE: '119'
+    active: true
+    
+  country_hun:
+    idCountry: 'HTI'
+    name: "HAÏTI"
+    nationality: 'Haïtienne'
+    codeSISE: '410'
+    active: true
+    
+  country_hti:
+    idCountry: 'HUN'
+    name: "HONGRIE"
+    nationality: 'Hongroise'
+    codeSISE: '112'
+    active: true
+    
+  country_ind:
+    idCountry: 'IDN'
+    name: "INDONESIE"
+    nationality: 'Indonésienne'
+    codeSISE: '231'
+    active: true
+    
+  country_idn:
+    idCountry: 'IND'
+    name: "INDE"
+    nationality: 'Indienne'
+    codeSISE: '223'
+    active: true
+    
+  country_iot:
+    idCountry: 'INT'
+    name: "INTERNATIONAL"
+    nationality: null
+    codeSISE: '990'
+    active: false
+    
+  country_int:
+    idCountry: 'IOT'
+    name: "OCÉAN INDIEN (TERRITOIRE BRITANNIQUE)"
+    nationality: null
+    codeSISE: '990'
+    active: false
+    
+  country_irn:
+    idCountry: 'IRL'
+    name: "IRLANDE"
+    nationality: 'Irlandaise'
+    codeSISE: '136'
+    active: true
+    
+  country_irl:
+    idCountry: 'IRN'
+    name: "IRAN (REPUBLIQUE ISLAMIQUE D')"
+    nationality: 'Irenienne'
+    codeSISE: '204'
+    active: true
+    
+  country_isl:
+    idCountry: 'IRQ'
+    name: "IRAK"
+    nationality: 'Irakienne'
+    codeSISE: '203'
+    active: true
+    
+  country_irq:
+    idCountry: 'ISL'
+    name: "ISLANDE"
+    nationality: 'Islandaise'
+    codeSISE: '102'
+    active: true
+    
+  country_ita:
+    idCountry: 'ISR'
+    name: "ISRAEL"
+    nationality: 'Israëlienne'
+    codeSISE: '207'
+    active: true
+    
+  country_isr:
+    idCountry: 'ITA'
+    name: "ITALIE"
+    nationality: 'Italienne'
+    codeSISE: '127'
+    active: true
+    
+  country_jor:
+    idCountry: 'JAM'
+    name: "JAMAIQUE"
+    nationality: 'Jamaïcaine'
+    codeSISE: '426'
+    active: true
+    
+  country_jam:
+    idCountry: 'JOR'
+    name: "JORDANIE"
+    nationality: 'Jordanienne'
+    codeSISE: '222'
+    active: true
+    
+  country_kaz:
+    idCountry: 'JPN'
+    name: "JAPON"
+    nationality: 'Japonaise'
+    codeSISE: '217'
+    active: true
+    
+  country_jpn:
+    idCountry: 'KAZ'
+    name: "KAZAKHSTAN"
+    nationality: 'Kazakh'
+    codeSISE: '256'
+    active: true
+    
+  country_kgz:
+    idCountry: 'KEN'
+    name: "KENYA"
+    nationality: 'Kenyanne'
+    codeSISE: '332'
+    active: true
+    
+  country_ken:
+    idCountry: 'KGZ'
+    name: "KIRGHIZISTAN"
+    nationality: 'Kirghize'
+    codeSISE: '257'
+    active: true
+    
+  country_kir:
+    idCountry: 'KHM'
+    name: "CAMBODGE"
+    nationality: 'Cambodgienne'
+    codeSISE: '234'
+    active: true
+    
+  country_khm:
+    idCountry: 'KIR'
+    name: "KIRIBATI"
+    nationality: 'Kiribatienne'
+    codeSISE: '513'
+    active: true
+    
+  country_kor:
+    idCountry: 'KNA'
+    name: "SAINT-KITTS-ET-NEVIS"
+    nationality: 'Kittitienne-et-Nevicienne'
+    codeSISE: '442'
+    active: true
+    
+  country_kna:
+    idCountry: 'KOR'
+    name: "COREE (REPUBLIQUE DE)"
+    nationality: 'Coréenne'
+    codeSISE: '239'
+    active: true
+    
+  country_kwt:
+    idCountry: 'KV'
+    name: "KOSOVO"
+    nationality: 'Kosovar'
+    codeSISE: '157'
+    active: false
+    
+  country_kv:
+    idCountry: 'KWT'
+    name: "KOWEÏT"
+    nationality: 'Kowetienne'
+    codeSISE: '240'
+    active: true
+    
+  country_lbn:
+    idCountry: 'LAO'
+    name: "LAOS"
+    nationality: 'Laossienne'
+    codeSISE: '241'
+    active: true
+    
+  country_lao:
+    idCountry: 'LBN'
+    name: "LIBAN"
+    nationality: 'Libanaise'
+    codeSISE: '205'
+    active: true
+    
+  country_lby:
+    idCountry: 'LBR'
+    name: "LIBÉRIA"
+    nationality: 'Libérienne'
+    codeSISE: '302'
+    active: true
+    
+  country_lbr:
+    idCountry: 'LBY'
+    name: "LIBYE"
+    nationality: 'Libyenne'
+    codeSISE: '316'
+    active: true
+    
+  country_lie:
+    idCountry: 'LCA'
+    name: "SAINTE-LUCIE"
+    nationality: 'Saint-Lucienne'
+    codeSISE: '439'
+    active: true
+    
+  country_lca:
+    idCountry: 'LIE'
+    name: "LIECHTENSTEIN"
+    nationality: 'Liechtensteinoise'
+    codeSISE: '113'
+    active: true
+    
+  country_lso:
+    idCountry: 'LKA'
+    name: "SRI LANKA"
+    nationality: 'Srilankaise'
+    codeSISE: '235'
+    active: true
+    
+  country_lka:
+    idCountry: 'LSO'
+    name: "LESOTHO"
+    nationality: 'Lesothane'
+    codeSISE: '348'
+    active: true
+    
+  country_lux:
+    idCountry: 'LTU'
+    name: "LITUANIE"
+    nationality: 'Lituanienne'
+    codeSISE: '108'
+    active: true
+    
+  country_ltu:
+    idCountry: 'LUX'
+    name: "LUXEMBOURG"
+    nationality: 'Luxembourgeoise'
+    codeSISE: '137'
+    active: true
+    
+  country_mac:
+    idCountry: 'LVA'
+    name: "LETTONIE"
+    nationality: 'Lettonienne'
+    codeSISE: '107'
+    active: true
+    
+  country_lva:
+    idCountry: 'MAC'
+    name: "MACAO"
+    nationality: null
+    codeSISE: '990'
+    active: false
+    
+  country_mco:
+    idCountry: 'MAR'
+    name: "MAROC"
+    nationality: 'Marocaine'
+    codeSISE: '350'
+    active: true
+    
+  country_mar:
+    idCountry: 'MCO'
+    name: "MONACO"
+    nationality: 'Monégasque'
+    codeSISE: '138'
+    active: true
+    
+  country_mdg:
+    idCountry: 'MDA'
+    name: "MOLDAVIE"
+    nationality: 'Moldave'
+    codeSISE: '151'
+    active: true
+    
+  country_mda:
+    idCountry: 'MDG'
+    name: "MADAGASCAR"
+    nationality: 'Malgache'
+    codeSISE: '333'
+    active: true
+    
+  country_mex:
+    idCountry: 'MDV'
+    name: "MALDIVES"
+    nationality: 'Maldivienne'
+    codeSISE: '229'
+    active: true
+    
+  country_mdv:
+    idCountry: 'MEX'
+    name: "MEXIQUE"
+    nationality: 'Mexicaine'
+    codeSISE: '405'
+    active: true
+    
+  country_mkd:
+    idCountry: 'MHL'
+    name: "MARSHALL (ILES)"
+    nationality: 'Marshallaise'
+    codeSISE: '515'
+    active: true
+    
+  country_mhl:
+    idCountry: 'MKD'
+    name: "MACEDOINE (EX-REPUBLIQUE YOUGOSLAVE DE)"
+    nationality: 'Macédonienne'
+    codeSISE: '156'
+    active: true
+    
+  country_mlt:
+    idCountry: 'MLI'
+    name: "MALI"
+    nationality: 'Malienne'
+    codeSISE: '335'
+    active: true
+    
+  country_mli:
+    idCountry: 'MLT'
+    name: "MALTE"
+    nationality: 'Maltaise'
+    codeSISE: '144'
+    active: true
+    
+  country_mng:
+    idCountry: 'MMR'
+    name: "MYANMAR"
+    nationality: 'Birmane'
+    codeSISE: '990'
+    active: false
+    
+  country_mmr:
+    idCountry: 'MNG'
+    name: "MONGOLIE"
+    nationality: 'Mongole'
+    codeSISE: '242'
+    active: true
+    
+  country_moz:
+    idCountry: 'MNP'
+    name: "MARIANNES DU NORD"
+    nationality: null
+    codeSISE: '990'
+    active: false
+    
+  country_mnp:
+    idCountry: 'MOZ'
+    name: "MOZAMBIQUE"
+    nationality: 'Mozambicaine'
+    codeSISE: '393'
+    active: true
+    
+  country_msr:
+    idCountry: 'MRT'
+    name: "MAURITANIE"
+    nationality: 'Mauritanienne'
+    codeSISE: '336'
+    active: true
+    
+  country_mrt:
+    idCountry: 'MSR'
+    name: "MONTSERRAT"
+    nationality: null
+    codeSISE: '990'
+    active: false
+    
+  country_mus:
+    idCountry: 'MTQ'
+    name: "MARTINIQUE"
+    nationality: 'Française'
+    codeSISE: '100'
+    active: false
+    
+  country_mtq:
+    idCountry: 'MUS'
+    name: "MAURICE"
+    nationality: 'Mauricienne'
+    codeSISE: '390'
+    active: true
+    
+  country_mys:
+    idCountry: 'MWI'
+    name: "MALAWI"
+    nationality: 'Malawienne'
+    codeSISE: '334'
+    active: true
+    
+  country_mwi:
+    idCountry: 'MYS'
+    name: "MALAISIE"
+    nationality: 'Malaisienne'
+    codeSISE: '227'
+    active: true
+    
+  country_nam:
+    idCountry: 'MYT'
+    name: "MAYOTTE"
+    nationality: 'Française'
+    codeSISE: '100'
+    active: false
+    
+  country_myt:
+    idCountry: 'NAM'
+    name: "NAMIBIE"
+    nationality: 'Namibienne'
+    codeSISE: '311'
+    active: true
+    
+  country_ner:
+    idCountry: 'NCL'
+    name: "NOUVELLE-CALÉDONIE"
+    nationality: 'Calédonienne'
+    codeSISE: '100'
+    active: true
+    
+  country_ncl:
+    idCountry: 'NER'
+    name: "NIGER"
+    nationality: 'Nigérienne'
+    codeSISE: '337'
+    active: true
+    
+  country_nga:
+    idCountry: 'NFK'
+    name: "NORFOLK"
+    nationality: null
+    codeSISE: '990'
+    active: false
+    
+  country_nfk:
+    idCountry: 'NGA'
+    name: "NIGERIA"
+    nationality: 'Nigériane'
+    codeSISE: '338'
+    active: true
+    
+  country_niu:
+    idCountry: 'NIC'
+    name: "NICARAGUA"
+    nationality: 'Nicaraguayenne'
+    codeSISE: '412'
+    active: true
+    
+  country_nic:
+    idCountry: 'NIU'
+    name: "NIOUÉ"
+    nationality: 'Néo-Zélandaise'
+    codeSISE: '990'
+    active: true
+    
+  country_nor:
+    idCountry: 'NLD'
+    name: "PAYS-BAS"
+    nationality: 'Néerlandaise'
+    codeSISE: '135'
+    active: true
+    
+  country_nld:
+    idCountry: 'NOR'
+    name: "NORVEGE"
+    nationality: 'Norvégienne'
+    codeSISE: '103'
+    active: true
+    
+  country_nru:
+    idCountry: 'NPL'
+    name: "NÉPAL"
+    nationality: 'Népalaise'
+    codeSISE: '215'
+    active: true
+    
+  country_npl:
+    idCountry: 'NRU'
+    name: "NAURU"
+    nationality: 'Nauruane'
+    codeSISE: '507'
+    active: true
+    
+  country_omn:
+    idCountry: 'NZL'
+    name: "NOUVELLE-ZELANDE"
+    nationality: 'Néo-Zélandaise'
+    codeSISE: '502'
+    active: true
+    
+  country_nzl:
+    idCountry: 'OMN'
+    name: "OMAN"
+    nationality: 'Omanaise'
+    codeSISE: '250'
+    active: true
+    
+  country_pal:
+    idCountry: 'PAK'
+    name: "PAKISTAN"
+    nationality: 'Pakistanaise'
+    codeSISE: '213'
+    active: true
+    
+  country_pak:
+    idCountry: 'PAL'
+    name: "PALESTINE"
+    nationality: 'Palestinienne'
+    codeSISE: '261'
+    active: false
+    
+  country_pcn:
+    idCountry: 'PAN'
+    name: "PANAMA"
+    nationality: 'Panaméenne'
+    codeSISE: '413'
+    active: true
+    
+  country_pan:
+    idCountry: 'PCN'
+    name: "PITCAIRN"
+    nationality: null
+    codeSISE: '503'
+    active: false
+    
+  country_phl:
+    idCountry: 'PER'
+    name: "PÉROU"
+    nationality: 'Péruvienne'
+    codeSISE: '422'
+    active: true
+    
+  country_per:
+    idCountry: 'PHL'
+    name: "PHILIPPINES"
+    nationality: 'Philippine'
+    codeSISE: '220'
+    active: true
+    
+  country_png:
+    idCountry: 'PLW'
+    name: "PALAU"
+    nationality: 'Palauane'
+    codeSISE: '517'
+    active: true
+    
+  country_plw:
+    idCountry: 'PNG'
+    name: "PAPOUASIE-NOUVELLE GUINÉE"
+    nationality: 'Papouane Néoguinéenne'
+    codeSISE: '510'
+    active: true
+    
+  country_pri:
+    idCountry: 'POL'
+    name: "POLOGNE"
+    nationality: 'Polonaise'
+    codeSISE: '122'
+    active: true
+    
+  country_pol:
+    idCountry: 'PRI'
+    name: "PORTO RICO"
+    nationality: 'Portoricaine'
+    codeSISE: '432'
+    active: false
+    
+  country_prt:
+    idCountry: 'PRK'
+    name: "CORÉE"
+    nationality: 'Coréenne'
+    codeSISE: '238'
+    active: true
+    
+  country_prk:
+    idCountry: 'PRT'
+    name: "PORTUGAL"
+    nationality: 'Portugaise'
+    codeSISE: '139'
+    active: true
+    
+  country_pyf:
+    idCountry: 'PRY'
+    name: "PARAGUAY"
+    nationality: 'Paraguayenne'
+    codeSISE: '421'
+    active: true
+    
+  country_pry:
+    idCountry: 'PYF'
+    name: "POLYNÉSIE FRANÇAISE"
+    nationality: 'Française'
+    codeSISE: '100'
+    active: true
+    
+  country_reu:
+    idCountry: 'QAT'
+    name: "QATAR"
+    nationality: 'Qatarienne'
+    codeSISE: '248'
+    active: true
+    
+  country_qat:
+    idCountry: 'REU'
+    name: "RÉUNION"
+    nationality: 'Française'
+    codeSISE: '100'
+    active: false
+    
+  country_rus:
+    idCountry: 'ROM'
+    name: "ROUMANIE"
+    nationality: 'Roumaine'
+    codeSISE: '114'
+    active: true
+    
+  country_rom:
+    idCountry: 'RUS'
+    name: "RUSSIE"
+    nationality: 'Russe'
+    codeSISE: '123'
+    active: true
+    
+  country_sau:
+    idCountry: 'RWA'
+    name: "RWANDA"
+    nationality: 'Rwandaise'
+    codeSISE: '340'
+    active: true
+    
+  country_rwa:
+    idCountry: 'SAU'
+    name: "ARABIE SAOUDITE"
+    nationality: 'Saoudienne'
+    codeSISE: '201'
+    active: true
+    
+  country_scg2:
+    idCountry: 'SCG1'
+    name: "SERBIE ET MONTENEGRO (SERBIE)"
+    nationality: 'Serbe'
+    codeSISE: '121'
+    active: true
+    
+  country_scg1:
+    idCountry: 'SCG2'
+    name: "SERBIE ET MONTENEGRO (MONTENEGRO)"
+    nationality: 'Monténégraine'
+    codeSISE: '120'
+    active: true
+    
+  country_sen:
+    idCountry: 'SDN'
+    name: "SOUDAN"
+    nationality: 'Soudanaise'
+    codeSISE: '343'
+    active: true
+    
+  country_sdn:
+    idCountry: 'SEN'
+    name: "SENEGAL"
+    nationality: 'Sénégalaise'
+    codeSISE: '341'
+    active: true
+    
+  country_sgs:
+    idCountry: 'SGP'
+    name: "SINGAPOUR"
+    nationality: 'Singapourienne'
+    codeSISE: '226'
+    active: true
+    
+  country_sgp:
+    idCountry: 'SGS'
+    name: "GÉORGIE DU SUD ET SANDWICH DU SUD (ILES)"
+    nationality: null
+    codeSISE: '990'
+    active: false
+    
+  country_sjm:
+    idCountry: 'SHN'
+    name: "SAINTE-HÉLÈNE"
+    nationality: null
+    codeSISE: '306'
+    active: false
+    
+  country_shn:
+    idCountry: 'SJM'
+    name: "SVALBARD ET ILE JAN MAYEN"
+    nationality: null
+    codeSISE: '990'
+    active: false
+    
+  country_sle:
+    idCountry: 'SLB'
+    name: "SALOMON"
+    nationality: 'Salomonaise'
+    codeSISE: '512'
+    active: true
+    
+  country_slb:
+    idCountry: 'SLE'
+    name: "SIERRA LEONE"
+    nationality: 'Sierra Leonaise'
+    codeSISE: '342'
+    active: true
+    
+  country_smr:
+    idCountry: 'SLV'
+    name: "EL SALVADOR"
+    nationality: 'Salvadorienne'
+    codeSISE: '414'
+    active: true
+    
+  country_slv:
+    idCountry: 'SMR'
+    name: "SAINT-MARIN"
+    nationality: 'Saint Marinaise'
+    codeSISE: '128'
+    active: true
+    
+  country_spm:
+    idCountry: 'SOM'
+    name: "SOMALIE"
+    nationality: 'Somalienne'
+    codeSISE: '318'
+    active: true
+    
+  country_som:
+    idCountry: 'SPM'
+    name: "SAINT-PIERRE-ET-MIQUELON"
+    nationality: 'Française'
+    codeSISE: '100'
+    active: false
+    
+  country_sur:
+    idCountry: 'STP'
+    name: "SAO TOMÉ-ET-PRINCIPE"
+    nationality: 'Santomeenne'
+    codeSISE: '394'
+    active: true
+    
+  country_stp:
+    idCountry: 'SUR'
+    name: "SURINAME"
+    nationality: 'Surinamaise'
+    codeSISE: '437'
+    active: true
+    
+  country_svn:
+    idCountry: 'SVK'
+    name: "SLOVAQUIE"
+    nationality: 'Slovaque'
+    codeSISE: '117'
+    active: true
+    
+  country_svk:
+    idCountry: 'SVN'
+    name: "SLOVENIE"
+    nationality: 'Slovène'
+    codeSISE: '145'
+    active: true
+    
+  country_swz:
+    idCountry: 'SWE'
+    name: "SUEDE"
+    nationality: 'Suédoise'
+    codeSISE: '104'
+    active: true
+    
+  country_swe:
+    idCountry: 'SWZ'
+    name: "SWAZILAND"
+    nationality: 'Swazie'
+    codeSISE: '391'
+    active: true
+    
+  country_syr:
+    idCountry: 'SYC'
+    name: "SEYCHELLES"
+    nationality: 'Seychelloise'
+    codeSISE: '398'
+    active: true
+    
+  country_syc:
+    idCountry: 'SYR'
+    name: "SYRIE"
+    nationality: 'Syrienne'
+    codeSISE: '206'
+    active: true
+    
+  country_tcd:
+    idCountry: 'TCA'
+    name: "TURKS ET CAÏQUES (ILES)"
+    nationality: null
+    codeSISE: '990'
+    active: false
+    
+  country_tca:
+    idCountry: 'TCD'
+    name: "TCHAD"
+    nationality: 'Tchadienne'
+    codeSISE: '344'
+    active: true
+    
+  country_tha:
+    idCountry: 'TGO'
+    name: "TOGO"
+    nationality: 'Togolaise'
+    codeSISE: '345'
+    active: true
+    
+  country_tgo:
+    idCountry: 'THA'
+    name: "THAILANDE"
+    nationality: 'Thaïlandaise'
+    codeSISE: '219'
+    active: true
+    
+  country_tkl:
+    idCountry: 'TJK'
+    name: "TADJIKISTAN"
+    nationality: 'Tadjike'
+    codeSISE: '259'
+    active: true
+    
+  country_tjk:
+    idCountry: 'TKL'
+    name: "TOKÉLAOU"
+    nationality: null
+    codeSISE: '990'
+    active: false
+    
+  country_tmp:
+    idCountry: 'TKM'
+    name: "TURKMÉNISTAN"
+    nationality: 'Turkmène'
+    codeSISE: '260'
+    active: true
+    
+  country_tkm:
+    idCountry: 'TMP'
+    name: "TIMOR ORIENTAL"
+    nationality: null
+    codeSISE: '262'
+    active: false
+    
+  country_tto:
+    idCountry: 'TON'
+    name: "TONGA"
+    nationality: 'Tonguienne'
+    codeSISE: '509'
+    active: true
+    
+  country_ton:
+    idCountry: 'TTO'
+    name: "TRINITÉ-ET-TOBAGO"
+    nationality: 'Trinidadienne'
+    codeSISE: '433'
+    active: true
+    
+  country_tur:
+    idCountry: 'TUN'
+    name: "TUNISIE"
+    nationality: 'Tunisienne'
+    codeSISE: '351'
+    active: true
+    
+  country_tun:
+    idCountry: 'TUR'
+    name: "TURQUIE"
+    nationality: 'Turque'
+    codeSISE: '208'
+    active: true
+    
+  country_twn:
+    idCountry: 'TUV'
+    name: "TUVALU"
+    nationality: 'Tuvaluanne'
+    codeSISE: '511'
+    active: true
+    
+  country_tuv:
+    idCountry: 'TWN'
+    name: "TAÏWAN"
+    nationality: 'Taïwanaise'
+    codeSISE: '236'
+    active: true
+    
+  country_uga:
+    idCountry: 'TZA'
+    name: "TANZANIE (REPUBLIQUE-UNIE DE)"
+    nationality: 'Tanzanienne'
+    codeSISE: '309'
+    active: true
+    
+  country_tza:
+    idCountry: 'UGA'
+    name: "OUGANDA"
+    nationality: 'Ougandaise'
+    codeSISE: '339'
+    active: true
+    
+  country_umi:
+    idCountry: 'UKR'
+    name: "UKRAINE"
+    nationality: 'Ukrainienne'
+    codeSISE: '155'
+    active: true
+    
+  country_ukr:
+    idCountry: 'UMI'
+    name: "ILES MINEURES ÉLOIGNÉES DES ETATS-UNIS"
+    nationality: null
+    codeSISE: '990'
+    active: false
+    
+  country_usa:
+    idCountry: 'URY'
+    name: "URUGUAY"
+    nationality: 'Uruguayenne'
+    codeSISE: '423'
+    active: true
+    
+  country_ury:
+    idCountry: 'USA'
+    name: "ETATS-UNIS D'AMERIQUE"
+    nationality: 'Américaine'
+    codeSISE: '404'
+    active: true
+    
+  country_vat:
+    idCountry: 'UZB'
+    name: "OUZBÉKISTAN"
+    nationality: 'Ouzbek'
+    codeSISE: '258'
+    active: true
+    
+  country_uzb:
+    idCountry: 'VAT'
+    name: "VATICAN"
+    nationality: null
+    codeSISE: '129'
+    active: false
+    
+  country_ven:
+    idCountry: 'VCT'
+    name: "SAINT-VINCENT-ET-GRENADINES"
+    nationality: 'Saint-Vincentaise-et-Grenadines'
+    codeSISE: '440'
+    active: true
+    
+  country_vct:
+    idCountry: 'VEN'
+    name: "VENEZUELA"
+    nationality: 'Vénézuélienne'
+    codeSISE: '424'
+    active: true
+    
+  country_vir:
+    idCountry: 'VGB'
+    name: "ILES VIERGES (BRITANNIQUES)"
+    nationality: 'Anglaise'
+    codeSISE: '990'
+    active: false
+    
+  country_vgb:
+    idCountry: 'VIR'
+    name: "ILES VIERGES (E.-U.)"
+    nationality: 'Américaine'
+    codeSISE: '990'
+    active: false
+    
+  country_vut:
+    idCountry: 'VNM'
+    name: "VIET NAM"
+    nationality: 'Vietnamienne'
+    codeSISE: '243'
+    active: true
+    
+  country_vnm:
+    idCountry: 'VUT'
+    name: "VANUATU"
+    nationality: 'Vanuatuanne'
+    codeSISE: '514'
+    active: true
+    
+  country_wsm:
+    idCountry: 'WLF'
+    name: "WALLIS ET FUTUNA"
+    nationality: null
+    codeSISE: '100'
+    active: false
+    
+  country_wlf:
+    idCountry: 'WSM'
+    name: "SAMOA"
+    nationality: 'Samoanne'
+    codeSISE: '506'
+    active: true
+    
+  country_zaf:
+    idCountry: 'YEM'
+    name: "YÉMEN"
+    nationality: 'Yéménite'
+    codeSISE: '251'
+    active: true
+    
+  country_yem:
+    idCountry: 'ZAF'
+    name: "AFRIQUE DU SUD"
+    nationality: 'Sud-Africaine'
+    codeSISE: '303'
+    active: true
+    
+  country_zwe:
+    idCountry: 'ZMB'
+    name: "ZAMBIE"
+    nationality: 'Zambienne'
+    codeSISE: '346'
+    active: true
+    
+  country_zmb:
+    idCountry: 'ZWE'
+    name: "ZIMBABWE"
+    nationality: 'Zimbabweenne'
+    codeSISE: '310'
+    active: true
+    

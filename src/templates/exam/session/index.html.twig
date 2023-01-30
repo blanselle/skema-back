@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des sessions{% endblock %}
+
+{% block body %}
+    <h1>Liste des sessions <a class="btn btn-primary" href="{{ path('exam_session_new') }}">Ajouter une session</a></h1>
+
+    <div class="row">
+        {{ include('partial/_flash_messages.html.twig') }}
+    </div>
+
+    <div class="search_form">
+        <hr />
+        <form action="" method="get" id="list-search">
+            <div class="row">
+                <div class="col">
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Paramètre"
+                           value="{% if params['name'] is defined %}{{ params['name'] }}{% endif %}" />
+                </div>
+                <div class="col">
+                    <select name="campus" id="campus" class="form-select select-filter">
+                        <option value=""></option>
+                        {% for campus in campuses %}
+                            <option value="{{ campus.id }}" {% if params['campus'] is defined and params['campus'] == campus.id %}selected{% endif %}>{{ campus.name }}</option>
+                        {% endfor %}
+                        <option value="online" {% if params['campus'] is defined and params['campus'] == 'online' %}selected{% endif %}>En ligne</option>
+                    </select>
+                </div>
+            </div>
+            <button class="btn btn-success" type="submit">Filtrer</button>
+        </form>
+        <hr />
+    </div>
+
+    {% include 'table.html.twig' with {'columns' : columns, 'controller' : 'exam_session_index'} %}
+{% endblock %}

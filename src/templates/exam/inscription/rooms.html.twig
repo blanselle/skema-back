@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Session skema : {{ item.examClassification.name }}{% endblock %}
+
+{% block body %}
+<h1>{{ item.examClassification.name }} ({{ item.dateStart|date('d-m-Y H:i') }})</h1>
+<table class="table">
+    <thead>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Campus</th>
+        <th>Salle</th>
+        <th>Action</th>
+    </thead>
+    <tbody>
+        {% for student in item.examStudents %}
+        <tr>
+            <td>{{ student.student.user.firstName }}</td>
+            <td>{{ student.student.user.lastName }}</td>
+            <td>
+                {% if item.campus is not empty %}{{ item.campus.name }}{% else %}<span class="badge bg-danger">En ligne</span>{% endif %}
+            </td>
+            <td>{% if student.examRoom is not empty %}{{ student.examRoom.name }}{% endif %}</td>
+            <td>{{ include('exam/inscription/_delete_form.html.twig') }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

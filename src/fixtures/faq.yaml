@@ -1,0 +1,151 @@
+App\Entity\Faq\FaqTopic:
+  inscription:
+    label: 'Inscription'
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+
+  diplome:
+    label: 'Diplômes'
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+
+  epreuves_admissibilite:
+    label: "Épreuves d'admissibilité"
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+
+  infos_tage:
+    label: "Infos TAGE®"
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+
+  infos_toeic:
+    label: "Infos TOEIC®"
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+
+App\Entity\Faq\Faq:
+  question1:
+    question: "Jusqu'à quelle date puis-je m'inscrire ?"
+    answer: "<escape(\"Vous avez jusqu'au <b>14 mars</b> (12h) pour vous inscrire (paiement des frais d'inscription ou téléchargement de votre attestation de bourse définitive si vous êtes boursier) <b>ET</b> compléter votre CV en ligne.\")>"
+    topics: ['@inscription']
+
+  question2:
+    question: "Quelles sont les pièces administratives à fournir à l'inscription ?"
+    answer: "<escape(\"Les pièces administratives à nous joindre sont: <br/><ul><li>Le certificat de scolarité 2021/2022 ou diplôme Bac+2/+3 déjà obtenu</li><li>AST1: les relevés de notes officiels S1 et S2</li><li>AST2: les relevés de notes officiels S1, S2, S3 et S4</li><li>Et éventuellement votre attestation de <b>bourse définitive recto-verso</b> 2021/2022 et/ou de Sportif de Haut Niveau.</li></ul>\")>"
+    topics: ['@inscription']
+
+  question3:
+    question: "Quand et comment dois-je faire parvenir ces pièces administratives ?"
+    answer: "<escape(\"Ces pièces administratives doivent être téléchargées dès l'inscription.<br/><b>ATTENTION</b> si votre inscription n'est pas finalisée (paiement des frais de dossier pour les candidats non boursiers et validation de la candidature), vous n'êtes pas considéré comme candidat.\")>"
+    topics: ['@inscription']
+
+  question4:
+    question: "Qu'est-ce que l'attestation de bourse définitive (pièce à télécharger si vous êtes boursier) ?"
+    answer: "<escape(\"L'attestation de bourse définitive est l'attestation qui confirme que vous êtes boursier : il est indiqué au verso le montant définitif que vous allez percevoir. <b>L'attestation conditionnelle</b> n'est pas recevable.\")>"
+    topics: ['@inscription']
+
+  question5:
+    question: "Je suis boursier, quel montant dois-je verser pour mon inscription ?"
+    answer: Les droits d'inscription au concours sont gratuits pour les candidats boursiers. Votre statut ne vous dispense cependant pas des frais des tests réalisés par des organismes privés (TOEIC®, TAGE 2®, TAGE MAGE®) pour lesquels la gratuité ne peut être appliquée.
+    topics: ['@inscription']
+
+  question6:
+    question: "J'ai une équivalence L3, puis-je postuler au concours AST1 ?"
+    answer: "<escape(\"<b>Les niveaux d'études, équivalences, crédits ne sont pas acceptés.</b> Les candidats doivent être titulaires d'un diplôme Bac+2 minimum ou inscrits en dernière année d'un cursus diplômant. Les candidats ayant, par exemple, effectué deux années d'un cursus d'une Ecole délivrant son diplôme au bout de trois, quatre ou cinq ans ne pourront pas se présenter au concours AST1. SKEMA Business School n'accepte pas les diplômes ne répondant pas aux critères requis.\")>"
+    topics: ['@diplome']
+
+  question7:
+    question: "J'ai une équivalence M1, puis-je postuler au concours AST2 ?"
+    answer: "<escape(\"<b>Les niveaux d'études, équivalences, crédits ne sont pas acceptés.</b> Les candidats doivent être titulaires d'un diplôme Bac+3 minimum ou inscrits en dernière année d'un cursus diplômant. Les candidats ayant, par exemple, effectué trois années d'un cursus d'une Ecole délivrant son diplôme au bout de quatre ou cinq ans ne pourront pas se présenter au concours AST2. SKEMA Business School n'accepte pas les diplômes ne répondant pas aux critères requis.\")>"
+    topics: ['@diplome']
+
+  question8:
+    question: "Si je suis admis à SKEMA Business School et ne valide pas mon diplôme actuel, pourrai-je intégrer ?"
+    answer: "<escape(\"L'admission est prononcée sous réserve d'obtention du diplôme universitaire <b>avant le 31 octobre 2022</b>. Si vous ne validez pas votre diplôme, vous ne pourrez pas intégrer SKEMA Business School ou poursuivre votre scolarité au sein de SKEMA Business School, et perdrez le bénéfice de votre admission.\")>"
+    topics: ['@diplome']
+
+  question9:
+    question: "Puis-je postuler avec le diplôme que je prépare ?"
+    answer: "Vous trouverez, lors de votre inscription, la liste des diplômes acceptés dans le menu déroulant. Si celui-ci n'y figure pas veuillez contacter le service concours : service.concours@skema.edu"
+    topics: ['@diplome']
+
+  question10:
+    question: "Quelles sont les épreuves d'admissibilité ?"
+    answer: "<escape(\"Pour les concours AST 1:<ul><li>le TAGE 2® ou le GMAT®</li><li>le TOEIC® (Listening et Reading), le TOEFL iBT ou ITP, l'IELTS® ou iCIMS®</li><li>le CV à compléter</li></ul>Pour le concours AST 2:<ul><li>le TAGE MAGE® ou le GMAT®</li><li>le TOEIC® (Listening et Reading), le TOEFL iBT ou ITP, l'IELTS® ou iCIMS®</li><li>le CV à compléter</li></ul>\")>"
+    topics: ['@epreuves_admissibilite']
+
+  question11:
+    question: "Quand et comment puis-je obtenir ma convocation aux épreuves d'admissibilité ?"
+    answer: "Votre convocation aux épreuves écrites, pour les étudiants inscrits aux sessions proposées sur les campus de SKEMA (Grand Paris, Lille et Sophia Antipolis), sera disponible en ligne dans votre espace personnel : vous en serez informé par e-mail."
+    topics: ['@epreuves_admissibilite']
+
+  question12:
+    question: "J'ai passé le TAGE2® ou le TAGE MAGE® l'année dernière, le score est-il encore valable ?"
+    answer: "<escape(\"Les tests TAGE 2® et TAGE MAGE® peuvent être passés 2 fois par année civile (1 fois au cours du 1er semestre / janvier à juin / et une fois au cours du 2e semestre / juillet à décembre). <br/> SKEMA retiendra le meilleur score présenté entre le <b>1er janvier 2021 et le 22 avril 2022</b>\")>"
+    topics: ['@infos_tage']
+
+  question13:
+    question: "J'ai un score GMAT, puis-je vous le fournir à la place du TAGE 2® ou TAGE MAGE® ?"
+    answer: "<escape(\"Le test GMAT® peut se substituer au TAGE 2® ou au TAGE MAGE®. <br/>SKEMA retiendra le meilleur score présenté à partir du <b>1er janvier 2021</b>\")>"
+    topics: ['@infos_tage']
+
+  question14:
+    question: "Suis-je obligé de passer le TAGE2® ou le TAGE MAGE® via une session SKEMA Business School ? Comment dois-je vous faire parvenir mon score ?"
+    answer: "<escape(\"Non vous pouvez tout à fait passer le test par le biais d?un autre organisme, la FNEGE nous transmettra directement votre meilleur score présenté à partir du <b>1er janvier 2021.</b>\")>"
+    topics: ['@infos_tage']
+
+  question15:
+    question: "Je passe le TAGE2® ou le TAGE MAGE® par le biais d?un autre concours mais je n'aurai pas les résultats pour le 22 avril, comment faire ?"
+    answer: "<escape(\"Nous pourrons obtenir votre score directement auprès de la FNEGE, nous n'aurons pas à attendre la parution de vos résultats pour nous les procurer. L'important étant que la session se déroule <b>au plus tard le 22 avril 2022.</b>\")>"
+    topics: ['@infos_tage']
+
+  question16:
+    question: "J'ai eu l?occasion de passer plusieurs fois le TAGE2® ou le TAGE MAGE®, comment vous adresser le meilleur score ?"
+    answer: "<escape(\"La FNEGE nous adressera directement le meilleur score que vous aurez pu obtenir <b>entre le 1er janvier 2021 et le 22 avril 2022</b>. ATTENTION : si vous avez passé le test avec votre nom de jeune fille est que vous êtes depuis mariée, ou si vous avez présenté le test avec un autre nom de famille pour une autre raison, nous ne pourrons pas retrouver le meilleur des 2 scores. Merci dans ce cas de contacter le service concours : service.concours@skema.edu\")>"
+    topics: ['@infos_tage']
+
+  question17:
+    question: "Comment faire pour m'inscrire à la session TAGE2® ou TAGE MAGE® de SKEMA ?"
+    answer: "<escape(\"Les inscriptions et règlement se font uniquement sur le site de la FNEGE: www.tage2.fr ou www.tagemage.fr <br/>SKEMA ne s'occupe pas de votre inscription.<br/><b><i>ATTENTION :</i></b> le nombre de places est limité.\")>"
+    topics: ['@infos_tage']
+
+  question18:
+    question: "Je me suis inscrit à la session TAGE2® ou TAGE MAGE® de SKEMA, quels sont les horaires du test ?"
+    answer: "Le test a lieu le matin, avec une convocation à 8h30, et se termine habituellement au plus tard à 12h30."
+    topics: ['@infos_tage']
+
+  question19:
+    question: "Je me suis inscrit à la session TAGE2® ou TAGE MAGE® de SKEMA, le score est-il accepté par les autres Ecoles ? Quand aurons-nous les résultats ? Comment les communiquer aux autres Ecoles ?"
+    answer: "<escape(\"Il vous faut vérifier auprès des écoles concernées si la date de notre session est acceptée. <br/>Les résultats vous seront ensuite communiqués sur votre espace personnel du site concours (date précisée sur le site) et l'attestation papier transmise ensuite directement par la FNEGE. Ce score vous appartient, il n'est pas limité à une utilisation uniquement par SKEMA. Il vous faut cependant vérifier auprès des Ecoles concernées qu'elles peuvent obtenir votre score directement auprès de la FNEGE.\")>"
+    topics: ['@infos_tage']
+
+  question20:
+    question: "Je souhaite passer le test à l'occasion de la session SKEMA de Paris, Lille ou Sophia Antipolis mais il n'y a plus de place, allez-vous rajouter des places ?"
+    answer: "Il n'est pas prévu d?ajouter des places : il vous faudra prévoir une inscription sur une session publique."
+    topics: ['@infos_tage']
+
+  question21:
+    question: "Sur le site de la FNEGE il me réclame mon numéro de candidat SKEMA, de quel numéro s'agit-il ?"
+    answer: "Il s'agit du numéro d'inscription à 6 chiffres (23XXXX) fourni lorsque vous avez créé votre candidature sur le site AST de SKEMA Business School."
+    topics: ['@infos_tage']
+
+  question22:
+    question: "J'ai reçu un mail de la FNEGE m'indiquant que vous leur aviez dit que je n'étais pas candidat chez vous et que je ne pouvais pas bénéficier de la session de SKEMA ? Je suis pourtant inscrit sur le site concours de SKEMA?"
+    answer: "Merci de contacter le service concours. Après vérification, s'il s'avère que vous n'êtes effectivement pas inscrit sur notre site ou que votre candidature n'a pas été finalisée, il ne sera pas possible de vous inscrire à cette session. La session SKEMA est réservée aux candidats dont la candidature est finalisée (paiement des frais de dossier pour les candidats non boursiers et validation de la candidature): vous devrez donc procéder à la finalisation de votre inscription rapidement ou changer de session pour pouvoir conserver votre place à notre session."
+    topics: ['@infos_tage']
+
+  question23:
+    question: "Avez-vous des annales à me conseiller pour que je puisse m'exercer à ces tests ?"
+    answer: "Nous vous invitons à vous rapprocher de la FNEGE qui propose des annales officielles (avec logo FNEGE) qui contiendront toutes les nouveautés, disponibles également dans le commerce."
+    topics: ['@infos_tage']
+
+  question24:
+    question: "Quel score doit-on obtenir au TAGE 2®, TAGE MAGE®, GMAT® pour être admissible ? Y a-t-il une barre minimum ?"
+    answer: "Il n'y a pas de « moyenne » ou score minimum à obtenir aux épreuves : aucune note n'est éliminatoire. Il s'agit d?un classement relatif des performances de l'ensemble des candidats, sur l'ensemble des composantes des épreuves écrites : il n'est pas possible de présupposer de la barre d'admissibilité avant la tenue du jury."
+    topics: ['@infos_tage']
+
+  question25:
+    question: "Il y a plusieurs TOEIC® Listening and Reading®, lesquels sont acceptés ?"
+    answer: "<escape(\"Les TOEIC Institutional Programme ou Public : (Institutional quand on le passe au sein d?une Ecole / Public : quand on le passe dans un centre officiel ETS) sont acceptés. <br/> Attention, les tests passés 'en autonomie' (sans surveillance) ne sont pas acceptés.\")>"
+    topics: ['@infos_toeic']
+
+  question26:
+    question: "Est-il nécessaire d'avoir sa photo sur l'attestation de score TOEIC® ?"
+    answer: "L'attestation avec photo n'est pas obligatoire."
+    topics: ['@infos_toeic']

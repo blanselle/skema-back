@@ -1,0 +1,209 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails candidat{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('student_index', app.request.query.all ) }}" class="btn btn-secondary">Retour à la liste des candidats</a>
+
+        <div>
+            <a style="margin-right: 20px;" href="{{ path('notification_new', {'role': 'coordinateur', 'student': student.identifier, 'type': 'comment'}) }}" class="btn btn-primary">Commenter</a>
+
+            {% if is_granted('ROLE_COORDINATOR') and student.state not in ['resigned', 'resigned_payed', 'canceled', 'canceled_payed'] %}
+                <button class="btn btn-danger resignation popup" type="button" data-url="{{ path('ajax_student_cancelation', {'id': student.id}) }}">Démissioner</button>
+            {% endif %}
+
+            {% if is_granted('ROLE_ADMIN') and student.anonymized != true %}
+                <button class="btn btn-danger anonymization popup" style="display: inline-block" onclick="confirm('Cette action est définitive. Voulez-vous continuer?') ? location.href='{{ path('student_anonymization', {'id': student.id}) }}':''">Anonymiser</button>
+            {% endif %}
+        </div>
+    </div>
+    <hr />
+    <h1>{{ student ~ ' - ' ~ ('workflow.student.' ~ student.state) | trans }}</h1>
+    <input type="hidden" name="current_user" value="{{ user.id }}" />
+    {% include 'student/_validation_candidate.html.twig' %}
+
+    {% include 'student/_validation_exemption.html.twig' %}
+
+    {{ include('partial/_flash_messages.html.twig') }}
+    {% for notificationParent in notifications %}
+        {% include 'notification/notification_partial/_notification_parent.html.twig' with {'edit_student': true} %}
+    {% endfor %}
+
+    <div id="candidate_profil" class="body_container">
+        {% if student.cv is not null %}
+            <a href="#estimation_part" class="collapse_title" data-bs-toggle="collapse">
+                <h3>ESTIMATION NOTE DOSSIER</h3>
+                <div class="arrow"></div>
+            </a>
+            <div id="estimation_part" class="collapse collapse_content">
+                {% include 'student/_note_dossier.html.twig' with {'cv': student.cv} %}
+            </div>
+        {% endif %}
+
+        <a href="#profil_part" class="collapse_title {% if not form.vars.valid %}errors{% endif %}" data-bs-toggle="collapse"
+           {% if not form.vars.valid %}aria-expanded="true"{% endif %}>
+            <h3>PROFIL</h3>
+            <div class="arrow"></div>
+        </a>
+        <div id="profil_part" class="collapse collapse_content {% if not form.vars.valid %}show{% endif %}">
+            {{ include('student/_form_profile.html.twig') }}
+        </div>
+
+        {% if is_granted('send-admissibility', student) %}
+        <a href="#notification_admissibility_result_part" class="collapse_title {% if not form.vars.valid %}errors{% endif %}" data-bs-toggle="collapse"
+           {% if not form.vars.valid %}aria-expanded="true"{% endif %}>
+            <h3>PAGE D'ADMISSIBILITE</h3>
+            <div class="arrow"></div>
+        </a>
+        <div id="notification_admissibility_result_part" class="collapse collapse_content {% if not form.vars.valid %}show{% endif %}">
+            {{ render(path('notification_admissibility', {id: student.id})) }}
+        </div>
+        {% endif %}
+
+        <a href="#connexion_part" class="collapse_title" data-bs-toggle="collapse">
+            <h3>IDENTIFIANTS DE CONNEXION</h3>
+            <div class="arrow"></div>
+        </a>
+        <div id="connexion_part" class="collapse collapse_content">
+            {{ include('student/_form_connexion.html.twig') }}
+            {% if student.state == 'start' %}
+                {{ include('student/_form_activation_mail.html.twig') }}
+                {{ include('student/_form_activation_student_account.html.twig') }}
+            {% endif %}
+        </div>
+
+        <a id="administrative_record_title" href="#administrative_record_part" class="collapse_title {% if not formAR.vars.valid %}errors{% endif %}" data-bs-toggle="collapse"
+           {% if not formAR.vars.valid %}aria-expanded="true"{% endif %}>
+            <h3>DOSSIER ADMINISTRATIF</h3>
+            <div class="arrow"></div>
+        </a>
+        <div id="administrative_record_part" class="collapse collapse_content {% if not formAR.vars.valid %}show{% endif %}">
+            {{ include('student/_form_administrative_record.html.twig') }}
+        </div>
+
+        <a id="cv_title" href="#cv_part" class="collapse_title {% if not formCV.vars.valid %}errors{% endif %}" data-bs-toggle="collapse"
+           {% if not formCV.vars.valid %}aria-expanded="true"{% endif %}>
+            <h3>CV</h3>
+            <div class="arrow"></div>
+        </a>
+        <div id="cv_part" class="collapse collapse_content {% if not formCV.vars.valid %}show{% endif %}">
+            {{ include('student/cv/_form_cv.html.twig') }}
+        </div>
+
+        <a href="#exams_part" class="collapse_title {% if not formExam.vars.valid %}errors{% endif %}" data-bs-toggle="collapse"
+           {% if not formExam.vars.valid %}aria-expanded="true"{% endif %}>
+            <h3>ÉPREUVES ÉCRITES</h3>
+            <div class="arrow"></div>
+        </a>
+        <div id="exams_part" class="collapse collapse_content {% if not formExam.vars.valid %}show{% endif %}">
+            {{ include('student/_form_exam.html.twig') }}
+        </div>
+
+        <a href="#summons_part" class="collapse_title"  data-bs-toggle="collapse">
+            <h3>CONVOCATIONS</h3>
+            <div class="arrow"></div>
+        </a>
+        <div id="summons_part" class="collapse collapse_content {% if not formExam.vars.valid %}show{% endif %}">
+            <ul>
+            {% for summon in student.examSummons %}
+                <li><a target="_blank" href="{{ absolute_url(path('media_rendering', {'id': summon.media.id})) }}">{{ summon.examSession.examClassification.name }} : {{ summon.examSession.dateStart|date('d/m/Y') }} {% if summon.examSession.campus is not empty %}{{ summon.examSession.campus.name }}{% else %}{{ constant('App\\Constants\\Exam\\ExamConditionConstants::CONDITION_ONLINE') }}{% endif %}</a></li>
+            {% endfor %}
+            </ul>
+        </div>
+
+        {% if is_granted('edit-oral-test', student) %}
+        <a href="#oral_test_part" class="collapse_title"  data-bs-toggle="collapse">
+            <h3>EPREUVES ORALES</h3>
+            <div class="arrow"></div>
+        </a>
+        <div id="oral_test_part" class="collapse collapse_content">
+            {% include('oral_test/oral_test_student/_form.html.twig') with {'form': formOralTest} %}
+        </div>
+        {% endif %}
+
+        <div class="links">
+            <a class="links__item" href="{{ path('notification_index', {'student': student.identifier}) }}" target="_blank">> {{ 'student_edit_page.notification_center'|trans }}</a>
+            <a class="links__item" href="{{ path('order_index', {'identifier': student.identifier}) }}" target="_blank">> {{ 'student_edit_page.payment_history'|trans }}</a>
+            <a class="links__item" href="{{ path('student_history', {'id': student.id}) }}" target="_blank">> {{ 'student_edit_page.user_action_histories'|trans }}</a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+{#    TODO Mais où est passé le fichier??? #}
+{#    <script type="text/javascript" src="{{ asset('js/administrative-record-media.js') }}"></script>#}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            const addFormToCollection = (e) => {
+                const collectionHolder = document.querySelector('.' + e.currentTarget.dataset.collectionHolderClass);
+
+                const item = document.createElement('li');
+
+                item.innerHTML = collectionHolder
+                    .dataset
+                    .prototype
+                    .replace(
+                        /__name__/g,
+                        collectionHolder.dataset.index
+                    );
+
+                if (collectionHolder.dataset.index < 1) {
+                    collectionHolder.appendChild(item);
+
+                    $("input[type='file']").on("change", function () {
+                        if(this.files[0].size > 5000000) {
+                            alert("Vous ne pouvez pas uploader un fichier de plus de 5Mo");
+                            $(this).val('');
+                        }
+                    });
+                }
+
+                collectionHolder.dataset.index++;
+            };
+
+            $(document).on('click', '.add_media', addFormToCollection)
+
+            $(document).on('change', 'input[type=file]', function() {
+                $(this).parent().parent().parent().parent().next().find('.save_media').show()
+            })
+
+            $(document).on('click', '.save_media', function() {
+                var obj = $(this)
+                var file_obj = $(this).parent().prev().find('input[type=file]');
+                var file = file_obj[0].files[0];
+
+                var formData = new FormData();
+                formData.append("file", file, file.name);
+                formData.append("field", $(this).attr('data-id'))
+
+                $.ajax({
+                    url: '{{ path('ajax_media_upload', {'student' : student.id}) }}',
+                    method: 'post',
+                    async: true,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    data: formData,
+                    success: function (result) {
+                        if (obj.parent().parent().parent().hasClass('single_content')) {
+                            obj.parent().parent().parent().html(result)
+                        } else {
+                            if (obj.parent().parent().parent().find('.media_container').length !== 0) {
+                                $(result).insertAfter(obj.parent().parent().parent().find('.media_container').last())
+                                obj.parent().parent().parent().find('.media_content').hide()
+                            } else {
+                                obj.parent().parent().parent().html(result)
+                            }
+                        }
+                    }
+                })
+            })
+
+            $(document.getElementById($(location).attr('hash').substr(1))).addClass("show");
+
+            $(".select2").select2({width: '100%'});
+
+        })
+    </script>
+{% endblock %}

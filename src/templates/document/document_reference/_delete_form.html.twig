@@ -1,0 +1,4 @@
+<form method="post" action="{{ path('document_reference_delete', {'id': document_reference.id}) }}" onsubmit="return confirm('Voulez-vous vraiment supprimer ce document ?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ document_reference.id) }}">
+    <button class="btn btn-danger action-delete"><i class="bi bi-trash"></i></button>
+</form>

@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification d'un document de référence{% endblock %}
+
+{% block javascripts %}
+ <script src="{{ asset('js/button-clipboard.js') }}"></script>
+{% endblock %}
+
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('document_reference_index') }}" class="btn btn-secondary">Retourner à la liste des documents de référence</a>
+        {{ include('document/document_reference/_delete_form.html.twig') }}
+    </div>
+    <hr />
+    <h1>{{ document_reference.name }}</h1>
+
+    {{ include('document/document_reference/_form.html.twig') }}
+{% endblock %}

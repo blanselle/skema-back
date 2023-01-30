@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/admin-datatables-light.js') }}" type="text/javascript"></script>
+{% endblock %}
+
+{% block title %}Liste des voies de concours{% endblock %}
+
+{% block body %}
+    <h1>Liste des voies de concours <a class="btn btn-primary" href="{{ path('program_channel_new') }}">Ajouter</a></h1>
+
+    <table id="program-channels" class="table admin-datatable stripe hover order-column">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Nombre d'etudiants</th>
+                <th>Programme</th>
+                <th>Position</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for programChannel in programChannels %}
+            <tr id="{{ programChannel.name | lower | slug }}">
+                <td id="{{ 'name-' ~ programChannel.name | lower | slug }}">{{ programChannel.name }}</td>
+                <td id="{{ 'student-' ~ programChannel.name | lower | slug }}"><span class="badge bg-primary"> {{ programChannel.students|length }} etudiant(s)</td>
+                <td id="{{ 'program-' ~ programChannel.name | lower | slug }}">
+                {% if programChannel.program is defined %}
+                    <a href="{{ path('program_edit', {'id': programChannel.program.id}) }}">{{programChannel.program.name}}</a>
+                {% else %}
+                    <p>Cette voie de concours n'a pas de programme rattaché</p>
+                {% endif %}
+                </td>
+                <td id="{{ 'program-position-' ~ programChannel.position | lower | slug }}">{{ programChannel.position }}</td>
+                <td>
+                    <a class="action-edit btn btn-warning me-2" href="{{ path('program_channel_edit', {'id': programChannel.id}) }}"><i class="bi bi-pencil-square"></i></a>
+                    {{ include('program_channel/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Aucune voie de concours trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

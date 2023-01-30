@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle langue{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('exam_language_index') }}" class="btn btn-secondary">Retour à la liste des langues</a>
+    </div>
+    <hr />
+    <h1>Création d'une langue</h1>
+
+    {{ include('exam/language/_form.html.twig') }}
+{% endblock %}

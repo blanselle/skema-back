@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/admin-datatables-light.js') }}" type="text/javascript"></script>
+{% endblock %}
+
+{% block title %}Liste des niveaux sportifs{% endblock %}
+
+{% block body %}
+    <h1>Liste des niveaux sportifs <a class="btn btn-primary" href="{{ path('sport_level_new') }}">Ajouter un niveau sportif</a></h1>
+
+    <div class="row">
+        {{ include('partial/_flash_messages.html.twig') }}
+    </div>
+
+    <table id="campus" class="table admin-datatable stripe hover order-column">
+        <thead>
+            <tr>
+                <th>label</th>
+                <th>position</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for sportLevel in sportLevels %}
+            <tr id="{{ sportLevel.label | lower | slug }}">
+                <td id="{{ 'label-' ~ sportLevel.label | lower | slug }}">{{ sportLevel.label }}</td>
+                <td id="{{ 'position-' ~ sportLevel.label | lower | slug }}">{{ sportLevel.position }}</td>
+                <td class="d-flex">
+                    <a class="btn btn-warning me-2 action-edit" href="{{ path('sport_level_edit', {'id': sportLevel.id}) }}"><i class="bi bi-pencil-square"></i></a>
+                    {{ include('sportLevel/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Aucun niveau sportif trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

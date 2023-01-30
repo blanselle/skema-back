@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'notification.page.new.block_title'|trans }}{% endblock %}
+
+{% block body %}
+    <h1>{{ title|default('notification.page.title.default')|trans }}</h1>
+
+    {{ include('notification/notification/_form.html.twig') }}
+
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".select2").select2({width: '100%'});
+        })
+    </script>
+{% endblock %}

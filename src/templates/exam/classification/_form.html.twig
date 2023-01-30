@@ -1,0 +1,34 @@
+{{ form_start(form) }}
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.name) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="row">
+            <div class="col">
+                {{ form_row(form.examSessionType) }}
+            </div>
+            <div class="col">
+                {{ form_row(form.examCondition) }}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="row">
+            <div class="col">
+                {{ form_row(form.programChannels) }}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="row">
+            <div class="col">
+                {{ form_row(form.equipment) }}
+            </div>
+        </div>
+    </div>
+    <div class="save_container">
+        <button class="btn btn-success">{{ button_label|default('Sauvegarder') }}</button>
+    </div>
+{{ form_end(form) }}

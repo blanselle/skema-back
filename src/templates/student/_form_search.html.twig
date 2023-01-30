@@ -1,0 +1,45 @@
+<div class="search_form">
+    <form method="get" action="" id="list-search" name="candidat_search_form">
+        <div class="row">
+            <div class="col">
+                <input class="form-control" type="text" name="identifier" id="identifier" placeholder="Numéro candidat"
+                       value="{{ app.request.query.get('identifier') }}" />
+            </div>
+            <div class="col">
+                <input class="form-control" type="text" name="lastname" id="lastname"
+                       placeholder="Nom candidat" value="{{ app.request.query.get('lastname') }}" />
+            </div>
+            <div class="col">
+                <select class="form-select select-filter" name="state" id="state">
+                    <option value="" {% if app.request.query.get('state') is empty %}selected{% endif %}>Filtrer par statut du candidat</option>
+                    {% for key, state in studentStates %}
+                        {% if state != 'start' %}
+                            <option value="{{ key }}" {% if app.request.query.get('state') == key %}selected{% endif %}>{{ state }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <select class="form-select select-filter" name="mediaCode" id="mediaCode">
+                    <option value="" {% if app.request.get('mediaCode') is empty %}selected{% endif %}>Filtrer par code media</option>
+                    {% for key, state in mediaCodes %}
+                        <option value="{{ key }}" {% if app.request.get('mediaCode') == key %}selected{% endif %}>{{ state }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col">
+                <select class="form-select select-filter" name="media" id="media">
+                    <option value="" {% if app.request.get('media') is empty %}selected{% endif %}>Filtrer par statut du media</option>
+                    {% for key, state in mediaStates %}
+                        <option value="{{ key }}" {% if app.request.get('media') == key %}selected{% endif %}>{{ state }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <input type="hidden" name="intern" value="{{ app.request.query.getBoolean('intern') }}">
+        </div>
+
+        <button type="submit" class="btn btn-primary">{{ button_label|default('Filtrer') }}</button>
+    </form>
+</div>

@@ -1,0 +1,4 @@
+<form method="post" action="{{ path('app_approve_all_candidacy') }}" onsubmit="return confirm('Voulez-vous vraiment valider tous les candidats ?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('app_approve_all_candidacy') }}">
+    <button class="btn btn-danger"><i class="bi bi-magic"></i> Approuver les candidatures</button>
+</form>

@@ -1,0 +1,20 @@
+<ul class="list-group list-group-horizontal">
+    <li class="list-group-item w-25">Campus : </li>
+    <li class="list-group-item w-75">
+        {% if item.campuses is not null %}
+            {% for campus in item.campuses %}
+                <a class="badge bg-primary" href="{{ path('campus_edit', {'id': campus.id}) }}">{{ campus.name }}</a>
+            {% endfor %}
+        {% endif %}
+    </li>
+</ul>
+<ul class="list-group list-group-horizontal">
+    <li class="list-group-item w-25">Voie de concours : </li>
+    <li class="list-group-item w-75">
+        {% if item.programChannels is not null %}
+            {% for programChannel in item.programChannels %}
+                <a class="badge bg-primary" href="{{ path('program_channel_edit', {'id': programChannel.id}) }}">{{ programChannel.name }}</a>
+            {% endfor %}
+        {% endif %}
+    </li>
+</ul>

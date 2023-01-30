@@ -1,0 +1,5 @@
+App\Entity\Program:
+  pge_program:
+    name: PGE
+  program_{1..3}:
+    name: <company()>

@@ -1,0 +1,24 @@
+{{ form_start(form) }}
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.campus) }}
+        </div>
+        <div class="col">
+            {{ form_row(form.numberOfPlaces) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.examRooms[0].name) }}
+        </div>
+        <div class="col">
+            {{ form_row(form.examRooms[0].numberOfPlaces) }}
+        </div>
+        <div class="col">
+            {{ form_row(form.examRooms[0].thirdTime) }}
+        </div>
+    </div>
+    <div class="save_container">
+        <button class="btn btn-success">{{ button_label|default('Ajouter') }}</button>
+    </div>
+{{ form_end(form) }}

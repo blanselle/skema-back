@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des pays{% endblock %}
+
+{% block body %}
+    <h1>Liste des pays <a class="btn btn-primary" href="{{ path('country_new') }}">Ajouter un nouveau pays</a></h1>
+
+    <div class="search_form">
+        <hr />
+        <form action="" method="get" id="list-search">
+            <div class="row">
+                <div class="col">
+                    <input type="text" name="code" id="code" class="form-control" placeholder="Code"
+                           value="{% if params['code'] is defined %}{{ params['code'] }}{% endif %}" />
+                </div>
+                <div class="col">
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Nom du pays"
+                           value="{% if params['name'] is defined %}{{ params['name'] }}{% endif %}" />
+                </div>
+                <div class="col">
+                    <input type="text" name="codeSISE" id="codeSISE" class="form-control" placeholder="Code SISE"
+                           value="{% if params['codeSISE'] is defined %}{{ params['codeSISE'] }}{% endif %}" />
+                </div>
+            </div>
+            <button class="btn btn-success" type="submit">Filtrer</button>
+        </form>
+        <hr />
+    </div>
+
+    {% include 'table.html.twig' with {'columns' : columns, 'controller' : 'country_index'} %}
+{% endblock %}

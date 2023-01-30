@@ -1,0 +1,12 @@
+<form name="import_upload" enctype="multipart/form-data" method="post" action="" id="import">
+    <div class="row">
+        <div class="col">
+            <input type="file" name="file" class="form-control" />
+        </div>
+    </div>
+    <input type="hidden" name="exam-classification" value="{{ examClassification.id }}">
+    <br />
+    <div class="save_container">
+        <button class="btn btn-primary">{{ button_label|default('Importer') }}</button>
+    </div>
+</form>

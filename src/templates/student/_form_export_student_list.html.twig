@@ -1,0 +1,27 @@
+{{ form_start(form) }}
+    <div class="row">
+        {{ form_row(form.columns) }}
+    </div>
+
+    <div class="row">
+        {{ form_row(form.identifier) }}
+        {{ form_row(form.lastname) }}
+        {{ form_row(form.media) }}
+        {{ form_row(form.mediaCode) }}
+        {{ form_row(form.state) }}
+        {{ form_row(form.intern) }}
+    </div>
+
+    <div class="save_container">
+        <button id="form-export-student-list-submit" class="btn btn-success" type="submit" data-bs-dismiss="modal">{{ button_label|default('Exporter') }}</button>
+    </div>
+{{ form_end(form) }}
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".export-student-list-columns-select2").select2({
+            width: '100%',
+            dropdownParent: $('#student-export-modal')
+        });
+    })
+</script>

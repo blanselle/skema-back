@@ -1,0 +1,29 @@
+framework:
+  workflows:
+    payment:
+      type: 'state_machine'
+      marking_store:
+        type: 'method'
+        property: 'state'
+      supports:
+        - App\Entity\Payment\Payment
+      initial_marking: created
+      places:
+        - created
+        - in_progress
+        - validated
+        - canceled
+        - rejected
+      transitions:
+        treated:
+          from: created
+          to: in_progress
+        validate:
+          from: [created, in_progress]
+          to: validated
+        reject:
+          from: [created, in_progress]
+          to: rejected
+        cancel:
+          from: [created, in_progress]
+          to: canceled

@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col">
+        <div class="input-group">
+            <input disabled id="target-clipboard" type="text" class="form-control" placeholder="Url resultat d'admissibilité" value="{{admissibilityResultUrl}}">
+            <button type="button" class="btn btn-outline-secondary btn-clipboard" for="target-clipboard"><i class="bi bi-files"></i></button>
+            <a href="{{admissibilityResultUrl}}" class="btn btn-outline-secondary" target="_blank"><i class="bi bi-download"></i></a>
+        </div>
+    </div>
+    <div class="col">
+        {% if is_granted('send-admissibility') %}
+        <div class="nav_actions">
+            <form action="{{ path('notification_admissibility', {id: student.id}) }}" method="post">
+                <button class="btn btn-primary btn-confirmation" data-confirmation-label="Souhaitez-vous envoyer le mail de résultat d'admissibilité ?">Envoyer le mail d'admissibilité</button>
+            </form>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<script src="{{ asset('js/button-clipboard.js') }}"></script>

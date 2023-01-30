@@ -1,0 +1,47 @@
+{% macro menu_links(notification) %}
+    {% for reply in notification.replies|reverse %}
+        {% import _self as macros %}
+        <div class="reply_item {% if 'ROLE_CANDIDATE' in reply.sender.roles %}reply{% endif %}">
+            <div class="message">
+                <div class="from">
+                    De : <span class="from_name">
+                        {% if reply.sender.student is not empty %}
+                            <a href="{{ path('student_edit', {'id': reply.sender.student.id}) }}">
+                                {{ reply.sender.firstName }} {{ reply.sender.lastName }}
+                            </a>
+                        {% else %}
+                            {{ reply.sender.firstName }} {{ reply.sender.lastName }}
+                        {% endif %}
+                    </span> - ({{ reply.createdAt|date('d/m/Y H:i:s') }})
+                </div>
+                {% if reply.receiver is not null %}
+                    <div class="to">
+                        À : <span class="to_name">
+                            {% if reply.receiver.student is not empty %}
+                                <a href="{{ path('student_edit', {'id': reply.receiver.student.id}) }}">
+                                {{ reply.receiver.firstName }} {{ reply.receiver.lastName }}
+                            </a>
+                            {% else %}
+                                {{ reply.receiver.firstName }} {{ reply.receiver.lastName }}
+                            {% endif %}
+                        </span>
+                    </div>
+                {% endif %}
+                <hr />
+                <div class="subject">
+                    Sujet : {{ reply.subject }}
+                </div>
+                <br />
+                {{ reply.content|raw }}
+            </div>
+        </div>
+
+        {% if reply.replies is not empty %}
+            {{ macros.menu_links(reply) }}
+        {% endif %}
+    {% endfor %}
+{% endmacro %}
+
+<div class="replies_container">
+    {{ _self.menu_links(notificationParent) }}
+</div>

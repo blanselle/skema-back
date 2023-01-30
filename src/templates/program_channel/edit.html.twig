@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier la voie de concours{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('program_channel_index') }}" class="btn btn-secondary">Retour à la liste des voies de concours</a>
+        {{ include('program_channel/_delete_form.html.twig') }}
+    </div>
+    <hr />
+    <h1>Modifier la voie de concours {{ programChannel.name }}</h1>
+
+    {{ include('program_channel/_form.html.twig') }}
+{% endblock %}

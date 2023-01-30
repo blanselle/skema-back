@@ -1,0 +1,4 @@
+services:
+  App\Helper\PaymentHelper:
+    public: true
+    autowire: true

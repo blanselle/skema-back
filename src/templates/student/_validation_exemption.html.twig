@@ -1,0 +1,14 @@
+{% if student.state == 'exemption' %}
+    <hr />
+    <div class="validation validation_exemption">
+        <form name="validate_form" id="validate_form" action="" method="post">
+            <input type="hidden" name="token" value="{{ csrf_token('student'~student.id) }}"/>
+            <button value="{{ validate }}" name="validation_exemption" type="submit" class="btn btn-danger btn-lg">Valider la dérogation</button>
+        </form>
+        <form name="rejected_form" id="rejected_form" action="" method="post">
+            <input type="hidden" name="token" value="{{ csrf_token('student'~student.id) }}"/>
+            <button value="{{ rejected }}" name="validation_exemption" type="submit" class="btn btn-danger btn-lg">Refuser la dérogation</button>
+        </form>
+    </div>
+    <hr />
+{% endif %}

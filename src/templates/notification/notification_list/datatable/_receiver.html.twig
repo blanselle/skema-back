@@ -1,0 +1,9 @@
+{% if item.receiver is not empty %}
+    {% if item.receiver.student is not empty %}
+        <a target="_blank" href="{{ path('student_edit', {'id': item.receiver.student.id}) }}">{{ item.receiver.firstName}} {{ item.receiver.lastName}}</a>
+    {% else %}
+        {{ item.receiver.firstName}} {{ item.receiver.lastName}}
+    {% endif %}
+{% else %}
+    Service Concours
+{% endif %}

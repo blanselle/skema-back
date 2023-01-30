@@ -1,0 +1,68 @@
+App\Entity\Event:
+  event1:
+    label: "Ouverture des inscriptions en ligne"
+    paramStart: '@param_dateDebutInscriptions1'
+    paramEnd: '@param_dateClotureInscriptions1'
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+
+  event2:
+    label: "Date limite de validation du CV en ligne"
+    paramStart: '@param_dateFinCV1'
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+
+  event3:
+    label: "Date limite de transmission des scores des épreuves d'admissibilité d'anglais (hors sessions SKEMA)"
+    paramStart: '@param_dateFinUploadEpreuveAnglais1'
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+
+  event4:
+    label: "Fermeture des dates de passages des épreuves écrites de management"
+    paramStart: '@param_dateFinEpreuveManagement1'
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+
+  event5:
+    label: "Résultats d'admissibilité"
+    paramStart: '@param_dateResultatsAdmissibilite1'
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+
+  event6:
+    label: "Ouverture prise de rendez-vous aux oraux"
+    paramStart: '@param_dateOuvertureRDV1'
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+
+  event7:
+    label: "Fermeture prise de rendez-vous aux oraux"
+    paramStart: '@param_dateFermetureRDV1'
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+
+  event8:
+    label: "Epreuves orales"
+    paramStart: '@param_oralDateDebut1'
+    paramEnd: '@param_oralDateFin1'
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+
+  event9:
+    label: "Résultats d'admission"
+    paramStart: '@param_dateResultatsAdmission1'
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+
+  event10:
+    label: "Affectation et confirmations"
+    paramStart: '@param_dateAffectationDefinitive1'
+    paramEnd: '@param_dateFinReaffectation1'
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+
+  event11:
+    label: "Ouverture des dates de passages des épreuves écrites d'anglais"
+    paramStart: '@param_dateMiniAnglais1'
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+
+  event12:
+    label: "Ouverture des dates de passages des épreuves écrites de management"
+    paramStart: '@param_dateMiniManagement1'
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+
+  event13:
+    label: "Date limite de transmission des scores des épreuves d'admissibilité de management"
+    paramStart: '@param_dateFinUploadEpreuveGmat1'
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']

@@ -1,0 +1,27 @@
+services:
+  # default configuration for services in *this* file
+  _defaults:
+    autowire: true      # Automatically injects dependencies in your services.
+    autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+  App\EventSubscriber\Workflow\Student\OnAuthenticationSuccessEvent:
+    tags:
+      - { name: doctrine.event_listener, event: AuthenticationSuccessEvent }
+
+  App\EventSubscriber\Workflow\Student\OnAuthenticationFailure:
+    tags:
+      - { name: doctrine.event_listener, event: AuthenticationFailureEvent }
+
+  App\EventSubscriber\Doctrine\FileRemoveSubscriber:
+    tags:
+      - { name: doctrine.event_listener, event: postRemove }
+
+  App\EventSubscriber\Workflow\OralTest\OnOralTestStudentValidationSubscriber:
+    arguments:
+      $purger: '@api_platform.http_cache.purger.varnish'
+
+  App\EventSubscriber\Doctrine\OralTest\DecreaseReservedPlacesSubscriber:
+    arguments:
+      $purger: '@api_platform.http_cache.purger.varnish'
+    tags:
+      - { name: doctrine.event_listener, event: postRemove }

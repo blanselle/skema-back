@@ -1,0 +1,13 @@
+App\Entity\AdministrativeRecord\SportLevel:
+  sl_level_0:
+    label: Élite / Sénior / Reconversion
+    position: 0
+  sl_level_1:
+    label: Relève / Jeune
+    position: 1
+  sl_level_2:
+    label: Espoir / Collectifs nationaux et partenaires
+    position: 2
+  sl_level_3:
+    label: Professionnel / Arbitre / Entraineur
+    position: 3

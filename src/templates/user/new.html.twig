@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvel utilisateur{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('user_index') }}" class="btn btn-secondary">Retour à la liste des utilisateurs</a>
+    </div>
+    <hr />
+    <h1>Créer un nouvel utilisateur</h1>
+    <p>
+        Attention, si l'utilisateur à un compte interne skema, le mot de passe ne sera pas pris en compte
+    </p>
+
+    {{ include('user/_form.html.twig') }}
+{% endblock %}

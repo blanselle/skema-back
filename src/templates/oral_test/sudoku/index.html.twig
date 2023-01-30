@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Épreuves orales - Sudoku{% endblock title %}
+
+{% block page_title %}Épreuves orales - Sudoku{% endblock page_title %}
+
+{% block main %}
+
+    <div id="sudoku" class="row">
+        <div class="row">
+            {% if is_granted('ROLE_RESPONSABLE') and hasRemainingConfiguration %}
+                <div class="col-4 p-2">
+                    <a class="btn btn-primary" href="{{ path('sudoku_initialization_init') }}">Initialiser un Sudoku</a>
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="row pt-5">
+            {% if is_granted('ROLE_RESPONSABLE') %}
+                {% for configuration in configurations %}
+                    <div class="col-4 p-2">
+                        <a class="btn btn-warning" href="{{ path('sudoku_initialization_configure', {'id': configuration.id}) }}">Compléter/éditer la configuration {{ configuration }}</a>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        <hr>
+
+        <div class="row pt-5">
+            <h2>Liste des Sudoku initialisés</h2>
+
+            {% for sudoku in sudokuList %}
+                <div class="col-4 p-2">
+                    <a class="btn btn-success" href="{{ path('sudoku_show', {'id': sudoku.id}) }}">Accéder au {{ sudoku }}</a>
+                </div>
+            {% else %}
+                <div>Aucun Sudoku initialisé</div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+{% endblock main %}

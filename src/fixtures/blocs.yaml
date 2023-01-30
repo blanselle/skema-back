@@ -1,0 +1,1002 @@
+App\Entity\Bloc\BlocTag:
+  home_ge:
+    label: 'HOME_GE'
+  home_nav_social:
+    label: 'HP_NAV_SOCIAL'
+  home_raison_title:
+    label: 'HP_RAISON_TITLE'
+  home_raison_content:
+    label: 'HP_RAISON_CONTENT'
+  home_raison_detail:
+    label: 'HP_RAISON_DETAIL'
+  home_footer_map:
+    label: 'HP_FOOTER_MAP'
+  home_footer_middle:
+    label: 'HP_FOOTER_MIDDLE'
+  home_footer_logo:
+    label: 'HP_FOOTER_LOGO'
+  tag_ast_home_title:
+    label: 'AST_HP_TITLE'
+  tag_mail:
+    label: 'MAIL'
+  errors:
+    label: 'ERRORS'
+  candidate_connexion:
+    label: 'CANDIDATE_CONNEXION'
+  tag_home_pge_justificatifs:
+    label: 'HOME_PGE_JUSTIFICATIFS'
+  tag_home_pge_descriptif_epreuves:
+    label: 'HOME_PGE_DESCRIPTIF_EPREUVES'
+  tag_home_pge_informations_concours:
+    label: 'HOME_PGE_INFORMATIONS_CONCOURS'
+  tag_home_pge_infos_pratiques:
+    label: 'HOME_PGE_INFOS_PRATIQUES'
+  tag_home_pge_liens_utiles:
+    label: 'HOME_PGE_LIENS_UTILES'
+  tag_home_pge_concours_international:
+    label: 'HOME_PGE_CONCOURS_INTERNATIONAL'
+  tag_ast_refused:
+    label: 'TAG_AST_REFUSED'
+  tag_home_pge_descriptif_epreuves_admissibilite:
+    label: 'HOME_PGE_DESCRIPTIF_EPREUVES_ADMISSIBILITE'
+  tag_home_pge_descriptif_epreuves_admission:
+    label: 'HOME_PGE_DESCRIPTIF_EPREUVES_ADMISSION'
+  tag_error_candidate_inscription_not_open:
+    label: 'ERROR_CANDIDATE_INSCRIPTION_NOT_OPEN'
+  tag_error_candidate_inscription_too_late:
+    label: 'ERROR_CANDIDATE_INSCRIPTION_TOO_LATE'
+  tag_dossier_administratif_verbatim:
+    label: 'DOSSIER_ADMINISTRATIF_VERBATIM'
+  tag_profil_footer_light:
+    label: 'PROFIL_FOOTER_LIGHT'
+  tag_text_legal:
+    label: 'TEXT_LEGAL'
+  tag_administrative_record_lv2_part:
+    label: 'ADMINISTRATIVE_RECORD_LV2_PART'
+  tag_cv_verbatim:
+    label: 'CV_VERBATIM'
+  tag_resignation_verbatim:
+    label: 'RESIGNATION_VERBATIM'
+  tag_notification_messages:
+    label: 'NOTIFICATION_MESSAGES'
+  tag_resignation_message_success:
+    label: 'RESIGNATION_MESSAGE_SUCCESS'
+  tag_mail_reject:
+    label: 'MAIL_REJECT'
+  tag_profil_verbatim:
+    label: 'PROFIL_VERBATIM'
+  tag_notification_summons_generated:
+    label: 'NOTIFICATION_SUMMONS_GENERATED'
+  tag_error_reinit_password:
+    label: 'ERROR_REINIT_PASSWORD'
+  tag_success_reinit_password:
+    label: 'MSG_REINIT_PASSWORD_SUCCESS'
+  tag_cv_popin_validation:
+    label: 'CV_POPIN_VALIDATION'
+  tag_payment:
+    label: 'PAYMENT'
+  tag_dashboard_initialized_candidacy:
+    label: 'DASHBOARD_INITIALIZED_CANDIDACY'
+  tag_dashboard_completed_candidacy:
+    label: 'DASHBOARD_COMPLETED_CANDIDACY'
+  tag_dashboard_saved_candidacy:
+    label: 'DASHBOARD_SAVED_CANDIDACY'
+  tag_dashboard_validated_candidacy:
+    label: 'DASHBOARD_VALIDATED_CANDIDACY'
+  tag_dashboard_admissible_candidacy:
+    label: 'DASHBOARD_ADMISSIBLE_CANDIDACY'
+  tag_dashboard_campus_informations:
+    label: 'DASHBOARD_CAMPUS_INFORMATIONS'
+  tag_dashboard_processing_candidacy:
+    label: 'DASHBOARD_PROCESSING_CANDIDACY'
+  tag_dashboard_welcome_candidacy:
+    label: 'DASHBOARD_WELCOME_CANDIDACY'
+  tag_cv_info_moyenne:
+    label: 'CV_INFO_MOYENNE'
+  tag_cv_info_moyenne_non_standard:
+    label: 'CV_INFO_MOYENNE_NON_STANDARD'
+  tag_account_activation:
+    label: 'ACCOUNT_ACTIVATION'
+  tag_written_test_management_nota_bene_fnege:
+    label: 'WRITTEN_TEST_MANAGEMENT_NOTA_BENE_FNEGE'
+  tag_written_test_english_score_subtitle:
+    label: 'WRITTEN_TEST_ENGLISH_SCORE_SUBTITLE'
+  tag_written_test_english_score_nota_bene:
+    label: 'WRITTEN_TEST_ENGLISH_SCORE_NOTA_BENE'
+  tag_written_test_english_inscription_subtitle:
+    label: 'WRITTEN_TEST_ENGLISH_INSCRIPTION_SUBTITLE'
+  tag_written_test_english_inscription_nota_bene:
+    label: 'WRITTEN_TEST_ENGLISH_INSCRIPTION_NOTA_BENE'
+  tag_written_test_management_score_nota_bene:
+    label: 'WRITTEN_TEST_MANAGEMENT_SCORE_NOTA_BENE'
+  tag_written_test_management_inscription_subtitle:
+    label: 'WRITTEN_TEST_MANAGEMENT_INSCRIPTION_SUBTITLE'
+  tag_written_test_management_inscription_nota_bene:
+    label: 'WRITTEN_TEST_MANAGEMENT_INSCRIPTION_NOTA_BENE'
+  tag_written_test_management_score_subtitle:
+    label: 'WRITTEN_TEST_MANAGEMENT_SCORE_SUBTITLE'
+  tag_dashboard_complete_popin:
+    label: 'DASHBOARD_COMPLETE_POPIN'
+  tag_registrations_closed_cv_in_progress_of_control:
+    label: 'REGISTRATIONS_CLOSED_CV_IN_PROGRESS_OF_CONTROL'
+  tag_history_orders_page_verbatim:
+    label: 'HISTORY_ORDERS_PAGE_VERBATIM'
+  tag_admissibility_result:
+    label: 'ADMISSIBILITY_RESULT'
+  tag_error_candidacy_submission_popin:
+    label: 'ERROR_CANDIDACY_SUBMISSION_POPIN'
+  tag_notification_ranking_messages:
+    label: 'NOTIFICATION_RANKING_MESSAGES'
+  tag_dashboard_oraux_recap_titre:
+    label: 'DASHBOARD_ORAUX_RECAP_TITRE'
+  tag_dashboard_oraux_recap_epreuve:
+    label: 'DASHBOARD_ORAUX_RECAP_EPREUVE'
+  tag_dashboard_oraux_prepa:
+    label: 'DASHBOARD_ORAUX_PREPA'
+  tag_program_channel_switched:
+    label: 'PROGRAM_CHANNEL_SWITCHED'
+  tag_landing_admissibilite:
+    label: 'LANDING_ADMISSIBILITE'
+
+App\Entity\Bloc\Bloc:
+  bce:
+    label: '#BCE'
+    content: 'Vous êtes étudiant(e) en classe préparatoire : devenez candidat(e) au concours de la BCE.'
+    link: '/bce'
+    labelLink: 'Accéder'
+    position: 0
+    tag: '@home_ge'
+  ast:
+    label: '#AST'
+    content: "Vous êtes étudiant(e) titulaire ou futur titulaire d'un Bac+2, Bac+3 ou Bac+4 : devenez candidat(e) au Concours sur titres."
+    link: '/ast'
+    labelLink: 'Accéder'
+    position: 1
+    tag: '@home_ge'
+  hp_facebook:
+    label: 'Facebook'
+    content: 'facebook'
+    link: 'https://www.facebook.com/SKEMA.Business.School'
+    position: 0
+    tag: '@home_nav_social'
+    media: '@media_hp_facebook'
+  hp_twitter:
+    label: 'Twitter'
+    content: 'twitter'
+    link: 'https://twitter.com/Skema_BS'
+    position: 1
+    tag: '@home_nav_social'
+    media: '@media_hp_twitter'
+  hp_insta:
+    label: 'Instagram'
+    content: 'instagram'
+    link: 'https://www.instagram.com/skema_bs/'
+    position: 2
+    tag: '@home_nav_social'
+    media: '@media_hp_insta'
+  hp_linkedin:
+    label: 'Linkedin'
+    content: 'linkedin'
+    link: 'https://www.linkedin.com/school/skema-business-school/'
+    position: 3
+    tag: '@home_nav_social'
+    media: '@media_hp_linkedin'
+  hp_youtube:
+    label: 'Youtube'
+    content: 'youtube'
+    link: 'https://www.youtube.com/skemabstv'
+    position: 4
+    tag: '@home_nav_social'
+    media: '@media_hp_youtube'
+  hp_tiktok:
+    label: 'Tiktok'
+    content: 'tiktok'
+    link: 'https://www.tiktok.com/@skema_businessschool '
+    position: 5
+    tag: '@home_nav_social'
+    media: '@media_hp_tiktok'
+  hp_wechat:
+    label: 'Wechat'
+    content: 'wechat'
+    link: 'https://www.skema-bs.fr/skema/suivez-nous-sur-wechat'
+    position: 6
+    tag: '@home_nav_social'
+    media: '@media_hp_wechat'
+  hp_raison_title:
+    label: 'PROGRAMME GRANDE ECOLE'
+    content: 'Les 5 bonnes raisons de choisir SKEMA Business School'
+    link: '#'
+    position: 0
+    tag: '@home_raison_title'
+  hp_prog1:
+    label: 'grande ecole'
+    content: 'Intégrez une Grande Ecole reconnue en France et dans le monde : Triple accréditée EQUIS, AACSB et EFMD.'
+    link: '#'
+    position: 0
+    tag: '@home_raison_content'
+    media: '@media_hp_prog1'
+  hp_prog2:
+    label: '60 spe'
+    content: "60 spécialisations délivrant des doubles et triples diplômes dont 25% à l'international."
+    link: '#'
+    position: 1
+    tag: '@home_raison_content'
+    media: '@media_hp_prog2'
+  hp_prog3:
+    label: 'profil inter'
+    content: "Dotez-vous d'un profil international et recherché par les recruteurs en étant préparé au management de l'innovation et aux enjeux de l'entrepreunariat"
+    link: '#'
+    position: 2
+    tag: '@home_raison_content'
+    media: '@media_hp_prog3'
+  hp_prog4:
+    label: 'reseau actif'
+    content: 'Réseau actif dans le monde entier. 48 000 diplômés occupant des postes clés dans des entreprises françaises et internationales'
+    link: '#'
+    position: 3
+    tag: '@home_raison_content'
+    media: '@media_hp_prog4'
+  hp_prog5:
+    label: 'epanouissez vous'
+    content: "Epanouissez-vous dans une vie associative riche et diversifiée en vous engageant dans l'une de nos 65 associations sur nos campus en France et à l'international."
+    link: '#'
+    position: 4
+    tag: '@home_raison_content'
+    media: '@media_hp_prog5'
+  hp_more_detail:
+    label: 'Découvrir'
+    content: '#'
+    link: 'https://www.google.fr'
+    labellink: 'Découvrir'
+    position: 4
+    tag: '@home_raison_detail'
+  hp_footer_map:
+    label: 'map'
+    content: '#'
+    link: 'https://www.skema-bs.fr/skema/campus'
+    labellink: 'Découvrir'
+    position: 4
+    tag: '@home_footer_map'
+    media: '@media_hp_footer_map'
+  hp_footer_middle:
+    label: 'SKEMA Business School'
+    content: "BBA, ESDHEM, Programme Grande Ecole, Mastère Spécialisée, Masters of science, Formation Continue, Executive MBA, Doctorat, PhD, DBA... <br /> <stong> <a href='https://www.skema-bs.fr/skema/s-abonner-a-nos-newsletters' target='_blank'>Abonnez-vous à nos newsletters</a><br /> <a href='https://www.skema-bs.fr/informations-legales/' target='_blank'>Informations légales</a> | <a href='https://www.e-marchespublics.com/appel-offre/skema' target='_blank'>Achats SKEMA</a> | <a href='#'>Contact</a> | SKEMA 2020"
+    link: '#'
+    labellink: 'Découvrir'
+    position: 0
+    tag: '@home_footer_middle'
+  hp_footer_logo0:
+    label: 'grande ecoles'
+    content: '#'
+    link: 'https://www.cge.asso.fr/'
+    position: 0
+    tag: '@home_footer_logo'
+    media: '@media_hp_footer_logo0'
+  hp_footer_logo1:
+    label: 'EMBA'
+    content: '#'
+    link: 'https://www.efmdglobal.org/accreditations/business-schools/efmd-accredited/'
+    position: 1
+    tag: '@home_footer_logo'
+    media: '@media_hp_footer_logo1'
+  hp_footer_logo2:
+    label: 'AACSB'
+    content: '#'
+    link: 'https://www.aacsb.edu/'
+    position: 2
+    tag: '@home_footer_logo'
+    media: '@media_hp_footer_logo2'
+  hp_footer_logo3:
+    label: 'EQUIS'
+    content: '#'
+    link: 'https://www.efmdglobal.org/accreditations/business-schools/equis/'
+    position: 3
+    tag: '@home_footer_logo'
+    media: '@media_hp_footer_logo3'
+  hp_footer_logo4:
+    label: 'SKEMA'
+    content: '#'
+    link: 'https://www.skema-bs.fr/'
+    position: 4
+    tag: '@home_footer_logo'
+    media: '@media_hp_footer_logo4'
+
+  profil_footer_light_campus:
+    label: 'Découvrir les campus'
+    content: ''
+    labellink: 'Découvrir les campus'
+    link: 'https://www.skema-bs.fr/skema/campus'
+    position: 1
+    tag: '@tag_profil_footer_light'
+  profil_footer_light_presentation:
+    label: 'Présentation du concours'
+    content: ''
+    labellink: 'Présentation du concours'
+    link: 'https://www.skema-bs.fr/skema/concours'
+    position: 2
+    tag: '@tag_profil_footer_light'
+  profil_footer_light_rules:
+    label: 'Règlement'
+    content: ''
+    labellink: 'Règlement'
+    link: 'https://www.skema-bs.fr/skema/rules'
+    position: 3
+    tag: '@tag_profil_footer_light'
+  profil_footer_light_contact:
+    label: 'Contact'
+    content: ''
+    labellink: 'Contact'
+    link: 'https://www.skema-bs.fr/skema/contact'
+    position: 4
+    tag: '@tag_profil_footer_light'
+  profil_footer_light_legacy:
+    label: 'Informations légales'
+    content: ''
+    labellink: 'Informations légales'
+    link: 'https://www.skema-bs.fr/skema/legacy'
+    position: 5
+    tag: '@tag_profil_footer_light'
+  profil_footer_light_skema:
+    label: © SKEMA <displayCurrentDate('Y')>
+    content: ''
+    position: 6
+    tag: '@tag_profil_footer_light'
+
+  ast_home_title:
+    label: '#ast'
+    content: <escape("<strong>Les inscriptions en ligne au concours AST 2021 sont ouvertes</strong><br /> du mardi 1er décembre 2020 à 08h00 au 15 mars 2021 12h.<br /><br /> Vous êtes étudiant(e) titulaire d'un Bac+2, Bac+3, ou Bac+4,<br /> devenez candidat(e) au concours AST")>
+    link: '/signup'
+    labellink: 'Candidater'
+    position: 4
+    tag: '@tag_ast_home_title'
+  reset_password_mail:
+    key: 'MAIL_RESET_PASSWORD'
+    label: 'Réinitialiser son mot de passe'
+    content: "Vous avez fait une demande de reinitialisation de mot de passe pour le compte %default.email%. <br />Si vous êtes pas à l'origine de ce mail merci d'ignorer ce message. <br />Pour continuer la démarche de réinitialisation, nous vous invitons à cliquer <a href='%default.link%'>ici</a>"
+    labelLink: 'Réinitialiser mon mot de passe'
+    position: 1
+    tag: '@tag_mail'
+  ast_candidate_connexion:
+    key: 'CANDIDATE_CONNEXION_FORM'
+    label: 'Déjà inscrit au concours AST {year}'
+    content: 'Entrez votre e-mail et votre mot de passe pour accéder à votre dossier :'
+    labelLink: 'Se connecter'
+    tag: '@candidate_connexion'
+    position: 0
+
+  ### ERRORS ###
+  ## CANDIDATE
+  error_candidate_incription_not_open:
+    key: 'ERROR_CANDIDATE_INSCRIPTION_NOT_OPEN'
+    label: 'ERROR_CANDIDATE_INSCRIPTION_NOT_OPEN'
+    content: 'Les inscriptions au concours PGE ne sont pas encore ouvertes'
+    tag: '@tag_error_candidate_inscription_not_open'
+    position: 0
+  error_candidate_incription_too_late:
+    key: 'ERROR_CANDIDATE_INSCRIPTION_TOO_LATE'
+    label: 'ERROR_CANDIDATE_INSCRIPTION_TOO_LATE'
+    content: 'Les inscriptions au concours PGE sont closes'
+    tag: '@tag_error_candidate_inscription_too_late'
+    position: 0
+  error_candidate_exemption:
+    key: 'ERROR_CANDIDATE_EXEMPTION'
+    label: 'ERROR_CANDIDATE_EXEMPTION'
+    content: <escape("Bonjour, <br /><br /> Vous souhaitez participer au concours AST SKEMA. <br />Votre profil nécessite une dérogation. Merci de contacter le service concours.")>
+    tag: '@errors'
+    position: 0
+  error_candidate_connexion_form:
+    key: 'ERROR_CANDIDATE_CONNEXION_FORM'
+    label: 'ERROR_CANDIDATE_CONNEXION_FORM'
+    content: 'Erreur lors de la connexion, veuillez vérifier vos identifiants.'
+    tag: '@errors'
+    position: 0
+  error_reinit_password:
+    key: 'ERROR_REINIT_PASSWORD'
+    label: 'ERROR_REINIT_PASSWORD'
+    content: 'Une erreur est survenue lors de la réinitialisation de votre mot de passe. Merci de faire une nouvelle demande.'
+    tag: '@tag_error_reinit_password'
+  error_reinit_password_success:
+    key: 'MSG_REINIT_PASSWORD_SUCCESS'
+    label: 'MSG_REINIT_PASSWORD_SUCCESS'
+    content: 'Vous pouvez dès à présent vous connecter avec votre nouveau mot de passe.'
+    tag: '@tag_success_reinit_password'
+  error_connexion_resignation:
+    key: 'ERROR_CONNEXION_RESIGNATION'
+    label: 'ERROR_CONNEXION_RESIGNATION'
+    content: 'Vous avez démissionné du concours Skema pour le Programme Grande École.'
+    tag: '@errors'
+  error_candidacy_submission_popin:
+    key: 'ERROR_CANDIDACY_SUBMISSION_POPIN'
+    label: 'ERROR_CANDIDACY_SUBMISSION_POPIN'
+    tag: '@tag_error_candidacy_submission_popin'
+    content: <escape("<p>La soumission de votre candidature n’a pas pu aboutir, merci de contacter le service concours.</p>")>
+    position: 0
+    active: 1
+    programChannels:
+      ['@ast1_program_channel', '@ast2_program_channel', '@bce_eco_program_channel', '@bce_lit_program_channel']
+  user_creation_ok:
+    key: 'USER_CREATION_OK'
+    label: 'USER_CREATION_OK'
+    content: <escape("Bienvenue sur le site Concours AST SKEMA.<br /> Vous pouvez dès à présent vous connectez à votre espace et finaliser votre candidature au plus vite.<br />ATTENTION votre inscription sera effective dès lors que vous procéderez au paiement des frais d’inscription ou téléchargement de l’attestation de bourse ainsi que des pièces administratives obligatoires!")>
+    tag: '@errors'
+  ast_justificatifs_a_fournir_part1:
+    label: "Jutificatifs à fournir"
+    content: <escape("<p style='text-align:center'>&nbsp;</p> <p style='text-align:center'><span style='font-size:20px'>Jutificatifs &agrave; fournir</span></p> <p>&nbsp;</p> <ul> <li>Certificat de scolarit&eacute; ou dipl&ocirc;me d&eacute;j&agrave; obtenu (bac, autres dipl&ocirc;mes...)</li> <li>Relev&eacute;s de notes (&eacute;tudes sup&eacute;rieures)</li> <li>Notes TOEIC&reg;, TOEFL&reg;, ICIMS Language assessment, TAGE 2&reg;, TAGE MAGE&reg;</li> </ul>")>
+    position: 1
+    tag: '@tag_home_pge_justificatifs'
+  ast_justificatifs_a_fournir_part2:
+    label: "Pour les candidats concernés"
+    content: <escape("<hr /> <p>&nbsp;</p> <p>&nbsp;</p> <p><strong>Pour les candidats concern&eacute;s</strong></p> <ul> <li>Attestation de bourse</li> <li>Justificatif sportif haut niveau</li> <li>Attestation m&eacute;dicale dans le cadre d&#39;un am&eacute;nagement</li> </ul>")>
+    position: 2
+    tag: '@tag_home_pge_justificatifs'
+  ast_descriptif_des_epreuves:
+    label: 'DESCRIPTIFS DES ÉPREUVES'
+    content: ""
+    position: 1
+    tag: '@tag_home_pge_descriptif_epreuves'
+  ast_informations_concours:
+    label: <replace('{year}', <displayCurrentDate('Y')>, 'INFORMATIONS CONCOURS {year}')>
+    content: <escape('<table><tr><td colspan="2">Nombre de candidats</td></tr><tr><th>AST1</th><th>AST2</th></tr><tr><td>1577</td><td>3762</td></tr></table><table><tr><td colspan="2">Moyenne derniers affectés</td></tr><tr><th>AST1</th><th>AST2</th></tr><tr><td>1389</td><td>1383</td></tr></table><table><tr><td colspan="2">Rang derniers affectés</td></tr><tr><th>AST1</th><th>AST2</th></tr><tr><td>503</td><td>1300</td></tr></table><p>Nam consectetur interdum felis, ac viverra nisl luctus a. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;</p>')>
+    media: '@media_ast_informations_concours'
+    labelLink: 'Télécharger la brochure'
+    link: '#'
+    position: 1
+    tag: '@tag_home_pge_informations_concours'
+  ast_infos_pratiques_title:
+    label: 'INFORMATIONS PRATIQUES'
+    content: ''
+    position: 1
+    tag: '@tag_home_pge_infos_pratiques'
+  ast_infos_pratiques_1:
+    label: ''
+    content: ''
+    position: 2
+    tag: '@tag_home_pge_infos_pratiques'
+    labelLink: Règlement du concours
+    media: '@media_ast_concours_reglement'
+  ast_infos_pratiques_2:
+    label: ''
+    content: ''
+    position: 3
+    tag: '@tag_home_pge_infos_pratiques'
+    labelLink: Présentation du concours
+    media: '@media_ast_concours_presentation'
+  ast_liens_utiles_title:
+    label: 'LIENS UTILES'
+    content: ''
+    position: 1
+    tag: '@tag_home_pge_liens_utiles'
+  ast_liens_utiles_1:
+    label: ''
+    content: ''
+    link: 'https://www.skema-bs.fr/'
+    labelLink: Skema Business School
+    position: 2
+    tag: '@tag_home_pge_liens_utiles'
+  ast_liens_utiles_2:
+    label: ''
+    content: ''
+    link: 'https://www.tagemage.fr/'
+    labelLink: Tage Mage®
+    position: 3
+    tag: '@tag_home_pge_liens_utiles'
+  ast_liens_utiles_3:
+    label: ''
+    content: ''
+    link: 'https://www.tage2.fr/'
+    labelLink: Tage 2®
+    position: 4
+    tag: '@tag_home_pge_liens_utiles'
+  ast_liens_utiles_4:
+    label: ''
+    content: ''
+    link: 'https://www.etsglobal.org/fr/fr/test-type-family/test-toeic-listening-and-reading'
+    labelLink: TOEIC Listening &amp; Reading
+    position: 5
+    tag: '@tag_home_pge_liens_utiles'
+  ast_liens_utiles_5:
+    label: ''
+    content: ''
+    link: '/faq'
+    labelLink: FAQ
+    position: 6
+    tag: '@tag_home_pge_liens_utiles'
+  ast_liens_utiles_6:
+    label: ''
+    content: ''
+    link: '/contact'
+    labelLink: Nous contacter
+    position: 7
+    tag: '@tag_home_pge_liens_utiles'
+  ast_concours_international:
+    label: 'Concours international'
+    content: <escape("<p><span style='font-family:Arial,Helvetica,sans-serif'><span style='font-size:26px'>Concours international</span></span></p> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent scelerisque commodo purus, non bibendum neque luctus vitae. Donec id libero risus. Proin at fringilla arcu. Nulla maximus enim sem, id pretium massa dapibus nec. Mauris non erat consectetur, luctus nisl ut, accumsan nisi. Etiam a posuere urna. Donec at dignissim nisi. Praesent venenatis condimentum vulputate. Duis tristique, enim at malesuada venenatis, enim orci sagittis eros, ut ornare neque lacus eget lectus. Maecenas ante metus, placerat a ornare vitae, sodales id justo. Nam consectetur interdum felis, ac viverra nisl luctus a. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;</p>")>
+    media: '@media_ast_concours_international'
+    position: 1
+    tag: '@tag_home_pge_concours_international'
+  ast_refused:
+    key: 'AUTH_REFUSED'
+    label: 'Authentification refusée'
+    content: "Vous n'êtes pas éligible au concours Skema pour le Programme Grande École"
+    tag: '@tag_ast_refused'
+  ast_refused_payement:
+    key: 'AUTH_REFUSED_PAYEMENT'
+    label: 'Authentification refusée'
+    content: 'Les inscriptions au concours Skema pour le Programme Grande École sont clôturées'
+    tag: '@tag_ast_refused'
+
+  ast_epreuves_admissibilite_anglais:
+    label: "Test d'anglais"
+    content: "Toeic® Listening and reading / TOEFL IBT / IELTS"
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+    position: 1
+    tag: '@tag_home_pge_descriptif_epreuves_admissibilite'
+  ast_epreuves_admissibilite_management_ast1:
+    label: "Test d'aptitude au management"
+    content: "TAGE 2® ou GMAT"
+    programChannels: ['@ast1_program_channel']
+    position: 2
+    tag: '@tag_home_pge_descriptif_epreuves_admissibilite'
+  ast_epreuves_admissibilite_management_ast2:
+    label: "Test d'aptitude au management"
+    content: "TAGE MAGE® ou GMAT"
+    programChannels: ['@ast2_program_channel']
+    position: 3
+    tag: '@tag_home_pge_descriptif_epreuves_admissibilite'
+  ast_epreuves_admissibilite_niveau_academique_cv:
+    label: "Niveau académique + CV"
+    content: ""
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+    position: 4
+    tag: '@tag_home_pge_descriptif_epreuves_admissibilite'
+  ast_epreuves_admission_entretien:
+    label: "Entretien"
+    content: ""
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+    position: 1
+    tag: '@tag_home_pge_descriptif_epreuves_admission'
+  ast_epreuves_admission_anglais:
+    label: "Anglais"
+    content: ""
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+    position: 2
+    tag: '@tag_home_pge_descriptif_epreuves_admission'
+  ast_epreuves_admission_lv2:
+    label: "LV2 Facultative"
+    content: ""
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+    position: 3
+    tag: '@tag_home_pge_descriptif_epreuves_admission'
+
+  ## ADMINISTRATIVE RECORD ##
+  dossier_administratif_message_cloture_inscription:
+    content: "Votre candidature doit être validée avant le %parameter.dateClotureInscriptions%"
+    position: 1
+    tag: '@tag_dossier_administratif_verbatim'
+
+  ## LEGAL ##
+  text_legal_cnil:
+    label: "text cnil"
+    content: Les informations recueillies font l'objet d'un traitement informatique destiné à l'usage interne de Skema Business School. Les destinataires des données sont les services. Informatique admissions, registraires et scolarité. Conformément à la loi "informatique et libertés", vous bénéficiez d'un droit d'accès, de rectification et de suppression des informations qui vous concernent. Si vous souhaitez exercer ce droit et obtenir communication des informations vous concernant veuillez nous contacter.
+    position: 1
+    tag: '@tag_text_legal'
+  dossier_administratif_lv2:
+    label: 'ADMINISTRATIVE_RECORD_LV2_PART'
+    content: <escape("Il est obligatoire pour un candidat d'être capable de converser correctement dans la langue choisie pour espérer obtenir des points supplémentaires.<br/>L'épreuve devient obligatoire dès lors que vous y serez inscrit(e) sous peine d'élimination.<br /><strong>Vous avez jusqu'à la clôture des inscriptions pour modifier ou supprimer le choix de la LV2</strong>")>
+    position: 1
+    tag: '@tag_administrative_record_lv2_part'
+
+  ## CV ##
+  cv_verbatim_text:
+    content: "Prenez soin de bien compléter chaque rubrique. Chaque diplôme, années d’études post bac et chaque expérience viendront valoriser votre candidature. Votre CV peut être complété en 1 ou plusieurs fois, mais il doit être validé avant le %parameter.dateFinCV%."
+    position: 1
+    tag: '@tag_cv_verbatim'
+
+  ## RESIGNATION ##
+  resignation_label:
+    content: "Vous ne souhaitez plus intégrer Skema ?"
+    position: 1
+    tag: '@tag_resignation_verbatim'
+  resignation_label_link:
+    content: "Démissionner"
+    position: 2
+    tag: '@tag_resignation_verbatim'
+  resignation_label_confirmation:
+    content: "Confirmez-vous votre démission ?"
+    position: 3
+    tag: '@tag_resignation_verbatim'
+  resignation_label_message:
+    content: "Vous avez démissionné, vous n’êtes plus candidat au concours Grande École Skema. Vous allez être déconnecté de l’espace candidat."
+    position: 1
+    key: 'RESIGNATION_LABEL_MESSAGE'
+    tag: '@tag_resignation_message_success'
+
+  notification_new_message:
+    label: "Vous avez reçu un nouveau message"
+    content: "Bonjour, vous avez reçu un nouveau message de la part du service concours Skema. Merci de vous connecter à votre espace pour en prendre connaissance."
+    position: 1
+    key: 'NOTIFICATION_MESSAGE_STUDENT'
+    tag: '@tag_notification_messages'
+
+  notification_check_diploma:
+    label: "Votre candidature est en attente"
+    content: "Bonjour %firstname%, l’éligibilité de votre candidature va être contrôlée. Vous pouvez compléter votre dossier administratif. Le service concours"
+    position: 1
+    key: 'NOTIFICATION_CHECK_DIPLOMA'
+    tag: '@tag_notification_messages'
+
+  notification_derogation_validated:
+    label: "Votre compte est activé"
+    content: "Bonjour %firstname%, votre demande de dérogation est validée, votre compte est désormais activé et vous pouvez vous connecter sur votre espace afin de compléter votre dossier de candidature. Le service concours"
+    position: 1
+    key: 'NOTIFICATION_DEROGATION_VALIDATED'
+    tag: '@tag_notification_messages'
+
+  mail_reject:
+    label: "Votre demande de dérogation est rejetée"
+    content: "Bonjour %firstname%, votre demande de dérogation a été rejetée, vous n’êtes pas éligible au concours du programme Grande École de Skema. Le service concours"
+    key: 'MAIL_REJECT'
+    tag: '@tag_mail_reject'
+    position: 1
+
+  notification_check_diploma_to_created:
+    label: "Compléter votre dossier de candidature"
+    content: "Bonjour %firstname%, votre diplôme est éligible au concours du programme Grande École de Skema. Vous pouvez dès à présent compléter votre dossier administratif et payer vos frais de concours. Le service concours"
+    position: 1
+    key: 'NOTIFICATION_CHECK_DIPLOMA_TO_CREATED'
+    tag: '@tag_notification_messages'
+
+  notification_check_diploma_to_rejected_diploma:
+    label: "Votre dossier de candidature est rejetée"
+    content: "Bonjour %firstname%, votre dossier de candidature a été rejeté, vous n’êtes pas éligible au concours du programme Grande École de Skema. Le service concours"
+    position: 1
+    key: 'NOTIFICATION_CHECK_DIPLOMA_TO_REJECTED_DIPLOMA'
+    tag: '@tag_notification_messages'
+
+  profil_verbatim:
+    content: 'Lorem ipsum dolor sit amet'
+    tag: '@tag_profil_verbatim'
+
+  notification_resignation:
+    label: 'Démission par le service concours'
+    content: <escape("<p>Bonjour %firstname%,</p> <p>Votre candidature pour le concours PGE Skema a été annulé pour le motif suivant :%motif%.</p> <p>Le Service Concours</p>")>
+    tag: '@tag_notification_messages'
+    key: 'RESIGNATION_NOTIFICATION'
+    programChannels: [
+      '@ast1_program_channel',
+      '@ast2_program_channel',
+      '@bce_eco_program_channel',
+      '@bce_lit_program_channel',
+    ]
+  message_email_already_exists:
+    key: 'MESSAGE_EMAIL_ALREADY_EXISTS'
+    content: 'L’adresse email est déjà lié a un compte, merci de vous connectez'
+    tag: '@errors'
+
+  notification_summons_generated:
+    tag: '@tag_notification_summons_generated'
+    key: 'NOTIFICATION_SUMMONS_GENERATED'
+    label: 'Votre convocation'
+    content: 'Bonjour %default.firstname%, votre convocation pour l’épreuve %default.nom_typologie% est téléchargeable dans la rubrique « Mes épreuves écrites ». Le service concours'
+
+  notification_justificatif_rejected:
+    key: 'NOTIFICATION_JUSTIFICATIF_REJECTED'
+    content: 'Le justificatif %type% est refusé.'
+    tag: '@errors'
+
+  cv_popin_validation:
+    key: 'CV_POPIN_VALIDATION'
+    tag: '@tag_cv_popin_validation'
+    content: <escape("<p>En soumettant mon CV, je confirme que :</p><ul><li><p>mes informations sont complètes</p></li><li><p>tous les justificatifs sont correctement téléchargés</p></li></ul><p>Je comprends que mon CV ne sera plus modifiable</p>")>
+
+  payment_msg_payment_in_progress:
+    label: 'Votre paiement'
+    key: 'MSG_PAYMENT_IN_PROGRESS'
+    tag: '@tag_payment'
+    content: <escape("<p>Votre paiement est en cours de traitement</p><p>vous recevrez une notification et un email lorsque celui-ci sera traité</p>")>
+  payment_notification_payment_validated:
+    label: 'Votre paiement'
+    key: 'NOTIFICATION_PAYMENT_VALIDATED'
+    tag: '@tag_payment'
+    content: <escape("<p>Confirmation de paiement</p><p>Vos frais <quote>%label%</quote> ont bien été réglés.</p><p>%content%</p>")>
+  payment_notification_payment_rejected:
+    label: 'Votre paiement'
+    key: 'NOTIFICATION_PAYMENT_REJECTED'
+    tag: '@tag_payment'
+    content: <escape("<p>Paiement refusé</p><p>Le paiement de vos frais <quote>%label%</quote> n’a pas abouti.</p><p>Si vous ne pouvez pas payer en ligne, contactez-nous via le formulaire de contact. </p>")>
+  payment_notification_payment_canceled:
+    label: 'Votre paiement'
+    key: 'NOTIFICATION_PAYMENT_CANCELED'
+    tag: '@tag_payment'
+    content: <escape("<p>Paiement annulé</p><p>Le paiement de vos frais <quote>%label%</quote> a été annulé.</p>")>
+  ### DASHBOARD
+  bloc_dashboard_initialized_candidacy:
+    tag: '@tag_dashboard_initialized_candidacy'
+    content: <escape("<p><strong>Complétez votre dossier administratif</strong> pour confirmer votre éligibilité au concours.</p>")>
+
+  bloc_dashboard_completed_candidacy:
+    tag: '@tag_dashboard_completed_candidacy'
+    content: <escape("<p><strong>Votre candidature est complète</strong></p>")>
+
+  bloc_dashboard_saved_candidacy:
+    tag: '@tag_dashboard_saved_candidacy'
+    content: <escape("<p><strong>Votre candidature est bien enregistrée.</strong><br />Elle est actuellement en cours de validation par nos services.</p>")>
+
+  bloc_dashboard_validated_candidacy:
+    tag: '@tag_dashboard_validated_candidacy'
+    label: 'Votre candidature est validée'
+    content: <escape("<p>Rendez-vous <strong>le %parameter.dateResultatsAdmissibilite%</strong> pour consulter les résultats d’admissibilité !</p>")>
+    media: '@media_skameleon_applaudissement'
+
+  bloc_dashboard_admissible_candidacy:
+    tag: '@tag_dashboard_admissible_candidacy'
+    label: 'Bravo !'
+    content: <escape("<p>Vous êtes admissible aux épreuves orales du Concours.<br />Vous avez <strong>jusqu’au %parameter.dateFermetureRDV% pour choisir une date et un campus</strong> pour passer vos épreuves orales (en fonction des places disponibles)</p>")>
+    media: '@media_skameleon_festif'
+
+  bloc_dashboard_campus_informations:
+    tag: '@tag_dashboard_campus_informations'
+    content: <escape("<p><strong>Envie d’en savoir plus sur les campus ?</strong></p>")>
+    link: 'https://www.skema-bs.fr/skema/campus'
+    labelLink: 'Découvrir les campus'
+
+  bloc_dashboard_processing_candidacy:
+    tag: '@tag_dashboard_processing_candidacy'
+    content: <escape("<p><strong>Complétez et validez votre candidature</strong> afin que celle-ci puisse être vétifiée par nos services.</p>")>
+
+  bloc_dashboard_welcome_candidacy:
+    tag: '@tag_dashboard_welcome_candidacy'
+    content: <escape("<p>Bienvenue dans votre espace candidat.<br />Vous pouvez maintenant compléter toutes les rubriques de votre candidature.</p>")>
+    media: '@media_skameleon_sympa'
+
+  bloc_cv_info_moyenne:
+    tag: '@tag_cv_info_moyenne'
+    label: 'Votre moyenne'
+    content: <escape("<p>Saisir votre moyenne générale si votre relevé de note présente une moyenne sur 20</p>")>
+
+  bloc_cv_info_moyenne_non_standard:
+    tag: '@tag_cv_info_moyenne_non_standard'
+    label: 'Pas de moyenne'
+    content: <escape("<p>Vous n’avez pas de moyenne générale sur 20, cocher cette case et pensez à joindre votre relevé de note ou votre justificatif</p>")>
+
+  #Export
+  student_export_list_notification:
+    tag: '@tag_notification_messages'
+    key: 'STUDENT_EXPORT_LIST_NOTIFICATION'
+    label: 'Export terminé.'
+    content: "Votre export est terminé: <a href='%link%'>Cliquez ici pour téléchager votre fichier</a>"
+
+  bloc_account_activation_mail:
+    tag: '@tag_account_activation'
+    key: 'ACCOUNT_ACTIVATION_MAIL'
+    label: 'Activer votre compte'
+    content: <escape("<p>Bonjour %default.firstname%,<br /> <br />Cliquer <a href='%default.link%'>ici</a> pour activer votre compte sur le site concours Skema et compléter votre dossier de candidature. <br /><br />Le service concours")>
+
+  bloc_error_unactive_account:
+    tag: '@tag_account_activation'
+    key: 'ERROR_UNACTIVE_ACCOUNT'
+    label: 'Activer votre compte'
+    content: "Impossible de se connecter, ce compte n'est pas encore activé"
+
+  bloc_account_actived_message:
+    tag: '@tag_account_activation'
+    key: 'ACCOUNT_ACTIVED_MESSAGE'
+    content: <escape("<p>Vous allez recevoir un e-mail afin d’activer votre compte. <br />Merci de cliquer sur le lien d’activation afin de pouvoir accéder à votre espace.</p>")>
+
+  bloc_token_expired_message:
+    tag: '@errors'
+    key: 'EXPIRED_TOKEN_MESSAGE'
+    content: 'Le token est expiré'
+
+# WRITTEN_TEST
+  bloc_written_test_management_nota_bene_fnege:
+    tag: '@tag_written_test_management_nota_bene_fnege'
+    content: <escape("<p><strong>NB :</strong> SKEMA récupère automatiquement votre score auprès de la FNEGE</p>")>
+  bloc_written_test_english_score_subtitle:
+    tag: '@tag_written_test_english_score_subtitle'
+    content: <escape("<p>Vous avez déjà un score de test de langue et/ou êtes inscrits à une future session</p>")>
+  bloc_written_test_english_score_nota_bene:
+    tag: '@tag_written_test_english_score_nota_bene'
+    content: <escape("<p>Lorem ipsum dolor sit amet</p>")>
+  bloc_written_test_english_inscription_subtitle:
+    tag: '@tag_written_test_english_inscription_subtitle'
+    content: <escape("<p>Vous souhaitez vous inscrire à une session TOEIC® ou iCIMS® SKEMA ?</p>")>
+  bloc_written_test_english_inscription_nota_bene:
+    tag: '@tag_written_test_english_inscription_nota_bene'
+    content: <escape("<p>Lorem ipsum dolor sit amet</p>")>
+  bloc_written_test_management_score_subtitle:
+    tag: '@tag_written_test_management_score_subtitle'
+    content: <escape("<p>Vous avez déjà un score de test de management et/ou êtes inscrits à une future session</p>")>
+  bloc_written_test_management_score_nota_bene:
+    tag: '@tag_written_test_management_score_nota_bene'
+    content: <escape("<p><strong>NB :</strong> Les tests acceptés sont le TAGE2® dans le cadre du concours AST1, et le TAGE MAGE® dans le cadre du concours AST2. Le test GMAT® est également accepté pour ces deux voies de concours. SKEMA Business School retiendra le meilleur score obtenu lors de toutes les sessions présentées entre le 1er janvier de l\'année civile précédant l\'année du concours et la date limite indiquée dans le calendrier du concours (cf. Annexe 12.1)</p>")>
+  bloc_WRITTEN_TEST_MANAGEMENT_INSCRIPTION_SUBTITLE:
+    tag: '@tag_written_test_management_inscription_subtitle'
+    content: <escape("<p>Vous souhaitez vous inscrire à une session TAGE® SKEMA ?</p>")>
+  bloc_written_test_management_inscription_nota_bene:
+    tag: '@tag_written_test_management_inscription_nota_bene'
+    content: <escape("<p>Lorem ipsum dolor sit amet</p>")>
+  bloc_dashboard_complete_popin:
+    tag: '@tag_dashboard_complete_popin'
+    content: <escape("<p>Confirmez-vous la soumission de votre candidature ?</p>")>
+  bloc_registrations_closed_cv_in_progress_of_control:
+    tag: '@tag_registrations_closed_cv_in_progress_of_control'
+    content: <escape("<p>Les inscriptions sont clôturées. Votre CV est en cours de contrôle par le Service Concours Skema. Rendez-vous le %parameter.dateResultatsAdmissibilite% pour les résultats d'admissibilité</p>")>
+  bloc_history_orders_page_verbatim:
+    tag: '@tag_history_orders_page_verbatim'
+    content: <escape("<p>Retrouvez ici vos paiements effectués</p>")>
+  bloc_admissibility_result_verbatim:
+    tag: '@tag_admissibility_result'
+    key: 'ADMISSIBILITY_RESULT_VERBATIM'
+    content: <escape("<p>z ci-dessous votre score de dossier d’admissibilité. <br /> A la suite des épreuves orales, vos résultats d’admission seront disponibles à partir de %parameter.dateAffectationDefinitive%</p>")>
+  bloc_administrative_record_validation_error_message_check_diploma:
+    tag: '@errors'
+    key: ADMINISTRATIVE_RECORD_ERROR_MESSAGE_CHECK_DIPLOMA
+    content: "Le service concours doit valider l'éligibilité de votre diplôme pour que vous puissiez continuer votre candidature"
+    programChannels: [
+      '@ast1_program_channel',
+      '@ast2_program_channel',
+      '@bce_eco_program_channel',
+      '@bce_lit_program_channel',
+    ]
+  bloc_administrative_record_validation_error_message:
+    tag: '@errors'
+    key: ADMINISTRATIVE_RECORD_ERROR_MESSAGE
+    content: 'Vous ne pouvez pas valider votre dossier administratif. Contactez le service concours.'
+    programChannels: [
+      '@ast1_program_channel',
+      '@ast2_program_channel',
+      '@bce_eco_program_channel',
+      '@bce_lit_program_channel',
+    ]
+  bloc_ranking_admissibility_notification:
+    tag: '@tag_notification_ranking_messages'
+    key: 'RANKING_ADMISSIBILITY_NOTIFICATION'
+    label: 'La conversion des scores est terminée.'
+    content: <escape("<p>La conversion des scores est terminée.</p>")>
+    programChannels: [
+      '@ast1_program_channel',
+      '@ast2_program_channel',
+      '@bce_eco_program_channel',
+      '@bce_lit_program_channel',
+    ]
+  bloc_ranking_simulator_notification:
+    tag: '@tag_notification_ranking_messages'
+    key: 'RANKING_SIMULATOR_NOTIFICATION'
+    label: 'La simulation de ranking est terminée.'
+    content: 'La simulation de ranking admissibilité est terminée.'
+    programChannels: [
+      '@ast1_program_channel',
+      '@ast2_program_channel',
+      '@bce_eco_program_channel',
+      '@bce_lit_program_channel',
+    ]
+  bloc_ranking_admissibility_notification_error:
+    tag: '@tag_notification_ranking_messages'
+    key: 'RANKING_ADMISSIBILITY_NOTIFICATION_ERROR'
+    label: 'La conversion des scores a échouée.'
+    content: <escape("<p>Une erreur est survenue lors de la conversion des scores.</p><p>Essayez de relancer une conversion ou contactez votre administrateur.</p>")>
+    programChannels: [
+      '@ast1_program_channel',
+      '@ast2_program_channel',
+      '@bce_eco_program_channel',
+      '@bce_lit_program_channel',
+    ]
+  bloc_admissibility_result_ok:
+    tag: '@tag_admissibility_result'
+    key: 'ADMISSIBILITY_RESULT_OK'
+    content: <escape("<p>Bravo !</p><p>Vous êtes admissible aux épreuves Orales du Concours</p><p>Vous avez <strong>jusqu'au %parameter.dateFermetureRDV% pour choisir une date et un Campus </strong>pour passer vos épreuves orales (en fonction des places disponibles)</p>")>
+    programChannels: [
+      '@ast1_program_channel',
+      '@ast2_program_channel',
+      '@bce_eco_program_channel',
+      '@bce_lit_program_channel',
+    ]
+  bloc_admissibility_result_ko:
+    tag: '@tag_admissibility_result'
+    key: 'ADMISSIBILITY_RESULT_KO'
+    content: <escape("<p>Votre candidature n’est pas admissible.</p>")>
+    programChannels: [
+      '@ast1_program_channel',
+      '@ast2_program_channel',
+      '@bce_eco_program_channel',
+      '@bce_lit_program_channel',
+    ]
+  bloc_dashboard_oraux_recap_titre:
+    tag: '@tag_dashboard_oraux_recap_titre'
+    content: <escape("<p>Epreuves orales</p>")>
+    programChannels: [
+      '@ast1_program_channel',
+      '@ast2_program_channel',
+      '@bce_eco_program_channel',
+      '@bce_lit_program_channel',
+    ]
+  bloc_dashboard_oraux_recap_epreuve_1:
+    tag: '@tag_dashboard_oraux_recap_epreuve'
+    content: <escape("<ul><li><strong>L'entretien</strong></br>Il s'agit d'un entretien de motivation au cours duquel vous présenterez le CV qui pourrait être le vôtre dans 10 ans. </br><a href='https://concours.skema-bs.fr/' title='En savoir plus'>En savoir plus</a></li></ul>")>
+    position: 0
+    programChannels: [
+      '@ast1_program_channel',
+      '@ast2_program_channel',
+      '@bce_eco_program_channel',
+      '@bce_lit_program_channel',
+    ]
+  bloc_dashboard_oraux_recap_epreuve_2:
+    tag: '@tag_dashboard_oraux_recap_epreuve'
+    content: <escape("<ul><li><strong>Les langues</strong></br>Vous présenterez une synthèse d'un article de presse en Anglais qui vous sera attribué lors de l'épreuve. </br><a href='https://concours.skema-bs.fr/' title='En savoir plus'>En savoir plus</a></li></ul>")>
+    position: 1
+    programChannels: [
+      '@ast1_program_channel',
+      '@ast2_program_channel',
+      '@bce_eco_program_channel',
+      '@bce_lit_program_channel',
+    ]
+  bloc_dashboard_oraux_prepa:
+    tag: '@tag_dashboard_oraux_prepa'
+    content: <escape("<strong>Entraîne-toi aux oraux!</strong> </br><a href='https://concours.skema-bs.fr/' title='Consulte nos modules de préparation'>Consulte nos modules de préparation</a>")>
+    programChannels: [
+      '@ast1_program_channel',
+      '@ast2_program_channel',
+      '@bce_eco_program_channel',
+      '@bce_lit_program_channel',
+    ]
+
+  bloc_program_channel_switched:
+    tag: '@tag_program_channel_switched'
+    key: 'PROGRAM_CHANNEL_SWITCHED'
+    label: 'Modification de votre voie de concours'
+    content: <escape("<p>Votre candidature a été modifiée. Vous candidatez désormais dans la voie de concours %default.libelle_voie%</p>")>
+    programChannels: [
+      '@ast1_program_channel',
+      '@ast2_program_channel',
+      '@bce_eco_program_channel',
+      '@bce_lit_program_channel',
+    ]
+    
+  bloc_landing_admissibilite:
+    tag: '@tag_landing_admissibilite'
+    key: 'LANDING_ADMISSIBILITE'
+    content: <escape("<p>Les résultats d’admissibilité seront publiés le %parameter.dateResultatsAdmissibilite%</p>")>
+    programChannels: [
+      '@ast1_program_channel',
+      '@ast2_program_channel',
+      '@bce_eco_program_channel',
+      '@bce_lit_program_channel',
+    ]
+
+
+  bloc_notification_import_scores_done:
+    tag: '@tag_notification_messages'
+    label: Import de notes effectué
+    content: 'Bonjour, l’import de notes pour la session %exam_classification% a bien été effectuée, %nb_lines% lignes ont été traitées. Vous trouverez ci-après les erreurs éventuelles : %errors%'
+    key: NOTIFICATION_IMPORT_SCORES_DONE
+    programChannels: [
+      '@ast1_program_channel',
+      '@ast2_program_channel',
+      '@bce_eco_program_channel',
+      '@bce_lit_program_channel',
+    ]
+
+  bloc_mail_resultat_admissibilite:
+    tag: '@tag_mail'
+    key: MAIL_RESULTAT_ADMISSIBILITE
+    label: "Accéder à vos résultats dès le %parameter.dateResultatsAdmissibilite%"
+    content: <escape("<p>Bonjour %default.firstname%, vos résultats d'admissibilité seront disponibles sur le lien suivant à partir du %parameter.dateResultatsAdmissibilite% <a href='%default.link%'>%default.link%</a><br />Le service concours</p>")>
+    programChannels: [
+      '@ast1_program_channel',
+      '@ast2_program_channel',
+      '@bce_eco_program_channel',
+      '@bce_lit_program_channel',
+    ]
+
+  bloc_notification_import_scores_notification_student:
+    tag: '@tag_notification_messages'
+    label: 'Votre score %nom_typologie%'
+    content: 'Bonjour %firstname%, votre score pour l’épreuve écrite %nom_typologie% a été complété sur votre dossier de candidature. Vous pouvez vous connecter sur votre espace, menu « Mes épreuves écrites » pour en prendre connaissance. Le service concours'
+    key: NOTIFICATION_IMPORT_SCORES_NOTIFICATION_STUDENT
+    programChannels: [
+      '@ast1_program_channel',
+      '@ast2_program_channel',
+      '@bce_eco_program_channel',
+      '@bce_lit_program_channel',
+    ]

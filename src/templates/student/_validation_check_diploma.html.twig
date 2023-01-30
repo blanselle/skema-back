@@ -1,0 +1,14 @@
+{% if student.state == 'check_diploma' %}
+    <hr />
+    <div class="validation validation_check_diploma">
+        <form name="check_diploma_validate_form" id="validate_form" action="{{ path('check_diploma_validation', {'id': student.id}) }}" method="post" onsubmit="return confirm('Voulez-vous vraiment valider ce diplôme ?');">
+            <input type="hidden" name="token" value="{{ csrf_token('student'~student.id) }}"/>
+            <button value="{{ validate }}" name="check_diploma" type="submit" class="btn btn-danger btn-lg">Valider l'éligibilité du diplôme</button>
+        </form>
+        <form name="check_diploma_rejected_form" id="rejected_form" action="{{ path('check_diploma_validation', {'id': student.id}) }}" method="post" onsubmit="return confirm('Voulez-vous vraiment refuser ce diplôme ?');">
+            <input type="hidden" name="token" value="{{ csrf_token('student'~student.id) }}"/>
+            <button value="{{ rejected }}" name="check_diploma" type="submit" class="btn btn-danger btn-lg">Refuser l'éligibilité du diplôme</button>
+        </form>
+    </div>
+    <hr />
+{% endif %}

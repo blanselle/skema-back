@@ -1,0 +1,28 @@
+{{ form_start(form) }}
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.name) }}
+        </div>
+    </div>
+    {% if document_reference.file is not null %}
+        <div class="row">
+            <div class="col">
+                <label for="document_reference_file" class="form-label">Fichier</label>
+                <div class="input-group">
+                    <input disabled id="target-clipboard" type="text" class="form-control" placeholder="Url du document" value="{{ backofficeUrl|trim('/', 'right') }}/{{document_reference.file}}">
+                    <button type="button" class="btn btn-outline-secondary btn-clipboard" for="target-clipboard"><i class="bi bi-files"></i></button>
+                    <a href="/{{document_reference.file}}" class="btn btn-outline-secondary" target="_blank"><i class="bi bi-download"></i></a>
+                </div>
+            </div>
+        </div>
+        <br />
+    {% endif %}
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.file) }}
+        </div>
+    </div>
+    <div class="save_container">
+        <button type="submit" class="btn btn-success">{{ button_label|default('Sauvegarder') }}</button>
+    </div>
+{{ form_end(form) }}

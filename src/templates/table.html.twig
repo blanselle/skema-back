@@ -1,0 +1,27 @@
+{% block javascripts %}
+<script src="{{ asset('js/admin-datatables.js') }}" type="text/javascript"></script>
+{% endblock %}
+
+{% if query is defined %}
+    {% set controllerPath = path(controller, query) %}
+{% else %}
+    {% set controllerPath = path(controller) %}    
+{% endif %}
+
+<table id="myTable" class="table admin-datatable cell-border compact stripe hover order-column" data-page-length='{{ length }}'
+       data-length-menu="[ 10, 25, 50, 100, 500, 1000 ]"
+       data-controller="{{ controllerPath }}"
+       data-refer-form="#list-search"
+       data-searching="false">
+    <thead>
+    <tr>
+        {% for key,options in columns %}
+            {% if options.label is defined %}
+                <th data-data="{{ key }}"
+                    data-orderable="{% if options.db is not defined %}false{% else %}true{% endif %}">{{ options.label }}</th>
+            {% endif %}
+        {% endfor %}
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>

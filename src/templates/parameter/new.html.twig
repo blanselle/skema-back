@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau paramètre{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('parameter_index') }}" class="btn btn-secondary">Retour à la liste des paramètres</a>
+    </div>
+    <hr />
+    <h1>Création d'un paramètre</h1>
+
+    {{ include('parameter/_form_create.html.twig') }}
+{% endblock %}

@@ -1,0 +1,65 @@
+<script type="application/javascript">
+    $(document).ready(function (){
+
+        function checkIfOnline()
+        {
+            let examClassificationId = $('#exam_session_examClassification option:selected').val()
+
+            $.ajax({
+                url: '{{ path('ajax_exam_typologie_online') }}',
+                method: 'POST',
+                data: {
+                    examClassification: examClassificationId
+                },
+                success: function(data) {
+                    if (true === data) {
+                        $('#exam_session_campus').find('option:selected').prop("selected", false).parent().attr('disabled', true)
+                    } else {
+                        $('#exam_session_campus').attr('disabled', false)
+                    }
+                }
+            })
+        }
+        checkIfOnline()
+
+        $('#exam_session_examClassification').change(function() {
+            checkIfOnline()
+        })
+    })
+</script>
+{{ form_start(form) }}
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.examClassification) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.campus) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.dateStart) }}
+        </div>
+        <div class="col">
+            {{ form_row(form.dateEnd) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.numberOfPlaces) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.price) }}
+        </div>
+        <div class="col">
+            {{ form_row(form.priceLink) }}
+        </div>
+    </div>
+    <div class="save_container">
+        <button class="btn btn-success">{{ button_label|default('Sauvegarder') }}</button>
+    </div>
+{{ form_end(form) }}

@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('css/campus-slot.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block title %}{{ 'oral_test.campus_oral_day_show.page.title'|trans({'%configuration%': configuration}) }}{% endblock %}
+{% block page_title %}{{ 'oral_test.campus_oral_day_show.page.title'|trans({'%configuration%': configuration}) }}{% endblock page_title %}
+
+{% block main %}
+    <div id="campus-slot" class="row">
+
+        <div id="campus-slot-table-container" class="row pt-5">
+            {{ include('oral_test/campus_capacity/_campus_slot_table.html.twig') }}
+        </div>
+
+        <div class="row pt-5">
+            <div class="col">
+                <a class="btn btn-primary" href="{{ path('campus_capacity_settings_languages_index', {'id': configuration.id}) }}">{{ 'oral_test.campus_oral_day_show.page.button_modify_languages'|trans }}</a>
+            </div>
+        </div>
+    </div>
+{% endblock main %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/campus-slot.js') }}" type="text/javascript"></script>
+{% endblock %}

@@ -1,0 +1,116 @@
+version: '3.4'
+
+services:
+  db:
+    # In production, you may want to use a managed database service
+    image: skema/app_db
+    build:
+      context: .
+      target: app_db
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB:-skema}
+      - POSTGRES_USER=${POSTGRES_USER:-skema}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-skema}
+    ports:
+      - ${DB_PORT:-5432}:5432
+    volumes:
+      - postgres-data:/var/lib/postgresql/data:rw
+    networks:
+      default:
+        ipv4_address: 183.67.130.2
+
+  redis:
+    image: redis:alpine
+    ports:
+      - 6379:6379
+
+  adminer:
+    image: adminer
+    depends_on:
+      - db
+    ports:
+      - 8080:8080
+
+  mailhog:
+    image: mailhog/mailhog:latest
+    environment:
+      - MH_STORAGE=maildir
+    ports:
+      - "8025:8025"
+
+  php:
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NODE_VERSION: ${NODE_VERSION}
+    depends_on:
+      - db
+      - mailhog
+      - redis
+    ports:
+      - ${SKEMA_PORT:-80}:80
+    environment:
+      - MAILER_DSN=smtp://mailhog:1025
+      - USER_ID=${HOST_UID}
+      - GROUP_ID=${HOST_GID}
+      - GULP_ENV=dev
+    volumes:
+      - ../../src:/srv/skema:rw,cached
+
+  varnish:
+    build: ./varnish
+    volumes:
+      - ./varnish/default.vcl:/etc/varnish/default.vcl:ro
+    tmpfs: /var/lib/varnish:exec
+    ports:
+      - 80:80
+
+  rabbitmq:
+    image: rabbitmq:3.6-management-alpine
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=admin
+    ports:
+      - 15672:15672
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.6.0
+    environment:
+      ES_JAVA_OPTS: "-Xmx256m -Xms256m"
+      ELASTIC_PASSWORD: changeme
+      discovery.type: single-node
+    volumes:
+      - ./elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:cached
+    ports:
+      - 9200:9200
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:7.6.0
+    depends_on:
+      - elasticsearch
+    volumes:
+      - ./logstash/logstash.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
+      - ./logstash/pipeline:/usr/share/logstash/pipeline:ro
+    environment:
+      LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.6.0
+    depends_on:
+      - elasticsearch
+    ports:
+      - 5601:5601
+
+volumes:
+  postgres-data: ~
+  elastic_volume: ~
+
+networks:
+  default:
+    ipam:
+      config:
+        - subnet: 183.67.130.0/16
+

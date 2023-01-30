@@ -1,0 +1,1456 @@
+App\Entity\CV\Language:
+  lang_aar:
+    code: 'aar'
+    label: "Afar"
+  lang_abk:
+    code: 'abk'
+    label: "Abkhaze"
+  lang_ace:
+    code: 'ace'
+    label: "Aceh"
+  lang_ach:
+    code: 'ach'
+    label: "Acoli"
+  lang_ada:
+    code: 'ada'
+    label: "Adangme"
+  lang_ady:
+    code: 'ady'
+    label: "Adygh‚"
+  lang_afa:
+    code: 'afa'
+    label: "Afro-asiatiques, Langues"
+  lang_afh:
+    code: 'afh'
+    label: "Afrihili"
+  lang_afr:
+    code: 'afr'
+    label: "Afrikaans"
+  lang_ain:
+    code: 'ain'
+    label: "A‹nou"
+  lang_aka:
+    code: 'aka'
+    label: "Akan"
+  lang_akk:
+    code: 'akk'
+    label: "Akkadien"
+  lang_alb:
+    code: 'alb'
+    label: "Albanais"
+  lang_ale:
+    code: 'ale'
+    label: "Al‚oute"
+  lang_alg:
+    code: 'alg'
+    label: "Algonquines, Langues"
+  lang_alt:
+    code: 'alt'
+    label: "Altai Du Sud"
+  lang_amh:
+    code: 'amh'
+    label: "Amharique"
+  lang_ang:
+    code: 'ang'
+    label: "Anglo-saxon (ca.450-1100)"
+  lang_anp:
+    code: 'anp'
+    label: "Angika"
+  lang_apa:
+    code: 'apa'
+    label: "Apaches, Langues"
+  lang_ara:
+    code: 'ara'
+    label: "Arabe"
+  lang_arc:
+    code: 'arc'
+    label: "Aram‚en D'empire (700-300 BCE)"
+  lang_arg:
+    code: 'arg'
+    label: "Aragonais"
+  lang_arm:
+    code: 'arm'
+    label: "Arm‚nien"
+  lang_arn:
+    code: 'arn'
+    label: "Mapudungun; Mapuche; Mapuce"
+  lang_arp:
+    code: 'arp'
+    label: "Arapaho"
+  lang_art:
+    code: 'art'
+    label: "Artificielles, Langues"
+  lang_arw:
+    code: 'arw'
+    label: "Arawak"
+  lang_asm:
+    code: 'asm'
+    label: "Assamais"
+  lang_ast:
+    code: 'ast'
+    label: "Asturien; Bable; L‚onais; Asturol‚onais"
+  lang_ath:
+    code: 'ath'
+    label: "Athapascanes, Langues"
+  lang_aus:
+    code: 'aus'
+    label: "Australiennes, Langues"
+  lang_ava:
+    code: 'ava'
+    label: "Avar"
+  lang_ave:
+    code: 'ave'
+    label: "Avestique"
+  lang_awa:
+    code: 'awa'
+    label: "Awadhi"
+  lang_aym:
+    code: 'aym'
+    label: "Aymara"
+  lang_aze:
+    code: 'aze'
+    label: "Az‚ri"
+  lang_bad:
+    code: 'bad'
+    label: "Banda, Langues"
+  lang_bai:
+    code: 'bai'
+    label: "Bamil‚k‚, Langues"
+  lang_bak:
+    code: 'bak'
+    label: "Bachkir"
+  lang_bal:
+    code: 'bal'
+    label: "Baloutchi"
+  lang_bam:
+    code: 'bam'
+    label: "Bambara"
+  lang_ban:
+    code: 'ban'
+    label: "Balinais"
+  lang_baq:
+    code: 'baq'
+    label: "Basque"
+  lang_bas:
+    code: 'bas'
+    label: "Basa"
+  lang_bat:
+    code: 'bat'
+    label: "Baltes, Langues"
+  lang_bej:
+    code: 'bej'
+    label: "Bedja"
+  lang_bel:
+    code: 'bel'
+    label: "Bi‚lorusse"
+  lang_bem:
+    code: 'bem'
+    label: "Bemba"
+  lang_ben:
+    code: 'ben'
+    label: "Bengali"
+  lang_ber:
+    code: 'ber'
+    label: "BerbŠres"
+  lang_bho:
+    code: 'bho'
+    label: "Bhojpuri"
+  lang_bih:
+    code: 'bih'
+    label: "Langues Biharis"
+  lang_bik:
+    code: 'bik'
+    label: "Bikol"
+  lang_bin:
+    code: 'bin'
+    label: "Bini; Edo"
+  lang_bis:
+    code: 'bis'
+    label: "Bichlamar"
+  lang_bla:
+    code: 'bla'
+    label: "Blackfoot"
+  lang_bnt:
+    code: 'bnt'
+    label: "Bantoues, Autres Langues"
+  lang_bos:
+    code: 'bos'
+    label: "Bosniaque"
+  lang_bra:
+    code: 'bra'
+    label: "Braj"
+  lang_bre:
+    code: 'bre'
+    label: "Breton"
+  lang_btk:
+    code: 'btk'
+    label: "Batak, Langues"
+  lang_bua:
+    code: 'bua'
+    label: "Bouriate"
+  lang_bug:
+    code: 'bug'
+    label: "Bugi"
+  lang_bul:
+    code: 'bul'
+    label: "Bulgare"
+  lang_bur:
+    code: 'bur'
+    label: "Birman"
+  lang_byn:
+    code: 'byn'
+    label: "Blin; Bilen"
+  lang_cad:
+    code: 'cad'
+    label: "Caddo"
+  lang_cai:
+    code: 'cai'
+    label: "Am‚rindiennes De L'Am‚rique Centrale, Langues"
+  lang_car:
+    code: 'car'
+    label: "Karib; Galibi; Carib"
+  lang_cat:
+    code: 'cat'
+    label: "Catalan; Valencien"
+  lang_cau:
+    code: 'cau'
+    label: "Caucasiennes, Langues"
+  lang_ceb:
+    code: 'ceb'
+    label: "Cebuano"
+  lang_cel:
+    code: 'cel'
+    label: "Celtiques, Langues; Celtes, Langues"
+  lang_cha:
+    code: 'cha'
+    label: "Chamorro"
+  lang_chb:
+    code: 'chb'
+    label: "Chibcha"
+  lang_che:
+    code: 'che'
+    label: "Tch‚tchŠne"
+  lang_chg:
+    code: 'chg'
+    label: "Djaghata‹"
+  lang_chi:
+    code: 'chi'
+    label: "Chinois"
+  lang_chk:
+    code: 'chk'
+    label: "Chuuk"
+  lang_chm:
+    code: 'chm'
+    label: "Mari"
+  lang_chn:
+    code: 'chn'
+    label: "Chinook, Jargon"
+  lang_cho:
+    code: 'cho'
+    label: "Choctaw"
+  lang_chp:
+    code: 'chp'
+    label: "Chipewyan"
+  lang_chr:
+    code: 'chr'
+    label: "Cherokee"
+  lang_chu:
+    code: 'chu'
+    label: "Slavon D'‚glise; Vieux Slave; Slavon Liturgique; Vieux Bulgare"
+  lang_chv:
+    code: 'chv'
+    label: "Tchouvache"
+  lang_chy:
+    code: 'chy'
+    label: "Cheyenne"
+  lang_cmc:
+    code: 'cmc'
+    label: "Chames, Langues"
+  lang_cop:
+    code: 'cop'
+    label: "Copte"
+  lang_cor:
+    code: 'cor'
+    label: "Cornique"
+  lang_cos:
+    code: 'cos'
+    label: "Corse"
+  lang_cpe:
+    code: 'cpe'
+    label: "Cr‚oles Et Pidgins Bas‚s Sur L'anglais"
+  lang_cpf:
+    code: 'cpf'
+    label: "Cr‚oles Et Pidgins Bas‚s Sur Le Fran‡ais"
+  lang_cpp:
+    code: 'cpp'
+    label: "Cr‚oles Et Pidgins Bas‚s Sur Le Portugais"
+  lang_cre:
+    code: 'cre'
+    label: "Cree"
+  lang_crh:
+    code: 'crh'
+    label: "Tatar De Crim‚"
+  lang_crp:
+    code: 'crp'
+    label: "Cr‚oles Et Pidgins"
+  lang_csb:
+    code: 'csb'
+    label: "Kachoube"
+  lang_cus:
+    code: 'cus'
+    label: "Couchitiques, Langues"
+  lang_cze:
+    code: 'cze'
+    label: "TchŠque"
+  lang_dak:
+    code: 'dak'
+    label: "Dakota"
+  lang_dan:
+    code: 'dan'
+    label: "Danois"
+  lang_dar:
+    code: 'dar'
+    label: "Dargwa"
+  lang_day:
+    code: 'day'
+    label: "Dayak, Langues"
+  lang_del:
+    code: 'del'
+    label: "Delaware"
+  lang_den:
+    code: 'den'
+    label: "Esclave (athapascan)"
+  lang_dgr:
+    code: 'dgr'
+    label: "Dogrib"
+  lang_din:
+    code: 'din'
+    label: "Dinka"
+  lang_div:
+    code: 'div'
+    label: "Maldivien"
+  lang_doi:
+    code: 'doi'
+    label: "Dogri"
+  lang_dra:
+    code: 'dra'
+    label: "Dravidiennes, Langues"
+  lang_dsb:
+    code: 'dsb'
+    label: "Bas-sorabe"
+  lang_dua:
+    code: 'dua'
+    label: "Douala"
+  lang_dum:
+    code: 'dum'
+    label: "N‚erlandais Moyen (ca. 1050-1350)"
+  lang_dut:
+    code: 'dut'
+    label: "N‚erlandais; Flamand"
+  lang_dyu:
+    code: 'dyu'
+    label: "Dioula"
+  lang_dzo:
+    code: 'dzo'
+    label: "Dzongkha"
+  lang_efi:
+    code: 'efi'
+    label: "Efik"
+  lang_egy:
+    code: 'egy'
+    label: "gyptien"
+  lang_eka:
+    code: 'eka'
+    label: "Ekajuk"
+  lang_elx:
+    code: 'elx'
+    label: "lamite"
+  lang_eng:
+    code: 'eng'
+    label: "Anglais"
+  lang_enm:
+    code: 'enm'
+    label: "Anglais Moyen (1100-1500)"
+  lang_epo:
+    code: 'epo'
+    label: "Esp‚ranto"
+  lang_est:
+    code: 'est'
+    label: "Estonien"
+  lang_ewe:
+    code: 'ewe'
+    label: "w‚"
+  lang_ewo:
+    code: 'ewo'
+    label: "wondo"
+  lang_fan:
+    code: 'fan'
+    label: "Fang"
+  lang_fao:
+    code: 'fao'
+    label: "F‚ro‹en"
+  lang_fat:
+    code: 'fat'
+    label: "Fanti"
+  lang_fij:
+    code: 'fij'
+    label: "Fidjien"
+  lang_fil:
+    code: 'fil'
+    label: "Filipino; Pilipino"
+  lang_fin:
+    code: 'fin'
+    label: "Finnois"
+  lang_fiu:
+    code: 'fiu'
+    label: "Finno-ougriennes, Langues"
+  lang_fon:
+    code: 'fon'
+    label: "Fon"
+  lang_fre:
+    code: 'fre'
+    label: "Fran‡ais"
+  lang_frm:
+    code: 'frm'
+    label: "Fran‡ais Moyen (1400-1600)"
+  lang_fro:
+    code: 'fro'
+    label: "Fran‡ais Ancien (842-ca.1400)"
+  lang_frr:
+    code: 'frr'
+    label: "Frison Septentrional"
+  lang_frs:
+    code: 'frs'
+    label: "Frison Oriental"
+  lang_fry:
+    code: 'fry'
+    label: "Frison Occidental"
+  lang_ful:
+    code: 'ful'
+    label: "Peul"
+  lang_fur:
+    code: 'fur'
+    label: "Frioulan"
+  lang_gaa:
+    code: 'gaa'
+    label: "Ga"
+  lang_gay:
+    code: 'gay'
+    label: "Gayo"
+  lang_gba:
+    code: 'gba'
+    label: "Gbaya"
+  lang_gem:
+    code: 'gem'
+    label: "Germaniques, Langues"
+  lang_geo:
+    code: 'geo'
+    label: "G‚orgien"
+  lang_ger:
+    code: 'ger'
+    label: "Allemand"
+  lang_gez:
+    code: 'gez'
+    label: "GuŠze"
+  lang_gil:
+    code: 'gil'
+    label: "Kiribati"
+  lang_gla:
+    code: 'gla'
+    label: "Ga‚lique; Ga‚lique cossais"
+  lang_gle:
+    code: 'gle'
+    label: "Irlandais"
+  lang_glg:
+    code: 'glg'
+    label: "Galicien"
+  lang_glv:
+    code: 'glv'
+    label: "Manx; Mannois"
+  lang_gmh:
+    code: 'gmh'
+    label: "Allemand, Moyen Haut (ca. 1050-1500)"
+  lang_goh:
+    code: 'goh'
+    label: "Allemand, Vieux Haut (ca. 750-1050)"
+  lang_gon:
+    code: 'gon'
+    label: "Gond"
+  lang_gor:
+    code: 'gor'
+    label: "Gorontalo"
+  lang_got:
+    code: 'got'
+    label: "Gothique"
+  lang_grb:
+    code: 'grb'
+    label: "Grebo"
+  lang_grc:
+    code: 'grc'
+    label: "Grec Ancien (jusqu'… 1453)"
+  lang_gre:
+    code: 'gre'
+    label: "Grec Moderne (aprŠs 1453)"
+  lang_grn:
+    code: 'grn'
+    label: "Guarani"
+  lang_gsw:
+    code: 'gsw'
+    label: "Suisse Al‚manique; Al‚manique; Alsacien"
+  lang_guj:
+    code: 'guj'
+    label: "Goudjrati"
+  lang_gwi:
+    code: 'gwi'
+    label: "Gwich'in"
+  lang_hai:
+    code: 'hai'
+    label: "Haida"
+  lang_hat:
+    code: 'hat'
+    label: "Ha‹tien; Cr‚ole Ha‹tien"
+  lang_hau:
+    code: 'hau'
+    label: "Haoussa"
+  lang_haw:
+    code: 'haw'
+    label: "Hawa‹en"
+  lang_heb:
+    code: 'heb'
+    label: "H‚breu"
+  lang_her:
+    code: 'her'
+    label: "Herero"
+  lang_hil:
+    code: 'hil'
+    label: "Hiligaynon"
+  lang_him:
+    code: 'him'
+    label: "Langues Himachalis; Langues Paharis Occidentales"
+  lang_hin:
+    code: 'hin'
+    label: "Hindi"
+  lang_hit:
+    code: 'hit'
+    label: "Hittite"
+  lang_hmn:
+    code: 'hmn'
+    label: "Hmong"
+  lang_hmo:
+    code: 'hmo'
+    label: "Hiri Motu"
+  lang_hrv:
+    code: 'hrv'
+    label: "Croate"
+  lang_hsb:
+    code: 'hsb'
+    label: "Haut-sorabe"
+  lang_hun:
+    code: 'hun'
+    label: "Hongrois"
+  lang_hup:
+    code: 'hup'
+    label: "Hupa"
+  lang_iba:
+    code: 'iba'
+    label: "Iban"
+  lang_ibo:
+    code: 'ibo'
+    label: "Igbo"
+  lang_ice:
+    code: 'ice'
+    label: "Islandais"
+  lang_ido:
+    code: 'ido'
+    label: "Ido"
+  lang_iii:
+    code: 'iii'
+    label: "Yi De Sichuan"
+  lang_ijo:
+    code: 'ijo'
+    label: "Ijo, Langues"
+  lang_iku:
+    code: 'iku'
+    label: "Inuktitut"
+  lang_ile:
+    code: 'ile'
+    label: "Interlingue"
+  lang_ilo:
+    code: 'ilo'
+    label: "Ilocano"
+  lang_ina:
+    code: 'ina'
+    label: "Interlingua (langue Auxiliaire Internationale)"
+  lang_inc:
+    code: 'inc'
+    label: "Indo-aryennes, Langues"
+  lang_ind:
+    code: 'ind'
+    label: "Indon‚sien"
+  lang_ine:
+    code: 'ine'
+    label: "Indo-europ‚ennes, Langues"
+  lang_inh:
+    code: 'inh'
+    label: "Ingouche"
+  lang_ipk:
+    code: 'ipk'
+    label: "Inupiaq"
+  lang_ira:
+    code: 'ira'
+    label: "Iraniennes, Langues"
+  lang_iro:
+    code: 'iro'
+    label: "Iroquoises, Langues"
+  lang_ita:
+    code: 'ita'
+    label: "Italien"
+  lang_jav:
+    code: 'jav'
+    label: "Javanais"
+  lang_jbo:
+    code: 'jbo'
+    label: "Lojban"
+  lang_jpn:
+    code: 'jpn'
+    label: "Japonais"
+  lang_jpr:
+    code: 'jpr'
+    label: "Jud‚o-persan"
+  lang_jrb:
+    code: 'jrb'
+    label: "Jud‚o-arabe"
+  lang_kaa:
+    code: 'kaa'
+    label: "Karakalpak"
+  lang_kab:
+    code: 'kab'
+    label: "Kabyle"
+  lang_kac:
+    code: 'kac'
+    label: "Kachin; Jingpho"
+  lang_kal:
+    code: 'kal'
+    label: "Groenlandais"
+  lang_kam:
+    code: 'kam'
+    label: "Kamba"
+  lang_kan:
+    code: 'kan'
+    label: "Kannada"
+  lang_kar:
+    code: 'kar'
+    label: "Karen, Langues"
+  lang_kas:
+    code: 'kas'
+    label: "Kashmiri"
+  lang_kau:
+    code: 'kau'
+    label: "Kanouri"
+  lang_kaw:
+    code: 'kaw'
+    label: "Kawi"
+  lang_kaz:
+    code: 'kaz'
+    label: "Kazakh"
+  lang_kbd:
+    code: 'kbd'
+    label: "Kabardien"
+  lang_kha:
+    code: 'kha'
+    label: "Khasi"
+  lang_khi:
+    code: 'khi'
+    label: "Kho‹san, Langues"
+  lang_khm:
+    code: 'khm'
+    label: "Khmer Central"
+  lang_kho:
+    code: 'kho'
+    label: "Khotanais; Sakan"
+  lang_kik:
+    code: 'kik'
+    label: "Kikuyu"
+  lang_kin:
+    code: 'kin'
+    label: "Rwanda"
+  lang_kir:
+    code: 'kir'
+    label: "Kirghiz"
+  lang_kmb:
+    code: 'kmb'
+    label: "Kimbundu"
+  lang_kok:
+    code: 'kok'
+    label: "Konkani"
+  lang_kom:
+    code: 'kom'
+    label: "Kom"
+  lang_kon:
+    code: 'kon'
+    label: "Kongo"
+  lang_kor:
+    code: 'kor'
+    label: "Cor‚en"
+  lang_kos:
+    code: 'kos'
+    label: "Kosrae"
+  lang_kpe:
+    code: 'kpe'
+    label: "Kpell‚"
+  lang_krc:
+    code: 'krc'
+    label: "Karatchai Balkar"
+  lang_krl:
+    code: 'krl'
+    label: "Car‚lien"
+  lang_kro:
+    code: 'kro'
+    label: "Krou, Langues"
+  lang_kru:
+    code: 'kru'
+    label: "Kurukh"
+  lang_kua:
+    code: 'kua'
+    label: "Kuanyama; Kwanyama"
+  lang_kum:
+    code: 'kum'
+    label: "Koumyk"
+  lang_kur:
+    code: 'kur'
+    label: "Kurde"
+  lang_kut:
+    code: 'kut'
+    label: "Kutenai"
+  lang_lad:
+    code: 'lad'
+    label: "Jud‚o-espagnol"
+  lang_lah:
+    code: 'lah'
+    label: "Lahnda"
+  lang_lam:
+    code: 'lam'
+    label: "Lamba"
+  lang_lao:
+    code: 'lao'
+    label: "Lao"
+  lang_lat:
+    code: 'lat'
+    label: "Latin"
+  lang_lav:
+    code: 'lav'
+    label: "Letton"
+  lang_lez:
+    code: 'lez'
+    label: "Lezghien"
+  lang_lim:
+    code: 'lim'
+    label: "Limbourgeois"
+  lang_lin:
+    code: 'lin'
+    label: "Lingala"
+  lang_lit:
+    code: 'lit'
+    label: "Lituanien"
+  lang_lol:
+    code: 'lol'
+    label: "Mongo"
+  lang_loz:
+    code: 'loz'
+    label: "Lozi"
+  lang_ltz:
+    code: 'ltz'
+    label: "Luxembourgeois"
+  lang_lua:
+    code: 'lua'
+    label: "Luba-lulua"
+  lang_lub:
+    code: 'lub'
+    label: "Luba-katanga"
+  lang_lug:
+    code: 'lug'
+    label: "Ganda"
+  lang_lui:
+    code: 'lui'
+    label: "Luiseno"
+  lang_lun:
+    code: 'lun'
+    label: "Lunda"
+  lang_luo:
+    code: 'luo'
+    label: "Luo (Kenya Et Tanzanie)"
+  lang_lus:
+    code: 'lus'
+    label: "Lushai"
+  lang_mac:
+    code: 'mac'
+    label: "Mac‚donien"
+  lang_mad:
+    code: 'mad'
+    label: "Madourais"
+  lang_mag:
+    code: 'mag'
+    label: "Magahi"
+  lang_mah:
+    code: 'mah'
+    label: "Marshall"
+  lang_mai:
+    code: 'mai'
+    label: "Maithili"
+  lang_mak:
+    code: 'mak'
+    label: "Makassar"
+  lang_mal:
+    code: 'mal'
+    label: "Malayalam"
+  lang_man:
+    code: 'man'
+    label: "Mandingue"
+  lang_mao:
+    code: 'mao'
+    label: "Maori"
+  lang_map:
+    code: 'map'
+    label: "Austron‚siennes, Langues"
+  lang_mar:
+    code: 'mar'
+    label: "Marathe"
+  lang_mas:
+    code: 'mas'
+    label: "Massa‹"
+  lang_may:
+    code: 'may'
+    label: "Malais"
+  lang_mdf:
+    code: 'mdf'
+    label: "Moksa"
+  lang_mdr:
+    code: 'mdr'
+    label: "Mandar"
+  lang_men:
+    code: 'men'
+    label: "Mend‚"
+  lang_mga:
+    code: 'mga'
+    label: "Irlandais Moyen (900-1200)"
+  lang_mic:
+    code: 'mic'
+    label: "Mi'kmaq; Micmac"
+  lang_min:
+    code: 'min'
+    label: "Minangkabau"
+  lang_mis:
+    code: 'mis'
+    label: "Langues Non Cod‚es"
+  lang_mkh:
+    code: 'mkh'
+    label: "M“n-khmer, Langues"
+  lang_mlg:
+    code: 'mlg'
+    label: "Malgache"
+  lang_mlt:
+    code: 'mlt'
+    label: "Maltais"
+  lang_mnc:
+    code: 'mnc'
+    label: "Mandchou"
+  lang_mni:
+    code: 'mni'
+    label: "Manipuri"
+  lang_mno:
+    code: 'mno'
+    label: "Manobo, Langues"
+  lang_moh:
+    code: 'moh'
+    label: "Mohawk"
+  lang_mon:
+    code: 'mon'
+    label: "Mongol"
+  lang_mos:
+    code: 'mos'
+    label: "Mor‚"
+  lang_mul:
+    code: 'mul'
+    label: "Multilingue"
+  lang_mun:
+    code: 'mun'
+    label: "Mounda, Langues"
+  lang_mus:
+    code: 'mus'
+    label: "Muskogee"
+  lang_mwl:
+    code: 'mwl'
+    label: "Mirandais"
+  lang_mwr:
+    code: 'mwr'
+    label: "Marvari"
+  lang_myn:
+    code: 'myn'
+    label: "Maya, Langues"
+  lang_myv:
+    code: 'myv'
+    label: "Erza"
+  lang_nah:
+    code: 'nah'
+    label: "Nahuatl, Langues"
+  lang_nai:
+    code: 'nai'
+    label: "Nord-am‚rindiennes, Langues"
+  lang_nap:
+    code: 'nap'
+    label: "Napolitain"
+  lang_nau:
+    code: 'nau'
+    label: "Nauruan"
+  lang_nav:
+    code: 'nav'
+    label: "Navaho"
+  lang_nbl:
+    code: 'nbl'
+    label: "Nd‚b‚l‚ Du Sud"
+  lang_nde:
+    code: 'nde'
+    label: "Nd‚b‚l‚ Du Nord"
+  lang_ndo:
+    code: 'ndo'
+    label: "Ndonga"
+  lang_nds:
+    code: 'nds'
+    label: "Bas Allemand; Bas Saxon; Allemand, Bas; Saxon, Bas"
+  lang_nep:
+    code: 'nep'
+    label: "N‚palais"
+  lang_new:
+    code: 'new'
+    label: "Nepal Bhasa; Newari"
+  lang_nia:
+    code: 'nia'
+    label: "Nias"
+  lang_nic:
+    code: 'nic'
+    label: "Nig‚ro-kordofaniennes, Langues"
+  lang_niu:
+    code: 'niu'
+    label: "Niu‚"
+  lang_nno:
+    code: 'nno'
+    label: "Norv‚gien Nynorsk; Nynorsk, Norv‚gien"
+  lang_nob:
+    code: 'nob'
+    label: "Norv‚gien Bokm†l"
+  lang_nog:
+    code: 'nog'
+    label: "Noga‹; Nogay"
+  lang_non:
+    code: 'non'
+    label: "Norrois, Vieux"
+  lang_nor:
+    code: 'nor'
+    label: "Norv‚gien"
+  lang_nqo:
+    code: 'nqo'
+    label: "N'ko"
+  lang_nso:
+    code: 'nso'
+    label: "Pedi; Sepedi; Sotho Du Nord"
+  lang_nub:
+    code: 'nub'
+    label: "Nubiennes, Langues"
+  lang_nwc:
+    code: 'nwc'
+    label: "Newari Classique"
+  lang_nya:
+    code: 'nya'
+    label: "Chichewa; Chewa; Nyanja"
+  lang_nym:
+    code: 'nym'
+    label: "Nyamwezi"
+  lang_nyn:
+    code: 'nyn'
+    label: "Nyankol‚"
+  lang_nyo:
+    code: 'nyo'
+    label: "Nyoro"
+  lang_nzi:
+    code: 'nzi'
+    label: "Nzema"
+  lang_oci:
+    code: 'oci'
+    label: "Occitan (aprŠs 1500); Proven‡al"
+  lang_oji:
+    code: 'oji'
+    label: "Ojibwa"
+  lang_ori:
+    code: 'ori'
+    label: "Oriya"
+  lang_orm:
+    code: 'orm'
+    label: "Galla"
+  lang_osa:
+    code: 'osa'
+    label: "Osage"
+  lang_oss:
+    code: 'oss'
+    label: "OssŠte"
+  lang_ota:
+    code: 'ota'
+    label: "Turc Ottoman (1500-1928)"
+  lang_oto:
+    code: 'oto'
+    label: "Otomi, Langues"
+  lang_paa:
+    code: 'paa'
+    label: "Papoues, Langues"
+  lang_pag:
+    code: 'pag'
+    label: "Pangasinan"
+  lang_pal:
+    code: 'pal'
+    label: "Pahlavi"
+  lang_pam:
+    code: 'pam'
+    label: "Pampangan"
+  lang_pan:
+    code: 'pan'
+    label: "Pendjabi"
+  lang_pap:
+    code: 'pap'
+    label: "Papiamento"
+  lang_pau:
+    code: 'pau'
+    label: "Palau"
+  lang_peo:
+    code: 'peo'
+    label: "Perse, Vieux (ca. 600-400 Av. J.-C.)"
+  lang_per:
+    code: 'per'
+    label: "Persan"
+  lang_phi:
+    code: 'phi'
+    label: "Philippines, Langues"
+  lang_phn:
+    code: 'phn'
+    label: "Ph‚nicien"
+  lang_pli:
+    code: 'pli'
+    label: "Pali"
+  lang_pol:
+    code: 'pol'
+    label: "Polonais"
+  lang_pon:
+    code: 'pon'
+    label: "Pohnpei"
+  lang_por:
+    code: 'por'
+    label: "Portugais"
+  lang_pra:
+    code: 'pra'
+    label: "Prƒkrit, Langues"
+  lang_pro:
+    code: 'pro'
+    label: "Proven‡al Ancien (jusqu'… 1500)"
+  lang_pus:
+    code: 'pus'
+    label: "Pachto"
+  lang_qaa:
+    code: 'qaa'
+    label: "R‚serv‚e · L'usage Local"
+  lang_que:
+    code: 'que'
+    label: "Quechua"
+  lang_raj:
+    code: 'raj'
+    label: "Rajasthani"
+  lang_rap:
+    code: 'rap'
+    label: "Rapanui"
+  lang_rar:
+    code: 'rar'
+    label: "Rarotonga; Maori Des ×les Cook"
+  lang_roa:
+    code: 'roa'
+    label: "Romanes, Langues"
+  lang_roh:
+    code: 'roh'
+    label: "Romanche"
+  lang_rom:
+    code: 'rom'
+    label: "Tsigane"
+  lang_rum:
+    code: 'rum'
+    label: "Roumain; Moldave"
+  lang_run:
+    code: 'run'
+    label: "Rundi"
+  lang_rup:
+    code: 'rup'
+    label: "Aroumain; Mac‚do-roumain"
+  lang_rus:
+    code: 'rus'
+    label: "Russe"
+  lang_sad:
+    code: 'sad'
+    label: "Sandawe"
+  lang_sag:
+    code: 'sag'
+    label: "Sango"
+  lang_sah:
+    code: 'sah'
+    label: "Iakoute"
+  lang_sai:
+    code: 'sai'
+    label: "Indiennes D'Am‚rique Du Sud, Autres Langues"
+  lang_sal:
+    code: 'sal'
+    label: "Salishennes, Langues"
+  lang_sam:
+    code: 'sam'
+    label: "Samaritain"
+  lang_san:
+    code: 'san'
+    label: "Sanskrit"
+  lang_sas:
+    code: 'sas'
+    label: "Sasak"
+  lang_sat:
+    code: 'sat'
+    label: "Santal"
+  lang_scn:
+    code: 'scn'
+    label: "Sicilien"
+  lang_sco:
+    code: 'sco'
+    label: "cossais"
+  lang_sel:
+    code: 'sel'
+    label: "Selkoupe"
+  lang_sem:
+    code: 'sem'
+    label: "S‚mitiques, Langues"
+  lang_sga:
+    code: 'sga'
+    label: "Irlandais Ancien (jusqu'… 900)"
+  lang_sgn:
+    code: 'sgn'
+    label: "Langues Des Signes"
+  lang_shn:
+    code: 'shn'
+    label: "Chan"
+  lang_sid:
+    code: 'sid'
+    label: "Sidamo"
+  lang_sin:
+    code: 'sin'
+    label: "Singhalais"
+  lang_sio:
+    code: 'sio'
+    label: "Sioux, Langues"
+  lang_sit:
+    code: 'sit'
+    label: "Sino-tib‚taines, Langues"
+  lang_sla:
+    code: 'sla'
+    label: "Slaves, Langues"
+  lang_slo:
+    code: 'slo'
+    label: "Slovaque"
+  lang_slv:
+    code: 'slv'
+    label: "SlovŠne"
+  lang_sma:
+    code: 'sma'
+    label: "Sami Du Sud"
+  lang_sme:
+    code: 'sme'
+    label: "Sami Du Nord"
+  lang_smi:
+    code: 'smi'
+    label: "Sames, Langues"
+  lang_smj:
+    code: 'smj'
+    label: "Sami De Lule"
+  lang_smn:
+    code: 'smn'
+    label: "Sami D'Inari"
+  lang_smo:
+    code: 'smo'
+    label: "Samoan"
+  lang_sms:
+    code: 'sms'
+    label: "Sami Skolt"
+  lang_sna:
+    code: 'sna'
+    label: "Shona"
+  lang_snd:
+    code: 'snd'
+    label: "Sindhi"
+  lang_snk:
+    code: 'snk'
+    label: "Sonink‚"
+  lang_sog:
+    code: 'sog'
+    label: "Sogdien"
+  lang_som:
+    code: 'som'
+    label: "Somali"
+  lang_son:
+    code: 'son'
+    label: "Songhai, Langues"
+  lang_sot:
+    code: 'sot'
+    label: "Sotho Du Sud"
+  lang_spa:
+    code: 'spa'
+    label: "Espagnol; Castillan"
+  lang_srd:
+    code: 'srd'
+    label: "Sarde"
+  lang_srn:
+    code: 'srn'
+    label: "Sranan Tongo"
+  lang_srp:
+    code: 'srp'
+    label: "Serbe"
+  lang_srr:
+    code: 'srr'
+    label: "S‚rŠre"
+  lang_ssa:
+    code: 'ssa'
+    label: "Nilo-sahariennes, Langues"
+  lang_ssw:
+    code: 'ssw'
+    label: "Swati"
+  lang_suk:
+    code: 'suk'
+    label: "Sukuma"
+  lang_sun:
+    code: 'sun'
+    label: "Soundanais"
+  lang_sus:
+    code: 'sus'
+    label: "Soussou"
+  lang_sux:
+    code: 'sux'
+    label: "Sum‚rien"
+  lang_swa:
+    code: 'swa'
+    label: "Swahili"
+  lang_swe:
+    code: 'swe'
+    label: "Su‚dois"
+  lang_syc:
+    code: 'syc'
+    label: "Syriaque Classique"
+  lang_syr:
+    code: 'syr'
+    label: "Syriaque"
+  lang_tah:
+    code: 'tah'
+    label: "Tahitien"
+  lang_tai:
+    code: 'tai'
+    label: "Tai, Langues"
+  lang_tam:
+    code: 'tam'
+    label: "Tamoul"
+  lang_tat:
+    code: 'tat'
+    label: "Tatar"
+  lang_tel:
+    code: 'tel'
+    label: "T‚lougou"
+  lang_tem:
+    code: 'tem'
+    label: "Temne"
+  lang_ter:
+    code: 'ter'
+    label: "Tereno"
+  lang_tet:
+    code: 'tet'
+    label: "Tetum"
+  lang_tgk:
+    code: 'tgk'
+    label: "Tadjik"
+  lang_tgl:
+    code: 'tgl'
+    label: "Tagalog"
+  lang_tha:
+    code: 'tha'
+    label: "Tha‹"
+  lang_tib:
+    code: 'tib'
+    label: "Tib‚tain"
+  lang_tig:
+    code: 'tig'
+    label: "Tigr‚"
+  lang_tir:
+    code: 'tir'
+    label: "Tigrigna"
+  lang_tiv:
+    code: 'tiv'
+    label: "Tiv"
+  lang_tkl:
+    code: 'tkl'
+    label: "Tokelau"
+  lang_tlh:
+    code: 'tlh'
+    label: "Klingon"
+  lang_tli:
+    code: 'tli'
+    label: "Tlingit"
+  lang_tmh:
+    code: 'tmh'
+    label: "Tamacheq"
+  lang_tog:
+    code: 'tog'
+    label: "Tonga (Nyasa)"
+  lang_ton:
+    code: 'ton'
+    label: "Tongan (×les Tonga)"
+  lang_tpi:
+    code: 'tpi'
+    label: "Tok Pisin"
+  lang_tsi:
+    code: 'tsi'
+    label: "Tsimshian"
+  lang_tsn:
+    code: 'tsn'
+    label: "Tswana"
+  lang_tso:
+    code: 'tso'
+    label: "Tsonga"
+  lang_tuk:
+    code: 'tuk'
+    label: "TurkmŠne"
+  lang_tum:
+    code: 'tum'
+    label: "Tumbuka"
+  lang_tup:
+    code: 'tup'
+    label: "Tupi, Langues"
+  lang_tur:
+    code: 'tur'
+    label: "Turc"
+  lang_tut:
+    code: 'tut'
+    label: "Alta‹ques, Langues"
+  lang_tvl:
+    code: 'tvl'
+    label: "Tuvalu"
+  lang_twi:
+    code: 'twi'
+    label: "Twi"
+  lang_tyv:
+    code: 'tyv'
+    label: "Touva"
+  lang_udm:
+    code: 'udm'
+    label: "Oudmourte"
+  lang_uga:
+    code: 'uga'
+    label: "Ougaritique"
+  lang_uig:
+    code: 'uig'
+    label: "Ou‹gour"
+  lang_ukr:
+    code: 'ukr'
+    label: "Ukrainien"
+  lang_umb:
+    code: 'umb'
+    label: "Umbundu"
+  lang_und:
+    code: 'und'
+    label: "Ind‚termin‚e"
+  lang_urd:
+    code: 'urd'
+    label: "Ourdou"
+  lang_uzb:
+    code: 'uzb'
+    label: "Ouszbek"
+  lang_vai:
+    code: 'vai'
+    label: "Va‹"
+  lang_ven:
+    code: 'ven'
+    label: "Venda"
+  lang_vie:
+    code: 'vie'
+    label: "Vietnamien"
+  lang_vol:
+    code: 'vol'
+    label: "Volapk"
+  lang_vot:
+    code: 'vot'
+    label: "Vote"
+  lang_wak:
+    code: 'wak'
+    label: "Wakashanes, Langues"
+  lang_wal:
+    code: 'wal'
+    label: "Walamo"
+  lang_war:
+    code: 'war'
+    label: "Waray"
+  lang_was:
+    code: 'was'
+    label: "Washo"
+  lang_wel:
+    code: 'wel'
+    label: "Gallois"
+  lang_wen:
+    code: 'wen'
+    label: "Sorabes, Langues"
+  lang_wln:
+    code: 'wln'
+    label: "Wallon"
+  lang_wol:
+    code: 'wol'
+    label: "Wolof"
+  lang_xal:
+    code: 'xal'
+    label: "Kalmouk; O‹rat"
+  lang_xho:
+    code: 'xho'
+    label: "Xhosa"
+  lang_yao:
+    code: 'yao'
+    label: "Yao"
+  lang_yap:
+    code: 'yap'
+    label: "Yapois"
+  lang_yid:
+    code: 'yid'
+    label: "Yiddish"
+  lang_yor:
+    code: 'yor'
+    label: "Yoruba"
+  lang_ypk:
+    code: 'ypk'
+    label: "Yupik, Langues"
+  lang_zap:
+    code: 'zap'
+    label: "ZapotŠque"
+  lang_zbl:
+    code: 'zbl'
+    label: "Symboles Bliss; Bliss"
+  lang_zen:
+    code: 'zen'
+    label: "Zenaga"
+  lang_zgh:
+    code: 'zgh'
+    label: "Amazighe Standard Marocain"
+  lang_zha:
+    code: 'zha'
+    label: "Zhuang; Chuang"
+  lang_znd:
+    code: 'znd'
+    label: "Zand‚, Langues"
+  lang_zul:
+    code: 'zul'
+    label: "Zoulou"
+  lang_zun:
+    code: 'zun'
+    label: "Zuni"
+  lang_zza:
+    code: 'zza'
+    label: "Zaza; Dimili; Dimli; Kirdki; Kirmanjki; Zazaki"

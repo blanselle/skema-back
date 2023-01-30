@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Double parcours{% endblock %}
+
+{% block body %}
+<div class="nav_actions">
+    <a href="{{ path('student_edit', {'id': student.id}) }}" class="btn btn-secondary">Retour à la candidature</a>
+</div>
+<hr />
+<h1>Ajouter un double parcours</h1>
+{{ form_start(form) }}
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.year, {'label': false, 'attr': {'class': 'hidden'}}) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.diploma) }}
+        </div>
+        <div class="col">
+            {{ form_row(form.diplomaChannel) }}
+        </div>
+        <div class="col">
+            {{ form_row(form.detail) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.establishment) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.postalCode) }}
+        </div>
+        <div class="col">
+            {{ form_row(form.city) }}
+        </div>
+    </div>
+    <hr />
+    <div class="save_container">
+        <button type="submit" class="btn btn-success btn-lg">{{ button_label|default('Sauvegarder') }}</button>
+        <a onclick="return confirm('Voulez vous vraiment annuler les modifications ?');" href="{{ path('student_edit', {'id': student.id}) }}" class="btn btn-secondary btn-lg" style="margin-left: 15px">{{ button_label|default('Annuler') }}</a>
+    </div>
+{{ form_end(form) }}
+
+    <script type="text/javascript" src="{{ asset('js/bacsup-form.js') }}" data-ajax-diploma-channel="{{ path('ajax_diploma_channel') }}" data-ajax-diploma-need-detail="{{ path('ajax_diploma_need_detail') }}"></script>
+{% endblock %}

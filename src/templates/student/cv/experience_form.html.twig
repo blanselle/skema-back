@@ -1,0 +1,45 @@
+{{ form_start(form) }}
+<div class="experience_item">
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.establishment) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.experienceType) }}
+        </div>
+        <div class="col">
+            {{ form_row(form.timeType) }}
+        </div>
+        <div class="col">
+            {{ form_row(form.hoursPerWeek) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.description) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.beginAt) }}
+        </div>
+        <div class="col">
+            {{ form_row(form.endAt) }}
+        </div>
+        <div class="col">
+            {{ form_row(form.duration) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            {{ form_row(form.state) }}
+        </div>
+    </div>
+
+    <div class="save_container">
+        <button type="submit" class="btn btn-success btn-lg">{{ button_label|default('Sauvegarder') }}</button>
+    </div>
+</div>
+{{ form_end(form) }}

@@ -1,0 +1,36 @@
+<div class="notification_container">
+    <div class="read">
+    
+        {% if (notification.receiver is null or constant('App\\Constants\\User\\UserRoleConstants::ROLE_CANDIDATE') not in notification.receiver.roles) and false == notification.read %}
+        <form action="" method="post" id="treat_form" name="treat_form">
+            <input type="hidden" name="treat_hidden">
+            <div id="treat" class="badge bg-warning text-dark" for="treat">
+                <input type="checkbox" class="form-check-inline"  name="treat" />Traitée
+            </div>
+        </form>
+        {% elseif true == notification.read %}
+            <span id="treat" class="badge bg-success">Traitée</span>
+        {% endif %}
+    </div>
+    <div class="title">
+        <div class="from">
+            Répondre à : <span class="from_name">
+            {% if notificationParent.sender is not empty %}
+                {% if notification.sender.student is not empty %}
+                    <a href="{{ path('student_edit', {'id': notification.sender.student.id}) }}">
+                        {{ notification.sender.firstName }} {{ notification.sender.lastName }}
+                    </a>
+                {% else %}
+                    {{ notification.sender.firstName }} {{ notification.sender.lastName }}
+                {% endif %}
+            {% else %}
+                Service Concours
+            {% endif %}
+            </span> - ({{ notification.createdAt|date('d/m/Y H:i:s') }})
+        </div>
+        {{ notification.subject }}
+    </div>
+    <div class="message">
+        {{ notification.content|raw }}
+    </div>
+</div>

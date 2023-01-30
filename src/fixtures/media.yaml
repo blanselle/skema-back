@@ -1,0 +1,145 @@
+App\Entity\Media:
+  media_campus_paris:
+    file: public/fixtures/campus/Paris.svg
+    originalName: Paris.svg
+    code: 'autre'
+
+  media_campus_lille:
+    file: public/fixtures/campus/Lille.svg
+    originalName: Lille.svg
+    code: 'autre'
+
+  media_campus_sophia_antipolis:
+    file: public/fixtures/campus/Sophia.svg
+    originalName: Sophia.svg
+    code: 'autre'
+
+  media_campus_distance:
+    file: public/fixtures/campus/Distance.svg
+    originalName: Distance.svg
+    code: 'autre'
+
+  media_hp_facebook:
+    file: public/fixtures/blocs/facebook.svg
+    originalName: facebook.svg
+    code: 'autre'
+
+  media_hp_twitter:
+    file: public/fixtures/blocs/twitter.svg
+    originalName: twitter.svg
+    code: 'autre'
+
+  media_hp_insta:
+    file: public/fixtures/blocs/instagram.png
+    originalName: instagram.png
+    code: 'autre'
+
+  media_hp_linkedin:
+    file: public/fixtures/blocs/linkedin.svg
+    originalName: linkedin.svg
+    code: 'autre'
+
+  media_hp_youtube:
+    file: public/fixtures/blocs/youtube.svg
+    originalName: youtube.svg
+    code: 'autre'
+
+  media_hp_tiktok:
+    file: public/fixtures/blocs/tiktok.svg
+    originalName: tiktok.svg
+    code: 'autre'
+
+  media_hp_wechat:
+    file: public/fixtures/blocs/wechat.svg
+    originalName: wechat.svg
+    code: 'autre'
+
+  media_hp_prog1:
+    file: public/fixtures/blocs/coupe.svg
+    originalName: coupe.svg
+    code: 'autre'
+
+  media_hp_prog2:
+    file: public/fixtures/blocs/parcours.svg
+    originalName: parcours.svg
+    code: 'autre'
+
+  media_hp_prog3:
+    file: public/fixtures/blocs/business.svg
+    originalName: business.svg
+    code: 'autre'
+
+  media_hp_prog4:
+    file: public/fixtures/blocs/reseau.svg
+    originalName: reseau.svg
+    code: 'autre'
+
+  media_hp_prog5:
+    file: public/fixtures/blocs/association.svg
+    originalName: association.svg
+    code: 'autre'
+
+  media_hp_footer_map:
+    file: public/fixtures/blocs/mini-worldmap.png
+    originalName: mini-worldmap.png
+    code: 'autre'
+
+  media_hp_footer_logo0:
+    file: public/fixtures/blocs/accreditation-cge.png
+    originalName: accreditation-cge.png
+    code: 'autre'
+
+  media_hp_footer_logo1:
+    file: public/fixtures/blocs/accreditation-amba.png
+    originalName: accreditation-amba.png
+    code: 'autre'
+
+  media_hp_footer_logo2:
+    file: public/fixtures/blocs/accreditation-aacsb.png
+    originalName: accreditation-aacsb.png
+    code: 'autre'
+
+  media_hp_footer_logo3:
+    file: public/fixtures/blocs/accreditation-equis.png
+    originalName: accreditation-equis.png
+    code: 'autre'
+
+  media_hp_footer_logo4:
+    file: public/fixtures/blocs/skema-footer-logo.png
+    originalName: skema-footer-logo.png
+    code: 'autre'
+
+  media_ast_informations_concours:
+    file: public/fixtures/home_pge/infos_concours.png
+    originalName: infos_concours.png
+    code: 'autre'
+
+  media_ast_concours_international:
+    file: public/fixtures/home_pge/concours_international.png
+    originalName: concours_international.png
+    code: 'autre'
+
+  media_ast_concours_presentation:
+    file: public/fixtures/documents/PresentationConcoursAST2022.pdf
+    originalName: PresentationConcoursAST2022.pdf
+    code: 'autre'
+
+  media_ast_concours_reglement:
+    file: public/fixtures/documents/Reglement_AST.pdf
+    originalName: Reglement_AST.pdf
+    code: 'autre'
+
+  media_skameleon_applaudissement:
+    file: fixtures/skema/skema_applaudissement-min.png
+    originalName: skema_applaudissement-min.png
+    code: 'autre'
+
+  media_skameleon_festif:
+    file: public/fixtures/skema/skema_festif-min.png
+    originalName: skema_festif-min.png
+    code: 'autre'
+
+  media_skameleon_sympa:
+    file: public/fixtures/skema/skema_sympa-min.png
+    originalName: skema_sympa-min.png
+    code: 'autre'

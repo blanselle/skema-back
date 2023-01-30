@@ -1,0 +1,17 @@
+services:
+  # default configuration for services in *this* file
+  _defaults:
+    autowire: true      # Automatically injects dependencies in your services.
+    autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+  App\DataFixtures\Providers\HashPasswordProvider:
+    tags: [ { name: nelmio_alice.faker.provider } ]
+
+  App\DataFixtures\Providers\UserRoleProvider:
+    tags: [ { name: nelmio_alice.faker.provider } ]
+
+  App\DataFixtures\Providers\StringProvider:
+    tags: [ { name: nelmio_alice.faker.provider } ]
+
+  App\DataFixtures\Providers\NumericalProvider:
+    tags: [ { name: nelmio_alice.faker.provider } ]

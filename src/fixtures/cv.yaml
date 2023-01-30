@@ -1,0 +1,59 @@
+App\Entity\CV\Cv:
+  cv_student1:
+    student: '@student_ast1'
+    languages: ['@lang_aar']
+    note: <randomScore(0, 20, 1)>
+  cv_student2:
+    student: '@student_ast2'
+    languages: [ '@lang_aar' ]
+    note: <randomScore(0, 20, 1)>
+#  cv_ar_ast1_{1..30}:
+#    student: '@student_ast1_<current()>'
+#    note: <randomScore(0, 20, 1)>
+#  cv_ar_ast2_{1..30}:
+#    student: '@student_ast2_<current()>'
+#    note: <randomScore(0, 20, 1)>
+    
+App\Entity\CV\Experience:
+  exp1:
+    cv: '@cv_student1'
+    establishment: 'BCSYS'
+    timeType: 'full'
+    experienceType: 'default'
+    beginAt: <(new \DateTime('2018-04-03'))>
+    endAt: <(new \DateTime('2018-08-30'))>
+    description: "Développement d'une interface du système de sauvegardes externalisées de l’entreprise"
+
+  exp2:
+    cv: '@cv_student1'
+    establishment: 'FnacDarty'
+    timeType: 'full'
+    experienceType: 'default'
+    beginAt: <(new \DateTime('2018-11-19'))>
+    endAt: <(new \DateTime('2015-09-30'))>
+    description: "Développement d'application interne"
+
+App\Entity\CV\BacSup:
+  bacSup_esiee:
+    diploma: '@diploma_bts'
+    diplomaChannel: '@diplomaChannel_1'
+    establishment: 'ESIEE'
+    year: 2017
+    postalCode: '80000'
+    city: 'Lyon'
+    type: 'annuel'
+    cv: '@cv_student1'
+    country: '@country_ago'
+
+App\Entity\Media:
+  media_schoolReport:
+    formFile: null
+    file: 'aze'
+    originalName: aze
+    code: 'bulletin'
+
+App\Entity\CV\SchoolReport:
+  schoolReport1: 
+    score: 121
+    bacSup: '@bacSup_esiee'
+    media: '@media_schoolReport'

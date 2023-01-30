@@ -1,0 +1,21 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  App\Serializer\Normalizer\MediaNormalizer:
+    decorates: 'api_platform.jsonld.normalizer.item'
+    arguments:
+      $backofficeUrl: '%env(BACKOFFICE_URL)%'
+
+  App\Serializer\Normalizer\EventNormalizer:
+    decorates: 'api_platform.jsonld.normalizer.item'
+
+  App\Serializer\Normalizer\AdministrativeRecordNormalizer:
+    decorates: 'api_platform.jsonld.normalizer.item'
+
+  App\Serializer\Normalizer\BlocNormalizer:
+    decorates: 'api_platform.jsonld.normalizer.item'
+
+  App\Serializer\Normalizer\CvNormalizer:
+    decorates: 'api_platform.jsonld.normalizer.item'

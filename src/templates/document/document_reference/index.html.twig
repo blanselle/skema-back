@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/admin-datatables-light.js') }}" type="text/javascript"></script>
+{% endblock %}
+
+{% block title %}Liste des document_reference{% endblock %}
+
+{% block body %}
+    <h1>Liste des documents reference <a class="btn btn-primary" href="{{ path('document_reference_new') }}">Ajouter un document de référence</a></h1>
+
+    <table id="document_reference" class="table admin-datatable stripe hover order-column">
+        <thead>
+            <tr>
+                <th>Document</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for document_reference in document_references %}
+            <tr id="{{ document_reference.name | lower | slug }}">
+                <td id="{{ 'file-' ~ document_reference.name | lower | slug }}"><a target="_blank" href="{{ app.request.schemeAndHttpHost ~ app.request.baseUrl }}/{{document_reference.file}}">{{document_reference.name}}</a></td>
+                <td class="d-flex">
+                    <a class="btn btn-warning me-2 action-edit" href="{{ path('document_reference_edit', {'id': document_reference.id}) }}"><i class="bi bi-pencil-square"></i></a>
+                    {{ include('document/document_reference/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Aucun document_reference trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

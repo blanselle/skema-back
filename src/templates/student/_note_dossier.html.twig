@@ -1,0 +1,22 @@
+<h4 class="bg-light">Estimation note Cv</h4>
+<table class="table">
+    <caption>Ces valeurs sont des estimations et sont mises à jours à la modification du CV ou du dossier administratif.<br>
+        La mise à jour peut prendre quelques minutes après une modification.<br>
+        Les données prises en compte sont uniquement celles dont le justificatif associé est validé. </caption>
+    <tr>
+        <th scope="row">Note</th>
+        <td>{{ cv.note }}</td>
+    </tr>
+    <tr>
+        <th scope="row">Bonus</th>
+        <td>{{ cv.bonus }}</td>
+    </tr>
+    <tr>
+        <th scope="row">Score total</th>
+        {% if (cv.note + cv.bonus) > 20 %}
+            <td>20</td>
+        {% else %}
+            <td>{{ cv.note + cv.bonus }}</td>
+        {% endif %}
+    </tr>
+</table>

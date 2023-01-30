@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des candidats{% endblock %}
+
+{% block body %}
+    <h1>Liste des candidats</h1>
+    <hr />
+    {{ include('partial/_flash_messages.html.twig') }}
+
+    <br>
+
+    {% include 'student/_form_search.html.twig' %}
+    <hr />
+
+    <a class="btn btn-primary" href="{{ path('multicast_notification', app.request.query.all) }}">Notifier</a>
+
+    {% if is_granted('send-admissibility') %}
+        <a class="btn btn-primary btn-confirmation" href="{{ path('notifications_admissibility') }}" data-confirmation-label="Souhaitez-vous envoyer le mail de résultats d'admissibilité à tous les candidats ?">Envoyer les mails d'admissibilité</a>
+    {% endif %}
+
+    <button id="student-export-list-button" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#student-export-modal">Exporter</button>
+
+    {% if is_granted('ROLE_COORDINATOR') %}
+        <div class="d-inline-block">
+        {% include 'approve_all_candidacy/_form.html.twig' %}
+        </div>
+    {% endif %}
+
+    <hr />
+    {% include 'table.html.twig' with {'columns' : columns, 'controller' : 'student_index', parameters: query} %}
+
+    {% include 'student/_modal_student_export_list.html.twig' %}
+
+    <script type="text/javascript" src="{{ asset('js/button-confirmation.js') }}"></script>
+
+{% endblock %}

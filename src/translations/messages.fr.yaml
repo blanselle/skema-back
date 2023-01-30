@@ -1,0 +1,287 @@
+to_check: À vérifier
+uploaded: Uploadé
+transfered: Transféré
+accepted: Accepté
+rejected: Refusé
+workflow:
+  student:
+    start: Candidature non activée
+    exemption: En attente (dérogation)
+    created: Candidature initialisée
+    check_diploma: Autre diplôme à contrôler
+    rejected_diploma: Autre diplôme non éligible
+    rejected: Dérogation refusée
+    check_boursier: Boursier à contrôler
+    created_to_pay: Candidature à payer
+    declined_payment: Candidature non payée
+    valid: Candidature payée
+    boursier_ko: Contrôle 1 bourses refusé
+    recheck_boursier: Boursier à contrôler (2)
+    rejected_eligible: Diplôme non éligible
+    eligible: Candidature en cours
+    complete: Candidature soumise
+    complete_proof: Candidature soumise en cours
+    approved: Candidature approuvée
+    resigned_payed: Démission FC payé
+    resigned: Démission
+    canceled: Annulé
+    canceled_payed: Annulé payé
+    admissible: Admissible
+    rejected_admissible: Non admissible
+    admis: Admis
+    registered_sk: Admis et payé
+    resignation_switch: Changement de voie de concours
+    registered_eo: Candidature inscrit oraux
+    canceled_eo: Candidature inscription oraux annulée
+  payment:
+    created: Créé
+    in_progress: En cours
+    validated: Validé
+    rejected: Rejeté
+    canceled: Annulé
+  order:
+    created: Créée
+    in_progress: En cours
+    validated: Validée
+  media:
+    uploaded: Téléchargé
+    to_check: A valider
+    transfered: Transféré
+    accepted: Accepté
+    rejected: Rejeté
+    cancelled: Annulé
+
+admissible:
+  eligible_candidates: Nb de candidats admissible
+  not_eligible_candidates: Nb de candidats non admissible
+
+student_edit_page:
+  notification_center: Centre de notifications
+  user_action_histories: Historique des actions
+  payment_history: Historique des paiements
+
+notification:
+  page:
+    new:
+      block_title: Nouveau message
+    title:
+      comment: Commenter la candidature
+      default: Envoyer un message
+  form:
+    btn_default_submit: Envoyer
+  sender: '%firstName% %lastName% a envoyé une notification "%subject%".'
+
+media:
+  codes:
+    certificat_eligibilite: Certificat de scolarité
+    certificat_double_parcours: Certificat de scolarité (double parcours)
+    shn: Sportif de Haut Niveau
+    tt: Aménagement d'épreuves
+    crous: Bourses
+    id_card: Pièce d’identité
+    bac: Baccalauréat
+    attestation_anglais: Attestation Anglais
+    attestation_management: Attestation Management
+    jdc: Journée de la citoyenneté
+    autre: Autre
+    summon: Convocation
+    bulletin_l1_s1: Bulletin L1 1er semestre
+    bulletin_l1_s2: Bulletin L1 2ème semestre
+    bulletin_l2_s3: Bulletin L2 3ème semestre
+    bulletin_l2_s4: Bulletin L2 4ème semestre
+    bulletin_l3_s5: Bulletin L3 5ème semestre
+    bulletin_l3_s6: Bulletin L3 6ème semestre
+    bulletin_m1_s1: Bulletin M1 1er semestre
+    bulletin_m1_s2: Bulletin M1 2ème semestre
+    bulletin_m2_s3: Bulletin M2 3ème semestre
+    bulletin_m2_s4: Bulletin M2 4ème semestre
+    bulletin_l1: Bulletin L1
+    bulletin_l2: Bulletin L2
+    bulletin_l3: Bulletin L3
+    bulletin_m1: Bulletin M1
+    bulletin_m2: Bulletin M2
+    l1: Bulletin L1
+    l1_s1: Bulletin L1 1er semestre
+    l1_s2: Bulletin L1 2ème semestre
+    l2: Bulletin L2
+    l2_s3: Bulletin L2 3ème semestre
+    l2_s4: Bulletin L2 4ème semestre
+    l3: Bulletin L3
+    l3_s5: Bulletin L3 5ème semestre
+    l3_s6: Bulletin L3 6ème semestre
+    m1: Bulletin M1
+    m1_s1: Bulletin M1 1er semestre
+    m1_s2: Bulletin M1 2ème semestre
+    m2: Bulletin M2
+    m2_s3: Bulletin M2 3ème semestre
+    m2_s4: Bulletin M2 4ème semestre
+
+loggable:
+  action:
+    create: Ajout
+    remove: Suppression
+    update: Modification
+  field:
+    additionnal: Supplément
+    address: Adresse
+    bac_channel: Filière
+    bac_distinction: Mention
+    bac_option: Option
+    begin_at: Début
+    city: Ville
+    country: Pays
+    country_birth: Pays de naissance
+    date_of_birth: Date de naissance
+    detail: Précision
+    description: Description
+    diploma: Diplôme
+    diploma_channel: Filière
+    dual_path_student_diploma: Double parcours
+    duration: Durée en année
+    email: Adresse électronique
+    end_at: Fin
+    establishment: Etablissement
+    exam_language: LV2
+    experience_type: Type d'expérience
+    first_name: Prénom
+    first_name_secondary: Deuxième prénom
+    gender: Sexe
+    high_level_sportsman: Sportif de haut niveau
+    hours_per_week: Heure(s) par semaine
+    ine: INE
+    jdc: Attestation Journée Défense et Citoyenneté
+    languages: Langues
+    last_diploma: Dernier diplôme
+    last_name: Nom
+    nationality: Nationalité
+    nationality_secondary: Double nationalité
+    no_associative_experience: Aucune experience associative
+    no_internationnal_experience: Aucune expérience internationale
+    no_professional_experience: Aucune expérience professionnelle
+    optional_exam_language: LV2 (optionnelle)
+    original_name: Nom du fichier
+    password: Mot de passe
+    phone: Téléphone
+    postal_code: Code postale
+    rewarded_year: Année d'obtention
+    scholar_ship: Boursier
+    scholar_ship_level: Niveau de bourse
+    score: Score
+    score_not_out_of_twenty: Ma moyenne n'est pas sur 20
+    score_retained: Score retenu
+    sport_level: Niveau sportif
+    state: Statut
+    third_time: Tiers temps
+    third_time_detail: Autre aménagement
+    time_type: Type de mission
+    type: Type
+    year: Année
+    receiver: Destinataire
+    roles: Rôles
+    bac_sup: Baccalauréat supérieur
+    exam_session: Inscription Session
+    subject: Sujet
+    anonymized: Anonymisé(e)
+    program_channel: Voie de concours
+    token: Token
+  history:
+    type:
+      administrative_record: Dossier administratif
+      user_account: Compte utilisateur
+      cv: CV
+      other: Autre
+      document: Document
+      epreuves_ecrites: Epreuves écrites
+      payment: Paiement
+      notification: Notification
+      exam_student: Inscription Session
+    message:
+      programChannel: 'L’utilisateur a changé de voie de concours : %programChannel%'
+      admissibility_token: Token d'admissibilité
+
+history:
+  page:
+    title: Historique des actions %student%
+    button:
+      go_back: Retour à la fiche candidat
+    table:
+      head:
+        date: Date
+        author: Auteur
+        action: Action
+        type: Type
+      no_result_found: Aucun résultat trouvé
+
+order:
+  type:
+    school_registration_fees: Frais d'inscription
+    registration_fee_for_exam_session: Frais d'inscription pour la session d'examen %session_name%
+  datatable:
+    type:
+      registration_fee_for_exam_session: Épreuve écrite
+      school_registration_fees: Frais d'inscription
+      advance_payment: Accompte
+
+payment:
+  mode:
+    bank_transfert: Virement
+    check: Chèque
+    online: En ligne
+    cash: Espèce
+    other: Autre
+  order:
+    page:
+      title: Historique des paiements de %student%
+      table:
+        head:
+          type: Type
+          amount: Montant
+          student: Etudiant
+          exam_session: Epreuves écrites
+          state: Statut
+          action: Actions
+        no_result_found: Aucun résultat trouvé
+
+admissibility:
+  bonus:
+    page:
+      title: Liste des bonus
+      table:
+        head:
+          category: Categorie
+          value: Valeur
+          program_channel: Voie de concours
+          information: Infos
+          action: Action
+        no_result_found: Aucun résultat trouvé
+oral_test:
+  configuration:
+    page:
+      title: Voir la capacité des campus
+  campus_oral_day_show:
+    page:
+      title: Capacité du campus %configuration%
+      button_modify_languages: Modifier les langues vivantes
+  campus_oral_day_settings:
+    page:
+      title: Gérer la capacité des campus
+      configuration_list: Liste des configurations
+      campus_description: Gérer la capacité du Campus %name%
+      button_no_result: Aucun campus configuré
+      display_configuration: Voir la capacité du Campus %configuration%
+      modal:
+        title: Sélectionnez les voies de concours à associer
+        button_submit: Valider
+        button_close: Annuler
+  campus_oral_day_settings_languages:
+    form:
+      button_submit: Valider
+      fields:
+        first_language: LV1
+        second_language: LV2
+        optional: Epreuve facultative ?
+
+examStudent:
+  inscription: '%firstName% %lastName% s’est inscrit à la session %examSessionName% du %examSessionStart% - %campus%'
+cv:
+  schoolReport: '%firstName% %lastName% a ajouté un bulletin de scolarité pour le diplôme %diploma% pour l’année %year% et pour l’établissement %establishement%'

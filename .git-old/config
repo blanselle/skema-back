@@ -1,0 +1,9 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	hooksPath = .githooks
+[remote "origin"]
+	url = https://gitlab.pictime-groupe-integ.com/skema/dev/backend.git
+	fetch = +refs/heads/*:refs/remotes/origin/*

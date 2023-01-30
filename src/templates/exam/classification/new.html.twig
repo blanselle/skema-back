@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle typologie{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('exam_classifications_index') }}" class="btn btn-secondary">Retour à la liste des typologies</a>
+    </div>
+    <hr />
+    <h1>Créer un examen</h1>
+
+    {{ include('exam/classification/_form.html.twig') }}
+{% endblock %}

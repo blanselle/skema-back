@@ -1,0 +1,4 @@
+<form method="post" action="{{ path('faq_topic_delete', {'id': topic.id}) }}" onsubmit="return confirm('Voulez-vous vraiment supprimer ce thème ?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ topic.id) }}">
+    <button class="btn btn-danger action-delete"><i class="bi bi-trash"></i></button>
+</form>

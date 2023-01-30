@@ -1,0 +1,61 @@
+App\Entity\User:
+  user_admin:
+    email: 'admin@skema.fr'
+    plainPassword: 'mdp'
+    firstName: <firstName()>
+    lastName: <lastName()>
+    roles: ['ROLE_ADMIN']
+  user_candidate:
+    email: 'candidate@skema.fr'
+    plainPassword: 'mdp'
+    firstName: <firstName()>
+    lastName: <lastName()>
+    roles: ['ROLE_CANDIDATE']
+  user_coordinator:
+    email: 'coordinator@skema.fr'
+    plainPassword: 'mdp'
+    firstName: <firstName()>
+    lastName: <lastName()>
+    roles: ['ROLE_COORDINATOR']
+  user_responsable:
+    email: 'responsable@skema.fr'
+    plainPassword: 'mdp'
+    firstName: <firstName()>
+    lastName: <lastName()>
+    roles: ['ROLE_RESPONSABLE']
+  user_test:
+    email: 'test@skema.fr'
+    plainPassword: 'mdp'
+    firstName: 'Test'
+    lastName: 'Test'
+    roles: ['ROLE_ADMIN']
+  candidate_AST1:
+    email: 'candidate.ast1@skema.fr'
+    plainPassword: 'mdp'
+    firstName: <firstName()>
+    lastName: <lastName()>
+    roles: ['ROLE_CANDIDATE']
+  candidate_AST2:
+    email: 'candidate.ast2@skema.fr'
+    plainPassword: 'mdp'
+    firstName: <firstName()>
+    lastName: <lastName()>
+    roles: ['ROLE_CANDIDATE']
+  candidate_BCE:
+    email: 'candidate.bce@skema.fr'
+    plainPassword: 'mdp'
+    firstName: <firstName()>
+    lastName: <lastName()>
+    roles: ['ROLE_CANDIDATE']
+#  candidate_AST1_{1..30}:
+#    email: 'candidate<current()>.ast1@skema.fr'
+#    plainPassword: 'mdp'
+#    firstName: <firstName()>
+#    lastName: <lastName()>
+#    roles: [ 'ROLE_CANDIDATE' ]
+#  candidate_AST2_{1..30}:
+#    email: 'candidate<current()>.ast2@skema.fr'
+#    plainPassword: 'mdp'
+#    firstName: <firstName()>
+#    lastName: <lastName()>
+#    roles: [ 'ROLE_CANDIDATE' ]

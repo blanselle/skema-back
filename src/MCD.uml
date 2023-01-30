@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>4f3ee6a8-4d44-411c-b60d-21a4755a1e71</OriginalElement>
+  <nodes>
+    <node x="0.0" y="469.0">4f3ee6a8-4d44-411c-b60d-21a4755a1e71.TABLE:skema.public.users</node>
+    <node x="0.0" y="304.0">4f3ee6a8-4d44-411c-b60d-21a4755a1e71.TABLE:skema.public.student</node>
+    <node x="542.5" y="0.0">4f3ee6a8-4d44-411c-b60d-21a4755a1e71.TABLE:skema.public.doctrine_migration_versions</node>
+    <node x="300.5" y="139.0">4f3ee6a8-4d44-411c-b60d-21a4755a1e71.TABLE:skema.public.bloc</node>
+    <node x="23.5" y="139.0">4f3ee6a8-4d44-411c-b60d-21a4755a1e71.TABLE:skema.public.program_channel</node>
+    <node x="317.5" y="0.0">4f3ee6a8-4d44-411c-b60d-21a4755a1e71.TABLE:skema.public.bloc_tag</node>
+    <node x="36.5" y="-12.0">4f3ee6a8-4d44-411c-b60d-21a4755a1e71.TABLE:skema.public.program</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="4f3ee6a8-4d44-411c-b60d-21a4755a1e71.TABLE:skema.public.users" target="4f3ee6a8-4d44-411c-b60d-21a4755a1e71.TABLE:skema.public.student" relationship="REFERENCES">
+      <point x="0.0" y="-109.5" />
+      <point x="0.0" y="57.5" />
+    </edge>
+    <edge source="4f3ee6a8-4d44-411c-b60d-21a4755a1e71.TABLE:skema.public.student" target="4f3ee6a8-4d44-411c-b60d-21a4755a1e71.TABLE:skema.public.program_channel" relationship="REFERENCES">
+      <point x="0.0" y="-57.5" />
+      <point x="0.0" y="57.5" />
+    </edge>
+    <edge source="4f3ee6a8-4d44-411c-b60d-21a4755a1e71.TABLE:skema.public.bloc" target="4f3ee6a8-4d44-411c-b60d-21a4755a1e71.TABLE:skema.public.bloc_tag" relationship="REFERENCES">
+      <point x="0.0" y="-122.5" />
+      <point x="0.0" y="44.5" />
+    </edge>
+    <edge source="4f3ee6a8-4d44-411c-b60d-21a4755a1e71.TABLE:skema.public.program_channel" target="4f3ee6a8-4d44-411c-b60d-21a4755a1e71.TABLE:skema.public.program" relationship="REFERENCES">
+      <point x="0.0" y="-57.5" />
+      <point x="0.0" y="44.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="511.0" y="432.0" />
+  <SelectedNodes>
+    <node>4f3ee6a8-4d44-411c-b60d-21a4755a1e71.TABLE:skema.public.doctrine_migration_versions</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Columns</Category>
+    <Category>Comments</Category>
+    <Category>Key columns</Category>
+    <Category>Virtual foreign keys</Category>
+  </Categories>
+</Diagram>
+

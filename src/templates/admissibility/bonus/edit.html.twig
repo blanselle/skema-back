@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification d'un bonus{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('admissibility_bonus_index', {'categoryId': category.id}) }}" class="btn btn-secondary">Retour à la liste des bonus</a>
+    </div>
+    <hr />
+    <h1>Modifier le bonus {{ bonus.category.name }}</h1>
+
+    {{ include('admissibility/bonus/_form.html.twig') }}
+{% endblock %}

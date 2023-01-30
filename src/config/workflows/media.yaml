@@ -1,0 +1,51 @@
+framework:
+  workflows:
+    media:
+      type: 'state_machine'
+      marking_store:
+        type: 'method'
+        property: 'state'
+      supports:
+        - App\Entity\Media
+      initial_marking: uploaded
+      places:
+        - uploaded
+        - to_check
+        - transfered
+        - accepted
+        - rejected
+        - cancelled
+      transitions:
+        uploaded_to_check:
+          from: uploaded
+          to: to_check
+        check_to_accepted:
+          from: to_check
+          to: accepted
+        check_to_rejected:
+          from: to_check
+          to: rejected
+        check_to_transfered:
+          from: to_check
+          to: transfered
+        accepted_to_rejected:
+          from: accepted
+          to: rejected
+        accepted_to_check:
+          from: accepted
+          to: to_check
+        transfered_to_accepted:
+          from: transfered
+          to: accepted
+        transfered_to_rejected:
+          from: transfered
+          to: rejected
+        to_cancel:
+          from: [
+            uploaded,
+            to_check,
+            transfered,
+            accepted,
+            rejected
+          ]
+          to: cancelled

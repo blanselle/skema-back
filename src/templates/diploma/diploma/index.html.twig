@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des diplômes{% endblock %}
+
+{% block body %}
+    <h1>Liste des diplômes {% if diplomaChannel is not null %} de {{ diplomaChannel.name }}{% endif %}<a class="btn btn-primary" href="{{ path('diploma_new') }}">Ajouter un nouveau diplôme</a></h1>
+
+    <div class="search_form">
+        <hr />
+        <form action="" method="get" id="list-search">
+            <input type="hidden" name="idDiplomaChannel" id="idDiplomaChannel" class="form-control"
+                   value="{% if params['idDiplomaChannel'] is defined %}{{ params['idDiplomaChannel'] }}{% endif %}" />
+            <div class="row">
+                <div class="col">
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Nom du diplôme"
+                           value="{% if params['name'] is defined %}{{ params['name'] }}{% endif %}" />
+                </div>
+                <div class="col">
+                    <select class="form-select select-filter" name="programChannel" id="programChannel">
+                        <option value=""></option>
+                        {% for programChannel in programChannels %}
+                            <option value="{{ programChannel.id }}" {% if params is not empty and params['programChannel'] is defined and params['programChannel'] == programChannel.id %}selected{% endif %}>
+                                {{ programChannel.name }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <button class="btn btn-success" type="submit">Filtrer</button>
+        </form>
+        <hr />
+    </div>
+
+    {% include 'table.html.twig' with {'columns' : columns, 'controller' : 'diploma_index'} %}
+{% endblock %}

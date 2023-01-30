@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Notification{% endblock %}
+
+{% block body %}
+
+<h1>Notification</h1>
+
+{{ form_start(form) }}
+
+    {{ form_widget(form) }}
+
+    <div class="save_container">
+        <button class="btn btn-success">{{ button_label|default('Envoyer') }}</button>
+    </div>
+
+{{ form_end(form) }}
+
+{% endblock %}

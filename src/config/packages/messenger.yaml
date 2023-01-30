@@ -1,0 +1,96 @@
+framework:
+  messenger:
+    transports:
+      async_mailer:
+        dsn: '%env(MESSENGER_TRANSPORT_DSN)%/email'
+        options:
+          exchange:
+            name: mailer
+            type: direct
+      async_notifier:
+        dsn: '%env(MESSENGER_TRANSPORT_DSN)%/notification'
+        options:
+          exchange:
+            name: notifier
+            type: direct
+      async_cvcalculator:
+        dsn: '%env(MESSENGER_TRANSPORT_DSN)%/cvcalculation'
+        options:
+          exchange:
+            name: cvcalculator
+            type: direct
+      async_multicaster:
+        dsn: '%env(MESSENGER_TRANSPORT_DSN)%/multicast'
+        options:
+          exchange:
+            name: multicaster
+            type: direct
+      async_admissibility_calculator:
+        dsn: '%env(MESSENGER_TRANSPORT_DSN)%/admissibility-calculator'
+        options:
+          exchange:
+            name: admissibility-calculator
+            type: direct
+      async_eligible_students:
+        dsn: '%env(MESSENGER_TRANSPORT_DSN)%/eligible-students'
+        options:
+          exchange:
+            name: eligible-students
+            type: direct
+      async_student_export_list:
+        dsn: '%env(MESSENGER_TRANSPORT_DSN)%/student-export-list'
+        options:
+          exchange:
+            name: student-export-list
+            type: direct
+      async_payment_status:
+        dsn: '%env(MESSENGER_TRANSPORT_DSN)%/payment-status'
+        options:
+          exchange:
+            name: payment-status
+            type: direct
+      async_oral_test_student_reservation:
+        dsn: '%env(MESSENGER_TRANSPORT_DSN)%/oral-test-student-reservation'
+        options:
+          exchange:
+            name: oral-test-student-reservation
+            type: direct
+      async_written_test_summons_message:
+        dsn: '%env(MESSENGER_TRANSPORT_DSN)%/written_test_summons_message'
+        options:
+          exchange:
+            name: written-test-summons-message
+            type: direct
+      async_written_test_summon_message:
+        dsn: '%env(MESSENGER_TRANSPORT_DSN)%/written_test_summon_message'
+        options:
+          exchange:
+            name: written-test-summon-message
+            type: direct
+      async_approve_all_candidacy:
+        dsn: '%env(MESSENGER_TRANSPORT_DSN)%/approve-all-candidacy'
+        options:
+          exchange:
+            name: approve-all-candidacy
+            type: direct
+      async_notifications_admissibility_result:
+        dsn: '%env(MESSENGER_TRANSPORT_DSN)%/notifications-admissibility-result'
+        options:
+          exchange:
+            name: notifications-admissbility-result
+            type: direct
+
+    routing:
+      'App\Message\MailMessage': async_mailer
+      'App\Message\NotificationMessage': async_notifier
+      'App\Message\CvCalculationMessage': async_cvcalculator
+      'App\Message\MulticastMessage': async_multicaster
+      'App\Message\AdmissibilityCalculation': async_admissibility_calculator
+      'App\Message\EligibleStudents': async_eligible_students
+      'App\Message\StudentExportListMessage': async_student_export_list
+      'App\Message\PaymentsStatusMessage': async_payment_status
+      'App\Message\OralTestStudentReservation': async_oral_test_student_reservation
+      'App\Message\WrittenTest\SummonsMessage': async_written_test_summons_message
+      'App\Message\WrittenTest\SummonMessage': async_written_test_summon_message
+      'App\Message\ApproveAllCandidacy': async_approve_all_candidacy
+      'App\Message\NotificationsAdmissibilityResultMessage': async_notifications_admissibility_result

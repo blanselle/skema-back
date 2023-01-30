@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Upload de scores | Skema{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('exam_classification_scores_index', {'id': examClassification.id}) }}" class="btn btn-secondary">Retour à la liste des scores</a>
+    </div>
+    <hr />
+    <h1>Charger un fichier afin de remplacer tous les scores possibles pour la typologie {{ examClassification.name }}</h1>
+
+    <div class="save_container">
+        {{ form_start(form) }}
+        <div class="row">
+            <div class="col">
+                {{ form_row(form.file) }}
+            </div>
+        </div>
+        <div class="save_container">
+            <button class="btn btn-success">{{ button_label|default('Charger le fichier') }}</button>
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

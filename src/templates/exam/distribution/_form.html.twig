@@ -1,0 +1,39 @@
+<form name="exam_distribution" action="{{ path('exam_distribution_index') }}" method="post">
+    <div class="row">
+        <div class="col">
+            <select class="form-select" name="campus" id="distribution-campus-selector">
+                {% for campus in campuses %}
+                <option value="{{ campus.id }}" data-distributed="{{ (campus.id in campusesDistributed) ? '1' : '0' }}">{{ campus.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="col" style="display: flex;">
+            <button type="submit" class="btn btn-primary" id="btn-distribution" data-confirmation-label="Souhaitez-vous mettre à jour la répartition existante ?">{{ button_label|default('Répartir') }}</button>
+        </div>
+    </div>
+</form>
+
+<script type="text/javascript">
+
+document.addEventListener("DOMContentLoaded", function(){
+    "use strict";
+
+    let button = document.querySelector('#btn-distribution');
+    let label = button.getAttribute('data-confirmation-label');
+    let campusSelector = document.querySelector('#distribution-campus-selector');
+
+    button.addEventListener('click', (e) => {
+        
+        let campus = campusSelector.selectedOptions.item(0);
+    
+        if(campus === null) {
+            return;
+        }
+
+        if(campus.getAttribute('data-distributed') === "1" && !confirm(label)) {
+            e.preventDefault();
+        }
+    })
+});
+
+</script>

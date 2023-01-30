@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Candidature - Expérience{% endblock title %}
+
+{% block page_title %}Candidature - Ajouter une expérience à {{ student }}{% endblock page_title %}
+
+{% block referer %}
+    <div class="nav_actions">
+        <a href="{{ path('student_edit', {'id': student.id}) }}" class="btn btn-secondary">Retour à la candidature</a>
+    </div>
+{% endblock referer %}
+
+{% block main %}
+
+    <div id="experience-content" class="row">
+        {{ include('student/cv/experience_form.html.twig') }}
+    </div>
+
+{% endblock main %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script src="{{ asset('js/experience.js') }}" type="text/javascript"></script>
+{% endblock %}

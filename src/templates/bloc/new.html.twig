@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau bloc{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('bloc_index') }}" class="btn btn-secondary">Retourner à la liste des blocs</a>
+    </div>
+    <hr />
+    <h1>Créer un bloc</h1>
+
+    {{ include('bloc/_form.html.twig') }}
+{% endblock %}

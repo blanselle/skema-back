@@ -1,0 +1,174 @@
+categories:
+  home: 
+    label: 'Dashboard' 
+    role: 'ROLE_COORDINATOR'
+    icon: 'house-door-fill'
+    pages:
+      home: 
+        label: 'Épreuves écrites'
+        icon: 'house-fill'
+
+  candidat:
+    label: 'Candidats'
+    role: 'ROLE_COORDINATOR'
+    icon: 'file-person'
+    pages:
+      student_index:
+        label: 'Candidats'
+        icon: 'file-person'
+
+  exam_session:
+    label: 'Épreuves écrites'
+    role: 'ROLE_COORDINATOR'
+    icon: 'mortarboard-fill'
+    pages:
+      exam_classifications_index:
+        label: 'Typologie'
+        icon: 'bookmark'
+        role: 'ROLE_RESPONSABLE'
+      exam_session_index:
+        label: 'Session Skema'
+        icon: 'trophy-fill'
+      exam_inscriptions_index:
+        label: 'Inscriptions'
+        icon: 'book'
+      exam_distribution_index:
+        label: 'Répartitions'
+        icon: 'robot'
+      exam_session_convocation:
+        label: 'Convocation'
+        icon: 'filetype-pdf'
+      exam_grade_import:
+        label: 'Import scores'
+        icon: 'upload'
+
+  admissibility:
+    label: 'Ranking admissibilité'
+    role: 'ROLE_RESPONSABLE'
+    icon: 'diagram-3-fill'
+    pages:
+      admissibility_conversion_index:
+        label: 'Tableau de conversion'
+        icon: 'calculator'
+      admissibility_bonus_index:
+        label: 'Bonus'
+        icon: 'hand-thumbs-up'
+      admissibility_coefficient_index:
+        label: 'Coefficient'
+        icon: 'pie-chart'
+      admissibility_ranking_index:
+        label: 'Ranking'
+        icon: 'trophy-fill'
+      admissibility_admissible_index:
+        label: 'Admissible'
+        icon: 'flag'
+
+  oral_test:
+    label: 'Epreuves orales'
+    role: 'ROLE_COORDINATOR'
+    icon: 'mortarboard-fill'
+    pages:
+      campus_capacity_settings_index:
+        label: 'Capacité'
+        icon: 'people-fill'
+      sudoku_index:
+        label: 'Sudoku'
+        icon: 'grid-1x2-fill'
+
+  notification:
+    label: 'Notifications'
+    role: 'ROLE_COORDINATOR'
+    icon: 'mailbox'
+    pages:
+      notification_index:
+        label: 'Notifications reçues'
+        icon: 'send-check'
+      notification_send:
+        label: 'Notifications envoyées'
+        icon: 'send-check'
+
+  faq:
+    label: 'FAQ'
+    icon: 'life-preserver'
+    pages:
+      faq_topic_index:
+        label: 'Thèmes'
+        icon: 'paint-bucket'
+        role: 'ROLE_COORDINATOR'
+      faq_faq_index:
+        label: 'Questions'
+        icon: 'question-lg'
+        role: 'ROLE_COORDINATOR'
+
+  parameter:
+    label: 'Paramètrage'
+    icon: 'gear-fill'
+    pages:
+      parameter_index:
+        label: 'Paramètre'
+        icon: 'gear-wide'
+        role: 'ROLE_ADMIN'
+      event_index:
+        label: 'Evènement'
+        icon: 'calendar-event'
+        role: 'ROLE_RESPONSABLE'
+      bloc_index:
+        label: 'Bloc'
+        icon: 'filetype-html'
+        role: 'ROLE_COORDINATOR'
+      program_channel_index:
+        label: 'Voie de concours'
+        icon: 'file-bar-graph'
+        role: 'ROLE_ADMIN'
+      program_index:
+        label: 'Programme'
+        icon: 'file-check'
+        role: 'ROLE_ADMIN'
+      country_index: 
+        label: 'Pays et nationalités'
+        icon: 'translate'
+        role: 'ROLE_ADMIN'
+      campus_index: 
+        label: 'Campus'
+        icon: 'pin-map-fill'
+        role: 'ROLE_ADMIN'
+      user_index: 
+        label: 'Utilisateurs'
+        icon: 'people-fill'
+        role: 'ROLE_ADMIN'
+      diploma_index: 
+        label: 'Diplômes'
+        icon: 'mortarboard'
+        role: 'ROLE_RESPONSABLE'
+      diploma_channel_index: 
+        label: 'Filières'
+        icon: 'book'
+        role: 'ROLE_RESPONSABLE'
+      document_reference_index: 
+        label: 'Documents'
+        icon: 'filetype-pdf'
+        role: 'ROLE_RESPONSABLE'
+      exam_language_index:
+        label: 'Langues examens'
+        icon: 'chat'
+        role: 'ROLE_RESPONSABLE'
+      scholar_ship_level_index:
+        label: 'Niveaux de bourse'
+        icon: 'reception-4'
+        role: 'ROLE_RESPONSABLE'
+      sport_level_index:
+        label: 'Niveaux sportif'
+        icon: 'reception-3'
+        role: 'ROLE_RESPONSABLE'
+      notification_template_index:
+        label: 'Notification template'
+        icon: 'pencil'
+        role: 'ROLE_RESPONSABLE'
+      language_index:
+        label: 'Langues pratiquées'
+        icon: 'megaphone'
+        role: 'ROLE_RESPONSABLE'
+      reset_db_index:
+        label: 'RAZ base de donnée'
+        icon: 'x-octagon-fill'
+        role: 'ROLE_ADMIN'

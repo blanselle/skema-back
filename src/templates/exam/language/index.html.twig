@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/admin-datatables-light.js') }}" type="text/javascript"></script>
+{% endblock %}
+
+{% block title %}Liste des langues{% endblock %}
+
+{% block body %}
+    <h1>Liste des langues <a class="btn btn-primary" href="{{ path('exam_language_new') }}">Ajouter une nouvelle langue</a></h1>
+
+    <table class="table admin-datatable stripe hover order-column">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Langue</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for language in examLanguages %}
+            <tr id="{{ 'language-' ~ language.name | lower | slug }}">
+                <td id="{{ 'language-id-' ~ language.name | lower | slug }}"><span class="fw-bold">{{ language.id }}</span></td>
+                <td id="{{ 'language-name-' ~ language.name | lower | slug }}">{{ language.name }}</td>
+                <td class="d-flex">
+                    <a class="btn btn-warning me-2" href="{{ path('exam_language_edit', {'id': language.id}) }}"><i class="bi bi-pencil-square"></i></a>
+                    {{ include('exam/language/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Aucune langue trouvée</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

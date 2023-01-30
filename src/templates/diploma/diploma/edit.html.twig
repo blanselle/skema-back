@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification Diplôme{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('diploma_index') }}" class="btn btn-secondary">Retour à la liste des diplômes</a>
+        {{ include('diploma/diploma/_delete_form.html.twig') }}
+    </div>
+    <hr />
+    <h1>Modifier le diplôme</h1>
+
+    <div class="save_container">
+        {{ include('diploma/diploma/_form.html.twig') }}
+    </div>
+{% endblock %}

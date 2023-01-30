@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="skema" default="package" basedir=".">
+    <dirname property="project.basedir" file="."/>
+    <property file="run/dev/.env" />
+    <property name="release" value="skema_payment"/>
+    <property name="appVersion" value="payment" />
+    <property name="src" value="${project.basedir}/src"/>
+    <property name="rundev" value="run/dev" />
+    <property name="build_descriptor" value="${src}/artifact-description.properties" />
+    <property name="dockergroup" value="skema" />
+    <property name="exclusions" value="bin/*, vendor/**, tests/**, src/DataFixtures/** , fixtures/**,  migrations/**, src/Entity/**, public/js/**, src/Constants/**"/>
+    <property name="testsDirectories" value="tests/"/>
+    <property name="composer" value="composer" />
+    <property name="symfony_console" value="php bin/console" />
+    <property name="phpunit" value="./vendor/bin/phpunit" />
+    <property name="sonar_file" value="sonar-project.properties"/>
+    <property name="php" value="php -d memory_limit=1024M"/>
+    <property name="phpunit_config" value="${src}/phpunit.xml.dist"/>
+
+    <target name="cinstall">
+        <composer command="install" composer="/usr/bin/composer" >
+        </composer>
+    </target>
+
+    <target name="compile" depends="artifact-description" description="Compile le projet ${PROJECTNAME}." unless="ALREADY_COMPILED">
+        <echo msg="Execution des commandes Composer ...." />
+        <exec command="${composer} install" dir="${src}" passthru="true" />
+
+        <echo msg="Lancement des tests unitaires" />
+        <exec command="${phpunit}" dir="${src}" passthru="true" />
+
+        <property name="ALREADY_COMPILED" value="true" />
+    </target>
+
+    <target name="test">
+        <exec command="${composer} -v" dir="${src}" passthru="true" />
+        <exec command="composer install" dir="${src}" passthru="true" checkreturn="true"/>
+        <exec command="${php} -d xdebug.mode=coverage vendor/bin/phpunit -c ${phpunit_config} --testsuite 'Unit'" dir="${src}" passthru="true" checkreturn="false"/>
+        <phingcall target="config-sonar" />
+    </target>
+
+    <target name="try-test">
+        <exec command="composer install" dir="${src}" passthru="true" checkreturn="true"/>
+    </target>
+
+    <target name="prepare" depends="artifact-description" description="Creation du repertoire de livraison.">
+        <phingcall target="clean"/>
+    </target>
+
+
+    <target name="artifact-description" description="generateur du descripteur docker de l'artifact a produire">
+        <exec command="git rev-parse HEAD" dir="${src}" checkreturn="true" outputProperty="version.revision"/>
+        <exec command="echo $(git symbolic-ref -q --short HEAD || git describe --tags --exact-match) | sed 's/\//./'" dir="${src}" checkreturn="true" outputProperty="version.branch"/>
+        <exec command="date -Is" dir="${src}" checkreturn="true" outputProperty="version.date"/>
+
+        <echo msg="Emplacement du fichier artefact ${build_descriptor}   .." />
+
+        <echo file="${build_descriptor}" append="false">version=${appVersion} ${line.separator}</echo>
+        <echo file="${build_descriptor}" append="true">artifact=${PROJECTNAME} ${line.separator}</echo>
+        <echo file="${build_descriptor}" append="true">file=${packagename}${line.separator}</echo>
+        <echo file="${build_descriptor}" append="true">packaging=zip ${line.separator}</echo>
+        <echo file="${build_descriptor}" append="true">dockergroup=skema/registry ${line.separator}</echo>
+        <echo file="${build_descriptor}" append="true">user=web ${line.separator}</echo>
+        <echo file="${build_descriptor}" append="true">group=ftpgrp ${line.separator}</echo>
+        <echo file="${build_descriptor}" append="true">format=rpm ${line.separator}</echo>
+        <echo file="${build_descriptor}" append="true">install_folder=${WEB_APP_DIR} ${line.separator}</echo>
+        <echo file="${build_descriptor}" append="true">release=${release} ${line.separator}</echo>
+        <echo file="${build_descriptor}" append="true">date=${version.date} ${line.separator}</echo>
+        <echo file="${build_descriptor}" append="true">revision=${version.revision} ${line.separator}</echo>
+        <echo file="${build_descriptor}" append="true">branch=${version.branch} ${line.separator}</echo>
+    </target>
+
+
+    <target name="build" description="Build du projet ${PROJECTNAME}">
+        <echo msg="Build du projet ${PROJECTNAME} .." />
+        <phingcall target="compile"></phingcall>
+        <phingcall target="prepare"></phingcall>
+        <echo msg="Build du projet ${PROJECTNAME} terminé, livrable à disposition dans ${src}" />
+    </target>
+
+    <target name="config-sonar">
+        <echo>Configuration de Sonar</echo>
+        <copy file="${project.basedir}/run/dev/${sonar_file}.tpl" tofile="${src}/${sonar_file}" overwrite="true">
+            <filterchain>
+                <replacetokens begintoken="%%" endtoken="%%">
+                    <token key="projectKey" value="skema-backend"/>
+                    <token key="projectName" value="skema-backend"/>
+                    <token key="version" value="${appVersion}"/>
+                    <token key="phpunitReportPath" value="var/phpunit/junit.xml"/>
+                    <token key="coverageReportPath" value="var/phpunit/coverage.xml"/>
+                    <token key="exclusions" value="${exclusions}"/>
+                    <token key="testsDirs" value="${src}/${testsDirectories}"/>
+                </replacetokens>
+            </filterchain>
+        </copy>
+
+        <exec command="ls ${src}" dir="${src}" passthru="true" checkreturn="true"/>
+        <exec command="php -m" dir="${src}" passthru="true" checkreturn="true"/>
+        <exec command="cat ${src}/${sonar_file}" dir="${src}" passthru="true" checkreturn="true"/>
+    </target>
+
+    <target name="clean" description="Nettoyage des sources">
+        <delete>
+            <fileset defaultexcludes="true">
+                <include name="**/.gitkeep"/>
+                <include name="**/.gitignore" />
+                <include name="sonar-project.properties" />
+                <include name="composer.json" />
+                <include name="composer.lock" />
+                <include name="symfony.lock" />
+                <include name="phpunit.xml.dist" />
+                <include name="tests" />
+                <include name="var/cache/tests" />
+                <include name="var/log" />
+                <include name="tools" />
+                <include name="bin/phpunit" />
+                <include name="run" />
+            </fileset>
+        </delete>
+        <echo msg="Les sources sont propres"/>
+    </target>
+
+</project>

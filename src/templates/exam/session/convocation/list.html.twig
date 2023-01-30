@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Générer les convocations{% endblock %}
+
+{% block body %}
+
+    <h1>Générer les convocations</h1>
+    {% for message in app.flashes('sucess') %}
+        <div class="alert alert-success" role="alert">
+            {{ message }}
+        </div>
+    {% endfor %}
+    <div class="row">
+        {% for examClassification in examClassifications %}
+            <div class="mb-5">
+                <h5 class="card-title">{{examClassification.name}}</h5>
+                <a href="{{ path('written_test_summons', {'id': examClassification.id}) }}" class="btn btn-primary">Générer les convocations</a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau document de référence{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('document_reference_index') }}" class="btn btn-secondary">Retourner à la liste des documents de référence</a>
+    </div>
+    <hr />
+    <h1>Créer un document de référence</h1>
+
+    {{ include('document/document_reference/_form.html.twig') }}
+{% endblock %}

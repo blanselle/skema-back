@@ -1,0 +1,103 @@
+<div id="candidate_profil">
+{{ form_start(form) }}
+    <div class="row">
+        {% if form.examSession is not empty %}
+            <div class="col">{{ form_row(form.examSession.examClassification) }}</div>
+        {% else %}
+            <div class="col">{{ form_row(form.examSession) }}</div>
+        {% endif %}
+        {% if form.examSession.numberOfPlaces is defined %}<div class="col">{{ form_row(form.examSession.numberOfPlaces) }}</div>{% endif %}
+    </div>
+    {% if form.examSession is not empty %}
+    <div class="row">
+        {% if form.examSession.campus is defined %}<div class="col">{{ form_row(form.examSession.campus) }}</div>{% endif %}
+        <div class="col">{{ form_row(form.examSession.dateStart) }}</div>
+        {% if form.examSession.dateEnd is defined %}<div class="col">{{ form_row(form.examSession.dateEnd) }}</div>{% endif %}
+    </div>
+    <div class="row">
+        {% if form.examSession.price is defined %}<div class="col">{{ form_row(form.examSession.price) }}</div>{% endif %}
+        {% if form.examSession.priceLink is defined %}<div class="col">{{ form_row(form.examSession.priceLink) }}</div>{% endif %}
+    </div>
+    {% endif %}
+    {% if form.examRoom is defined %}
+        <div class="row">
+            <div class="col">{{ form_row(form.examRoom) }}</div>
+        </div>
+    {% endif %}
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.score) }}
+        </div>
+        {% if form.absent is defined %}
+            <div class="col">
+                {{ form_row(form.absent) }}
+            </div>
+        {% endif %}
+        {% if form.confirmed is defined %}
+            <div class="col">
+                {{ form_row(form.confirmed) }}
+            </div>
+        {% endif %}
+    </div>
+    <div class="row">
+        {% if form.media.vars.value is not empty %}
+            <div class="col media_parent_container">
+                {% include '_media.html.twig' with {'medias': [form.media.vars.value]} %}
+            </div>
+        {% endif %}
+        <br />
+        <div class="media_content {% if form.media.vars.value is not empty and (form.media.vars.value.state != 'rejected' and form.media.vars.value.state != 'uploaded' ) %}hidden{% endif %}">
+            {{ form_row(form.media) }}
+        </div>
+    </div>
+    {% if exemption is not defined or not exemption %}
+        <div class="save_container">
+            <button type="submit" id="exam-student-submit-button" class="btn btn-success btn-lg">{{ button_label|default('Enregistrer') }}</button>
+        </div>
+    {% endif %}
+{{ form_end(form) }}
+
+    {% include 'student/_modal_student_exam_confirmed.html.twig' %}
+
+</div>
+
+{% block javascripts %}
+    <script type="application/javascript">
+        let $submit = $('#exam-student-submit-button');
+        let $confirmed = $('#exam_student_confirmed');
+        let $delete = $('#student-exam-modal-button');
+
+        $confirmed.change(function() {
+            if ($confirmed.val() === '1') {
+                $submit.attr({"data-bs-toggle": "modal", "data-bs-target": "#student-exam-confirmed-modal"});
+            } else {
+                $submit.removeAttr("data-bs-toggle data-bs-target");
+            }
+        });
+
+        $submit.click(function(event) {
+            if ($confirmed.val() === '1') {
+                event.preventDefault();
+            }
+        });
+
+        $delete.click(function() {
+            $submit.unbind('click').click();
+        });
+
+        let $examStudent = $('#exam_student_examSession');
+        $examStudent.change(function(item) {
+            examSessionId = item.currentTarget.value
+                $.ajax({
+                    url : "{{ path('exam_session_room', {'id': 'azeaze'}) }}".replace('azeaze', examSessionId),
+                    type: 'GET',
+                    complete: function(html) {
+                    $('#exam_student_examRoom').replaceWith(
+                        $(html.responseText).find('#exam_student_examRoom')
+                    );
+                }
+            });
+        })
+
+    </script>
+{% endblock %}

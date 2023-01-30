@@ -1,0 +1,6 @@
+{% if not exemption %}
+    <form method="post" action="{{ path('exam_student_delete', {'student': student.id, 'examStudent': examStudent.id}) }}" onsubmit="return confirm('Voulez-vous vraiment supprimer cette inscription ?');">
+        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ examStudent.id) }}">
+        <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
+    </form>
+{% endif %}

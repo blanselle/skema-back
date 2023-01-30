@@ -1,0 +1,34 @@
+<div id="popup_notification_media">
+    <input type="hidden" name="media" value="{{ media.id }}" />
+    <input type="hidden" name="tag" value="{{ tag }}" />
+    {% if receivers is not empty %}
+    <div class="row">
+        <div class="col">
+            <select class="form-select" name="receiver">
+                {% for receiver in receivers %}
+                    <option value="{{ receiver.id }}">{{ receiver.lastName }} {{ receiver.firstName }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    <br />
+    {% endif %}
+    <div class="row">
+        <div class="col">
+            <select class="form-select" name="subject">
+                <option>--</option>
+                    {% for notification in notifications %}
+                            <option value="{{ notification.id }}" data-content="{{ notification.content }}">{{ notification.subject }}</option>
+                    {% endfor %}
+            </select>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col">
+        {{ form_row(formContent) }}
+        </div>
+    </div>
+    <br />
+    <button id="send" data-url="{{ path('ajax_media_notification_send', {'media': media.id}) }}" type="button" class="btn btn-primary">Envoyer</button>
+</div>

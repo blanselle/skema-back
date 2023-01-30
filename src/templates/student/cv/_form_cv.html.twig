@@ -1,0 +1,393 @@
+{{ form_start(formCV) }}
+
+<div class="bg-light p-2">
+    <h4>Baccalauréat</h4>
+
+    <div class="form_container p-5">
+        <div class="row">
+            <div class="col">
+                {{ form_row(formCV.bac.rewardedYear, {attr: {'data-year': formCV.bac.rewardedYear.vars.value}}) }}
+            </div>
+            <div class="col">
+                {{ form_row(formCV.bac.ine) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{ form_row(formCV.bac.bacChannel) }}
+            </div>
+            <div class="col">
+                {{ form_row(formCV.bac.bacTypes) }}
+            </div>
+            <div class="col">
+                {{ form_row(formCV.bac.bacOption) }}
+            </div>
+            <div class="col">
+                {{ form_row(formCV.bac.detail) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {% if formCV.bac.media.vars.value is not empty and formCV.bac.media.vars.value.id is not null %}
+                    {% include '_media.html.twig' with {'medias': [formCV.bac.media.vars.value], 'exemption': exemption} %}
+                {% endif %}
+                <br />
+
+                <div class="media_content {% if student.cv is not empty and student.cv.bac is not empty and student.cv.bac.media is not empty and student.cv.bac.media.state != 'rejected' or student.cv is null or student.cv.bac is null %}hidden{% endif %}">
+                    <div>
+                        {{ form_row(formCV.bac.media) }}
+                    </div>
+                    <div style="text-align:center;margin-bottom:25px;">
+                        <button type="button" class="save_media btn btn-success" data-id="bac">Sauvegarder</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col">
+                {{ form_row(formCV.bac.bacDistinction) }}
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr />
+<div class="bg-light p-2">
+    <h4>Année(s) post bac</h4>
+    <div id="cv-bac-sup-list" class="form_container p-5">
+        {% for studentBacSup in student.cv.bacSups %}
+            {% for bacSupItem in formCV.bacSups %}
+                {% set currentBacSup = null %}
+                {% if studentBacSup.id == bacSupItem.id.vars.value %}
+                    {% set currentBacSup = studentBacSup %}
+
+
+                {% if currentBacSup.parent is empty and currentBacSup.dualPathBacSup is empty %}
+                <div class="nav_actions">
+                    <div></div>
+                    <a href="{{ path('cv_dual_path_new', {'id': bacSupItem.id.vars.value}) }}" class="btn btn-primary justify-content-end">Ajouter un double parcours</a>
+                </div>
+                {% endif %}
+                {% if currentBacSup.parent is not empty %}
+                <div class="nav_actions">
+                    <div></div>
+                    <a href="{{ path('cv_dual_path_remove', {'id' : currentBacSup.id}) }}" onclick="return confirm('Voulez vous vraiment supprimer le double parcours ?');" class="btn btn-danger justify-content-end">
+                        Supprimer le double parcours
+                    </a>
+                </div>
+                {% endif %}
+                <h5>{{ bacSupItem.identifier.vars.value }} {% if currentBacSup.parent is not empty %} - Parcours secondaire{% elseif currentBacSup.dualPathBacSup is not empty %} - Parcours principal{% endif %}</h5>
+                <div class="bacsup_item">
+                    <div class="row">
+                        <div class="col">
+                            {{ form_row(bacSupItem.year) }}
+                        </div>
+                        <div class="col">
+                            {{ form_row(bacSupItem.diploma) }}
+                        </div>
+                        <div class="col">
+                            {{ form_row(bacSupItem.diplomaChannel) }}
+                        </div>
+                        <div class="col">
+                            {{ form_row(bacSupItem.detail) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            {{ form_row(bacSupItem.establishment) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            {{ form_row(bacSupItem.postalCode) }}
+                        </div>
+                        <div class="col">
+                            {{ form_row(bacSupItem.city) }}
+                        </div>
+                        <div class="col">
+                            {{ form_row(bacSupItem.country) }}
+                        </div>
+                    </div>
+                    <h5>Bulletin(s)</h5>
+                    <div class="col">
+                        {{ form_row(bacSupItem.type) }}
+                    </div>
+
+                    {% for schoolReport in bacSupItem.schoolReports %}
+                        <div class="row">
+                            {% if schoolReport.media.vars.value is not empty and schoolReport.media.vars.value.id is not null %}
+                                <div class="col media_parent_container">
+                                    {% include '_media.html.twig' with {'medias': [schoolReport.media.vars.value]} %}
+                                </div>
+                            {% endif %}
+                            <br />
+                            <div class="col col-auto">
+                                {{ form_row(schoolReport.score) }}
+                                {{ form_row(schoolReport.scoreRetained) }}
+                                {{ form_row(schoolReport.scoreNotOutOfTwenty) }}
+                                {{ form_row(schoolReport.media) }}
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                    <ul class="schoolReports school-reports-list"
+                        data-index="{{ bacSupItem.schoolReports|length > 0 ? bacSupItem.schoolReports|last.vars.name + 1 : 0 }}"
+                        data-prototype="
+                    {{ form_row(bacSupItem.schoolReports.vars.prototype.id)|e('html_attr')}}
+                    <div class='row'>
+                    {{ form_row(bacSupItem.schoolReports.vars.prototype.score, {'row_attr': {'class': 'col-6 mb-3'}})|e('html_attr') }}
+                    {{ form_row(bacSupItem.schoolReports.vars.prototype.scoreRetained, {'row_attr': {'class': 'col-6 mb-3'}})|e('html_attr') }}
+                    </div>
+                    {{ form_row(bacSupItem.schoolReports.vars.prototype.scoreNotOutOfTwenty, {'row_attr': {'class': 'mb-3'}})|e('html_attr') }}
+                    {{ form_row(bacSupItem.schoolReports.vars.prototype.media, {'row_attr': {'class': 'mb-3'}})|e('html_attr') }}
+                "
+                    ></ul>
+
+                    {%  if bacSupItem.vars.value.id|canSchoolReport %}
+                        <button type="button" class="add-item-link btn btn-info" data-collection-holder-class="schoolReports">Ajouter un bulletin</button>
+                    {% endif %}
+                </div>
+                <hr />
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+
+        {% if student.cv.id|canAddBacSup %}
+            <div class="nav_actions">
+                <a class="btn btn-primary justify-content-end" href="{{ path('cv_bac_sup_new', { 'id': student.cv.id }) }}">Ajouter une année post bac</a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+<hr />
+<div class="bg-light p-2">
+    <h4>Expérience(s)</h4>
+    <div class="form_container p-5">
+        {% for experience in formCV.experiences %}
+            <div class="experience_item">
+                <div class="row">
+                    {{ form_row(experience.id) }}
+                </div>
+                <div class="row">
+                    <div class="col">
+                        {{ form_row(experience.establishment) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        {{ form_row(experience.experienceType) }}
+                    </div>
+                    <div class="col">
+                        {{ form_row(experience.timeType) }}
+                    </div>
+                    <div class="col">
+                        {{ form_row(experience.hoursPerWeek) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        {{ form_row(experience.description) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        {{ form_row(experience.beginAt) }}
+                    </div>
+                    <div class="col">
+                        {{ form_row(experience.endAt) }}
+                    </div>
+                    <div class="col">
+                        {{ form_row(experience.duration) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        {{ form_row(experience.state) }}
+                    </div>
+                    {% if experience.state.vars.value == 'Accepté' and not exemption %}
+                        <div class="col-3 mb-3" style="align-self: end;">
+                            <label class="form-label">&nbsp;</label>
+                            <div id="experience_form">
+                                <button type="button" data-url="{{ path('ajax_cv_experience_validate', {'id': experience.id.vars.value}) }}" data-choice="rejected" class="btn btn-danger process">Refuser</button>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+                <hr>
+            </div>
+        {% endfor %}
+
+        <div class="nav_actions">
+            <a class="btn btn-primary justify-content-end" href="{{ path('cv_experience_new', { 'id': student.cv.id }) }}">Ajouter une expérience</a>
+        </div>
+    </div>
+</div>
+
+<hr />
+
+<div class="bg-light p-2">
+    <h4>Langue(s) parlée(s)</h4>
+    <div class="form_container p-5">
+        {{ form_row(formCV.languages) }}
+    </div>
+</div>
+
+{% if not exemption %}
+    <div class="save_container">
+        <button type="submit" class="btn btn-success btn-lg">{{ button_label|default('Sauvegarder') }}</button>
+        <a onclick="return confirm('Voulez vous vraiment annuler les modifications ?');" href="{{ path('student_edit', {'id': student.id}) }}" class="btn btn-secondary btn-lg">{{ button_label|default('Annuler') }}</a>
+    </div>
+{% endif %}
+{{ form_end(formCV) }}
+
+<script type="text/javascript" src="{{ asset('js/bacsup-form.js') }}" data-ajax-diploma-channel="{{ path('ajax_diploma_channel') }}" data-ajax-diploma-need-detail="{{ path('ajax_diploma_need_detail') }}"></script>
+<script type="text/javascript" src="{{ asset('js/experience.js') }}"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $('.score-not-out-of-twenty input').each((index, el) => {
+            $(el).change(function() {
+                let parent = $(this).parent().parent('.score-not-out-of-twenty').parent();
+                let dest = parent.find('.school-report-score').first().children('input').first();
+                if(this.checked) {
+                    dest.val(null);
+                    dest.prop('disabled', true);
+                } else {
+                    dest.prop('disabled', false);
+                }
+            })
+        })
+
+        $(".bac-channel select").each((index, el) => {
+            $(el).change(function() {
+                let parent = $(this).parent('.bac-channel').parent().parent();
+                let bacTypeDest = parent.find('.bac-type').first().children('select');
+                let rewardedYear = parent.parent().find('.rewarded-year').first().children('input').val();
+                refreshBacTypes(bacTypeDest, this.value, (rewardedYear !== '') ? rewardedYear : null);
+
+                let bacOption = parent.find('.bac-option').first().children('select').empty();
+                bacTypeDest.val(null).trigger('change')
+            })
+        })
+
+        $(".bac-type select").each((index, el) => {
+            $(el).change(function() {
+                let parent = $(this).parent('.bac-type').parent().parent();
+                let bacOptionDest = parent.find('.bac-option').first().children('select').first();
+                let bacTypeValues = parent.find('.bac-type').first().children('select').val()
+
+                refreshBacOptions(bacOptionDest, bacTypeValues);
+            })
+        })
+
+        $(".rewarded-year input").each((index, el) => {
+            $(el).keyup(function() {
+                let parent = $(this).parent('.rewarded-year').parent().parent().parent();
+                let bacTypeDest = parent.find('.bac-type').first().children('select');
+                let rewardedYear = this.value;
+                let backupYear = $(this).attr('data-year')
+                let bacTypeModificationsYear = {{ constant('App\\Constants\\Bac\\BacTypeConstants::BAC_TYPES_MODIFICATIONS_YEAR') }}
+
+                if (
+                    rewardedYear.length === 4 && backupYear >= bacTypeModificationsYear && rewardedYear < bacTypeModificationsYear ||
+                    rewardedYear.length === 4 && backupYear < bacTypeModificationsYear && rewardedYear >= bacTypeModificationsYear
+                ) {
+                    bacTypeDest.val(null).trigger('change');
+                    let bacChannel = parent.find('.bac-channel').first().children('select').val('')
+                    let bacOption = parent.find('.bac-option').first().children('select').empty();
+                }
+            })
+        })
+
+        $("form[name='cv']").submit(function(e) {
+            e.preventDefault();
+
+            $.ajax({
+                url: $(this).attr('action'),
+                data: new FormData(this),
+                method: $(this).attr('method'),
+                processData: false,
+                dataType: 'json',
+                contentType: false,
+            })
+            .done(function() {
+                location.reload();
+            })
+            .fail(function (data) {
+                $('#cv_part').html(data.responseText);
+
+                const error = $('#cv_part').find('.invalid-feedback').first();
+                if(error.length > 0) {
+                    $('html, body').animate({
+                        scrollTop: error.parent().offset().top
+                    }, 500);
+                }
+
+                $(".select2").select2({width: '100%'});
+            })
+        })
+
+        function refreshBacTypes(obj, bacChannel, rewardedYear)
+        {
+            let data = {
+                id: bacChannel,
+            }
+
+            if(rewardedYear !== null) {
+                data.year = rewardedYear
+            }
+
+            let route = "{{ path('ajax_bac_type')|escape('js') }}";
+            $.ajax({
+                url: route,
+                data: data,
+                method: 'get',
+                success: function (result) {
+                    obj.first().html(result);
+                }
+            })
+        }
+
+        function refreshBacOptions(obj, bacTypeIds)
+        {
+            let route = "{{ path('ajax_bac_option')|escape('js') }}";
+            $.ajax({
+                url: route,
+                data: {ids: bacTypeIds},
+                method: 'post',
+                success: function (result) {
+                    obj.html(result);
+                    obj.prop('disabled', false);
+                    if (result === '') {
+                        obj.prop('disabled', true);
+                    } else {
+                        obj.children('option').first().prop('selected', true);
+                    }
+                }
+            })
+        }
+
+        var hash = window.location.hash.substr(1);
+        if (hash == 'cvdualpath') {
+            $('#cv_title').removeClass('collapsed').attr('aria-expanded', true).next().addClass('show');
+        }
+
+        // Add possibility to remove experience
+        const addExperienceFormDeleteLink = (item) => {
+            const removeFormButton = $('<div class="d-flex flex-row-reverse"><button class="btn btn-danger"><i class="bi bi-trash"></i></button></div>');
+
+            $(item).prepend(removeFormButton);
+
+            removeFormButton.on('click', (e) => {
+                e.preventDefault();
+                $(item).remove();
+            });
+        }
+
+        $('.experience_item').each(function() {
+            addExperienceFormDeleteLink(this);
+        })
+    })
+</script>

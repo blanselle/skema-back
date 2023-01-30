@@ -1,0 +1,22 @@
+App\Entity\Payment\Order:
+  order_test_1_school_registration_fees:
+    student: '@student_ast1'
+    type: 'school_registration_fees'
+    amount: 500
+  order_test_2_registration_fee_for_exam_session:
+    student: '@student_ast1'
+    type: 'registration_fee_for_exam_session'
+    examSession: '@session_typologie1_lille'
+    amount: 99
+
+App\Entity\Payment\Payment:
+  payment_validated_for_test_1:
+    state: 'validated'
+    externalPaymentID: 'qsduhdqshjhsqjhdj'
+    externalStatus: 'CAPTURED'
+    indent: '@order_test_1_school_registration_fees'
+  payment_validated_for_test_2:
+    state: 'validated'
+    externalPaymentID: 'qsduhdqshjhsuiyyftyry'
+    externalStatus: 'CAPTURED'
+    indent: '@order_test_2_registration_fee_for_exam_session'

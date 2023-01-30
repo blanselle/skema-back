@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification d'une question - FAQ{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('faq_faq_index') }}" class="btn btn-secondary">Retour à la liste des questions</a>
+        {{ include('faq/faq/_delete_form.html.twig') }}
+    </div>
+    <hr />
+    <h1>Modifier la question</h1>
+
+    <div class="save_container">
+        {{ include('faq/faq/_form.html.twig') }}
+    </div>
+{% endblock %}

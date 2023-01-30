@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Épreuves orales - Sudoku{% endblock title %}
+
+{% block body %}
+    <h1>Épreuves orales - Sudoku</h1>
+
+    {% if app.flashes|length %}
+        <div class="row p-5">
+            {% include 'partial/_flash_messages.html.twig' %}
+        </div>
+    {% endif %}
+
+    <div class="row p-5">
+        <div class="col-4">
+            {{ include('oral_test/sudoku/_planning_info_search_form.html.twig') }}
+        </div>
+    </div>
+
+{% endblock body %}

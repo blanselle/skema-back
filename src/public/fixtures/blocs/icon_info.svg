@@ -1,0 +1,10 @@
+<svg id="Icon_info" xmlns="http://www.w3.org/2000/svg" width="40.016" height="40" viewBox="0 0 40.016 40">
+  <text id="i" transform="translate(16.5 28.5)" font-size="26" font-family="Raleway-Bold, Raleway" font-weight="700"><tspan x="0" y="0">i</tspan></text>
+  <g id="question" transform="translate(-1119.326 -359.334)">
+    <g id="Groupe_9" data-name="Groupe 9">
+      <g id="Groupe_8" data-name="Groupe 8">
+        <path id="Tracé_1386" data-name="Tracé 1386" d="M1159.176,395.553l-2.748-8.006a19.558,19.558,0,1,0-17.55,10.906h.034a19.647,19.647,0,0,0,8.647-2.025l8.006,2.748a2.891,2.891,0,0,0,.935.158,2.854,2.854,0,0,0,2.688-3.779Zm-2.358,1.265a.458.458,0,0,1-.492.114l-8.475-2.912a1.183,1.183,0,0,0-.941.074,17.2,17.2,0,1,1,7.184-7.184,1.187,1.187,0,0,0-.074.941l2.906,8.481A.457.457,0,0,1,1156.818,396.818Z"/>
+      </g>
+    </g>
+  </g>
+</svg>

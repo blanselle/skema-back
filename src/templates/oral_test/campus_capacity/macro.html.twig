@@ -1,0 +1,32 @@
+{% macro sum(slots) %}
+    {% set nbOfReservedPlaces = 0 %}
+    {% set nbOfAvailablePlaces = 0 %}
+    {% for slot in slots %}
+        {% set nbOfReservedPlaces = nbOfReservedPlaces + slot.nbOfReservedPlaces %}
+        {% set nbOfAvailablePlaces = nbOfAvailablePlaces + slot.nbOfAvailablePlaces %}
+    {% endfor %}
+
+    <span>TOTAL {{ nbOfReservedPlaces }} / {{ nbOfAvailablePlaces }}</span>
+{% endmacro %}
+
+{% macro percentColorClass(nbOfReservedPlaces, nbOfAvailablePlaces) %}
+    {% set _percent = 0 %}
+    {% if nbOfAvailablePlaces > 0 %}
+        {% set _percent = (nbOfReservedPlaces / nbOfAvailablePlaces) * 100 %}
+    {% endif %}
+    {% if _percent > 100 %}
+        {% set _class = 'border-l-purple' %}
+    {% elseif _percent == 100 %}
+        {% set _class = 'border-l-black' %}
+    {% elseif _percent > 90 %}
+        {% set _class = 'border-l-red' %}
+    {% elseif _percent > 75 %}
+        {% set _class = 'border-l-orange' %}
+    {% elseif _percent > 0 %}
+        {% set _class = 'border-l-green' %}
+    {% else %}
+        {% set _class = 'border-l-white' %}
+    {% endif %}
+
+    {{ _class }}
+{% endmacro %}

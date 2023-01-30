@@ -1,0 +1,12 @@
+<div class="notification_reply_form">
+    {{ form_start(formComment) }}
+    <div class="row">
+        <div class="col-10">
+            {{ form_row(formComment.comment) }}
+        </div>
+        <div class="col-2">
+            <button class="btn btn-success">{{ button_label|default('Sauvegarder') }}</button>
+        </div>
+    </div>
+    {{ form_end(formComment) }}
+</div>

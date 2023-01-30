@@ -1,0 +1,61 @@
+App\Entity\Campus:
+
+  campus_paris:
+    name: SKEMA BUSINESS SCHOOL - Campus Grand Paris
+    media: '@media_campus_paris'
+    addressLine1: 5 Quai Marcel Dassault
+    addressLine2: CS 90067
+    postalCode: 92156
+    city: Suresnes Cedex
+    country: France
+    email: service.concours@skema.edu
+    phoneReception: +33 (0)1 71 13 39 01
+    phoneCustomerService: +33 (0)1 87 10 08 27
+    assignmentCampus: true
+    oralTestCenter: true
+    contestJuryWebsiteCode: paris
+
+  campus_lille:
+    name: SKEMA BUSINESS SCHOOL - Campus Lille
+    media: '@media_campus_lille'
+    addressLine1: Avenue Willy Brandt
+    addressLine2: EURALILLE
+    postalCode: 59777
+    city: Lille
+    country: France
+    email: service.concours@skema.edu
+    phoneReception: +33 (0)3 20 21 59 62
+    phoneCustomerService: +33 (0)3 20 21 59 16
+    assignmentCampus: true
+    oralTestCenter: true
+    contestJuryWebsiteCode: lille
+
+  campus_sophia_antipolis:
+    name: SKEMA BUSINESS SCHOOL - Campus Sophia Antipolis
+    media: '@media_campus_sophia_antipolis'
+    addressLine1: 60 rue Dostoïevski
+    addressLine2: BP 085
+    postalCode: 06902
+    city: SOPHIA ANTIPOLIS CEDEX
+    country: France
+    email: service.concours@skema.edu
+    phoneReception: +33 (0)4 93 95 44 44
+    phoneCustomerService: +33 (0)4 93 95 44 35
+    assignmentCampus: true
+    oralTestCenter: true
+    contestJuryWebsiteCode: sophia
+
+  campus_distance:
+    name: Distance
+    media: '@media_campus_distance'
+    addressLine1: 5 Quai Marcel Dassault
+    addressLine2: CS 90067
+    postalCode: 92156
+    city: Suresnes Cedex
+    country: France
+    email: service.concours@skema.edu
+    phoneReception: +33 (0)1 71 13 39 01
+    phoneCustomerService: +33 (0)1 87 10 08 27
+    assignmentCampus: false
+    oralTestCenter: true
+    contestJuryWebsiteCode: distance

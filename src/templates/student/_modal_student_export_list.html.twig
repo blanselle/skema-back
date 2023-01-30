@@ -1,0 +1,26 @@
+<div class="modal fade" id="student-export-modal" tabindex="-1" aria-labelledby="student-export-modal-label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row" id="export-student-list-form-content">
+                    {{ render(path('admin_student_export_list', {
+                        'identifier': app.request.query.get('identifier'),
+                        'lastname': app.request.query.get('lastname'),
+                        'state': app.request.query.get('state'),
+                        'mediaCode': app.request.query.get('mediaCode'),
+                        'media': app.request.query.get('media'),
+                        'intern': app.request.query.getBoolean('intern'),
+                    })) }}
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="mb-3">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

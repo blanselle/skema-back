@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/admin-datatables-light.js') }}" type="text/javascript"></script>
+{% endblock %}
+
+{% block title %}Liste des templates pour notifications{% endblock %}
+
+{% block body %}
+    <h1>Liste des templates pour notifications <a class="btn btn-primary" href="{{ path('notification_template_new') }}">Ajouter une réponse rapide</a></h1>
+
+    <table id="faq" class="table admin-datatable stripe hover order-column">
+        <thead>
+            <tr>
+                <th>Sujet</th>
+                <th>tag</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for item in pagination %}
+            <tr id="{{ item.subject | lower | slug }}">
+                <td id="{{ 'subject-' ~ item.subject | lower | slug }}">{{ item.subject }}</td>
+                <td id="{{ 'tag-' ~ item.subject ~ '-' ~ item.tag | lower | slug }}">{{ item.tag }}</td>
+                <td class="d-flex">
+                    <a class="btn btn-warning me-2 action-edit" href="{{ path('notification_template_edit', {'id': item.id}) }}"><i class="bi bi-pencil-square"></i></a>
+                    {{ include('notification/notification_template/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Aucun message trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {{ knp_pagination_render(pagination) }}
+{% endblock %}

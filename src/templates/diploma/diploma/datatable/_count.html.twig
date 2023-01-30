@@ -1,0 +1,6 @@
+{% set count = item.diplomaChannels()|length %}
+{%  if count > 0 %}
+    <a href="{{ path('diploma_channel_index', {'idDiploma': item.id}) }}">{{ count }}</a>
+{% else %}
+    Aucune filière rattachée
+{% endif %}

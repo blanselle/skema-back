@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'admissibility.bonus.page.title'|trans }}{% endblock %}
+
+{% block body %}
+    <script type="application/javascript">
+        $(document).ready(function (){
+            $('#bonus-selector').change(function(){
+                $('form[name=bonus-selector-form]').submit()
+            })
+        })
+    </script>
+    <h1>Liste des bonus 
+        {% for category in categories %}
+            <span class="category category-{{ category.key }}">{{ category.name }}</span>
+        {% endfor %}
+    </h1>
+    <hr />
+    <div class="d-flex">
+        <div class="p-2 w-100">
+            <form  name="bonus-selector-form" method="get" action="">
+                <select id="bonus-selector" class="form-select" name="categoryId">
+                    {% for category in categories %}
+                        <option value="{{ category.id }}" {% if categoryId is not empty and categoryId == category.id %}selected{% endif %}>{{ category.name }}</option>
+                    {% endfor %}
+                </select>
+            </form>
+        </div>
+        <div class="p-2 flex-shrink-1">
+            {% for category in categories %}
+                {% if categoryId is not empty and categoryId == category.id %}
+                    <a class="category category-{{ category.key }} btn btn-primary" href="{{ path('admissibility_bonus_new', {'type': category.key }) }}">Ajouter un bonus</a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <table id="admissibility-bonus-table" class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">{{ knp_pagination_sortable(pagination, 'admissibility.bonus.page.table.head.category'|trans, 'c.name') }}</th>
+            <th scope="col">{{ knp_pagination_sortable(pagination, 'admissibility.bonus.page.table.head.value'|trans, 'b.value') }}</th>
+            <th scope="col">{{ knp_pagination_sortable(pagination, 'admissibility.bonus.page.table.head.program_channel'|trans, 'p.name') }}</th>
+            <th scope="col">{{ 'admissibility.bonus.page.table.head.information'|trans }}</th>
+            <th scope="col">{{ 'admissibility.bonus.page.table.head.action'|trans }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for bonus in pagination %}
+            <tr class="category category-{{ bonus.category.key }}" id="{{ 'bonus-' ~ bonus.id}}">
+                <th id="{{ 'bonus-category-' ~ bonus.id | lower | slug }}">{{ bonus.category.name }}</th>
+                <td id="{{ 'bonus-value-' ~ bonus.id | lower | slug }}">{{ bonus.value }}</td>
+                <td id="{{ 'bonus-programChannel-' ~ bonus.id | lower | slug }}">{{ bonus.programChannel.name }}</td>
+                <td id="{{ 'bonus-infos-' ~ bonus.id | lower | slug }}">
+                    <div class="list-group">
+                        {% for key, info in bonus.infos %}
+                            <span class="list-group-item list-group-item-action">{{key}} : {{ info }}</span>
+                        {% endfor %}
+                    </div>
+                </td>
+                <td class="d-flex">
+                    <a class="btn btn-warning me-2 action-edit" href="{{ path('admissibility_bonus_edit', {'id': bonus.id, 'type': bonus.class}) }}"><i class="bi bi-pencil-square"></i></a>
+                    {{ include('admissibility/bonus/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr class="text-center"><td colspan="5">{{ 'admissibility.bonus.page.table.no_result_found'|trans }}</td></tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+{% endblock %}

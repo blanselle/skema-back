@@ -1,0 +1,32 @@
+{{ form_start(form) }}
+<div class="row">
+    {% if form.receiver is defined %}
+    <div class="col">
+        {{ form_row(form.receiver) }}
+    </div>
+    {% endif %}
+    {% if role is not empty %}
+        <div class="col" style="display:none;">
+            {{ form_row(form.roles) }}
+        </div>
+    {% endif %}
+    {% if student is empty and role is empty  %}
+        <div class="col">
+            {{ form_row(form.programChannels) }}
+        </div>
+    {% endif %}
+</div>
+<div class="row">
+    <div class="col">
+        {{ form_row(form.subject) }}
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        {{ form_row(form.content) }}
+    </div>
+</div>
+<div class="save_container">
+    <button class="btn btn-success">{{ button_label|default('notification.form.btn_default_submit')|trans }}</button>
+</div>
+{{ form_end(form) }}

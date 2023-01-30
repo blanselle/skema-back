@@ -1,0 +1,497 @@
+App\Entity\Diploma\DiplomaChannel:
+  diplomaChannel_1:
+    name: "Assistant de gestion de PME-PMI"
+  diplomaChannel_2:
+    name: "Assistant de manager"
+  diplomaChannel_3:
+    name: "Assurance"
+  diplomaChannel_4:
+    name: "Banque – Conseiller de clientèle"
+  diplomaChannel_5:
+    name: "Commerce international"
+  diplomaChannel_6:
+    name: "Communication"
+  diplomaChannel_7:
+    name: "Comptabilité et Gestion"
+  diplomaChannel_8:
+    name: "Comptabilité et Gestion des organisations"
+  diplomaChannel_9:
+    name: "Hôtellerie restauration"
+  diplomaChannel_10:
+    name: "Management des Unités Commerciales"
+  diplomaChannel_11:
+    name: "Négociation et Relation Client"
+  diplomaChannel_12:
+    name: "Technico-Commercial"
+  diplomaChannel_13:
+    name: "Tourisme"
+  diplomaChannel_14:
+    name: "Autre"
+    needDetail: true
+  diplomaChannel_15:
+    name: "Économie gestion"
+  diplomaChannel_16:
+    name: "Scientifique"
+  diplomaChannel_20:
+    name: "Carrières juridiques"
+  diplomaChannel_21:
+    name: "Génie électrique et informatique industrielle"
+  diplomaChannel_22:
+    name: "Génie mécanique et productique"
+  diplomaChannel_23:
+    name: "Gestion administrative et commerciale des organisations"
+  diplomaChannel_24:
+    name: "Gestion des entreprises et des administrations"
+  diplomaChannel_25:
+    name: "Gestion des entreprises et des administrations – Gestion comptable et financière"
+  diplomaChannel_26:
+    name: "Gestion des entreprises et des administrations – Gestion des ressources humaines"
+  diplomaChannel_27:
+    name: "Gestion des entreprises et des administrations – Gestion et management des organisations"
+  diplomaChannel_28:
+    name: "Information communication"
+  diplomaChannel_29:
+    name: "Qualité logistique industrielle et organisation"
+  diplomaChannel_30:
+    name: "Statistiques et informatique décisionnelle"
+  diplomaChannel_31:
+    name: "Techniques de commercialisation"
+  diplomaChannel_33:
+    name: "Administration Économique et Sociale"
+  diplomaChannel_34:
+    name: "Administration Publique"
+  diplomaChannel_35:
+    name: "Droit"
+  diplomaChannel_36:
+    name: "Économie"
+  diplomaChannel_37:
+    name: "Économie et Gestion"
+  diplomaChannel_38:
+    name: "Gestion"
+  diplomaChannel_39:
+    name: "Histoire"
+  diplomaChannel_40:
+    name: "Humanités"
+  diplomaChannel_41:
+    name: "Informatique"
+  diplomaChannel_42:
+    name: "Langues Étrangères Appliquées"
+  diplomaChannel_43:
+    name: "Lettres"
+  diplomaChannel_44:
+    name: "Mathématiques"
+  diplomaChannel_45:
+    name: "Mathématiques et Informatique appliquées aux Sciences Humaines et Sociales"
+  diplomaChannel_46:
+    name: "Physique / Chimie"
+  diplomaChannel_47:
+    name: "Psychologie"
+  diplomaChannel_48:
+    name: "Sciences Politique"
+  diplomaChannel_49:
+    name: "Sciences de la Vie et de la Terre"
+  diplomaChannel_50:
+    name: "Sciences Sociales"
+  diplomaChannel_51:
+    name: "Sociologie"
+  diplomaChannel_53:
+    name: "Précisez l’intitulé"
+  diplomaChannel_59:
+    name: "Chimie"
+  diplomaChannel_63:
+    name: "Géographie et Aménagement"
+  diplomaChannel_66:
+    name: "Histoire de l’art"
+  diplomaChannel_68:
+    name: "Information et Communication"
+  diplomaChannel_73:
+    name: "Mathématiques et Informatique Appliquées aux Sciences Humaines et Sociales"
+  diplomaChannel_74:
+    name: "Philosophie"
+  diplomaChannel_75:
+    name: "Physique"
+  diplomaChannel_78:
+    name: "Science Politique"
+  diplomaChannel_79:
+    name: "Sciences de la Terre"
+  diplomaChannel_80:
+    name: "Sciences de la Vie"
+  diplomaChannel_82:
+    name: "Sciences et Techniques des Activités Physiques et Sportives"
+  diplomaChannel_86:
+    name: "Activités Juridiques"
+  diplomaChannel_87:
+    name: "Assurance Banque Finance"
+  diplomaChannel_88:
+    name: "Commerce et Distribution"
+  diplomaChannel_89:
+    name: "Commercialisation de Produits et Services"
+  diplomaChannel_90:
+    name: "E-Commerce Marketing Digital"
+  diplomaChannel_91:
+    name: "E-Commerce et Marketing Numérique"
+  diplomaChannel_92:
+    name: "Gestion des Achats et des Approvisionnements"
+  diplomaChannel_93:
+    name: "Gestion des Organisations de l’Économie Sociale et Solidaire"
+  diplomaChannel_94:
+    name: "Logistique et Transports Internationaux"
+  diplomaChannel_95:
+    name: "Management des Activités Commerciales"
+  diplomaChannel_96:
+    name: "Management des Processus Logistiques"
+  diplomaChannel_97:
+    name: "Management des Transports et de la Distribution"
+  diplomaChannel_98:
+    name: "Management et Gestion des Organisations"
+  diplomaChannel_99:
+    name: "Métiers de l’Entrepreneuriat"
+  diplomaChannel_100:
+    name: "Métiers de l’Immobilier : Gestion et Administration de biens"
+  diplomaChannel_101:
+    name: "Métiers de l’Immobilier : Gestion et Développement de patrimoine immobilier"
+  diplomaChannel_102:
+    name: "Métiers de l’Immobilier : Transaction et Commercialisation de biens immobiliers"
+  diplomaChannel_103:
+    name: "Métiers de l’Information"
+  diplomaChannel_104:
+    name: "Métiers de l’Informatique"
+  diplomaChannel_105:
+    name: "Métiers de la communication"
+  diplomaChannel_106:
+    name: "Métiers de la Gestion des Ressources Humaines : Assistant"
+  diplomaChannel_107:
+    name: "Métiers de la Gestion des Ressources Humaines : Formation, Compétences et Emploi"
+  diplomaChannel_108:
+    name: "Métiers de la Gestion et de la Comptabilité : Comptabilité du Secteur Immobilier"
+  diplomaChannel_109:
+    name: "Métiers de la Gestion et de la Comptabilité : Comptabilité et Gestion des Associations"
+  diplomaChannel_110:
+    name: "Métiers de la Gestion et de la Comptabilité : Comptabilité et Gestion des Entités Agricoles"
+  diplomaChannel_111:
+    name: "Métiers de la Gestion et de la Comptabilité : Comptabilité et Paie"
+  diplomaChannel_112:
+    name: "Métiers de la Gestion et de la Comptabilité : Contrôle de gestion"
+  diplomaChannel_113:
+    name: "Métiers de la Gestion et de la Comptabilité : Fiscalité"
+  diplomaChannel_114:
+    name: "Métiers de la Gestion et de la Comptabilité : Gestion Comptable et Financière"
+  diplomaChannel_115:
+    name: "Métiers de la Gestion et de la Comptabilité : Responsable de Portefeuille Clients en Cabinet d’expertise"
+  diplomaChannel_116:
+    name: "Métiers de la Gestion et de la Comptabilité : Révision Comptable"
+  diplomaChannel_117:
+    name: "Métiers de la Qualité"
+  diplomaChannel_118:
+    name: "Métiers des Administrations et Collectivités Territoriales"
+  diplomaChannel_119:
+    name: "Métiers du Commerce International"
+  diplomaChannel_120:
+    name: "Métiers du Décisionnel et de la Statistique"
+  diplomaChannel_121:
+    name: "Métiers du Marketing Opérationnel"
+  diplomaChannel_122:
+    name: "Métiers du Numérique"
+  diplomaChannel_123:
+    name: "Métiers du Tourisme"
+  diplomaChannel_124:
+    name: "Organisation et Gestion des Établissements Hôteliers et de Restauration"
+  diplomaChannel_129:
+    name: "Commerce / Marketing"
+  diplomaChannel_130:
+    name: "Comptabilité / Finance"
+  diplomaChannel_132:
+    name: "Droit Économie Gestion"
+  diplomaChannel_135:
+    name: "Finance"
+  diplomaChannel_136:
+    name: "Finance Contrôle de Gestion"
+  diplomaChannel_138:
+    name: "Information Communication"
+  diplomaChannel_146:
+    name: "Droit Économie"
+  diplomaChannel_148:
+    name: "Économie Gestion"
+  diplomaChannel_153:
+    name: "Droit / Économie / Gestion"
+  diplomaChannel_154:
+    name: "Économie / Finance"
+  diplomaChannel_155:
+    name: "Économie / Gestion"
+  diplomaChannel_156:
+    name: "Adaptation Technicien Supérieur"
+  diplomaChannel_157:
+    name: "Classes Préparatoires aux Grandes Écoles"
+
+App\Entity\Diploma\Diploma:
+  diploma_bts:
+    name: "BTS"
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+    diplomaChannels: [
+      '@diplomaChannel_1',
+      '@diplomaChannel_2',
+      '@diplomaChannel_3',
+      '@diplomaChannel_4',
+      '@diplomaChannel_5',
+      '@diplomaChannel_6',
+      '@diplomaChannel_7',
+      '@diplomaChannel_8',
+      '@diplomaChannel_9',
+      '@diplomaChannel_10',
+      '@diplomaChannel_11',
+      '@diplomaChannel_12',
+      '@diplomaChannel_13',
+      '@diplomaChannel_14',
+    ]
+  diploma_cpge-ens-cachan-d2-2:
+    name: "CPGE ENS CACHAN D2 (2ème année)"
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+    diplomaChannels: [
+      '@diplomaChannel_15',
+      '@diplomaChannel_16',
+      '@diplomaChannel_14',
+    ]
+  diploma_cpge:
+    name: "CPGE"
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+    diplomaChannels: [
+      '@diplomaChannel_16',
+      '@diplomaChannel_14',
+    ]
+  diploma_dut:
+    name: "DUT"
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+    diplomaChannels: [
+      '@diplomaChannel_20',
+      '@diplomaChannel_21',
+      '@diplomaChannel_22',
+      '@diplomaChannel_23',
+      '@diplomaChannel_24',
+      '@diplomaChannel_25',
+      '@diplomaChannel_26',
+      '@diplomaChannel_27',
+      '@diplomaChannel_28',
+      '@diplomaChannel_29',
+      '@diplomaChannel_30',
+      '@diplomaChannel_31',
+      '@diplomaChannel_14',
+    ]
+  diploma_licence-2:
+    name: "Licence 2"
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+    diplomaChannels: [
+      '@diplomaChannel_33',
+      '@diplomaChannel_34',
+      '@diplomaChannel_35',
+      '@diplomaChannel_36',
+      '@diplomaChannel_37',
+      '@diplomaChannel_38',
+      '@diplomaChannel_39',
+      '@diplomaChannel_40',
+      '@diplomaChannel_41',
+      '@diplomaChannel_42',
+      '@diplomaChannel_43',
+      '@diplomaChannel_44',
+      '@diplomaChannel_45',
+      '@diplomaChannel_46',
+      '@diplomaChannel_47',
+      '@diplomaChannel_48',
+      '@diplomaChannel_49',
+      '@diplomaChannel_50',
+      '@diplomaChannel_51',
+      '@diplomaChannel_14',
+    ]
+  diploma_deesma:
+    name: "DEESMA"
+    programChannels: ['@ast2_program_channel']
+    diplomaChannels: [
+      '@diplomaChannel_53',
+    ]
+  diploma_diplome-ingenieur:
+    name: "DIPLÔME D'INGÉNIEUR"
+    programChannels: ['@ast2_program_channel']
+    diplomaChannels: [
+      '@diplomaChannel_53',
+    ]
+  diploma_dueti:
+    name: "DUETI"
+    programChannels: ['@ast2_program_channel']
+    diplomaChannels: [
+      '@diplomaChannel_33',
+    ]
+  diploma_iep:
+    name: "IEP"
+    programChannels: ['@ast2_program_channel']
+    diplomaChannels: [
+      '@diplomaChannel_53',
+    ]
+  diploma_licence-3:
+    name: "Licence 3"
+    programChannels: ['@ast2_program_channel']
+    diplomaChannels: [
+      '@diplomaChannel_33',
+      '@diplomaChannel_34',
+      '@diplomaChannel_59',
+      '@diplomaChannel_35',
+      '@diplomaChannel_36',
+      '@diplomaChannel_37',
+      '@diplomaChannel_63',
+      '@diplomaChannel_38',
+      '@diplomaChannel_39',
+      '@diplomaChannel_66',
+      '@diplomaChannel_40',
+      '@diplomaChannel_68',
+      '@diplomaChannel_41',
+      '@diplomaChannel_42',
+      '@diplomaChannel_43',
+      '@diplomaChannel_44',
+      '@diplomaChannel_73',
+      '@diplomaChannel_74',
+      '@diplomaChannel_75',
+      '@diplomaChannel_46',
+      '@diplomaChannel_47',
+      '@diplomaChannel_78',
+      '@diplomaChannel_79',
+      '@diplomaChannel_80',
+      '@diplomaChannel_49',
+      '@diplomaChannel_82',
+      '@diplomaChannel_50',
+      '@diplomaChannel_51',
+      '@diplomaChannel_14',
+    ]
+  diploma_licence-professionnelle:
+    name: "Licence Professionnelle"
+    programChannels: ['@ast2_program_channel']
+    diplomaChannels: [
+      '@diplomaChannel_86',
+      '@diplomaChannel_87',
+      '@diplomaChannel_88',
+      '@diplomaChannel_89',
+      '@diplomaChannel_90',
+      '@diplomaChannel_91',
+      '@diplomaChannel_92',
+      '@diplomaChannel_93',
+      '@diplomaChannel_94',
+      '@diplomaChannel_95',
+      '@diplomaChannel_96',
+      '@diplomaChannel_97',
+      '@diplomaChannel_98',
+      '@diplomaChannel_99',
+      '@diplomaChannel_100',
+      '@diplomaChannel_101',
+      '@diplomaChannel_102',
+      '@diplomaChannel_103',
+      '@diplomaChannel_104',
+      '@diplomaChannel_105',
+      '@diplomaChannel_106',
+      '@diplomaChannel_107',
+      '@diplomaChannel_108',
+      '@diplomaChannel_109',
+      '@diplomaChannel_110',
+      '@diplomaChannel_111',
+      '@diplomaChannel_112',
+      '@diplomaChannel_113',
+      '@diplomaChannel_114',
+      '@diplomaChannel_115',
+      '@diplomaChannel_116',
+      '@diplomaChannel_117',
+      '@diplomaChannel_118',
+      '@diplomaChannel_119',
+      '@diplomaChannel_120',
+      '@diplomaChannel_121',
+      '@diplomaChannel_122',
+      '@diplomaChannel_123',
+      '@diplomaChannel_124',
+      '@diplomaChannel_12',
+      '@diplomaChannel_14',
+    ]
+  diploma_master-1:
+    name: "Master 1"
+    programChannels: ['@ast2_program_channel']
+    diplomaChannels: [
+      '@diplomaChannel_33',
+      '@diplomaChannel_34',
+      '@diplomaChannel_129',
+      '@diplomaChannel_130',
+      '@diplomaChannel_35',
+      '@diplomaChannel_132',
+      '@diplomaChannel_36',
+      '@diplomaChannel_37',
+      '@diplomaChannel_135',
+      '@diplomaChannel_136',
+      '@diplomaChannel_39',
+      '@diplomaChannel_138',
+      '@diplomaChannel_42',
+      '@diplomaChannel_14',
+    ]
+  diploma_master-2:
+    name: "Master 2"
+    programChannels: ['@ast2_program_channel']
+    diplomaChannels: [
+      '@diplomaChannel_16',
+      '@diplomaChannel_14',
+    ]
+  diploma_diplome-homologue-niveau-ii-rncp:
+    name: "Diplôme homologué niveau II RNCP"
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+    diplomaChannels: [
+      '@diplomaChannel_53',
+      '@diplomaChannel_129',
+      '@diplomaChannel_130',
+      '@diplomaChannel_153',
+      '@diplomaChannel_154',
+      '@diplomaChannel_155',
+      '@diplomaChannel_16',
+      '@diplomaChannel_14',
+    ]
+  diploma_dcg-3ème-annee:
+    name: "DCG 3ème année (Bac+3 homologué)"
+    programChannels: ['@ast2_program_channel']
+    diplomaChannels: [
+      '@diplomaChannel_53',
+    ]
+  diploma_cpge-ens-cachan-d1:
+    name: "CPGE ENS CACHAN D1 (2ème année)"
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+    diplomaChannels: [
+      '@diplomaChannel_35',
+      '@diplomaChannel_146',
+      '@diplomaChannel_132',
+      '@diplomaChannel_148',
+      '@diplomaChannel_14',
+    ]
+  diploma_bachelor-obtenu-en-france-et-vise-par-le-mesr:
+    name: "Bachelor obtenu en France et visé par le MESR"
+    programChannels: ['@ast2_program_channel']
+    diplomaChannels: [
+      '@diplomaChannel_53',
+    ]
+  diploma_diplome-homologue-niveau-iii-rncp:
+    name: "Diplôme homologué niveau III RNCP"
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+    diplomaChannels: [
+      '@diplomaChannel_129',
+      '@diplomaChannel_130',
+      '@diplomaChannel_153',
+      '@diplomaChannel_154',
+      '@diplomaChannel_155',
+      '@diplomaChannel_16',
+      '@diplomaChannel_14',
+    ]
+  diploma_autre:
+    name: "Autre diplôme"
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+    diplomaChannels: [
+      
+    ]
+    needDetail: true
+
+  diploma_classe_prepa:
+    name: "Classe préparatoire"
+    additional: true
+    programChannels: ['@ast1_program_channel', '@ast2_program_channel']
+    diplomaChannels: [
+      '@diplomaChannel_156',
+      '@diplomaChannel_157'
+    ]
+    needDetail: true

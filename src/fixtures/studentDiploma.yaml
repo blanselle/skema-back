@@ -1,0 +1,38 @@
+App\Entity\Diploma\StudentDiploma:
+  student_diploma_ast1:
+    year: 2021
+    diploma: '@diploma_dut'
+    diplomaChannel: '@diplomaChannel_59'
+    establishment: 'ESIEE'
+    postalCode: '80000'
+    city: 'Amiens'
+    detail: null
+    lastDiploma: true
+    dualPathStudentDiploma: '@student_diploma_ast1_2'
+  student_diploma_ast1_2:
+    year: 2021
+    diploma: '@diploma_bts'
+    diplomaChannel: '@diplomaChannel_5'
+    establishment: 'HEC'
+    postalCode: '75000'
+    city: 'Paris'
+    detail: null
+    lastDiploma: false
+  student_diploma_ast2:
+    year: 2021
+    diploma: '@diploma_dut'
+    diplomaChannel: '@diplomaChannel_20'
+    establishment: 'ESIEE'
+    postalCode: '80000'
+    city: 'Amiens'
+    detail: null
+    lastDiploma: true
+  student_diploma_bce:
+    year: 2021
+    diploma: '@diploma_autre'
+    diplomaChannel: null
+    establishment: 'ESIEE'
+    postalCode: '80000'
+    city: 'Amiens'
+    detail: null
+    lastDiploma: true

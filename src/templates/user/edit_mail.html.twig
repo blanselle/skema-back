@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit User{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('student_edit', {'id': user.student.id}) }}" class="btn btn-secondary">Retour sur l'utilisateur {{user.firstName}} {{user.lastName}}</a>
+    </div>
+    <hr />
+    <h1>Edition de l'email de {{user.firstName}} {{user.lastName}}</h1>
+
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+
+    <div class="save_container">
+        <button class="btn btn-success">{{ button_label|default('Valider') }}</button>
+    </div>
+{{ form_end(form) }}
+
+
+{% endblock %}

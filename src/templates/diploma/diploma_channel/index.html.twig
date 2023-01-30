@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des filières{% endblock %}
+
+{% block body %}
+    <h1>Liste des filières {% if diploma is not null %} de {{ diploma.name }}{% endif %} <a class="btn btn-primary" href="{{ path('diploma_channel_new') }}">Ajouter une nouvelle filière</a></h1>
+
+    <div class="search_form">
+        <hr />
+        <form action="" method="get" id="list-search">
+            <input type="hidden" name="idDiploma" id="idDiploma" class="form-control"
+                   value="{% if params['idDiploma'] is defined %}{{ params['idDiploma'] }}{% endif %}" />
+            <div class="row">
+                <div class="col">
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Nom de la filière"
+                           value="{% if params['name'] is defined %}{{ params['name'] }}{% endif %}" />
+                </div>
+            </div>
+            <button class="btn btn-success" type="submit">Filtrer</button>
+        </form>
+        <hr />
+    </div>
+
+    {% include 'table.html.twig' with {'columns' : columns, 'controller' : 'diploma_channel_index'} %}
+{% endblock %}

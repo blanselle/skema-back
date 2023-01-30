@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'payment.order.page.title'|trans({'%student%': student?student.user.firstName ~ ' ' ~ student.user.lastName: null}) }}{% endblock %}
+
+{% block body %}
+    {% if student is not empty %}
+        <div class="nav_actions">
+            <a href="{{ path('student_edit', {'id' : student.id}) }}" class="btn btn-secondary">Retour à la candidature</a>
+        </div>
+        <hr />
+    {% endif %}
+
+    <h1>{{ 'payment.order.page.title'|trans({'%student%': student?student.user.firstName ~ ' ' ~ student.user.lastName: null}) }} <a class="btn btn-primary" href="{{ path('order_manual_new', {'identifier' : (student)?student.identifier:null}) }}">Ajouter un paiement manuel</a></h1>
+
+    <hr>
+
+    <table id="order-table" class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">{{ knp_pagination_sortable(pagination, 'payment.order.page.table.head.type'|trans, 'o.type') }}</th>
+            <th scope="col">{{ knp_pagination_sortable(pagination, 'payment.order.page.table.head.amount'|trans, 'o.amount') }}</th>
+            <th scope="col">{{ knp_pagination_sortable(pagination, 'payment.order.page.table.head.student'|trans, 'student.identifier') }}</th>
+            <th scope="col">{{ knp_pagination_sortable(pagination, 'payment.order.page.table.head.exam_session'|trans, 'exam_classification.name') }}</th>
+            <th scope="col">{{ knp_pagination_sortable(pagination, 'payment.order.page.table.head.state'|trans, 'o.state') }}</th>
+            <th scope="col">{{ 'admissibility.bonus.page.table.head.action'|trans }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for order in pagination %}
+            <tr class="order" id="{{ 'order-' ~ order.id}}">
+                <th id="{{ 'order-type-' ~ order.id | lower | slug }}">
+                    {% if order.examSession is not empty %}
+                        {{ ('order.type.' ~ order.type)|trans({'%session_name%': order.examSession.examClassification.name}) }}
+                    {% else %}
+                        {{ ('order.type.' ~ order.type)|trans }}
+                    {% endif %}
+                </th>
+                <td id="{{ 'order-amount-' ~ order.id | lower | slug }}">{{ (order.amount/100)|number_format(2, ',', '.') ~ '€' }}</td>
+                <td id="{{ 'order-student-' ~ order.id | lower | slug }}">
+                    <a target="_blank" href="{{ path('exam_inscription_edit', {'examStudent': order.id}) }}">{{ order.student }}</a>
+                </td>
+                <td id="{{ 'order-exam-session-' ~ order.id | lower | slug }}">
+                    {% if order.examSession is not empty  %}
+                        {{ order.examSession.examClassification.name }}
+                    {% else %}
+                        NC
+                    {% endif %}
+                </td>
+                <td id="{{ 'order-state-' ~ order.id | lower | slug }}">{{ ('workflow.order.' ~ order.state)|trans }}</td>
+                <td class="d-flex">
+                    <a class="btn btn-warning me-2" href="{{ path('order_show', {'id': order.id}) }}"><i class="bi bi-pencil-square"></i></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr class="text-center"><td colspan="5">{{ 'payment.order.page.table.no_result_found'|trans }}</td></tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+{% endblock %}

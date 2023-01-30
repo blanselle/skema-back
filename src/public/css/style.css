@@ -1,0 +1,393 @@
+/* navbar */
+.app_navbar {
+    width: inherit;
+    height: 100%;
+    position: fixed;
+    overflow: auto;
+}
+.app_navbar .navbar {
+    width: 100%;
+    background-color: inherit;
+
+}
+.app_navbar .navbar .dropdown-menu, .navbar .dropdown-item:active {
+    background-color: inherit!important;
+    border: none;
+}
+.nav_actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+/* end */
+
+.hidden {
+   display: none;
+}
+.bg-light {
+    background-color: #EEE !important;
+}
+.bg-blue {
+    background-color: #9EC0F3 !important;
+}
+#popupModal .modal-xl {
+    max-width: 95%;
+}
+#fullscreen {
+    position: relative;
+    bottom: 0;
+}
+h1 a {
+    float: right;
+}
+.back {
+    position: relative;
+    top:20px;
+}
+.col label {
+    margin-right: 25px;
+}
+
+.save_container {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+#candidate_profil .save_container a {
+    margin-top: 0;
+    margin-left: 15px;
+}
+form label {
+    float: left;
+}
+.validation {
+    display: flex;
+    justify-content: space-around;
+}
+.exams_list {
+    padding: 20px;
+    border: 1px solid #cccccc;
+}
+.exams_list .exams_item:first-child {
+    margin-top: 0;
+}
+.exams_list .exams_item {
+    margin-top: 10px;
+    display: -webkit-box;
+}
+.exams_list .exams_item button {
+    margin-left: 15px;
+}
+.exam_students {
+    margin-top: 35px;
+}
+.exam_students table {
+    margin-top: 20px;
+}
+#edit_exam_list {
+    margin-top: 30px;
+}
+#inscribe_student {
+    padding: 20px;
+    border: 1px solid #cccccc;
+    margin-top: 30px;
+}
+fieldset legend {
+    text-align: left;
+}
+.links {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.links__item {
+    margin-bottom: 20px;
+}
+
+#ranking a {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+#candidate_profil  a.collapse_title,
+#ranking  a.collapse_title {
+    text-decoration: none;
+    color: #000;
+    padding: 5px 15px 5px 15px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+#candidate_profil  a.collapse_title.errors {
+    color: red !important;
+    border-color: red !important;
+}
+#candidate_profil a .arrow,
+#ranking a .arrow {
+    width: 24px;
+    height: 24px;
+    background-image: url('../fixtures/arrow_down.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    align-self: center;
+    margin-right: 5px;
+}
+#candidate_profil a[aria-expanded=true],
+#ranking a[aria-expanded=true] {
+    border-bottom: 1px dashed black;
+}
+#candidate_profil a[aria-expanded=true] .arrow,
+#ranking a[aria-expanded=true] .arrow {
+    background-image: url('../fixtures/arrow_up.png');
+}
+#candidate_profil  a h3,
+#ranking  a h3 {
+    font-size: 20px;
+    margin-bottom: 0;
+}
+#candidate_profil .collapse_content,
+#ranking .collapse_content {
+    padding: 20px;
+    border: 1px solid black;
+    border-top: 0;
+}
+#candidate_profil form h4 {
+    border-bottom: 1px dotted black;
+}
+.search_form {
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.search_form .row:first-child {
+    margin-top: 0;
+}
+.search_form .row {
+    margin-top: 15px;
+}
+.search_form .col {
+    text-align: center;
+}
+.admin-datatable tr td:last-child {
+    display: flex;
+}
+#list-search button[type=submit] {
+    display: none;
+}
+#myTable {
+    padding-top: 15px;
+}
+#first_message {
+    display: flex;
+    flex-direction: column;
+}
+#first_message .reply {
+    align-self: end;
+}
+#first_message .message {
+    margin-top: 0;
+}
+#first_message .content {
+    margin-top: 20px;
+}
+.reply_item {
+    width: 85%;
+}
+.notification_container,
+.reply_item,
+.notification_reply_form {
+    padding: 15px;
+    border: 1px solid #cccccc;
+    background: #F7F9FA;
+    margin-top: 30px;
+}
+.replies_container {
+    display: flex;
+    flex-direction: column;
+}
+.reply_item.reply {
+    background: #D1E7DE;
+    align-self: flex-end;
+}
+.notification_container .title,
+.reply_item .title {
+    font-weight: bold;
+}
+.notification_container .message,
+.reply_item .message {
+    text-align: left;
+    margin-top: 20px;
+}
+.reply_item .message {
+    font-style: italic;
+}
+.message .from_name,
+.message .to_name {
+    font-weight: bold;
+    color: #4F8AFF;
+}
+#first_message {
+    border: 2px solid #cccccc;
+    text-align: center;
+}
+#first_message .message {
+    text-align: center;
+}
+.reply_item .reply {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.reply a {
+    align-items: flex-end;
+}
+#treat {
+    float: right;
+}
+#candidate_profil .media_container {
+    display: flex;;
+    width: 100%;
+}
+#candidate_profil .media_form {
+    width: 50%;
+    align-self: center;
+}
+#candidate_profil .media_form button {
+    height: auto;
+}
+#candidate_profil a.media {
+    display: block;
+    width: 45%;
+    margin-right: 3%;
+    min-height: 160px;
+    background: url('../fixtures/icon-photo.jpg'), #fff;
+    background-size: auto;
+    background-position: center;
+    text-align: center;
+    vertical-align:middle;
+    border: 1px solid #ccc;
+}
+#candidate_profil .media_container .button_actions {
+    margin-top: 10px;
+}
+#candidate_profil .media_container .button_actions .col {
+    display: flex;
+    justify-content: space-between;
+}
+#candidate_profil h4 {
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+#candidate_profil h5 {
+    margin-top: 15px;
+}
+#imagepreview {
+    width: 100%;
+}
+.media_parent_container {
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+.media_content {
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 1px solid #848484;
+    padding-top: 1rem !important;
+    background: #fff;
+}
+.distribution_item {
+    margin-top: 25px;
+}
+.error_not_distributed {
+    color: red;
+}
+#import-score tr.alert {
+    background: #f8d7da;
+}
+.admissibility_pc {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.admissibility_item {
+    min-width: 49%;
+    flex-shrink: 0;
+    flex-grow: 1;
+    border: 1px solid #cccccc;
+    padding: 10px;
+    box-sizing: border-box;
+    flex-basis: min-content;
+}
+.table-admissibility-border tr td {
+    text-align: center;
+}
+#conversion_table, #moyenne_conversion_table {
+    width: 49%;
+    text-align: center;
+}
+#moyenne_conversion_table button {
+    margin-top: 25px;
+}
+#conversion_table tr td.warning {
+    background: #f8d7da;
+}
+#conversion {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.date_passed {
+    font-style: italic;
+    color: #a0a0a0;
+}
+.media_content ul {
+    list-style-type: none;
+}
+.row.button_actions {
+    max-width: 380px;
+}
+.media_content .save_media {
+    display: none;
+}
+.alert-error {
+    color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+}
+
+#cv-bac-sup-list .school-reports-list,
+#bac-sup-new .school-reports-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.border-l-purple {
+    border-left: 1rem solid #8B2BB9 !important;
+}
+.border-l-black {
+    border-left: 1rem solid #000000 !important;
+}
+.border-l-red {
+    border-left: 1rem solid #FF0000 !important;
+}
+.border-l-orange {
+    border-left: 1rem solid #ff7700 !important;
+}
+.border-l-green {
+    border-left: 1rem solid #008000 !important;
+}
+.border-l-white {
+    border-left: 1rem solid #FFFFFF !important;
+}
+.border-start-dashed {
+    border-left: 1px dashed #000000 !important;
+}
+#dual_media_container {
+    display: none;
+}

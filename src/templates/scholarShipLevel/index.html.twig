@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/admin-datatables-light.js') }}" type="text/javascript"></script>
+{% endblock %}
+
+{% block title %}Liste des niveaux de bourse{% endblock %}
+
+{% block body %}
+    <h1>Liste des niveaux de bourse <a class="btn btn-primary" href="{{ path('scholar_ship_level_new') }}">Ajouter un niveau de bourse</a></h1>
+
+    <div class="row">
+        {{ include('partial/_flash_messages.html.twig') }}
+    </div>
+
+    <table id="campus" class="table admin-datatable stripe hover order-column">
+        <thead>
+            <tr>
+                <th>label</th>
+                <th>position</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for scholarShipLevel in scholarShipLevels %}
+            <tr id="{{ scholarShipLevel.label | lower | slug }}">
+                <td id="{{ 'label-' ~ scholarShipLevel.label | lower | slug }}">{{ scholarShipLevel.label }}</td>
+                <td id="{{ 'position-' ~ scholarShipLevel.label | lower | slug }}">{{ scholarShipLevel.position }}</td>
+                <td class="d-flex">
+                    <a class="btn btn-warning me-2 action-edit" href="{{ path('scholar_ship_level_edit', {'id': scholarShipLevel.id}) }}"><i class="bi bi-pencil-square"></i></a>
+                    {{ include('scholarShipLevel/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Aucun niveau de bourse trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

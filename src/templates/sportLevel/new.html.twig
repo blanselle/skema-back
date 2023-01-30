@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau niveau sportif{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('sport_level_index') }}" class="btn btn-secondary">Retourner à la liste des niveaux sportifs</a>
+    </div>
+    <hr />
+    <h1>Créer un niveau sportif</h1>
+
+    {{ include('sportLevel/_form.html.twig') }}
+{% endblock %}

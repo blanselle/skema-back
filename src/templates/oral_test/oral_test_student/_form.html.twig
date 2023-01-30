@@ -1,0 +1,45 @@
+{{ form_start(form) }}
+<div class="row">
+    <div class="col">
+        {{ form_row(form.campus) }}
+    </div>
+    <div class="col">
+        {{ form_row(form.date) }}
+    </div>
+</div>
+<div class="save_container">
+    <button type="submit" class="btn btn-success btn-lg">{{ button_label|default('Sauvegarder') }}</button>
+{{ form_end(form) }}
+
+{% if oralTestStudent is not null %}
+{% include('oral_test/oral_test_student/_delete_form.html.twig') with {'item': oralTestStudent} %}
+{% endif %}
+</div>
+
+<script>
+    ( () => {
+        const campus = document.querySelector('#campus_date_oral_day_campus');
+        campus.addEventListener('change', function() {
+            
+            const form = this.closest('form');
+
+            const data = {};
+            data[campus.getAttribute('name')] = campus.value;
+            
+            fetch(form.action, {
+                method: form.method,
+                body: new URLSearchParams(data),
+            })
+            .then(response => {
+                let text = response.text()
+                return text;
+            })
+            .then(html => {
+                const date = document.querySelector('#campus_date_oral_day_date');
+                date.replaceWith(
+                    document.createRange().createContextualFragment(html).querySelector('#campus_date_oral_day_date')
+                );
+            });
+        });
+    } )();
+</script>   

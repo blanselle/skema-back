@@ -1,0 +1,5 @@
+{% if item.examSession.campus is not empty %}
+    {{ item.examSession.campus.name }}
+{% else %}
+    <span class="badge bg-danger">En ligne</span>
+{% endif %}

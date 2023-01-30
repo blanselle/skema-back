@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Scores de Typologie d'Épreuves - Session Skema{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('exam_classifications_index') }}" class="btn btn-secondary">Retour à la liste des typologies</a>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-8">
+            <h1>Scores pour la typologie d'Épreuve "{{ examClassification.name }}" </h1>
+        </div>
+        <div class="col-4">
+            <a class="btn btn-primary" href="{{ path('exam_classifications_score_upload', {'id': examClassification.id}) }}">Charger un fichier de scores</a>
+            <a class="btn btn-primary" href="{{ path('exam_classifications_score_new', {'id': examClassification.id}) }}">Ajouter un score</a>
+        </div>
+    </div>
+
+    <div class="row">
+        {{ include('partial/_flash_messages.html.twig') }}
+    </div>
+
+    <table class="table admin-datatable stripe hover order-column">
+        <thead>
+            <tr>
+                <th>score</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for examClassificationScore in examClassificationScores %}
+                <tr id="{{ 'classification-score-' ~ examClassificationScore.id | lower | slug }}">
+                    <td id="{{ 'classification-score-value-' ~ examClassificationScore.id | lower | slug }}">{{ examClassificationScore.score }}</td>
+                    <td class="d-flex">
+                        <a class="btn btn-warning action-edit" href="{{ path('exam_classifications_score_edit', {'id': examClassificationScore.id}) }}"><i class="bi bi-pencil-square"></i></a>
+                        {{ include('exam/classification/score/_delete_form.html.twig') }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

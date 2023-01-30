@@ -1,0 +1,49 @@
+App\Entity\Notification\Notification:
+  notification1:
+    sender: '@candidate_AST1'
+    receiver: '@user_admin'
+    subject: 'Problème inscription'
+    content: "Je suis candidat au concours, j'ai plus de 26 ans et à l'inscription ma candidature bloque, est-ce normal ?"
+    identifier: "230001"
+    read: false
+
+  notification2:
+    parent: '@notification1'
+    sender: '@user_admin'
+    receiver: '@candidate_AST1'
+    content: "Merci de votre message, nous analysons votre problème et revenons vers vous dans les meilleurs délais.<br /><br />Cordialement,<br />L'équipe Skema"
+    read: false
+
+  notification3:
+    parent: '@notification1'
+    sender: '@user_admin'
+    receiver: '@candidate_AST1'
+    content: "Le concours est en fait ouvert au moins de 26 ans.<br /><br />Cordialement,<br />L'équipe Skema"
+    read: false
+
+  notification4:
+    sender: '@candidate_AST1'
+    roles: ['ROLE_COORDINATOR']
+    subject: 'Question TOEIC'
+    content: "Pouvez-vous m'indiquer s'il reste des places pour la session TOEIC de samedi ?"
+    identifier: "230001"
+    read: false
+
+  notification5:
+    sender: '@candidate_AST1'
+    roles: ['ROLE_ADMIN']
+    subject: 'Documents à fournir'
+    content: "Avez-vous bien reçu mes documents d'admissibilité ?"
+    identifier: "230001"
+    read: false
+
+App\Entity\Notification\NotificationTemplate:
+  template1:
+    subject: 'Autre'
+    content: ''
+    tag: 'media_transfer'
+
+  template2:
+    subject: 'Document international'
+    content: 'Le document n’est pas en français'
+    tag: 'media_transfer'

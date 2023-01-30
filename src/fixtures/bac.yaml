@@ -1,0 +1,151 @@
+# Option
+App\Entity\CV\Bac\BacOption:
+  bacCirque:
+    name: "Arts du cirque"
+    bacTypes: ['@bacArts']
+  bacPlastoc:
+    name: "Arts plastiques"
+    bacTypes: ['@bacArts']
+  bacCine:
+    name: "Cinéma - Audiovisuel"
+    bacTypes: ['@bacArts']
+  bacDanse:
+    name: "Danse"
+    bacTypes: ['@bacArts']
+  bacHistoire:
+    name: "Histoire des Arts"
+  bacMusique:
+    name: "Musique"
+    bacTypes: ['@bacArts']
+  bacTheatre:
+    name: "Théâtre"
+    bacTypes: ['@bacArts']
+
+# CHANNEL
+App\Entity\CV\Bac\BacChannel:
+  bacTechno:
+    name: 'Technologique'
+    key: 'technologique'
+  bacPro:
+    name: 'Professionnel'
+    key: 'professional'
+    needDetail: true
+  bacGeneral:
+    name: 'Général'
+    key: 'general'
+
+# Type
+App\Entity\CV\Bac\BacType:
+  bacS:
+    name: "Scientifique"
+    tags: ['1']
+    bacChannel: '@bacGeneral'
+  bacL:
+    name: "Littéraire"
+    tags: ['1']
+    bacChannel: '@bacGeneral'
+  bacEcoSociale:
+    name: "Économique et social"
+    tags: ['1']
+    bacChannel: '@bacGeneral'
+  bacArts:
+    name: "Arts"
+    tags: ['2']
+    bacChannel: '@bacGeneral'
+  bacBiologie: 
+    name: "Biologie"
+    tags: ['2']
+    bacChannel: '@bacGeneral'
+  bacHistoire: 
+    name: "Histoire-géographie, géopolitique et sciences politiques"
+    tags: ['2']
+    bacChannel: '@bacGeneral'
+  bacPhilo: 
+    name: "Humanités, littérature et philosophie"
+    tags: ['2']
+    bacChannel: '@bacGeneral'
+  bacLitteratureAntiquite: 
+    name: "Littérature et langues et cultures de l'Antiquité"
+    tags: ['2']
+    bacChannel: '@bacGeneral'
+  bacLangues: 
+    name: "Langues, littératures et cultures étrangères et régionales"
+    tags: ['2']
+    bacChannel: '@bacGeneral'
+  bacMath: 
+    name: "Mathématiques"
+    tags: ['2']
+    bacChannel: '@bacGeneral'
+  bacNumerique: 
+    name: "Numérique et sciences informatiques"
+    tags: ['2']
+    bacChannel: '@bacGeneral'
+  bacPhysique: 
+    name: "Physique-chimie"
+    tags: ['2']
+    bacChannel: '@bacGeneral'
+  bacScienceEco: 
+    name: "Sciences économiques et sociales"
+    tags: ['2']
+    bacChannel: '@bacGeneral'
+  bacScienceInge: 
+    name: "Sciences de l’Ingénieur"
+    tags: ['2']
+    bacChannel: '@bacGeneral'
+  bacSvt:
+    name: "Sciences de la Vie et de la Terre"
+    tags: ['2']
+    bacChannel: '@bacGeneral'
+  bacST2S:
+    name: "ST2S"
+    tags: ['1', '2']
+    bacChannel: '@bacTechno'
+  bacSTL:
+    name: "STL"
+    tags: ['1', '2']
+    bacChannel: '@bacTechno'
+  bacSTD2A:
+    name: "STD2A"
+    tags: ['1', '2']
+    bacChannel: '@bacTechno'
+  bacSTI2D:
+    name: "STI2D"
+    tags: ['1', '2']
+    bacChannel: '@bacTechno'
+  bacTypeSTMG:
+    name: "STMG"
+    tags: ['1', '2']
+    bacChannel: '@bacTechno'
+  bacSTHR:
+    name: "STHR"
+    tags: ['1', '2']
+    bacChannel: '@bacTechno'
+  bacS2TMD:
+    name: "S2TMD"
+    tags: ['1', '2']
+    bacChannel: '@bacTechno'
+
+# BAC DISTINCTION
+App\Entity\CV\Bac\BacDistinction:
+  distinction_tb:
+    label: 'Très Bien'
+    code: 'distinction_tb'
+  distinction_b:
+    label: 'Bien'
+    code: 'distinction_b'
+  distinction_ab:
+    label: 'Assez Bien'
+    code: 'distinction_ab'
+  no_distinction:
+    label: 'Pas de mention'
+    code: 'no_distinction'
+
+# BAC
+App\Entity\CV\Bac\Bac:
+  bac1:
+    cv: '@cv_student1'
+    ine: 'azerty'
+    rewardedYear: 2020
+    bacDistinction: '@distinction_tb'
+    bacChannel: '@bacTechno'
+    bacTypes: ['@bacST2S']

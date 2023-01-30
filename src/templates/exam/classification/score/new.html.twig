@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau score pour la typologie {{ examClassification.name }}{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('exam_classification_scores_index', {'id': examClassification.id}) }}" class="btn btn-secondary">Retour à la liste des scores de typologie</a>
+    </div>
+    <hr />
+    <h1>Ajouter un score à la typologie {{ examClassification.name }}</h1>
+
+    {{ include('exam/classification/score/_form.html.twig') }}
+{% endblock %}

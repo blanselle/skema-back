@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification d'un message{% endblock %}
+
+{% block body %}
+    <div class="nav_actions">
+        <a href="{{ path('notification_template_index') }}" class="btn btn-secondary">Retour à la liste des messages</a>
+        {{ include('notification/notification_template/_delete_form.html.twig') }}
+    </div>
+    <hr />
+    <h1>{{ item.subject }}</h1>
+
+    {{ include('notification/notification_template/_form.html.twig') }}
+
+{% endblock %}
